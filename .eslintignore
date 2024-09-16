@@ -1,0 +1,4 @@
+<!-- List of files and directories to exclude from ESLint linting -->
+
+/.expo
+node_modules
