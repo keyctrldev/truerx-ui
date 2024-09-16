@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "truerx-ui",
+    "slug": "truerx-ui",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./app/assets/Icons/appLogo.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./app/assets/Images/appLogo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./app/assets/Icons/adaptiveIcon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./app/assets/Icons/favicon.png"
+    }
+  }
+}
