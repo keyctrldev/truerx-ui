@@ -6,5 +6,6 @@
 */
 
 export default {
-    login: 'Login'
+    login: 'Login',
+    claims:'Claims'
 }
