@@ -4,7 +4,6 @@ import React, {
   useRef,
   useState,
   useCallback,
-  useMemo,
 } from "react";
 import { View, Animated } from "react-native";
 import { styles } from "./CustomToastStyle";
@@ -32,25 +31,19 @@ const AnimatedToast = forwardRef<ToastRef, ToastProps>(
     const [visible, setVisible] = useState<boolean>(false);
     const [hideTimeout, setHideTimeout] = useState<NodeJS.Timeout | null>(null);
 
-    const toastColors = useMemo(
-      () => ({
-        SUCCESS: "#237D06",
-        ERROR: "#DB1415",
-        WARNING: "#F0C100",
-        INFO: "#2D60E5",
-      }),
-      []
-    );
+    const toastColors = {
+      SUCCESS: "#237D06",
+      ERROR: "#DB1415",
+      WARNING: "#F0C100",
+      INFO: "#2D60E5",
+    };
 
-    const bgColors = useMemo(
-      () => ({
-        SUCCESS: "#E7F4E7",
-        ERROR: "#FBE8E9",
-        WARNING: "#FDF9E7",
-        INFO: "#ECF0FD",
-      }),
-      []
-    );
+    const bgColors = {
+      SUCCESS: "#E7F4E7",
+      ERROR: "#FBE8E9",
+      WARNING: "#FDF9E7",
+      INFO: "#ECF0FD",
+    };
 
     const showToast = useCallback(
       (
