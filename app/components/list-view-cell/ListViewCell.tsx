@@ -1,23 +1,20 @@
 import React from "react";
 import { Text, View } from "react-native";
 import { styles } from "./ListViewCellStyle";
-interface claimData {
-  typeOfConsultance: string;
-  Description: string;
-  status: string;
-  colorCode:string;
-}
-interface Props {
-  claimDetails: claimData;
-}
-const ListViewCell:React.FC<Props>= ({claimDetails}) => {
+import { ClaimsData } from "../../types";
+const ListViewCell = ({
+  typeOfConsultance,
+  Description,
+  status,
+  colorCode,
+}: ClaimsData) => {
   return (
     <View style={styles.listContainer}>
       <View>
-        <Text style={styles.listHeading}>{claimDetails.typeOfConsultance}</Text>
-        <Text style={styles.listDetails}>{claimDetails.Description}</Text>
+        <Text style={styles.listHeading}>{typeOfConsultance}</Text>
+        <Text style={styles.listDetails}>{Description}</Text>
       </View>
-      <Text style={{color:claimDetails.colorCode}}>{claimDetails.status}</Text>
+      <Text style={{ color: colorCode }}>{status}</Text>
     </View>
   );
 };

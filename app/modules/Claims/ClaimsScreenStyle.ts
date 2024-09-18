@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
         paddingTop:20,
         paddingBottom:20,
         gap:20,
-        backgroundColor:'#3B76A1'
+        backgroundColor:Colors.skyBlue,
     },
     clainContent:{
         gap:20,
