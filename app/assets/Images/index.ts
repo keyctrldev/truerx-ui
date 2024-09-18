@@ -1,5 +1,5 @@
 // This file exports all the image assets used across the application.
 
 export default {
-    splash: require('./splash.png.png')
+    splash: require('./splash.png')
 }
