@@ -3,7 +3,7 @@ import { Colors, moderateScale, verticalScale } from '../../theme';
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: Colors.BlueGray,
+    backgroundColor: Colors.lightSlateGray,
     justifyContent: 'center',
     alignItems: 'center',
     width: "60%",

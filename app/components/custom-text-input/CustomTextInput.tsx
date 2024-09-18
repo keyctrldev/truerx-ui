@@ -1,5 +1,5 @@
 import React, { ForwardedRef, Dispatch, SetStateAction } from "react";
-import { TextInput as RNTextInput, TextInputProps, View, TouchableOpacity, Image} from 'react-native';
+import { TextInput, TextInputProps, View, TouchableOpacity, Image} from 'react-native';
 import { styles } from './CustomTextInputStyle'; 
 import { Colors } from '../../theme';
 import { Icons } from "../../assets";
@@ -10,7 +10,7 @@ interface CustomInputPropType {
 
 export type CustomInputType = (
   props: TextInputProps & CustomInputPropType,
-  ref: ForwardedRef<RNTextInput>
+  ref: ForwardedRef<TextInput>
 ) => React.JSX.Element;
 
 const CustomTextInput: CustomInputType = (
@@ -31,7 +31,7 @@ const CustomTextInput: CustomInputType = (
   return (
     <View style={styles.textInputViewStyle}>
       <View style={styles.inputViewStyle}>
-        <RNTextInput
+        <TextInput
           autoCapitalize="none"
           multiline={multiline}
           placeholder={placeholder}
