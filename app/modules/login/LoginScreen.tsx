@@ -8,15 +8,53 @@
  */
 
 import React from "react";
-import { SafeAreaView } from "react-native";
+import { SafeAreaView, ScrollView } from "react-native";
 import { styles } from "./LoginScreenStyle";
-import { AppText } from "../../components";
+import { AppText, CustomButton, CustomTextInput } from "../../components";
 import { loginScreenStrings } from "../../constants";
+import useLoginScreen from "./useLoginScreen";
 
 const LoginScreen = () => {
+  const {
+    passwordRef,
+    secureTextEntry,
+    setSecureTextEntry,
+    isloading,
+    goToPassword,
+  } = useLoginScreen();
   return (
     <SafeAreaView style={styles.rootContainerStyle}>
-      <AppText>{loginScreenStrings.login}</AppText>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.scrollViewContainerStyle}
+        bounces={false}
+      >
+        <AppText style={styles.loginToExpStyle}>
+          {loginScreenStrings.loginToExp}
+        </AppText>
+        <CustomTextInput
+          placeholder="Username"
+          keyboardType="email-address"
+          returnKeyType="next"
+          secureTextEntry={false}
+          onSubmitEditing={() => goToPassword(passwordRef)}
+        />
+        <CustomTextInput
+          placeholder="Password"
+          ref={passwordRef}
+          keyboardType="default"
+          returnKeyType="done"
+          secureTextEntry={secureTextEntry}
+          setSecureEntryText={setSecureTextEntry}
+        />
+
+        <CustomButton
+          title={loginScreenStrings.loginBtn}
+          customStyle={styles.customButtonStyle}
+          disabled={isloading}
+          onPress={() => {}}
+        />
+      </ScrollView>
     </SafeAreaView>
   );
 };

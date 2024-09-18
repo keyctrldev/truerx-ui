@@ -4,3 +4,10 @@ export interface UserFormType {
     email: string;
     password: string;
 }
+
+export interface ClaimsData {
+    typeOfConsultance: string,
+    Description: string,
+    status: string,
+    colorCode: string
+}

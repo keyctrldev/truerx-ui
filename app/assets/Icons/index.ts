@@ -3,5 +3,7 @@
 
 export default {
     appLogo: require('./appLogo.png'),
-    adaptiveIcon: require('./adaptive-icon.png'),
+    adaptiveIcon: require('./adaptiveIcon.png'),
+    eyeOpen: require('./eyeOpen.png'),
+    eyeHide: require('./eyeHide.png'),
 }
