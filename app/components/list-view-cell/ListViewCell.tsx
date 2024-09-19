@@ -1,20 +1,32 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import { styles } from "./ListViewCellStyle";
-import { ClaimsData } from "../../types";
+import AppText from "../app-text/AppText";
+
+interface ListViewCellProps {
+  typeOfConsultance: string;
+  Description: string;
+  status: string;
+  colorCode: string;
+}
+
 const ListViewCell = ({
   typeOfConsultance,
   Description,
   status,
   colorCode,
-}: ClaimsData) => {
+}: ListViewCellProps) => {
   return (
     <View style={styles.listContainer}>
-      <View>
-        <Text style={styles.listHeading}>{typeOfConsultance}</Text>
-        <Text style={styles.listDetails}>{Description}</Text>
+      <View style={styles.headingContainer}>
+        <AppText style={styles.listHeading}>{typeOfConsultance}</AppText>
+        <AppText style={styles.listDetails}>{Description}</AppText>
       </View>
-      <Text style={{ color: colorCode }}>{status}</Text>
+      <View style={styles.statusContainer}>
+        <AppText style={[styles.statusTextStyle, { color: colorCode }]}>
+          {status}
+        </AppText>
+      </View>
     </View>
   );
 };

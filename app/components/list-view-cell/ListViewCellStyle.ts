@@ -1,20 +1,34 @@
 import { StyleSheet } from "react-native";
-import { Colors } from '../../theme';
+import { Colors, horizontalScale, moderateScale, verticalScale } from '../../theme';
 
 export const styles = StyleSheet.create({
-    listContainer:{
-        flexDirection:'row',
-        justifyContent:'space-between',
-        backgroundColor:'#8C9CA5',
-        padding:20,
+    listContainer: {
+        flexDirection: 'row',
+        backgroundColor: Colors.lightSlateGray,
+        padding: moderateScale(17),
+        marginVertical: verticalScale(7)
     },
-    listHeading:{
-      color:Colors.white,
-      fontWeight:'400',
+    headingContainer: {
+        width: '70%',
     },
-    listDetails:{
-        width:150,
-        marginTop:10,
-        color:Colors.white,
+    statusTextStyle: {
+        fontSize: moderateScale(16),
+        textAlign: 'right'
+    },
+    statusContainer: {
+        paddingLeft: horizontalScale(5),
+        width: '30%',
+        paddingTop: verticalScale(5)
+    },
+    listHeading: {
+        color: Colors.white,
+        fontWeight: '800',
+        fontSize: moderateScale(18)
+    },
+    listDetails: {
+        marginTop: verticalScale(15),
+        color: Colors.white,
+        fontSize: moderateScale(16),
+        paddingRight: horizontalScale(30)
     }
 });
