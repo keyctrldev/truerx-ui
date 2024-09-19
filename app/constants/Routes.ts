@@ -7,5 +7,5 @@
 
 export default {
     login: 'Login',
-    claims:'Claims'
+    home:'TabNavigation'
 }
