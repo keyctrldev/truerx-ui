@@ -1,11 +1,19 @@
-import React, { ForwardedRef, Dispatch, SetStateAction } from "react";
-import { TextInput, TextInputProps, View, TouchableOpacity, Image} from 'react-native';
-import { styles } from './CustomTextInputStyle'; 
-import { Colors } from '../../theme';
+import {
+  Image,
+  TextInput,
+  TextInputProps,
+  TouchableOpacity,
+  View,
+  ViewStyle,
+} from "react-native";
+import React, { Dispatch, ForwardedRef, SetStateAction } from "react";
 import { Icons } from "../../assets";
+import { styles } from "./CustomTextInputStyle";
+import { Colors } from "../../theme";
 
 interface CustomInputPropType {
   setSecureEntryText?: Dispatch<SetStateAction<boolean>>;
+  containerStyle?: ViewStyle;
 }
 
 export type CustomInputType = (
@@ -25,18 +33,19 @@ const CustomTextInput: CustomInputType = (
     setSecureEntryText,
     secureTextEntry,
     multiline = false,
+    containerStyle,
   },
   ref
 ) => {
   return (
-    <View style={styles.textInputViewStyle}>
+    <View style={[styles.textInputViewStyle, containerStyle]}>
       <View style={styles.inputViewStyle}>
         <TextInput
           autoCapitalize="none"
           multiline={multiline}
           placeholder={placeholder}
           style={styles.inputStyle}
-          placeholderTextColor={Colors.primary}
+          placeholderTextColor={Colors.white}
           ref={ref}
           onSubmitEditing={onSubmitEditing}
           defaultValue={defaultValue}

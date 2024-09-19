@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
    },
    label: {
       color: Colors.white,
-      fontSize: moderateScale(15),
+      fontSize: moderateScale(16),
       paddingVertical: verticalScale(12),
    },
 
