@@ -5,6 +5,8 @@ const useLoginScreen = () => {
     const passwordRef = useRef<TextInput>(null);
     const [secureTextEntry, setSecureTextEntry] = useState<boolean>(true);
     const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [rememberUserName, setRememberUserName] = useState<boolean>(false);
+    const [enableFaceId, setEnableFaceId] = useState<boolean>(false);
 
     const goToPassword = (nextRef: RefObject<TextInput>): void => {
         nextRef.current?.focus();
@@ -16,7 +18,11 @@ const useLoginScreen = () => {
         passwordRef,
         goToPassword,
         isLoading,
-        setIsLoading
+        setIsLoading,
+        rememberUserName,
+        setRememberUserName,
+        enableFaceId,
+        setEnableFaceId
     }
 }
 
