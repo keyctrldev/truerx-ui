@@ -4,4 +4,5 @@
  */
 export const loginScreenStrings = Object.freeze({
     login: 'Log In',
+    loginBtn: 'Log In'
 });

@@ -3,7 +3,9 @@
 type ColorType =
     | 'black'
     | 'white'
-    | 'skyBlue'
+    | 'primary'
+    | 'lightSlateGray';
+    
 
 // This object provides a centralized way to manage and reference color values throughout the application, ensuring consistency in color usage.
 // Color code should be Hex values.
@@ -11,5 +13,6 @@ type ColorType =
 export const Colors: Record<ColorType, string> = {
     black: '#000000',
     white: '#ffffff',
-    skyBlue: '#3B76A1',
+    primary: '#007BFF',
+    lightSlateGray: '#99A8B9'
 };
