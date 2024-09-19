@@ -1,15 +1,20 @@
 import { StyleSheet } from "react-native";
-import { Colors, horizontalScale, moderateScale, verticalScale } from "../../theme";
+import {
+  Colors,
+  horizontalScale,
+  moderateScale,
+  verticalScale,
+} from "../../theme";
 
 export const styles = StyleSheet.create({
   textInputViewStyle: {
     marginHorizontal: horizontalScale(20),
     marginVertical: verticalScale(10),
-    width: "70%",
+    width: "87%",
   },
   inputViewStyle: {
     borderWidth: moderateScale(1),
-    borderColor: Colors.primary,
+    borderColor: Colors.white,
     borderRadius: moderateScale(5),
     justifyContent: "space-between",
     flexDirection: "row",
@@ -17,13 +22,13 @@ export const styles = StyleSheet.create({
   },
   inputStyle: {
     flex: 1,
-    color: Colors.black,
-    paddingVertical: verticalScale(12),
+    color: Colors.white,
+    paddingVertical: verticalScale(15),
     paddingHorizontal: horizontalScale(12),
   },
   eyeIconContainer: {
-    height: verticalScale(16),
-    width: horizontalScale(16),
+    height: verticalScale(18),
+    width: horizontalScale(18),
     marginRight: horizontalScale(10),
   },
   eyeIcon: {
