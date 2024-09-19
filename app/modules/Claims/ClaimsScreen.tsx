@@ -10,6 +10,7 @@ const ClaimsScreen = () => {
       <FlatList
         data={claimsData}
         bounces={false}
+        keyExtractor={(_, index) => `${index}claimItem`}
         renderItem={({ item, index }) => (
           <ListViewCell
             typeOfConsultance={item.typeOfConsultance}
