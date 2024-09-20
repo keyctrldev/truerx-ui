@@ -5,6 +5,7 @@ import { Image, ImageSourcePropType } from "react-native";
 import { Routes } from "../../constants";
 import { Icons } from "../../assets";
 import { styles } from "./TabNavigationStyle";
+
 const TabNav = createBottomTabNavigator();
 
 const getTabBarIcon =(icon: ImageSourcePropType , outlineIcon: ImageSourcePropType) =>
@@ -22,12 +23,8 @@ const TabNavigation = () => {
       screenOptions={{
         tabBarActiveTintColor:styles.activeColor.color,
         tabBarInactiveTintColor: styles.inActiveColor.color,
-        tabBarLabelStyle: {
-          fontSize: styles.tabBarLabel.fontSize,
-        },
-        tabBarStyle: {
-          height: styles.tabBarStyle.height,
-        },
+        tabBarLabelStyle:styles.tabBarLabel,
+        tabBarStyle: styles.tabBarStyle,
       }}
     >
       <TabNav.Screen
