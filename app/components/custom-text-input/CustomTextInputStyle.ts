@@ -36,4 +36,9 @@ export const styles = StyleSheet.create({
     height: "100%",
     tintColor: Colors.white,
   },
+  errorTextStyle: {
+    marginTop: verticalScale(5),
+    fontSize: moderateScale(13),
+    color: Colors.red,
+  },
 });

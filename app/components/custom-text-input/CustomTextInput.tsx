@@ -10,10 +10,13 @@ import React, { Dispatch, ForwardedRef, SetStateAction } from "react";
 import { Icons } from "../../assets";
 import { styles } from "./CustomTextInputStyle";
 import { Colors } from "../../theme";
+import AppText from "../app-text/AppText";
 
 interface CustomInputPropType {
   setSecureEntryText?: Dispatch<SetStateAction<boolean>>;
   containerStyle?: ViewStyle;
+  error: string;
+  touched: boolean;
 }
 
 export type CustomInputType = (
@@ -34,6 +37,9 @@ const CustomTextInput: CustomInputType = (
     secureTextEntry,
     multiline = false,
     containerStyle,
+    error,
+    touched,
+    value,
   },
   ref
 ) => {
@@ -55,6 +61,7 @@ const CustomTextInput: CustomInputType = (
           onBlur={onBlur}
           secureTextEntry={secureTextEntry}
           keyboardAppearance="dark"
+          value={value}
         />
         {setSecureEntryText && (
           <TouchableOpacity
@@ -69,6 +76,9 @@ const CustomTextInput: CustomInputType = (
           </TouchableOpacity>
         )}
       </View>
+      {error && touched && (
+        <AppText style={styles.errorTextStyle}>{error}</AppText>
+      )}
     </View>
   );
 };

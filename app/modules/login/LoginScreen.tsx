@@ -22,6 +22,12 @@ const LoginScreen = () => {
     setRememberUserName,
     enableFaceId,
     setEnableFaceId,
+    handleChange,
+    setFieldTouched,
+    errors,
+    touched,
+    handleSubmit,
+    values,
   } = useLoginScreen();
   return (
     <SafeAreaView style={styles.rootContainerStyle}>
@@ -38,18 +44,26 @@ const LoginScreen = () => {
         </AppText>
         <View style={styles.inputWrapper}>
           <CustomTextInput
-            placeholder="Username"
+            placeholder="Email"
+            value={values.email}
+            onSubmitEditing={() => goToPassword(passwordRef)}
             keyboardType="email-address"
             returnKeyType="next"
+            onChangeText={handleChange("email")}
+            onBlur={() => setFieldTouched("email")}
+            error={errors?.email as string}
+            touched={touched?.email as boolean}
             secureTextEntry={false}
-            onSubmitEditing={() => goToPassword(passwordRef)}
-            containerStyle={styles.nameInputStyle}
           />
           <CustomTextInput
             placeholder="Password"
             ref={passwordRef}
             keyboardType="default"
             returnKeyType="done"
+            onChangeText={handleChange("password")}
+            onBlur={() => setFieldTouched("password")}
+            error={errors?.password as string}
+            touched={touched?.password as boolean}
             secureTextEntry={secureTextEntry}
             setSecureEntryText={setSecureTextEntry}
           />
@@ -80,7 +94,7 @@ const LoginScreen = () => {
           customStyle={styles.customButtonStyle}
           buttonLabelStyle={styles.buttonLabelStyle}
           disabled={isLoading}
-          onPress={() => {}}
+          onPress={handleSubmit}
         />
       </ScrollView>
     </SafeAreaView>

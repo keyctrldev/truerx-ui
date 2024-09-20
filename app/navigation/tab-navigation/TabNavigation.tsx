@@ -8,23 +8,20 @@ import { styles } from "./TabNavigationStyle";
 
 const TabNav = createBottomTabNavigator();
 
-const getTabBarIcon =(icon: ImageSourcePropType , outlineIcon: ImageSourcePropType) =>
-  ({ focused }:{focused:boolean}) =>
-    (
-      <Image
-        source={focused ? icon : outlineIcon}
-        style={styles.image}
-      />
-    );
+const getTabBarIcon =
+  (icon: ImageSourcePropType, outlineIcon: ImageSourcePropType) =>
+  ({ focused }: { focused: boolean }) =>
+    <Image source={focused ? icon : outlineIcon} style={styles.image} />;
 
 const TabNavigation = () => {
   return (
     <TabNav.Navigator
       screenOptions={{
-        tabBarActiveTintColor:styles.activeColor.color,
+        tabBarActiveTintColor: styles.activeColor.color,
         tabBarInactiveTintColor: styles.inActiveColor.color,
-        tabBarLabelStyle:styles.tabBarLabel,
+        tabBarLabelStyle: styles.tabBarLabel,
         tabBarStyle: styles.tabBarStyle,
+        headerShown: false,
       }}
     >
       <TabNav.Screen
@@ -37,21 +34,24 @@ const TabNavigation = () => {
       <TabNav.Screen
         name={Routes.coverage}
         options={{
-          tabBarIcon:getTabBarIcon(Icons.coverageIcon,Icons.coverageOutline)
+          tabBarIcon: getTabBarIcon(Icons.coverageIcon, Icons.coverageOutline),
         }}
         component={ClaimsScreen}
       />
       <TabNav.Screen
         name={Routes.claims}
         options={{
-          tabBarIcon: getTabBarIcon(Icons.claimsIcon,Icons.claimsOutline)
+          tabBarIcon: getTabBarIcon(Icons.claimsIcon, Icons.claimsOutline),
         }}
         component={ClaimsScreen}
       />
       <TabNav.Screen
         name={Routes.settings}
         options={{
-          tabBarIcon: getTabBarIcon(Icons.settingsIcon,Icons.settingsOutlineIcon)
+          tabBarIcon: getTabBarIcon(
+            Icons.settingsIcon,
+            Icons.settingsOutlineIcon
+          ),
         }}
         component={ClaimsScreen}
       />

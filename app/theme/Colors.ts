@@ -6,6 +6,7 @@ type ColorType =
     | 'primary'
     | 'lightSlateGray'
     | 'skyBlue'
+    | 'red'
     | 'green'
     | 'gray'
     | 'horizonBlue'
@@ -21,6 +22,7 @@ export const Colors: Record<ColorType, string> = {
     primary: '#007BFF',
     lightSlateGray: '#99A8B9',
     skyBlue: '#34639A',
+    red: '#FE4130',
     green: '#1A7968',
     gray: '#D9D9D9',
     horizonBlue: '#3B76A1',
