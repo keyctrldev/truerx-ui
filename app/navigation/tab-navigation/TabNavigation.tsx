@@ -1,16 +1,15 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { ClaimsScreen } from "../../modules";
-import { Image } from "react-native";
+import { Image, ImageSourcePropType } from "react-native";
 import { Colors, moderateScale } from "../../theme";
 import { Routes } from "../../constants";
-import { TabBarIconProps } from "../../types";
 import { Icons } from "../../assets";
 
 const TabNav = createBottomTabNavigator();
 
-const getTabBarIcon =(icon: any, outlineIcon: any) =>
-  ({ focused }: TabBarIconProps) =>
+const getTabBarIcon =(icon: ImageSourcePropType , outlineIcon: ImageSourcePropType) =>
+  ({ focused }:{focused:boolean}) =>
     (
       <Image
         source={focused ? icon : outlineIcon}
