@@ -9,3 +9,12 @@ export const loginScreenStrings = Object.freeze({
   rememberUserName: 'Remember Username',
   enableFingerprint: 'Enable Fingerprint/Face ID'
 });
+
+//  claims screen Strings
+
+export const claimsScreenStrings = Object.freeze({
+  claimsDemoHeading: 'Demo',
+  historyHeading: 'Claims History',
+  claimSection: 'Claims',
+  statusSection: 'Status'
+});

@@ -10,4 +10,3 @@ export interface ClaimsData {
     status: string,
     colorCode: string
 }
-
