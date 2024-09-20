@@ -2,10 +2,9 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { ClaimsScreen } from "../../modules";
 import { Image, ImageSourcePropType } from "react-native";
-import { Colors, moderateScale } from "../../theme";
 import { Routes } from "../../constants";
 import { Icons } from "../../assets";
-
+import { styles } from "./TabNavigationStyle";
 const TabNav = createBottomTabNavigator();
 
 const getTabBarIcon =(icon: ImageSourcePropType , outlineIcon: ImageSourcePropType) =>
@@ -13,7 +12,7 @@ const getTabBarIcon =(icon: ImageSourcePropType , outlineIcon: ImageSourcePropTy
     (
       <Image
         source={focused ? icon : outlineIcon}
-        style={{ width: moderateScale(20), height: moderateScale(20) }}
+        style={styles.image}
       />
     );
 
@@ -21,13 +20,13 @@ const TabNavigation = () => {
   return (
     <TabNav.Navigator
       screenOptions={{
-        tabBarActiveTintColor: Colors.black,
-        tabBarInactiveTintColor: Colors.lightSlateGray,
+        tabBarActiveTintColor:styles.activeColor.color,
+        tabBarInactiveTintColor: styles.inActiveColor.color,
         tabBarLabelStyle: {
-          fontSize: moderateScale(14),
+          fontSize: styles.tabBarLabel.fontSize,
         },
         tabBarStyle: {
-          height: moderateScale(60),
+          height: styles.tabBarStyle.height,
         },
       }}
     >
