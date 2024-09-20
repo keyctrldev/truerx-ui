@@ -32,3 +32,10 @@ export const schemaRegEx = Object.freeze({
   characterOnlyRegEx: /^([a-zA-Z]+\s)*[a-zA-Z]+$/,
   digitsOnlyRegEx: /^[0-9]+$/,
 });
+
+export const claimsScreenStrings = Object.freeze({
+  claimsDemoHeading: 'Demo',
+  historyHeading: 'Claims History',
+  claimSection: 'Claims',
+  statusSection: 'Status'
+});

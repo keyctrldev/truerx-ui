@@ -35,7 +35,7 @@ const useLoginScreen = () => {
         navigation.reset({
             index: 0,
             routes: [{
-                name: Routes.claims,
+                name: Routes.home,
                 params: { email: userName }
             }]
         })
