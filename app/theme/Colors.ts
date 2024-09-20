@@ -5,7 +5,8 @@ type ColorType =
     | 'white'
     | 'primary'
     | 'lightSlateGray'
-    | 'skyBlue';
+    | 'skyBlue'
+    | 'red';
 
 
 // This object provides a centralized way to manage and reference color values throughout the application, ensuring consistency in color usage.
@@ -17,4 +18,5 @@ export const Colors: Record<ColorType, string> = {
     primary: '#007BFF',
     lightSlateGray: '#99A8B9',
     skyBlue: '#34639A',
+    red: '#FE4130'
 };
