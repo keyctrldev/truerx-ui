@@ -1,89 +1,64 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { ClaimsScreen, LoginScreen } from "../../modules";
+import { ClaimsScreen } from "../../modules";
 import { Image } from "react-native";
+import { Colors, moderateScale } from "../../theme";
+import { Routes } from "../../constants";
+import { TabBarIconProps } from "../../types";
+import { Icons } from "../../assets";
+
 const TabNav = createBottomTabNavigator();
+
+const getTabBarIcon =(icon: any, outlineIcon: any) =>
+  ({ focused }: TabBarIconProps) =>
+    (
+      <Image
+        source={focused ? icon : outlineIcon}
+        style={{ width: moderateScale(20), height: moderateScale(20) }}
+      />
+    );
+
 const TabNavigation = () => {
   return (
     <TabNav.Navigator
       screenOptions={{
-        tabBarActiveTintColor: "black",
-        tabBarInactiveTintColor: "grey",
+        tabBarActiveTintColor: Colors.black,
+        tabBarInactiveTintColor: Colors.lightSlateGray,
         tabBarLabelStyle: {
-          fontSize: 14,
+          fontSize: moderateScale(14),
         },
         tabBarStyle: {
-          height: 60,
+          height: moderateScale(60),
         },
       }}
     >
       <TabNav.Screen
-        name="Overview"
+        name={Routes.overview}
         options={{
-          tabBarIcon: ({ focused }) =>
-            focused ? (
-              <Image
-                source={require("../../assets/Icons/overviewIcon.png")}
-                style={{ width: 20, height: 20 }}
-              />
-            ) : (
-              <Image
-                source={require("../../assets/Icons/overviewOutline.png")}
-              />
-            ),
+          tabBarIcon: getTabBarIcon(Icons.overViewIcon, Icons.overViewOutline),
         }}
         component={ClaimsScreen}
       />
       <TabNav.Screen
-        name="coverage"
+        name={Routes.coverage}
         options={{
-          tabBarIcon: ({ focused }) =>
-            focused ? (
-              <Image
-                source={require("../../assets/Icons/coverageIcon.png")}
-                style={{ width: 20, height: 20 }}
-              />
-            ) : (
-              <Image
-                source={require("../../assets/Icons/coverageOutline.png")}
-              />
-            ),
-        }}
-        component={LoginScreen}
-      />
-      <TabNav.Screen
-        name="Claims"
-        options={{
-          tabBarIcon: ({ focused }) =>
-            focused ? (
-              <Image
-                source={require("../../assets/Icons/claimsIcon.png")}
-                style={{ width: 20, height: 20 }}
-              />
-            ) : (
-              <Image
-                source={require("../../assets/Icons/settingsOutlineIcon.png")}
-              />
-            ),
+          tabBarIcon:getTabBarIcon(Icons.coverageIcon,Icons.coverageOutline)
         }}
         component={ClaimsScreen}
       />
       <TabNav.Screen
-        name="Settings"
+        name={Routes.claims}
         options={{
-          tabBarIcon: ({ focused }) =>
-            focused ? (
-              <Image
-                source={require("../../assets/Icons/settingsIcon.png")}
-                style={{ width: 20, height: 20 }}
-              />
-            ) : (
-              <Image
-                source={require("../../assets/Icons/settingsOutlineIcon.png")}
-              />
-            ),
+          tabBarIcon: getTabBarIcon(Icons.claimsIcon,Icons.claimsOutline)
         }}
-        component={LoginScreen}
+        component={ClaimsScreen}
+      />
+      <TabNav.Screen
+        name={Routes.settings}
+        options={{
+          tabBarIcon: getTabBarIcon(Icons.settingsIcon,Icons.settingsOutlineIcon)
+        }}
+        component={ClaimsScreen}
       />
     </TabNav.Navigator>
   );

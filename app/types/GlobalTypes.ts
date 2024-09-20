@@ -10,3 +10,6 @@ export interface ClaimsData {
     status: string,
     colorCode: string
 }
+export interface TabBarIconProps {
+    focused: boolean;
+  }
