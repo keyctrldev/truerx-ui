@@ -7,5 +7,9 @@
 
 export default {
     login: 'Login',
-    claims:'Claims'
+    home:'TabNavigation',
+    overview:'Overview',
+    claims:'Claims',
+    settings:'Settings',
+    coverage:'Coverage',
 }
