@@ -10,11 +10,10 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingTop: verticalScale(50),
+    paddingVertical: verticalScale(20),
     paddingHorizontal: horizontalScale(16),
     backgroundColor: Colors.white,
     borderBottomWidth: moderateScale(1),
-    paddingBottom: verticalScale(20),
     borderBottomColor: Colors.lightSlateGray,
   },
   title: {

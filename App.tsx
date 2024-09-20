@@ -1,11 +1,14 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { RootStack } from "./app/navigation";
+import { ToastProvider } from "./app/context";
 
 const App = (): React.JSX.Element => {
   return (
-    <NavigationContainer>
-      <RootStack />
-    </NavigationContainer>
+    <ToastProvider>
+      <NavigationContainer>
+        <RootStack />
+      </NavigationContainer>
+    </ToastProvider>
   );
 };
 export default App;

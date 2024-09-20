@@ -8,6 +8,7 @@ import { UserFormType } from '../../types';
 import { ParamListBase, useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { Routes } from '../../constants';
+import { useToast } from '../../context';
 
 const useLoginScreen = () => {
     const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>()
@@ -16,6 +17,7 @@ const useLoginScreen = () => {
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [rememberUserName, setRememberUserName] = useState<boolean>(false);
     const [enableFaceId, setEnableFaceId] = useState<boolean>(false);
+    const { showToast } = useToast()
 
     const { handleChange, setFieldTouched, setFieldValue, touched, errors, handleSubmit, values } =
         useFormik({
@@ -47,7 +49,7 @@ const useLoginScreen = () => {
             const isEnrolled = await LocalAuthentication.isEnrolledAsync();
 
             if (!hasHardware || !isEnrolled) {
-                Alert.alert("Biometric authentication is not supported or not enrolled on this device.");
+                showToast("Biometric authentication is not supported or not enrolled on this device.", 'ERROR');
                 return;
             }
 
@@ -63,6 +65,7 @@ const useLoginScreen = () => {
             }
         } catch (error: any) {
             Alert.alert("Authentication error: " + error?.message);
+            showToast(error?.message, 'ERROR');
         }
     };
 
