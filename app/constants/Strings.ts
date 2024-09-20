@@ -7,9 +7,5 @@ export const loginScreenStrings = Object.freeze({
   loginToDemo: 'Login to Demo App',
   loginBtn: 'Login',
   rememberUserName: 'Remember Username',
-  enableFingerprint: 'Enable Fingerprint/Face ID',
-  claimsDemoHeading: 'Demo',
-  historyHeading: 'Claims History',
-  claimSection: 'Claims',
-  statusSection: 'Status'
+  enableFingerprint: 'Enable Fingerprint/Face ID'
 });

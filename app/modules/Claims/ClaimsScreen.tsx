@@ -4,7 +4,7 @@ import { AppText, ListViewCell } from "../../components";
 import { styles } from "./ClaimsScreenStyle";
 import { claimsData } from "../../utils";
 import { Icons } from "../../assets";
-import { loginScreenStrings } from "../../constants";
+import { claimsScreenStrings } from "../../constants";
 
 const ClaimsScreen = () => {
   return (
@@ -12,7 +12,7 @@ const ClaimsScreen = () => {
       
       {/* Header Section */}
       <View style={styles.headerContainer}>
-        <AppText style={styles.title}>{loginScreenStrings.claimsDemoHeading}</AppText>
+        <AppText style={styles.title}>{claimsScreenStrings.claimsDemoHeading}</AppText>
         <View style={styles.iconContainer}>
           <Image source={Icons.bellIcon} style={styles.icon}/>
           <Image source={Icons.profileIcon} style={styles.icon}/>
@@ -21,13 +21,13 @@ const ClaimsScreen = () => {
 
       {/* Claims History Section */}
       <View style={styles.claimsHistoryContainer}>
-        <AppText style={styles.claimsHistoryTitle}>{loginScreenStrings.historyHeading}</AppText>
+        <AppText style={styles.claimsHistoryTitle}>{claimsScreenStrings.historyHeading}</AppText>
         </View>
 
         {/* Claims and Status Sections */}
         <View style={styles.claimsStatusRow}>
-          <AppText style={styles.columnHeader}>{loginScreenStrings.claimSection}</AppText>
-          <AppText style={[styles.columnHeader,styles.statusText]}>{loginScreenStrings.statusSection}</AppText>
+          <AppText style={styles.columnHeader}>{claimsScreenStrings.claimSection}</AppText>
+          <AppText style={[styles.columnHeader,styles.statusText]}>{claimsScreenStrings.statusSection}</AppText>
         </View>
 
       <FlatList

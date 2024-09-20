@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { Colors } from "../../theme";
+import { Colors, horizontalScale, moderateScale, verticalScale} from "../../theme";
 
 export const styles = StyleSheet.create({
     claimContainerStyle: {
@@ -10,15 +10,15 @@ export const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
-        paddingTop: 50,
-        paddingHorizontal: 16,
+        paddingTop: verticalScale(50),
+        paddingHorizontal: horizontalScale(16),
         backgroundColor: Colors.white, 
-        borderBottomWidth: 1,
-        paddingBottom: 20,
+        borderBottomWidth: moderateScale(1),
+        paddingBottom: verticalScale(20),
         borderBottomColor: Colors.lightSlateGray, 
       },
       title: {
-        fontSize: 32,
+        fontSize: moderateScale(32),
         fontWeight: "bold",
         color: Colors.green,
       },
@@ -27,35 +27,34 @@ export const styles = StyleSheet.create({
         alignItems: "center",
       },
       icon: {
-        marginLeft: 16, 
-        width: 34,
-        height: 32,
+        marginLeft: horizontalScale(16), 
+        width: horizontalScale(34),
+        height: verticalScale(32),
       },
       claimsHistoryContainer: {
         backgroundColor: Colors.gray,
-        paddingVertical: 10,
-        paddingHorizontal: 16,
-        borderBottomWidth: 1,
+        paddingVertical: verticalScale(10),
+        paddingHorizontal: horizontalScale(16),
+        borderBottomWidth: moderateScale(1),
         borderBottomColor: Colors.lightSlateGray,
       },
       claimsHistoryTitle: {
-        fontSize: 32,
+        fontSize: moderateScale(32),
         fontWeight: 'bold',
         color: Colors.horizonBlue,
       },
       claimsStatusRow: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        paddingVertical: 8,
-        paddingHorizontal: 16,
+        paddingVertical: verticalScale(8),
+        paddingHorizontal: horizontalScale(16),
         backgroundColor: Colors.gray,
       },
       columnHeader: {
-        fontSize: 20,
-        fontWeight: 'regular',
+        fontSize: moderateScale(20),
         color: Colors.lightBlack,
       },
       statusText: {
-        marginRight: 40,
+        marginRight: horizontalScale(35),
       },
 })
