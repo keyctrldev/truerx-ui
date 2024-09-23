@@ -42,11 +42,6 @@ const TabNavigation = () => {
   return (
     <TabNav.Navigator screenOptions={screenOptions}>
       <TabNav.Screen
-        name={Routes.claims}
-        component={ClaimsScreen}
-        options={getTabBarOptions(Icons.claimsIcon, Routes.claims)}
-      />
-      <TabNav.Screen
         name={Routes.overview}
         component={OverviewScreen}
         options={getTabBarOptions(Icons.overViewIcon, Routes.overview)}
@@ -55,6 +50,11 @@ const TabNavigation = () => {
         name={Routes.coverage}
         component={CoverageScreen}
         options={getTabBarOptions(Icons.coverageIcon, Routes.coverage)}
+      />
+      <TabNav.Screen
+        name={Routes.claims}
+        component={ClaimsScreen}
+        options={getTabBarOptions(Icons.claimsIcon, Routes.claims)}
       />
       <TabNav.Screen
         name={Routes.settings}

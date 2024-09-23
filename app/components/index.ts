@@ -6,3 +6,4 @@ export { default as CustomTextInput } from './custom-text-input/CustomTextInput'
 export { default as CustomSwitch } from './custom-switch/CustomSwitch';
 export { default as SafeAreaContainer } from './safe-area-container/SafeAreaContainer';
 export { default as CustomTabIcon } from './custom-tab-icon/CustomTabIcon';
+export { default as ActivityLoader } from './activity-loader/ActivityLoader';

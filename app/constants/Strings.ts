@@ -30,7 +30,7 @@ export const schemaRegEx = Object.freeze({
   passwordRegEx:
     /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
   characterOnlyRegEx: /^([a-zA-Z]+\s)*[a-zA-Z]+$/,
-  digitsOnlyRegEx: /^[0-9]+$/,
+  // digitsOnlyRegEx: /^[0-9]+$/,
 });
 
 export const claimsScreenStrings = Object.freeze({

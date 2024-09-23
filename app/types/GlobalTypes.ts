@@ -10,3 +10,25 @@ export interface ClaimsData {
     status: string,
     colorCode: string
 }
+
+export type BiometricsData = {
+    isUserLoggedIn: boolean;
+    isBiometricsAuthEnabled: boolean;
+    userName: string
+};
+
+export type TokenData = {
+    token: string;
+};
+export interface LoginResponse {
+    access_token: string;
+}
+export interface ClaimsDataItem {
+    id: number,
+    name: string,
+    userId: number,
+    status: string,
+    description: string,
+    createdAt: string,
+    updatedAt: string
+}

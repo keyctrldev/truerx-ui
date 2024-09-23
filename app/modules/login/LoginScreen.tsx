@@ -2,6 +2,7 @@ import React from "react";
 import { SafeAreaView, ScrollView, View } from "react-native";
 import { styles } from "./LoginScreenStyle";
 import {
+  ActivityLoader,
   AppText,
   CustomButton,
   CustomSwitch,
@@ -31,6 +32,7 @@ const LoginScreen = () => {
   } = useLoginScreen();
   return (
     <SafeAreaView style={styles.rootContainerStyle}>
+      {isLoading && <ActivityLoader isVisible={isLoading} />}
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.scrollViewContainerStyle}
