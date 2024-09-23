@@ -25,10 +25,14 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
   },
-  icon: {
-    marginLeft: horizontalScale(16),
+  iconWrapper: {
     width: horizontalScale(34),
     height: verticalScale(32),
+    marginLeft: horizontalScale(16),
+  },
+  icon: {
+    width: '100%',
+    height: '100%',
   },
   claimsHistoryContainer: {
     backgroundColor: Colors.gray,
@@ -38,7 +42,7 @@ export const styles = StyleSheet.create({
     borderBottomColor: Colors.lightSlateGray,
   },
   claimsHistoryTitle: {
-    fontSize: moderateScale(32),
+    fontSize: moderateScale(30),
     fontWeight: 'bold',
     color: Colors.horizonBlue,
   },
