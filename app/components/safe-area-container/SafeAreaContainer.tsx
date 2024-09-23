@@ -14,10 +14,7 @@ const SafeAreaContainer: React.FC<SafeAreaContainerProps> = ({
   style,
 }) => {
   return (
-    <SafeAreaView
-      style={styles.safeArea}
-      edges={["top", "left", "right", "bottom"]}
-    >
+    <SafeAreaView style={styles.safeArea} edges={["top", "left", "right"]}>
       <View style={[styles.container, style]}>
         {Platform.OS === "android" && (
           <StatusBar barStyle="dark-content" backgroundColor={Colors.white} />

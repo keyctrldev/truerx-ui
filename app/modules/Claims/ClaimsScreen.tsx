@@ -1,12 +1,14 @@
 import React from "react";
-import { FlatList, Image, View } from "react-native";
+import { FlatList, Image, TouchableOpacity, View } from "react-native";
 import { AppText, ListViewCell, SafeAreaContainer } from "../../components";
 import { styles } from "./ClaimsScreenStyle";
 import { claimsData } from "../../utils";
 import { Icons } from "../../assets";
 import { claimsScreenStrings } from "../../constants";
+import useClaimsScreen from "./useClaimsScreen";
 
 const ClaimsScreen = () => {
+  const { handleLogOutPress } = useClaimsScreen();
   return (
     <SafeAreaContainer style={styles.claimContainerStyle}>
       {/* Header Section */}
@@ -15,8 +17,24 @@ const ClaimsScreen = () => {
           {claimsScreenStrings.claimsDemoHeading}
         </AppText>
         <View style={styles.iconContainer}>
-          <Image source={Icons.bellIcon} style={styles.icon} />
-          <Image source={Icons.profileIcon} style={styles.icon} />
+          <TouchableOpacity style={styles.iconWrapper} activeOpacity={0.8}>
+            <Image
+              source={Icons.bellIcon}
+              style={styles.icon}
+              resizeMode="contain"
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.iconWrapper}
+            activeOpacity={0.8}
+            onPress={handleLogOutPress}
+          >
+            <Image
+              source={Icons.profileIcon}
+              style={styles.icon}
+              resizeMode="contain"
+            />
+          </TouchableOpacity>
         </View>
       </View>
 
@@ -39,7 +57,6 @@ const ClaimsScreen = () => {
 
       <FlatList
         data={claimsData}
-        bounces={false}
         keyExtractor={(_, index) => `${index}claimItem`}
         renderItem={({ item, index }) => (
           <ListViewCell

@@ -1,21 +1,19 @@
 import { StyleSheet } from "react-native";
-import { Colors, moderateScale } from "../../theme";
+import { Colors, moderateScale, verticalScale } from "../../theme";
 
 export const styles = StyleSheet.create({
-  image: { 
-    width: moderateScale(20), 
-    height: moderateScale(20)
- },
-  activeColor: {
-    color: Colors.black,
+  tabBarBackgroundStyle: {
+    backgroundColor: Colors.white,
+    borderTopWidth: verticalScale(1),
+    borderColor: Colors.gray,
+    height: verticalScale(70),
   },
-  inActiveColor: {
-    color: Colors.lightSlateGray,
+  headerBackGroundStyle: {
+    backgroundColor: Colors.red,
   },
-  tabBarLabel: {
-    fontSize: moderateScale(14),
-  },
-  tabBarStyle: {
-    height: moderateScale(60),
+  headerTextStyle: {
+    color: Colors.white,
+    fontSize: moderateScale(25),
+    fontWeight: 'bold',
   },
 });
