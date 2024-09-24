@@ -11,6 +11,14 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "plugins": [
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "Allow TrueRx to utilize Face ID for accessing app features"
+        }
+      ]
+    ],
     "ios": {
       "supportsTablet": true
     },

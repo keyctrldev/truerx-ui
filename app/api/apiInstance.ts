@@ -1,9 +1,13 @@
 import axios, { AxiosInstance } from 'axios';
 import { EndPoint } from '../constants';
 
-// Create an Axios instance with default configurations
 export const truerxInstance: AxiosInstance = axios.create({
-    baseURL: EndPoint.baseUrl  // Set the base URL for all HTTP requests.
+    baseURL: EndPoint.baseUrl,
+    timeout: 10000, // timeout to avoid hanging requests
 });
 
 
+truerxInstance.interceptors.response.use(
+    (response) => response,
+    (error) => Promise.reject(error)
+);

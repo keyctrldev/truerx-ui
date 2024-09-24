@@ -6,5 +6,10 @@
 */
 
 export default {
-    login: 'Login'
+    login: 'Login',
+    home:'TabNavigation',
+    overview:'Overview',
+    claims:'Claims',
+    settings:'Settings',
+    coverage:'Coverage',
 }
