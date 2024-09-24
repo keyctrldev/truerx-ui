@@ -21,21 +21,23 @@ export const claimsData: ClaimsData[] = [
     colorCode: "#8F3333",
   },
 ];
+
 export const stepperData: StepperData[] = [
   {
-    date:'14 Nov',
+    date: '14 Nov',
     event: "Accept Offer",
   },
   {
-    date:'18 Nov',
+    date: '18 Nov',
     event: "Schedule Your Assesment",
   },
   {
-    date:'23 Nov',
+    date: '23 Nov',
     event: "Review Repairs",
   },
   {
-    date:'30 Nov',
+    date: '30 Nov',
     event: "Closing",
   },
 ];
+

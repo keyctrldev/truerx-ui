@@ -1,5 +1,5 @@
-import React from "react";
-import { AppText, SafeAreaContainer } from "../../components";
+import React from 'react';
+import { AppText, SafeAreaContainer } from '../../components';
 
 const CoverageScreen = () => {
   return (

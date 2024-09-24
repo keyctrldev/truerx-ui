@@ -1,8 +1,8 @@
-import React from "react";
-import { View } from "react-native";
-import { styles } from "./ListViewCellStyle";
-import AppText from "../app-text/AppText";
-import { capitalizeFLetter, getStatusColor } from "../../utils";
+import React from 'react';
+import { View } from 'react-native';
+import { styles } from './ListViewCellStyle';
+import AppText from '../app-text/AppText';
+import { capitalizeFLetter, getStatusColor } from '../../utils';
 
 interface ListViewCellProps {
   typeOfConsultance: string;
@@ -10,11 +10,7 @@ interface ListViewCellProps {
   status: string;
 }
 
-const ListViewCell = ({
-  typeOfConsultance,
-  Description,
-  status,
-}: ListViewCellProps) => {
+const ListViewCell = ({ typeOfConsultance, Description, status }: ListViewCellProps) => {
   return (
     <View style={styles.listContainer}>
       <View style={styles.headingContainer}>
@@ -22,9 +18,7 @@ const ListViewCell = ({
         <AppText style={styles.listDetails}>{Description}</AppText>
       </View>
       <View style={styles.statusContainer}>
-        <AppText
-          style={[styles.statusTextStyle, { color: getStatusColor(status) }]}
-        >
+        <AppText style={[styles.statusTextStyle, { color: getStatusColor(status) }]}>
           {capitalizeFLetter(status)}
         </AppText>
       </View>

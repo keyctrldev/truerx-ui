@@ -1,7 +1,7 @@
-import React, { useCallback, useEffect, useRef } from "react";
-import { TouchableWithoutFeedback, Animated } from "react-native";
-import { styles } from "./CustomSwitchStyle";
-import { Colors, horizontalScale } from "../../theme";
+import React, { useCallback, useEffect, useRef } from 'react';
+import { TouchableWithoutFeedback, Animated } from 'react-native';
+import { styles } from './CustomSwitchStyle';
+import { Colors, horizontalScale } from '../../theme';
 
 interface SwitchProps {
   activeColor?: string;
@@ -12,8 +12,8 @@ interface SwitchProps {
 }
 
 const CustomSwitch: React.FC<SwitchProps> = ({
-  activeColor = "#35C5F3",
-  inActiveColor = "#F2F5F7",
+  activeColor = '#35C5F3',
+  inActiveColor = '#F2F5F7',
   thumbColor = Colors.white,
   value,
   onValueChange,

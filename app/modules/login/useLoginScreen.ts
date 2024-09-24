@@ -1,9 +1,8 @@
-import { RefObject, useEffect, useRef, useState } from 'react'
+import { RefObject, useCallback, useEffect, useRef, useState } from 'react';
 import { TextInput, Alert } from 'react-native';
-import * as LocalAuthentication from "expo-local-authentication";
-import AsyncStorageService from '../../utils/AsyncStorageService';
+import * as LocalAuthentication from 'expo-local-authentication';
 import { useFormik } from 'formik';
-import { LogInSchema } from '../../utils';
+import { AsyncStorageService, LogInSchema } from '../../utils';
 import { TokenData, UserFormType } from '../../types';
 import { ParamListBase, useNavigation } from '@react-navigation/native';
 import { Routes } from '../../constants';
@@ -12,139 +11,140 @@ import { loginWithEmailPassword } from '../../api/AuthApis';
 import { StackNavigationProp } from '@react-navigation/stack';
 
 const useLoginScreen = () => {
-    const navigation = useNavigation<StackNavigationProp<ParamListBase>>()
-    const passwordRef = useRef<TextInput>(null);
-    const [secureTextEntry, setSecureTextEntry] = useState<boolean>(true);
-    const [isLoading, setIsLoading] = useState<boolean>(false);
-    const [rememberUserName, setRememberUserName] = useState<boolean>(false);
-    const [enableFaceId, setEnableFaceId] = useState<boolean>(false);
-    const { showToast } = useToast()
+  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const passwordRef = useRef<TextInput>(null);
+  const [secureTextEntry, setSecureTextEntry] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [rememberUserName, setRememberUserName] = useState<boolean>(false);
+  const [enableFaceId, setEnableFaceId] = useState<boolean>(false);
+  const { showToast } = useToast();
+  const { handleChange, setFieldTouched, setFieldValue, touched, errors, handleSubmit, values } = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+    },
+    validationSchema: LogInSchema,
+    onSubmit: values => onLoginPress(values),
+  });
 
-    const { handleChange, setFieldTouched, setFieldValue, touched, errors, handleSubmit, values } =
-        useFormik({
-            initialValues: {
-                email: '',
-                password: '',
-            },
-            validationSchema: LogInSchema,
-            onSubmit: values => onLoginPress(values),
+  const goToPassword = (nextRef: RefObject<TextInput>): void => {
+    nextRef.current?.focus();
+  };
+
+  const resetTheStack = useCallback(() => {
+    navigation.reset({
+      index: 0,
+      routes: [
+        {
+          name: Routes.home,
+        },
+      ],
+    });
+  }, [navigation]);
+
+  const authenticateTouchFaceId = useCallback(async () => {
+    try {
+      const hasHardware = await LocalAuthentication.hasHardwareAsync();
+      const isEnrolled = await LocalAuthentication.isEnrolledAsync();
+
+      if (!hasHardware || !isEnrolled) {
+        showToast('Biometric authentication is not supported or not enrolled on this device.', 'ERROR');
+        return;
+      }
+
+      const supportedBiometrics = await LocalAuthentication.supportedAuthenticationTypesAsync();
+      const promptMessage = supportedBiometrics.includes(LocalAuthentication.AuthenticationType.FACIAL_RECOGNITION)
+        ? 'Authenticate with Face ID'
+        : 'Authenticate with Fingerprint';
+
+      const result = await LocalAuthentication.authenticateAsync({ promptMessage });
+
+      if (result.success) {
+        resetTheStack();
+      }
+    } catch (error: any) {
+      showToast(error?.message, 'ERROR');
+    }
+  }, [resetTheStack, showToast]);
+
+  const onLoginPress = async (values: UserFormType) => {
+    if (values.email && values.password) {
+      try {
+        setIsLoading(true);
+        const response = await loginWithEmailPassword(values.email, values.password);
+        const tokenData: TokenData = { token: response.access_token };
+        await AsyncStorageService.storeAccessToken(tokenData);
+        await AsyncStorageService.storeBiometrics({
+          isBiometricsAuthEnabled: enableFaceId,
+          isUserLoggedIn: true,
+          userName: rememberUserName ? values.email : '',
         });
-
-    const goToPassword = (nextRef: RefObject<TextInput>): void => {
-        nextRef.current?.focus();
-    };
-
-    const resetTheStack = () => {
         navigation.reset({
-            index: 0,
-            routes: [{
-                name: Routes.home,
-            }]
-        })
+          index: 0,
+          routes: [
+            {
+              name: Routes.home,
+            },
+          ],
+        });
+      } catch (error: any) {
+        showToast(error.response?.data?.message || 'Something went wrong!', 'ERROR');
+      } finally {
+        setIsLoading(false);
+      }
     }
+  };
 
-    const authenticateTouchFaceId = async () => {
-        try {
-            const hasHardware = await LocalAuthentication.hasHardwareAsync();
-            const isEnrolled = await LocalAuthentication.isEnrolledAsync();
-
-            if (!hasHardware || !isEnrolled) {
-                showToast("Biometric authentication is not supported or not enrolled on this device.", 'ERROR');
-                return;
+  const getInitialUserData = useCallback(async () => {
+    try {
+      const token = await AsyncStorageService.loadAccessToken();
+      if (token) {
+        AsyncStorageService.loadBiometrics()
+          .then(async biometricsFromStorage => {
+            if (biometricsFromStorage?.isUserLoggedIn) {
+              if (biometricsFromStorage?.userName !== '') {
+                setRememberUserName(true);
+                setFieldValue('email', biometricsFromStorage?.userName);
+              }
+              if (biometricsFromStorage?.isBiometricsAuthEnabled) {
+                setEnableFaceId(true);
+                await authenticateTouchFaceId();
+              }
             }
-
-            const supportedBiometrics = await LocalAuthentication.supportedAuthenticationTypesAsync();
-            const promptMessage = supportedBiometrics.includes(LocalAuthentication.AuthenticationType.FACIAL_RECOGNITION)
-                ? "Authenticate with Face ID"
-                : "Authenticate with Fingerprint";
-
-            const result = await LocalAuthentication.authenticateAsync({ promptMessage });
-
-            if (result.success) {
-                resetTheStack();
-            }
-        } catch (error: any) {
-            showToast(error?.message, 'ERROR');
-        }
-    };
-
-    const onLoginPress = async (values: UserFormType) => {
-        if (values.email && values.password) {
-            try {
-                setIsLoading(true)
-                const response = await loginWithEmailPassword(values.email, values.password);
-                const tokenData: TokenData = { token: response.access_token };
-                await AsyncStorageService.storeAccessToken(tokenData)
-                await AsyncStorageService.storeBiometrics({
-                    isBiometricsAuthEnabled: enableFaceId,
-                    isUserLoggedIn: true,
-                    userName: rememberUserName ? values.email : ''
-                })
-                navigation.reset({
-                    index: 0,
-                    routes: [{
-                        name: Routes.home,
-                    }]
-                })
-            } catch (error: any) {
-                showToast(error.response?.data?.message || 'Something went wrong!', 'ERROR')
-            } finally {
-                setIsLoading(false);
-            }
-        }
+          })
+          .catch(error => {
+            Alert.alert('Biometrics Error', error?.message);
+          });
+      }
+    } catch (error) {
+      showToast('Failed To Load Initial Data', 'ERROR');
     }
+  }, [authenticateTouchFaceId, setFieldValue, showToast]);
 
+  useEffect(() => {
+    getInitialUserData();
+  }, [getInitialUserData]);
 
-    const getInitialUserData = async () => {
-        try {
-            const token = await AsyncStorageService.loadAccessToken()
-            if (token) {
-                AsyncStorageService.loadBiometrics().then(async (biometricsFromStorage) => {
-                    if (biometricsFromStorage?.isUserLoggedIn) {
-                        if (biometricsFromStorage?.userName !== "") {
-                            setRememberUserName(true)
-                            setFieldValue('email', biometricsFromStorage?.userName);
-                        }
-                        if (biometricsFromStorage?.isBiometricsAuthEnabled) {
-                            setEnableFaceId(true)
-                            await authenticateTouchFaceId()
-                        }
-                    }
-                }).catch((error) => {
-                    Alert.alert('Biometrics Error', error?.message)
-                })
-            }
+  return {
+    secureTextEntry,
+    setSecureTextEntry,
+    passwordRef,
+    goToPassword,
+    isLoading,
+    setIsLoading,
+    rememberUserName,
+    setRememberUserName,
+    enableFaceId,
+    setEnableFaceId,
+    authenticateTouchFaceId,
+    onLoginPress,
+    handleChange,
+    setFieldTouched,
+    errors,
+    touched,
+    handleSubmit,
+    values,
+  };
+};
 
-        } catch (error) {
-            showToast('Failed To Load Initial Data', 'ERROR')
-        }
-
-    }
-
-    useEffect(() => {
-        getInitialUserData()
-    }, [])
-
-    return {
-        secureTextEntry,
-        setSecureTextEntry,
-        passwordRef,
-        goToPassword,
-        isLoading,
-        setIsLoading,
-        rememberUserName,
-        setRememberUserName,
-        enableFaceId,
-        setEnableFaceId,
-        authenticateTouchFaceId,
-        onLoginPress,
-        handleChange,
-        setFieldTouched,
-        errors,
-        touched,
-        handleSubmit,
-        values
-    }
-}
-
-export default useLoginScreen
+export default useLoginScreen;
