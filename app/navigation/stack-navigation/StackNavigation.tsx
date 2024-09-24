@@ -1,21 +1,20 @@
 import React from "react";
-import {
-  NativeStackNavigationOptions,
-  createNativeStackNavigator,
-} from "@react-navigation/native-stack";
 import { Routes } from "../../constants";
 import { LoginScreen } from "../../modules";
 import TabNavigation from "../tab-navigation/TabNavigation";
+import {
+  createStackNavigator,
+  StackNavigationOptions,
+} from "@react-navigation/stack";
 
 // Create a stack navigator using React Navigation.
 // This will manage navigation between different screens in the app.
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
 const RootStack = () => {
-  const screenOption: NativeStackNavigationOptions = {
+  const screenOption: StackNavigationOptions = {
     headerShown: false,
-    animation: "slide_from_right",
   };
 
   return (

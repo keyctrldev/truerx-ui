@@ -1,14 +1,10 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { BiometricsData, TokenData } from "../types";
 
 enum StorageKeys {
     biometrics = '@truerx_biometrics',
+    accessToken = '@truerx_access_token',
 }
-
-export type BiometricsData = {
-    isUserLoggedIn: boolean;
-    isBiometricsAuthEnabled: boolean;
-    userName: string
-};
 
 const loadBiometrics = async (): Promise<BiometricsData> => {
     try {
@@ -29,7 +25,36 @@ const storeBiometrics = async (biometrics: BiometricsData): Promise<void> => {
     }
 };
 
+const loadAccessToken = async (): Promise<TokenData | null> => {
+    try {
+        const token = await AsyncStorage.getItem(StorageKeys.accessToken);
+        return token ? { token } : null;
+    } catch (e) {
+        throw new Error('Failed to load access token from async storage.');
+    }
+};
+
+const storeAccessToken = async (tokenData: TokenData): Promise<void> => {
+    try {
+        const jsonValue = JSON.stringify(tokenData);
+        await AsyncStorage.setItem(StorageKeys.accessToken, jsonValue);
+    } catch (e) {
+        return Promise.reject(new Error('Failed to save access token in async storage.'));
+    }
+};
+
+const removeAccessToken = async (): Promise<void> => {
+    try {
+        await AsyncStorage.removeItem(StorageKeys.accessToken);
+    } catch (e) {
+        return Promise.reject(new Error('Failed to remove access token from async storage.'));
+    }
+};
+
 export default {
     loadBiometrics,
-    storeBiometrics
+    storeBiometrics,
+    loadAccessToken,
+    storeAccessToken,
+    removeAccessToken
 }

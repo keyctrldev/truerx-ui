@@ -1,17 +1,20 @@
 import React from "react";
 import { FlatList, Image, TouchableOpacity, View } from "react-native";
-import { AppText, ListViewCell, SafeAreaContainer } from "../../components";
+import {
+  ActivityLoader,
+  AppText,
+  ListViewCell,
+  SafeAreaContainer,
+} from "../../components";
 import { styles } from "./ClaimsScreenStyle";
-import { claimsData } from "../../utils";
 import { Icons } from "../../assets";
 import { claimsScreenStrings } from "../../constants";
 import useClaimsScreen from "./useClaimsScreen";
-
 const ClaimsScreen = () => {
-  const { handleLogOutPress } = useClaimsScreen();
+  const { handleLogOutPress, isLoading, claimsData } = useClaimsScreen();
   return (
     <SafeAreaContainer style={styles.claimContainerStyle}>
-      {/* Header Section */}
+      {isLoading && <ActivityLoader isVisible={isLoading} />}
       <View style={styles.headerContainer}>
         <AppText style={styles.title}>
           {claimsScreenStrings.claimsDemoHeading}
@@ -54,16 +57,14 @@ const ClaimsScreen = () => {
           {claimsScreenStrings.statusSection}
         </AppText>
       </View>
-
       <FlatList
         data={claimsData}
         keyExtractor={(_, index) => `${index}claimItem`}
         renderItem={({ item, index }) => (
           <ListViewCell
-            typeOfConsultance={item.typeOfConsultance}
+            typeOfConsultance={item.name}
             status={item.status}
-            Description={item.Description}
-            colorCode={item.colorCode}
+            Description={item.description}
             key={index}
           />
         )}
