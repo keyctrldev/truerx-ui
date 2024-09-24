@@ -10,3 +10,7 @@ export interface ClaimsData {
     status: string,
     colorCode: string
 }
+export interface StepperData{
+    date:string,
+    event:string,
+}
