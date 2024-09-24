@@ -108,3 +108,31 @@ app/
 └── App.tsx
 
 ```
+
+## Code Quality Enforcement with Prettier and ESLint
+
+To maintain high code quality and consistency across our project, we utilize **ESLint** and **Prettier**. This setup enforces strict formatting and style guidelines, ensuring that all code committed to the repository adheres to a uniform standard.
+
+### Checking and Fixing Linting Errors
+
+To check for linting errors in your project, run the following command in your terminal:
+
+```bash
+npm run lint
+```
+
+### Fixing Linting Errors Automatically
+
+This command will attempt to resolve all fixable issues according to the ESLint configuration. Any remaining issues will need to be addressed manually.
+
+```bash
+npm run lint -- --fix
+```
+
+### Formatting Code with Prettier
+
+This command will format all files in the project based on the rules specified in `.prettierrc.js`.
+
+```bash
+npx prettier --write .
+```
