@@ -1,0 +1,5 @@
+# Format staged files using Prettier and update the Git index.
+# This ensures all code committed adheres to the formatting rules.
+
+# Run lint-staged to format and lint staged files before committing
+npx lint-staged

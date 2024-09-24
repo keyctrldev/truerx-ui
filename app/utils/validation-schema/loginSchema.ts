@@ -8,6 +8,6 @@ export const LogInSchema = Yup.object().shape({
   password: Yup.string()
     .min(8, logInSchemaError.password.minimumCharacterError)
     .max(12, logInSchemaError.password.maximumCharacterError)
-    .matches(schemaRegEx.passwordRegEx, logInSchemaError.password.regExError)
+    // .matches(schemaRegEx.passwordRegEx, logInSchemaError.password.regExError)
     .required(logInSchemaError.password.requiredError),
 });

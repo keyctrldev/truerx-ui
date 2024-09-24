@@ -1,59 +1,65 @@
 import React from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { ClaimsScreen } from "../../modules";
-import { Image, ImageSourcePropType } from "react-native";
+import {
+  BottomTabNavigationOptions,
+  createBottomTabNavigator,
+} from "@react-navigation/bottom-tabs";
+import {
+  ClaimsScreen,
+  CoverageScreen,
+  OverviewScreen,
+  SettingsScreen,
+} from "../../modules";
+import { ImageSourcePropType } from "react-native";
 import { Routes } from "../../constants";
 import { Icons } from "../../assets";
 import { styles } from "./TabNavigationStyle";
+import { CustomTabIcon } from "../../components";
 
 const TabNav = createBottomTabNavigator();
 
-const getTabBarIcon =
-  (icon: ImageSourcePropType, outlineIcon: ImageSourcePropType) =>
-  ({ focused }: { focused: boolean }) =>
-    <Image source={focused ? icon : outlineIcon} style={styles.image} />;
+const getTabBarOptions = (
+  icon: ImageSourcePropType,
+  label: string,
+  unmountOnBlur: boolean = false
+): BottomTabNavigationOptions => {
+  const tabBarOptions: BottomTabNavigationOptions = {
+    unmountOnBlur,
+    // eslint-disable-next-line react/no-unstable-nested-components
+    tabBarIcon: ({ focused }) => (
+      <CustomTabIcon focused={focused} label={label} icon={icon} />
+    ),
+  };
+  return tabBarOptions;
+};
 
 const TabNavigation = () => {
+  const screenOptions: BottomTabNavigationOptions = {
+    headerShown: false,
+    tabBarStyle: styles.tabBarBackgroundStyle,
+    tabBarShowLabel: false,
+    tabBarHideOnKeyboard: true,
+  };
   return (
-    <TabNav.Navigator
-      screenOptions={{
-        tabBarActiveTintColor: styles.activeColor.color,
-        tabBarInactiveTintColor: styles.inActiveColor.color,
-        tabBarLabelStyle: styles.tabBarLabel,
-        tabBarStyle: styles.tabBarStyle,
-        headerShown: false,
-      }}
-    >
+    <TabNav.Navigator screenOptions={screenOptions}>
       <TabNav.Screen
         name={Routes.overview}
-        options={{
-          tabBarIcon: getTabBarIcon(Icons.overViewIcon, Icons.overViewOutline),
-        }}
-        component={ClaimsScreen}
+        component={OverviewScreen}
+        options={getTabBarOptions(Icons.overViewIcon, Routes.overview)}
       />
       <TabNav.Screen
         name={Routes.coverage}
-        options={{
-          tabBarIcon: getTabBarIcon(Icons.coverageIcon, Icons.coverageOutline),
-        }}
-        component={ClaimsScreen}
+        component={CoverageScreen}
+        options={getTabBarOptions(Icons.coverageIcon, Routes.coverage)}
       />
       <TabNav.Screen
         name={Routes.claims}
-        options={{
-          tabBarIcon: getTabBarIcon(Icons.claimsIcon, Icons.claimsOutline),
-        }}
         component={ClaimsScreen}
+        options={getTabBarOptions(Icons.claimsIcon, Routes.claims)}
       />
       <TabNav.Screen
         name={Routes.settings}
-        options={{
-          tabBarIcon: getTabBarIcon(
-            Icons.settingsIcon,
-            Icons.settingsOutlineIcon
-          ),
-        }}
-        component={ClaimsScreen}
+        component={SettingsScreen}
+        options={getTabBarOptions(Icons.settingsIcon, Routes.settings)}
       />
     </TabNav.Navigator>
   );

@@ -2,19 +2,18 @@ import React from "react";
 import { View } from "react-native";
 import { styles } from "./ListViewCellStyle";
 import AppText from "../app-text/AppText";
+import { capitalizeFLetter, getStatusColor } from "../../utils";
 
 interface ListViewCellProps {
   typeOfConsultance: string;
   Description: string;
   status: string;
-  colorCode: string;
 }
 
 const ListViewCell = ({
   typeOfConsultance,
   Description,
   status,
-  colorCode,
 }: ListViewCellProps) => {
   return (
     <View style={styles.listContainer}>
@@ -23,11 +22,13 @@ const ListViewCell = ({
         <AppText style={styles.listDetails}>{Description}</AppText>
       </View>
       <View style={styles.statusContainer}>
-        <AppText style={[styles.statusTextStyle, { color: colorCode }]}>
-          {status}
+        <AppText
+          style={[styles.statusTextStyle, { color: getStatusColor(status) }]}
+        >
+          {capitalizeFLetter(status)}
         </AppText>
       </View>
     </View>
   );
 };
-export default ListViewCell;
+export default React.memo(ListViewCell);
