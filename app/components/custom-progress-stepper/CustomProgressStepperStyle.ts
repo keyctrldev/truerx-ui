@@ -1,6 +1,6 @@
-import { StyleSheet } from "react-native";
-import { Colors, horizontalScale, verticalScale } from "../../theme";
-import { moderateScale } from "../../theme";
+import { StyleSheet } from 'react-native';
+import { Colors, horizontalScale, verticalScale } from '../../theme';
+import { moderateScale } from '../../theme';
 
 export const styles = StyleSheet.create({
   progressStepper: {
@@ -8,14 +8,7 @@ export const styles = StyleSheet.create({
     marginTop: verticalScale(60),
     marginLeft: horizontalScale(20),
   },
-  stepperContainer: {
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-    marginBottom: verticalScale(30),
-    marginRight: horizontalScale(10),
-  },
   stepContainer: {
-    flexDirection: 'column',
     alignItems: 'center',
   },
   circle: {
@@ -34,12 +27,12 @@ export const styles = StyleSheet.create({
     backgroundColor: Colors.skyBlue,
   },
   buttonContainer: {
-    gap: 20,
-    alignItems:'center'
+    gap: moderateScale(20),
+    alignItems: 'center',
   },
   stepButton: {
     backgroundColor: Colors.skyBlue,
-    borderRadius: 10,
+    borderRadius: moderateScale(10),
     fontSize: moderateScale(18),
   },
   line: {
@@ -50,10 +43,11 @@ export const styles = StyleSheet.create({
   eventList: {
     height: moderateScale(60),
     marginRight: horizontalScale(10),
-    fontSize:moderateScale(16),
-    fontWeight:'500',
+    fontSize: moderateScale(16),
+    fontWeight: '500',
   },
   stepData: {
     flexDirection: 'row',
-  }
+    gap: moderateScale(10),
+  },
 });
