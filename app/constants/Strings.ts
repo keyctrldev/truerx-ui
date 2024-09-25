@@ -38,7 +38,7 @@ export const claimsScreenStrings = Object.freeze({
   statusSection: 'Status',
 });
 
-export const stepperNextPress = Object.freeze({
+export const stepperComponentStrings = Object.freeze({
   nextButton: 'Next',
   resetButton: 'Reset',
 });

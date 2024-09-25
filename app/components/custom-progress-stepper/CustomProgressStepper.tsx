@@ -5,7 +5,7 @@ import CustomButton from '../custom-button/CustomButton';
 import { stepperData } from '../../utils';
 import { StepperData } from '../../types';
 import AppText from '../app-text/AppText';
-import { stepperNextPress } from '../../constants';
+import { stepperComponentStrings } from '../../constants';
 
 const stepperEvents: StepperData[] = stepperData;
 
@@ -51,8 +51,16 @@ const CustomProgressStepper = () => {
       </View>
 
       <View style={styles.buttonContainer}>
-        <CustomButton title={stepperNextPress.nextButton} onPress={onNextStepPress} customStyle={styles.stepButton} />
-        <CustomButton title={stepperNextPress.resetButton} onPress={onRestPress} customStyle={styles.stepButton} />
+        <CustomButton
+          title={stepperComponentStrings.nextButton}
+          onPress={onNextStepPress}
+          customStyle={styles.stepButton}
+        />
+        <CustomButton
+          title={stepperComponentStrings.resetButton}
+          onPress={onRestPress}
+          customStyle={styles.stepButton}
+        />
       </View>
     </View>
   );
