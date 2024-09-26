@@ -32,3 +32,8 @@ export interface ClaimsDataItem {
     createdAt: string,
     updatedAt: string
 }
+
+export interface StepperData{
+    date:string,
+    event:string,
+}
