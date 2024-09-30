@@ -12,7 +12,8 @@ const useClaimsScreen = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [claimsData, setClaimsData] = useState<ClaimsDataItem[]>([]);
   const { showToast } = useToast();
-  const page: number = 0;
+  const [hasMore, setHasMore] = useState<boolean>(true);
+  const [page, setPage] = useState<number>(0);
   const limit: number = 5;
 
   const handleLogOutPress = async (): Promise<void> => {
@@ -38,14 +39,22 @@ const useClaimsScreen = () => {
   };
 
   const getClaimsData = async () => {
+    if (!hasMore) return;
+
     try {
       setIsLoading(true);
       const accesssToken = await AsyncStorageService.loadAccessToken();
+
       if (accesssToken) {
         const parsedOuter = JSON.parse(accesssToken?.token);
         const token: string = parsedOuter.token;
         const response = await getAllClaims(token, page, limit);
-        setClaimsData(response);
+
+        if (response.length > 0) {
+          setClaimsData(previousData => [...previousData, ...response]);
+        } else {
+          setHasMore(false);
+        }
       }
     } catch (error: any) {
       showToast(error?.message, 'ERROR');
@@ -53,14 +62,18 @@ const useClaimsScreen = () => {
       setIsLoading(false);
     }
   };
+  const loadMore = () => {
+    setPage(page + 1);
+  };
 
   useEffect(() => {
     getClaimsData();
-  }, []);
+  }, [page]);
   return {
     handleLogOutPress,
     isLoading,
     claimsData,
+    loadMore,
   };
 };
 
