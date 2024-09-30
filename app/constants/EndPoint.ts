@@ -2,4 +2,5 @@
 
 export default {
   baseUrl: 'http://truerx.ap-south-1.elasticbeanstalk.com',
+  gqlUrl: 'https://countries.trevorblades.com/graphql',
 };
