@@ -1,5 +1,5 @@
-import { StyleSheet } from "react-native";
-import { Colors, moderateScale, verticalScale } from "../../theme";
+import { StyleSheet } from 'react-native';
+import { Colors, moderateScale, verticalScale } from '../../theme';
 
 export const styles = StyleSheet.create({
   tabBarBackgroundStyle: {

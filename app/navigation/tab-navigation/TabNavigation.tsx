@@ -1,33 +1,23 @@
-import React from "react";
-import {
-  BottomTabNavigationOptions,
-  createBottomTabNavigator,
-} from "@react-navigation/bottom-tabs";
-import {
-  ClaimsScreen,
-  CoverageScreen,
-  OverviewScreen,
-  SettingsScreen,
-} from "../../modules";
-import { ImageSourcePropType } from "react-native";
-import { Routes } from "../../constants";
-import { Icons } from "../../assets";
-import { styles } from "./TabNavigationStyle";
-import { CustomTabIcon } from "../../components";
+import React from 'react';
+import { BottomTabNavigationOptions, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { ClaimsScreen, CoverageScreen, OverviewScreen, SettingsScreen } from '../../modules';
+import { ImageSourcePropType } from 'react-native';
+import { Routes } from '../../constants';
+import { Icons } from '../../assets';
+import { styles } from './TabNavigationStyle';
+import { CustomTabIcon } from '../../components';
 
 const TabNav = createBottomTabNavigator();
 
 const getTabBarOptions = (
   icon: ImageSourcePropType,
   label: string,
-  unmountOnBlur: boolean = false
+  unmountOnBlur: boolean = false,
 ): BottomTabNavigationOptions => {
   const tabBarOptions: BottomTabNavigationOptions = {
     unmountOnBlur,
     // eslint-disable-next-line react/no-unstable-nested-components
-    tabBarIcon: ({ focused }) => (
-      <CustomTabIcon focused={focused} label={label} icon={icon} />
-    ),
+    tabBarIcon: ({ focused }) => <CustomTabIcon focused={focused} label={label} icon={icon} />,
   };
   return tabBarOptions;
 };

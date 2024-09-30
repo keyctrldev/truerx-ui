@@ -1,4 +1,4 @@
-import { ClaimsDataItem, TokenData } from '../types';
+import { ClaimsDataItem } from '../types';
 import { truerxInstance } from './apiInstance';
 
 export const getClaimsByUserId = async (userId: number): Promise<ClaimsDataItem> => {

@@ -1,16 +1,9 @@
-import {
-  Image,
-  TextInput,
-  TextInputProps,
-  TouchableOpacity,
-  View,
-  ViewStyle,
-} from "react-native";
-import React, { Dispatch, ForwardedRef, SetStateAction } from "react";
-import { Icons } from "../../assets";
-import { styles } from "./CustomTextInputStyle";
-import { Colors } from "../../theme";
-import AppText from "../app-text/AppText";
+import { Image, TextInput, TextInputProps, TouchableOpacity, View, ViewStyle } from 'react-native';
+import React, { Dispatch, ForwardedRef, SetStateAction } from 'react';
+import { Icons } from '../../assets';
+import { styles } from './CustomTextInputStyle';
+import { Colors } from '../../theme';
+import AppText from '../app-text/AppText';
 
 interface CustomInputPropType {
   setSecureEntryText?: Dispatch<SetStateAction<boolean>>;
@@ -21,7 +14,7 @@ interface CustomInputPropType {
 
 export type CustomInputType = (
   props: TextInputProps & CustomInputPropType,
-  ref: ForwardedRef<TextInput>
+  ref: ForwardedRef<TextInput>,
 ) => React.JSX.Element;
 
 const CustomTextInput: CustomInputType = (
@@ -41,7 +34,7 @@ const CustomTextInput: CustomInputType = (
     touched,
     value,
   },
-  ref
+  ref,
 ) => {
   return (
     <View style={[styles.textInputViewStyle, containerStyle]}>
@@ -64,21 +57,14 @@ const CustomTextInput: CustomInputType = (
           value={value}
         />
         {setSecureEntryText && (
-          <TouchableOpacity
-            onPress={() => setSecureEntryText(!secureTextEntry)}
-          >
+          <TouchableOpacity onPress={() => setSecureEntryText(!secureTextEntry)}>
             <View style={styles.eyeIconContainer}>
-              <Image
-                source={secureTextEntry ? Icons.eyeHide : Icons.eyeOpen}
-                style={styles.eyeIcon}
-              />
+              <Image source={secureTextEntry ? Icons.eyeHide : Icons.eyeOpen} style={styles.eyeIcon} />
             </View>
           </TouchableOpacity>
         )}
       </View>
-      {error && touched && (
-        <AppText style={styles.errorTextStyle}>{error}</AppText>
-      )}
+      {error && touched && <AppText style={styles.errorTextStyle}>{error}</AppText>}
     </View>
   );
 };

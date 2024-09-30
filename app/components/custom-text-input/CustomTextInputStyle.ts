@@ -1,24 +1,19 @@
-import { StyleSheet } from "react-native";
-import {
-  Colors,
-  horizontalScale,
-  moderateScale,
-  verticalScale,
-} from "../../theme";
+import { StyleSheet } from 'react-native';
+import { Colors, horizontalScale, moderateScale, verticalScale } from '../../theme';
 
 export const styles = StyleSheet.create({
   textInputViewStyle: {
     marginHorizontal: horizontalScale(20),
     marginVertical: verticalScale(10),
-    width: "87%",
+    width: '87%',
   },
   inputViewStyle: {
     borderWidth: moderateScale(1),
     borderColor: Colors.white,
     borderRadius: moderateScale(5),
-    justifyContent: "space-between",
-    flexDirection: "row",
-    alignItems: "center",
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   inputStyle: {
     flex: 1,
@@ -32,8 +27,8 @@ export const styles = StyleSheet.create({
     marginRight: horizontalScale(10),
   },
   eyeIcon: {
-    width: "100%",
-    height: "100%",
+    width: '100%',
+    height: '100%',
     tintColor: Colors.white,
   },
   errorTextStyle: {
