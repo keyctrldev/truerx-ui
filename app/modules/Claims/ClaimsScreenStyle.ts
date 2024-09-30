@@ -1,15 +1,15 @@
-import { StyleSheet } from "react-native";
-import { Colors, horizontalScale, moderateScale, verticalScale } from "../../theme";
+import { StyleSheet } from 'react-native';
+import { Colors, horizontalScale, moderateScale, verticalScale } from '../../theme';
 
 export const styles = StyleSheet.create({
   claimContainerStyle: {
     flex: 1,
-    backgroundColor: Colors.skyBlue
+    backgroundColor: Colors.skyBlue,
   },
   headerContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     paddingVertical: verticalScale(20),
     paddingHorizontal: horizontalScale(16),
     backgroundColor: Colors.white,
@@ -18,12 +18,12 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontSize: moderateScale(32),
-    fontWeight: "bold",
+    fontWeight: 'bold',
     color: Colors.green,
   },
   iconContainer: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   iconWrapper: {
     width: horizontalScale(34),
@@ -60,4 +60,4 @@ export const styles = StyleSheet.create({
   statusText: {
     marginRight: horizontalScale(35),
   },
-})
+});

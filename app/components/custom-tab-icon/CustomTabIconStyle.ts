@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 import { moderateScale, verticalScale } from '../../theme';
 
 export const styles = StyleSheet.create({
