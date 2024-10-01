@@ -19,12 +19,7 @@ const useClaimsScreen = () => {
 
   const handleLogOutPress = async (): Promise<void> => {
     try {
-      await AsyncStorageService.removeAccessToken();
-      await AsyncStorageService.storeBiometrics({
-        isBiometricsAuthEnabled: false,
-        isUserLoggedIn: false,
-        userName: '',
-      }).then(() => {
+      await AsyncStorageService.clearAll().then(() => {
         navigation.reset({
           index: 0,
           routes: [

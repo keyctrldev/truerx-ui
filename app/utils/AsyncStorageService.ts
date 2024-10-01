@@ -52,10 +52,19 @@ const removeAccessToken = async (): Promise<void> => {
   }
 };
 
+const clearAll = async (): Promise<void> => {
+  try {
+    await AsyncStorage.clear();
+  } catch (e) {
+    return Promise.reject(new Error('Failed to clear async storage.'));
+  }
+};
+
 export default {
   loadBiometrics,
   storeBiometrics,
   loadAccessToken,
   storeAccessToken,
   removeAccessToken,
+  clearAll,
 };

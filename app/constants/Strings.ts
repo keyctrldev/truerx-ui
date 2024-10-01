@@ -25,7 +25,7 @@ export const logInSchemaError = Object.freeze({
 
 export const schemaRegEx = Object.freeze({
   emailRegEx:
-    /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i,
+    /^(([^<>()[\]\.,;:\s@\"!#]+(\.[^<>()[\]\.,;:\s@\"!#]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i,
   passwordRegEx: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
   characterOnlyRegEx: /^([a-zA-Z]+\s)*[a-zA-Z]+$/,
   // digitsOnlyRegEx: /^[0-9]+$/,
