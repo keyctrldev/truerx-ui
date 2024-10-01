@@ -55,6 +55,7 @@ const CustomTextInput: CustomInputType = (
           secureTextEntry={secureTextEntry}
           keyboardAppearance="dark"
           value={value}
+          cursorColor={Colors.white}
         />
         {setSecureEntryText && (
           <TouchableOpacity onPress={() => setSecureEntryText(!secureTextEntry)}>

@@ -9,7 +9,7 @@ export const capitalizeFLetter = (text: string): string => {
 
 export const getStatusColor = (status: string): string => {
   switch (status) {
-    case 'approved':
+    case 'accepted':
       return '#008000';
     case 'processing':
       return '#FFA500';
