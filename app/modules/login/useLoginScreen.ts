@@ -71,14 +71,14 @@ const useLoginScreen = () => {
     if (values.email && values.password) {
       try {
         setIsLoading(true);
-        const response = await loginWithEmailPassword(values.email, values.password);
-        const tokenData: TokenData = { token: response.access_token };
-        await AsyncStorageService.storeAccessToken(tokenData);
         await AsyncStorageService.storeBiometrics({
           isBiometricsAuthEnabled: enableFaceId,
           isUserLoggedIn: true,
           userName: rememberUserName ? values.email : '',
         });
+        const response = await loginWithEmailPassword(values.email, values.password);
+        const tokenData: TokenData = { token: response.access_token };
+        await AsyncStorageService.storeAccessToken(tokenData);
         navigation.reset({
           index: 0,
           routes: [
