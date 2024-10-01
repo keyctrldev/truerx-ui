@@ -3,7 +3,7 @@ import { ParamListBase, useNavigation } from '@react-navigation/native';
 import { Routes } from '../../constants';
 import { getAllClaims } from '../../api/ClaimsApis';
 import { useToast } from '../../context';
-import { ClaimsDataItem, TokenData } from '../../types';
+import { ClaimsDataItem } from '../../types';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { AsyncStorageService } from '../../utils';
 
@@ -40,21 +40,13 @@ const useClaimsScreen = () => {
 
   const getClaimsData = async () => {
     if (!hasMore) return;
-
     try {
       setIsLoading(true);
-      const accesssToken = await AsyncStorageService.loadAccessToken();
-
-      if (accesssToken) {
-        const parsedOuter = JSON.parse(accesssToken?.token);
-        const token: string = parsedOuter.token;
-        const response = await getAllClaims(token, page, limit);
-
-        if (response.length > 0) {
-          setClaimsData(previousData => [...previousData, ...response]);
-        } else {
-          setHasMore(false);
-        }
+      const response = await getAllClaims(page, limit);
+      if (response.length > 0) {
+        setClaimsData(previousData => [...previousData, ...response]);
+      } else {
+        setHasMore(false);
       }
     } catch (error: any) {
       showToast(error?.message, 'ERROR');

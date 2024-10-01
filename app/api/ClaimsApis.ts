@@ -10,14 +10,10 @@ export const getClaimsByUserId = async (userId: number): Promise<ClaimsDataItem>
   }
 };
 
-export const getAllClaims = async (token: string, page: number, limit: number): Promise<ClaimsDataItem[]> => {
+export const getAllClaims = async (page: number, limit: number): Promise<ClaimsDataItem[]> => {
   const offset: number = page * limit;
   try {
-    const response = await truerxInstance.get<ClaimsDataItem[]>(`/claims?offset=${offset}&limit=${limit}`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    const response = await truerxInstance.get<ClaimsDataItem[]>(`/claims?offset=${offset}&limit=${limit}`);
     return response.data;
   } catch (error: any) {
     throw error.response ? error.response.data : error.message;

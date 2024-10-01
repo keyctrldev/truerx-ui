@@ -39,6 +39,8 @@ const ClaimsScreen = () => {
           <ListViewCell typeOfConsultance={item.name} status={item.status} Description={item.description} key={index} />
         )}
         onEndReached={loadMore}
+        onEndReachedThreshold={0.2}
+        ListFooterComponent={() => (isLoading ? <ActivityLoader isVisible /> : null)}
       />
     </SafeAreaContainer>
   );
