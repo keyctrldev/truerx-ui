@@ -33,7 +33,7 @@ export interface ClaimsDataItem {
   updatedAt: string;
 }
 
-export interface StepperData{
-    date:string,
-    event:string,
+export interface StepperData {
+  date: string;
+  event: string;
 }

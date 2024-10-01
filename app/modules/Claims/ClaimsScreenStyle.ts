@@ -60,4 +60,7 @@ export const styles = StyleSheet.create({
   statusText: {
     marginRight: horizontalScale(35),
   },
+  footerLoaderContainer: {
+    paddingVertical: verticalScale(20),
+  },
 });

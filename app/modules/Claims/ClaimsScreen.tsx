@@ -1,12 +1,14 @@
 import React from 'react';
-import { FlatList, Image, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, FlatList, Image, TouchableOpacity, View } from 'react-native';
 import { ActivityLoader, AppText, ListViewCell, SafeAreaContainer } from '../../components';
 import { styles } from './ClaimsScreenStyle';
 import { Icons } from '../../assets';
 import { claimsScreenStrings } from '../../constants';
 import useClaimsScreen from './useClaimsScreen';
+import { Colors } from '../../theme';
+
 const ClaimsScreen = () => {
-  const { handleLogOutPress, isLoading, claimsData } = useClaimsScreen();
+  const { handleLogOutPress, isLoading, claimsData, loadMore, isLoadingMore } = useClaimsScreen();
   return (
     <SafeAreaContainer style={styles.claimContainerStyle}>
       {isLoading && <ActivityLoader isVisible={isLoading} />}
@@ -38,6 +40,15 @@ const ClaimsScreen = () => {
         renderItem={({ item, index }) => (
           <ListViewCell typeOfConsultance={item.name} status={item.status} Description={item.description} key={index} />
         )}
+        onEndReached={loadMore}
+        onEndReachedThreshold={0.2}
+        ListFooterComponent={() =>
+          isLoadingMore ? (
+            <View style={styles.footerLoaderContainer}>
+              <ActivityIndicator size={'large'} color={Colors.primary} />
+            </View>
+          ) : null
+        }
       />
     </SafeAreaContainer>
   );
