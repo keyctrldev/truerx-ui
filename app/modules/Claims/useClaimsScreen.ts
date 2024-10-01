@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ParamListBase, useNavigation } from '@react-navigation/native';
 import { Routes } from '../../constants';
 import { getAllClaims } from '../../api/ClaimsApis';
@@ -14,7 +14,8 @@ const useClaimsScreen = () => {
   const { showToast } = useToast();
   const [hasMore, setHasMore] = useState<boolean>(true);
   const [page, setPage] = useState<number>(0);
-  const limit: number = 5;
+  const [isLoadingMore, setIsLoadingMore] = useState<boolean>(false);
+  const limit: number = 10;
 
   const handleLogOutPress = async (): Promise<void> => {
     try {
@@ -41,7 +42,7 @@ const useClaimsScreen = () => {
   const getClaimsData = async () => {
     if (!hasMore) return;
     try {
-      setIsLoading(true);
+      claimsData.length === 0 ? setIsLoading(true) : setIsLoadingMore(true);
       const response = await getAllClaims(page, limit);
       if (response.length > 0) {
         setClaimsData(previousData => [...previousData, ...response]);
@@ -51,11 +52,13 @@ const useClaimsScreen = () => {
     } catch (error: any) {
       showToast(error?.message, 'ERROR');
     } finally {
-      setIsLoading(false);
+      claimsData.length === 0 ? setIsLoading(false) : setIsLoadingMore(false);
     }
   };
   const loadMore = () => {
-    setPage(page + 1);
+    if (hasMore && !isLoadingMore) {
+      setPage(prevState => prevState + 1);
+    }
   };
 
   useEffect(() => {
@@ -66,6 +69,7 @@ const useClaimsScreen = () => {
     isLoading,
     claimsData,
     loadMore,
+    isLoadingMore,
   };
 };
 
