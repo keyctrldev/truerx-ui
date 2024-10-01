@@ -11,7 +11,25 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "notification": {
+      "icon": "./app/assets/Icons/appLogo.png",
+      "color": "#ffffff",
+      "android": {
+        "channelId": "default"
+      }
+    },
     "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static"
+          },
+          "android": {
+            "usesCleartextTraffic": true
+          }
+        }
+      ],
       [
         "expo-local-authentication",
         {
@@ -20,16 +38,28 @@
       ]
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.app.truerx",
+      "entitlements": {
+        "aps-environment": "production"
+      }
     },
     "android": {
+      "package": "com.app.truerx",
       "adaptiveIcon": {
         "foregroundImage": "./app/assets/Icons/adaptiveIcon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": ["android.permission.USE_BIOMETRIC", "android.permission.USE_FINGERPRINT"]
     },
     "web": {
       "favicon": "./app/assets/Icons/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "636fb0bd-529c-4ae1-8a96-c659043db62b"
+      }
+    },
+    "owner": "keyctrl-solutions"
   }
 }
