@@ -1,0 +1,36 @@
+{
+  "cli": {
+    "version": ">= 9.0.5"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "preview2": {
+      "android": {
+        "gradleCommand": ":app:assembleRelease"
+      }
+    },
+    "preview3": {
+      "developmentClient": true
+    },
+    "production": {},
+    "dev": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "android": {
+        "image": "ubuntu-18.04-jdk-11-ndk-r19c"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}
