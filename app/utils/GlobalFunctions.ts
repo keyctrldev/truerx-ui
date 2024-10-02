@@ -1,7 +1,7 @@
-import messaging, { FirebaseMessagingTypes } from '@react-native-firebase/messaging';
-
+import messaging from '@react-native-firebase/messaging';
 import notifee, { AndroidImportance, AndroidVisibility } from '@notifee/react-native';
-import { Alert } from 'react-native';
+import { Alert, PermissionsAndroid, Platform } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const capitalizeFLetter = (text: string): string => {
   if (typeof text !== 'string' || text.length === 0) {
@@ -23,24 +23,57 @@ export const getStatusColor = (status: string): string => {
   }
 };
 
-export const fetchAndStorePushTokenIfPossible = async (): Promise<void> => {
-  try {
+export function buildDeepLinkFromNotificationData(data: any) {
+  const NAVIGATION_IDS = ['Login', 'Notifications', 'Settings'];
+  const navigationId = data?.notification.data?.notificationId;
+  if (!NAVIGATION_IDS.includes(navigationId)) {
+    return null;
+  }
+  switch (navigationId) {
+    case 'Login':
+      return `truerx://Login`;
+    case 'Notifications':
+      return `truerx://Notifications`;
+    case 'Settings':
+      return `truerx://Settings`;
+    default:
+      return null;
+  }
+}
+
+export const fetchAndStorePushTokenIfPossible = async () => {
+  if (Platform.OS === 'android' && Platform.Version >= 33) {
+    const granted = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.POST_NOTIFICATIONS);
+    if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+      getFCMToken();
+    }
+  } else {
     const authStatus = await messaging().requestPermission();
     const enabled =
       authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
       authStatus === messaging.AuthorizationStatus.PROVISIONAL;
 
     if (enabled) {
-      await messaging().registerDeviceForRemoteMessages();
-      const token = await messaging().getToken();
-      console.info('FCM :', token);
+      getFCMToken();
     }
-  } catch (error) {
-    Alert.alert('Error fetching FCM token');
   }
 };
 
-export const onNotifeeMessageReceived = async (message: FirebaseMessagingTypes.RemoteMessage): Promise<void> => {
+const getFCMToken = async () => {
+  try {
+    await messaging().registerDeviceForRemoteMessages();
+    let fcmToken = await AsyncStorage.getItem('fcm_token');
+    if (!fcmToken) {
+      const token = await messaging().getToken();
+      await AsyncStorage.setItem('fcm_token', token);
+    }
+  } catch (error) {
+    Alert.alert('Error generating token');
+  }
+};
+
+// Handle Notifee message received and display notification
+export const onNotifeeMessageReceived = async (message: any) => {
   try {
     if (message && message.notification) {
       const { title, body } = message.notification;
@@ -76,6 +109,6 @@ export const onNotifeeMessageReceived = async (message: FirebaseMessagingTypes.R
       });
     }
   } catch (error) {
-    Alert.alert('Error displaying notification:');
+    Alert.alert('Error displaying notification');
   }
 };

@@ -6,6 +6,7 @@
     "orientation": "portrait",
     "icon": "./app/assets/Icons/appLogo.png",
     "userInterfaceStyle": "light",
+    "scheme": "truerx",
     "splash": {
       "image": "./app/assets/Images/splash.png",
       "resizeMode": "contain",
@@ -53,12 +54,14 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.app.truerx",
+      "googleServicesFile": "./GoogleService-Info.plist",
       "entitlements": {
         "aps-environment": "production"
       }
     },
     "android": {
       "package": "com.app.truerx",
+      "googleServicesFile": "./google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./app/assets/Icons/adaptiveIcon.png",
         "backgroundColor": "#ffffff"

@@ -8,14 +8,15 @@ import useClaimsScreen from './useClaimsScreen';
 import { Colors } from '../../theme';
 
 const ClaimsScreen = () => {
-  const { handleLogOutPress, isLoading, claimsData, loadMore, isLoadingMore } = useClaimsScreen();
+  const { handleLogOutPress, isLoading, claimsData, handleNotificationPress, isLoadingMore, loadMore } =
+    useClaimsScreen();
   return (
     <SafeAreaContainer style={styles.claimContainerStyle}>
       {isLoading && <ActivityLoader isVisible={isLoading} />}
       <View style={styles.headerContainer}>
         <AppText style={styles.title}>{claimsScreenStrings.claimsDemoHeading}</AppText>
         <View style={styles.iconContainer}>
-          <TouchableOpacity style={styles.iconWrapper} activeOpacity={0.8}>
+          <TouchableOpacity style={styles.iconWrapper} activeOpacity={0.8} onPress={handleNotificationPress}>
             <Image source={Icons.bellIcon} style={styles.icon} resizeMode="contain" />
           </TouchableOpacity>
           <TouchableOpacity style={styles.iconWrapper} activeOpacity={0.8} onPress={handleLogOutPress}>

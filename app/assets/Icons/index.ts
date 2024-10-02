@@ -16,4 +16,5 @@ export default {
   coverageOutline: require('./coverageOutline.png'),
   claimsIcon: require('./claimsIcon.png'),
   claimsOutline: require('./claimsOutline.png'),
+  backIcon: require('./back.png'),
 };

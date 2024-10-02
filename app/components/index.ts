@@ -7,4 +7,4 @@ export { default as CustomSwitch } from './custom-switch/CustomSwitch';
 export { default as SafeAreaContainer } from './safe-area-container/SafeAreaContainer';
 export { default as CustomTabIcon } from './custom-tab-icon/CustomTabIcon';
 export { default as ActivityLoader } from './activity-loader/ActivityLoader';
-export {default as CustomProgressStepper} from './custom-progress-stepper/CustomProgressStepper'
+export { default as CustomProgressStepper } from './custom-progress-stepper/CustomProgressStepper';
