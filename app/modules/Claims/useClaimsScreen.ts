@@ -45,7 +45,7 @@ const useClaimsScreen = () => {
         setHasMore(false);
       }
     } catch (error: any) {
-      showToast(error?.message, 'ERROR');
+      showToast(error?.message || 'Something went wrong !', 'ERROR');
     } finally {
       claimsData.length === 0 ? setIsLoading(false) : setIsLoadingMore(false);
     }
