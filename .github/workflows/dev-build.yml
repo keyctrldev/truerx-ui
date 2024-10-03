@@ -1,0 +1,28 @@
+on:
+  push:
+    branches:
+      - feature/github-flow
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🏗 Setup repo
+        uses: actions/checkout@v3
+
+      - name: 🏗 Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22.x
+          cache: yarn
+
+      - name: 🏗 Setup EAS
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: FK6t9Ar3Fy1OnclJYE865Hjx0qMm4QPY5PC-IQlP
+
+      - name: 📦 Install dependencies
+        run: yarn install
+
+      - name: 🚀 Build app
+        run: eas build -p android --profile preview
