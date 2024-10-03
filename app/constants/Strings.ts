@@ -42,3 +42,11 @@ export const stepperComponentStrings = Object.freeze({
   nextButton: 'Next',
   resetButton: 'Reset',
 });
+
+export const headerComponentStrings = Object.freeze({
+  Overview: 'Overview',
+  Coverage: 'Coverage',
+  Claims: 'Claims',
+  Settings: 'Settings',
+  Notification: 'Notification',
+});

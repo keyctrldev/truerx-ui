@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { AppText, SafeAreaContainer } from '../../components';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { styles } from './NotificationScreenStyle';
-import { Alert, Image, TouchableOpacity, View } from 'react-native';
+import { Alert, BackHandler, Image, TouchableOpacity, View } from 'react-native';
 import { Icons } from '../../assets';
 import { ParamListBase, useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { headerComponentStrings, Routes } from '../../constants';
 
 const NotificationScreen = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const { replace } = useNavigation<StackNavigationProp<ParamListBase>>();
   const [fcm, setFcm] = useState<string | null>('');
 
   const fetchFcmToken = async () => {
@@ -21,17 +22,27 @@ const NotificationScreen = () => {
   };
 
   const onBackPress = () => {
-    navigation.goBack();
+    replace(Routes.home);
+    return true;
   };
+
+  useEffect(() => {
+    const backHandler = BackHandler.addEventListener('hardwareBackPress', onBackPress);
+
+    return () => backHandler.remove();
+  }, [onBackPress]);
 
   useEffect(() => {
     fetchFcmToken();
   }, []);
   return (
     <SafeAreaContainer style={styles.rootContainerStyle}>
-      <TouchableOpacity style={styles.headerContainer} onPress={onBackPress}>
-        <Image source={Icons.backIcon} style={styles.backIconStyle} />
-      </TouchableOpacity>
+      <View style={styles.headerContainer}>
+        <TouchableOpacity onPress={onBackPress}>
+          <Image source={Icons.backIcon} style={styles.backIconStyle} />
+        </TouchableOpacity>
+        <AppText style={styles.headerText}>{headerComponentStrings.Notification}</AppText>
+      </View>
       <View style={styles.bodyContainer}>
         <AppText style={styles.tokenTextStyle} selectable>
           FCM : {fcm}

@@ -54,4 +54,8 @@ export const styles = StyleSheet.create({
     letterSpacing: 0.5,
     color: Colors.white,
   },
+  tokenTextStyle: {
+    fontSize: moderateScale(16),
+    color: Colors.white,
+  },
 });

@@ -9,6 +9,7 @@ import { Routes } from '../../constants';
 import { useToast } from '../../context';
 import { loginWithEmailPassword } from '../../api/AuthApis';
 import { StackNavigationProp } from '@react-navigation/stack';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const useLoginScreen = () => {
   const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
@@ -18,6 +19,18 @@ const useLoginScreen = () => {
   const [rememberUserName, setRememberUserName] = useState<boolean>(false);
   const [enableFaceId, setEnableFaceId] = useState<boolean>(false);
   const { showToast } = useToast();
+
+  const [fcm, setFcm] = useState<string | null>('');
+
+  const fetchFcmToken = async () => {
+    try {
+      const fcmToken = await AsyncStorage.getItem('fcm_token');
+      setFcm(fcmToken);
+    } catch (error) {
+      Alert.alert('Failed to fetch FCM token');
+    }
+  };
+
   const { handleChange, setFieldTouched, setFieldValue, touched, errors, handleSubmit, values } = useFormik({
     initialValues: {
       email: '',
@@ -120,7 +133,11 @@ const useLoginScreen = () => {
       showToast('Failed To Load Initial Data', 'ERROR');
     }
   }, [authenticateTouchFaceId, setFieldValue, showToast]);
-
+  useEffect(() => {
+    setTimeout(() => {
+      fetchFcmToken();
+    }, 3000);
+  }, []);
   useEffect(() => {
     getInitialUserData();
   }, [getInitialUserData]);
@@ -144,6 +161,7 @@ const useLoginScreen = () => {
     touched,
     handleSubmit,
     values,
+    fcm,
   };
 };
 

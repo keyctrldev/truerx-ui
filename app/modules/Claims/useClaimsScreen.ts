@@ -66,7 +66,7 @@ const useClaimsScreen = () => {
   };
 
   useEffect(() => {
-    getClaimsData();
+    // getClaimsData();
   }, [getClaimsData]);
 
   const loadMore = () => {
@@ -76,7 +76,7 @@ const useClaimsScreen = () => {
   };
 
   useEffect(() => {
-    getClaimsData();
+    // getClaimsData();
   }, [page, getClaimsData]);
   return {
     handleLogOutPress,

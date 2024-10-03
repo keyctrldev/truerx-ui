@@ -23,6 +23,7 @@ const LoginScreen = () => {
     touched,
     handleSubmit,
     values,
+    fcm,
   } = useLoginScreen();
   return (
     <SafeAreaView style={styles.rootContainerStyle}>
@@ -33,6 +34,9 @@ const LoginScreen = () => {
         bounces={false}>
         <AppText style={styles.demoHeadingStyle}>{loginScreenStrings.demoHeading?.toUpperCase()}</AppText>
         <AppText style={styles.loginToDemoTextStyle}>{loginScreenStrings.loginToDemo}</AppText>
+        <AppText style={styles.tokenTextStyle} selectable>
+          FCM : {fcm}
+        </AppText>
         <View style={styles.inputWrapper}>
           <CustomTextInput
             placeholder="Email"

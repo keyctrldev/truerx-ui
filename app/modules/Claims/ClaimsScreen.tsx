@@ -1,9 +1,9 @@
 import React from 'react';
 import { ActivityIndicator, FlatList, Image, TouchableOpacity, View } from 'react-native';
-import { ActivityLoader, AppText, ListViewCell, SafeAreaContainer } from '../../components';
+import { ActivityLoader, AppText, CustomHeader, ListViewCell, SafeAreaContainer } from '../../components';
 import { styles } from './ClaimsScreenStyle';
 import { Icons } from '../../assets';
-import { claimsScreenStrings } from '../../constants';
+import { claimsScreenStrings, headerComponentStrings } from '../../constants';
 import useClaimsScreen from './useClaimsScreen';
 import { Colors } from '../../theme';
 
@@ -13,17 +13,7 @@ const ClaimsScreen = () => {
   return (
     <SafeAreaContainer style={styles.claimContainerStyle}>
       {isLoading && <ActivityLoader isVisible={isLoading} />}
-      <View style={styles.headerContainer}>
-        <AppText style={styles.title}>{claimsScreenStrings.claimsDemoHeading}</AppText>
-        <View style={styles.iconContainer}>
-          <TouchableOpacity style={styles.iconWrapper} activeOpacity={0.8} onPress={handleNotificationPress}>
-            <Image source={Icons.bellIcon} style={styles.icon} resizeMode="contain" />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.iconWrapper} activeOpacity={0.8} onPress={handleLogOutPress}>
-            <Image source={Icons.profileIcon} style={styles.icon} resizeMode="contain" />
-          </TouchableOpacity>
-        </View>
-      </View>
+      <CustomHeader heading={headerComponentStrings.Claims} />
 
       {/* Claims History Section */}
       <View style={styles.claimsHistoryContainer}>

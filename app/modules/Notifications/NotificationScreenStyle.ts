@@ -14,6 +14,13 @@ export const styles = StyleSheet.create({
     paddingVertical: verticalScale(15),
     paddingHorizontal: horizontalScale(10),
     backgroundColor: Colors.white,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  headerText: {
+    fontSize: moderateScale(20),
+    color: Colors.black,
+    marginStart: horizontalScale(10),
   },
   bodyContainer: {
     alignItems: 'center',
