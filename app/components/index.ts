@@ -9,3 +9,4 @@ export { default as CustomTabIcon } from './custom-tab-icon/CustomTabIcon';
 export { default as ActivityLoader } from './activity-loader/ActivityLoader';
 export { default as CustomProgressStepper } from './custom-progress-stepper/CustomProgressStepper';
 export { default as CustomHeader } from './custom-header/CustomHeader';
+export { default as NotificationTile } from './notification-tile/NotificationTile';

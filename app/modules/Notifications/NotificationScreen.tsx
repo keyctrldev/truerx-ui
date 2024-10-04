@@ -1,25 +1,26 @@
 import React, { useEffect, useState } from 'react';
-import { AppText, SafeAreaContainer } from '../../components';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { AppText, NotificationTile, SafeAreaContainer } from '../../components';
 import { styles } from './NotificationScreenStyle';
-import { Alert, BackHandler, Image, TouchableOpacity, View } from 'react-native';
+import { BackHandler, FlatList, Image, TouchableOpacity, View } from 'react-native';
 import { Icons } from '../../assets';
 import { ParamListBase, useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { headerComponentStrings, Routes } from '../../constants';
+import { AsyncStorageService } from '../../utils';
+import { NotificationItem } from '../../types';
 
 const NotificationScreen = () => {
   const { replace } = useNavigation<StackNavigationProp<ParamListBase>>();
-  const [fcm, setFcm] = useState<string | null>('');
+  const [notifications, setNotifications] = useState<NotificationItem[]>([]);
 
-  const fetchFcmToken = async () => {
-    try {
-      const fcmToken = await AsyncStorage.getItem('fcm_token');
-      setFcm(fcmToken);
-    } catch (error) {
-      Alert.alert('Failed to fetch FCM token');
-    }
-  };
+  useEffect(() => {
+    const fetchNotifications = async () => {
+      const storedNotifications: any[] = await AsyncStorageService.getNotifications();
+      setNotifications(storedNotifications);
+    };
+
+    fetchNotifications();
+  }, []);
 
   const onBackPress = () => {
     replace(Routes.home);
@@ -28,13 +29,9 @@ const NotificationScreen = () => {
 
   useEffect(() => {
     const backHandler = BackHandler.addEventListener('hardwareBackPress', onBackPress);
-
     return () => backHandler.remove();
   }, [onBackPress]);
 
-  useEffect(() => {
-    fetchFcmToken();
-  }, []);
   return (
     <SafeAreaContainer style={styles.rootContainerStyle}>
       <View style={styles.headerContainer}>
@@ -44,9 +41,21 @@ const NotificationScreen = () => {
         <AppText style={styles.headerText}>{headerComponentStrings.Notification}</AppText>
       </View>
       <View style={styles.bodyContainer}>
-        <AppText style={styles.tokenTextStyle} selectable>
-          FCM : {fcm}
-        </AppText>
+        <FlatList
+          data={notifications?.reverse()}
+          contentContainerStyle={styles.listContainer}
+          showsVerticalScrollIndicator={false}
+          renderItem={({ item, index }) => {
+            return (
+              <NotificationTile
+                key={`notification${index}`}
+                title={item?.title}
+                message={item?.message}
+                highlighted={true}
+              />
+            );
+          }}
+        />
       </View>
     </SafeAreaContainer>
   );

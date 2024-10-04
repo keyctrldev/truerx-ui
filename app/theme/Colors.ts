@@ -12,7 +12,8 @@ type ColorType =
   | 'horizonBlue'
   | 'lightBlack'
   | 'lightGreen'
-  | 'overlayDark';
+  | 'overlayDark'
+  | 'cyan';
 
 // This object provides a centralized way to manage and reference color values throughout the application, ensuring consistency in color usage.
 // Color code should be Hex values.
@@ -30,4 +31,5 @@ export const Colors: Record<ColorType, string> = {
   lightBlack: '#4F4F4F',
   lightGreen: '#34C759',
   overlayDark: 'rgba(0,0,0,0.2)',
+  cyan: '#E4FFFF',
 };

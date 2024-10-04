@@ -17,4 +17,5 @@ export default {
   claimsIcon: require('./claimsIcon.png'),
   claimsOutline: require('./claimsOutline.png'),
   backIcon: require('./back.png'),
+  tickCircle: require('./tickCircle.png'),
 };

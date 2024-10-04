@@ -3,10 +3,7 @@ import { Routes } from '../../constants';
 import { NotificationScreen } from '../../modules';
 import TabNavigation from '../tab-navigation/TabNavigation';
 import { createStackNavigator, StackNavigationOptions } from '@react-navigation/stack';
-import useNotification from '../../utils/NotifricationHandler';
-
-// Create a stack navigator using React Navigation.
-// This will manage navigation between different screens in the app.
+import { useNotification } from '../../utils';
 
 const Stack = createStackNavigator();
 const RootStack = () => {
