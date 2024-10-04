@@ -38,7 +38,12 @@ const ClaimsScreen = () => {
         data={claimsData}
         keyExtractor={(_, index) => `${index}claimItem`}
         renderItem={({ item, index }) => (
-          <ListViewCell typeOfConsultance={item.name} status={item.status} Description={item.description} key={index} />
+          <ListViewCell
+            typeOfConsultance={item.claimDate}
+            status={item.claimStatus}
+            Description={item.medicationName}
+            key={index}
+          />
         )}
         onEndReached={loadMore}
         onEndReachedThreshold={0.2}

@@ -6,6 +6,8 @@ import { useToast } from '../../context';
 import { ClaimsDataItem } from '../../types';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { AsyncStorageService } from '../../utils';
+import getClaimsQuery from '../../queries/claims-query/ClaimsQuery';
+import client from '../../queries/apollo-client/ApolloClient';
 
 const useClaimsScreen = () => {
   const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
@@ -34,20 +36,32 @@ const useClaimsScreen = () => {
     }
   };
 
-  const getClaimsData = async () => {
-    if (!hasMore) return;
+  // const getClaimsData = async () => {
+  //   if (!hasMore) return;
+  //   try {
+  //     claimsData.length === 0 ? setIsLoading(true) : setIsLoadingMore(true);
+  //     const response = await getAllClaims(page, limit);
+  //     if (response.length > 0) {
+  //       setClaimsData(previousData => [...previousData, ...response]);
+  //     } else {
+  //       setHasMore(false);
+  //     }
+  //   } catch (error: any) {
+  //     showToast(error?.message, 'ERROR');
+  //   } finally {
+  //     claimsData.length === 0 ? setIsLoading(false) : setIsLoadingMore(false);
+  //   }
+  // };
+
+  const fetchClaimsData = async (memberID: string) => {
     try {
-      claimsData.length === 0 ? setIsLoading(true) : setIsLoadingMore(true);
-      const response = await getAllClaims(page, limit);
-      if (response.length > 0) {
-        setClaimsData(previousData => [...previousData, ...response]);
-      } else {
-        setHasMore(false);
-      }
+      const { data } = await client.query({
+        query: getClaimsQuery,
+        variables: { memberId: memberID },
+      });
+      setClaimsData(data.claims);
     } catch (error: any) {
-      showToast(error?.message, 'ERROR');
-    } finally {
-      claimsData.length === 0 ? setIsLoading(false) : setIsLoadingMore(false);
+      return showToast(error?.message, 'ERROR');
     }
   };
   const loadMore = () => {
@@ -57,8 +71,9 @@ const useClaimsScreen = () => {
   };
 
   useEffect(() => {
-    getClaimsData();
-  }, [page]);
+    fetchClaimsData('M001');
+  }, []);
+
   return {
     handleLogOutPress,
     isLoading,

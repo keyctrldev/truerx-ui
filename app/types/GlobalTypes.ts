@@ -24,13 +24,17 @@ export interface LoginResponse {
   access_token: string;
 }
 export interface ClaimsDataItem {
-  id: number;
-  name: string;
-  userId: number;
-  status: string;
-  description: string;
-  createdAt: string;
-  updatedAt: string;
+  // id: number;
+  // name: string;
+  // userId: number;
+  // status: string;
+  // description: string;
+  // createdAt: string;
+  // updatedAt: string;
+  claimId: string;
+  medicationName: string;
+  claimStatus: string;
+  claimDate: string;
 }
 
 export interface StepperData {
