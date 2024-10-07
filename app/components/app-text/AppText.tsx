@@ -7,6 +7,7 @@ import { styles } from './AppTextStyle';
 
 const AppText = (props: TextProps) => {
   const { children, style, ...rest } = props;
+  console.log('props', props)
   return (
     <Text style={[styles.fontStyle, style]} {...rest}>
       {children}
