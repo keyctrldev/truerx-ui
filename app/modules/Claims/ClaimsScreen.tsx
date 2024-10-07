@@ -1,28 +1,17 @@
 import React from 'react';
-import { ActivityIndicator, FlatList, Image, TouchableOpacity, View } from 'react-native';
-import { ActivityLoader, AppText, ListViewCell, SafeAreaContainer } from '../../components';
+import { FlatList, View } from 'react-native';
+import { ActivityLoader, AppText, CustomHeader, ListViewCell, SafeAreaContainer } from '../../components';
 import { styles } from './ClaimsScreenStyle';
-import { Icons } from '../../assets';
-import { claimsScreenStrings } from '../../constants';
-import useClaimsScreen from './useClaimsScreen';
-import { Colors } from '../../theme';
+import { claimsScreenStrings, commonStrings, headerComponentStrings } from '../../constants';
+import { useQuery } from '@apollo/client';
+import { GET_CLAIMS } from '../../api';
 
 const ClaimsScreen = () => {
-  const { handleLogOutPress, isLoading, claimsData, loadMore, isLoadingMore } = useClaimsScreen();
+  const { loading, error, data } = useQuery(GET_CLAIMS);
   return (
     <SafeAreaContainer style={styles.claimContainerStyle}>
-      {isLoading && <ActivityLoader isVisible={isLoading} />}
-      <View style={styles.headerContainer}>
-        <AppText style={styles.title}>{claimsScreenStrings.claimsDemoHeading}</AppText>
-        <View style={styles.iconContainer}>
-          <TouchableOpacity style={styles.iconWrapper} activeOpacity={0.8}>
-            <Image source={Icons.bellIcon} style={styles.icon} resizeMode="contain" />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.iconWrapper} activeOpacity={0.8} onPress={handleLogOutPress}>
-            <Image source={Icons.profileIcon} style={styles.icon} resizeMode="contain" />
-          </TouchableOpacity>
-        </View>
-      </View>
+      <ActivityLoader isVisible={loading} />
+      <CustomHeader heading={headerComponentStrings.Claims} />
 
       {/* Claims History Section */}
       <View style={styles.claimsHistoryContainer}>
@@ -34,20 +23,25 @@ const ClaimsScreen = () => {
         <AppText style={styles.columnHeader}>{claimsScreenStrings.claimSection}</AppText>
         <AppText style={[styles.columnHeader, styles.statusText]}>{claimsScreenStrings.statusSection}</AppText>
       </View>
+
+      {/* Claims List */}
       <FlatList
-        data={claimsData}
+        data={data?.claims ?? []}
         keyExtractor={(_, index) => `${index}claimItem`}
+        contentContainerStyle={styles.listContainer}
         renderItem={({ item, index }) => (
-          <ListViewCell typeOfConsultance={item.name} status={item.status} Description={item.description} key={index} />
+          <ListViewCell
+            typeOfConsultance={item.medicationName}
+            status={item.claimStatus}
+            Description={item.medicationCost}
+            key={index}
+          />
         )}
-        onEndReached={loadMore}
         onEndReachedThreshold={0.2}
-        ListFooterComponent={() =>
-          isLoadingMore ? (
-            <View style={styles.footerLoaderContainer}>
-              <ActivityIndicator size={'large'} color={Colors.primary} />
-            </View>
-          ) : null
+        ListEmptyComponent={
+          <View style={styles.listEmptyContainer}>
+            <AppText style={styles.listEmptyText}>{commonStrings.NoDataFound}</AppText>
+          </View>
         }
       />
     </SafeAreaContainer>

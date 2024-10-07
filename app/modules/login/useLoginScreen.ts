@@ -18,6 +18,7 @@ const useLoginScreen = () => {
   const [rememberUserName, setRememberUserName] = useState<boolean>(false);
   const [enableFaceId, setEnableFaceId] = useState<boolean>(false);
   const { showToast } = useToast();
+
   const { handleChange, setFieldTouched, setFieldValue, touched, errors, handleSubmit, values } = useFormik({
     initialValues: {
       email: '',

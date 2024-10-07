@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "199388193793",
+    "project_id": "truerx-133b2",
+    "storage_bucket": "truerx-133b2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:199388193793:android:569a4f48142cd7d7b88c00",
+        "android_client_info": {
+          "package_name": "com.app.truerx"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBn8Gpnq1PNJaS6LuxcrN8FdJiCvPz8DDo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

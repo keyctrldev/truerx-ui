@@ -8,3 +8,4 @@ export { default as ClaimsScreen } from './Claims/ClaimsScreen';
 export { default as CoverageScreen } from './Coverage/CoverageScreen';
 export { default as SettingsScreen } from './Settings/SettingsScreen';
 export { default as OverviewScreen } from './Overview/OverviewScreen';
+export { default as NotificationScreen } from './Notifications/NotificationScreen';

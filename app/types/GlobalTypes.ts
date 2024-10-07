@@ -37,3 +37,10 @@ export interface StepperData {
   date: string;
   event: string;
 }
+
+export interface NotificationItem {
+  message: string;
+  messageId: string;
+  time: string;
+  title: string;
+}

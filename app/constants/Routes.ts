@@ -12,4 +12,5 @@ export default {
   claims: 'Claims',
   settings: 'Settings',
   coverage: 'Coverage',
+  notifications: 'Notifications',
 };

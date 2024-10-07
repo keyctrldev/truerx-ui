@@ -1,9 +1,10 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { BiometricsData, TokenData } from '../types';
+import { BiometricsData, NotificationItem, TokenData } from '../types';
 
 enum StorageKeys {
   biometrics = '@truerx_biometrics',
   accessToken = '@truerx_access_token',
+  notification = '@truerx_notifications',
 }
 
 const loadBiometrics = async (): Promise<BiometricsData> => {
@@ -60,6 +61,33 @@ const clearAll = async (): Promise<void> => {
   }
 };
 
+export const saveNotification = async (newNotification: NotificationItem) => {
+  try {
+    const currentNotifications = await getNotifications();
+    const updatedNotifications = [...currentNotifications, newNotification];
+    await AsyncStorage.setItem(StorageKeys.notification, JSON.stringify(updatedNotifications));
+  } catch (e) {
+    return Promise.reject(new Error('Failed to save notification.'));
+  }
+};
+
+export const getNotifications = async (): Promise<object[]> => {
+  try {
+    const storedNotifications = await AsyncStorage.getItem(StorageKeys.notification);
+    return storedNotifications ? JSON.parse(storedNotifications) : [];
+  } catch (e) {
+    return [];
+  }
+};
+
+export const clearNotifications = async () => {
+  try {
+    await AsyncStorage.removeItem(StorageKeys.notification);
+  } catch (error) {
+    return Promise.reject(new Error('Error clearing notifications.'));
+  }
+};
+
 export default {
   loadBiometrics,
   storeBiometrics,
@@ -67,4 +95,7 @@ export default {
   storeAccessToken,
   removeAccessToken,
   clearAll,
+  saveNotification,
+  getNotifications,
+  clearNotifications,
 };
