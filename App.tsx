@@ -5,6 +5,8 @@ import { RootStack } from './app/navigation';
 import { ToastProvider } from './app/context';
 import messaging from '@react-native-firebase/messaging';
 import { requestUserPermission } from './app/utils';
+import { ApolloProvider } from '@apollo/client';
+import { client } from './app/api';
 
 const App = () => {
   const checkNotificationPermission = async () => {
@@ -23,11 +25,13 @@ const App = () => {
   }, []);
 
   return (
-    <ToastProvider>
-      <NavigationContainer>
-        <RootStack />
-      </NavigationContainer>
-    </ToastProvider>
+    <ApolloProvider client={client}>
+      <ToastProvider>
+        <NavigationContainer>
+          <RootStack />
+        </NavigationContainer>
+      </ToastProvider>
+    </ApolloProvider>
   );
 };
 

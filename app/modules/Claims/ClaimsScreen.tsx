@@ -1,18 +1,16 @@
 import React from 'react';
-import { ActivityIndicator, FlatList, Image, TouchableOpacity, View } from 'react-native';
+import { FlatList, View } from 'react-native';
 import { ActivityLoader, AppText, CustomHeader, ListViewCell, SafeAreaContainer } from '../../components';
 import { styles } from './ClaimsScreenStyle';
-import { Icons } from '../../assets';
-import { claimsScreenStrings, headerComponentStrings } from '../../constants';
-import useClaimsScreen from './useClaimsScreen';
-import { Colors } from '../../theme';
+import { claimsScreenStrings, commonStrings, headerComponentStrings } from '../../constants';
+import { useQuery } from '@apollo/client';
+import { GET_CLAIMS } from '../../api';
 
 const ClaimsScreen = () => {
-  const { handleLogOutPress, isLoading, claimsData, handleNotificationPress, isLoadingMore, loadMore } =
-    useClaimsScreen();
+  const { loading, error, data } = useQuery(GET_CLAIMS);
   return (
     <SafeAreaContainer style={styles.claimContainerStyle}>
-      {isLoading && <ActivityLoader isVisible={isLoading} />}
+      <ActivityLoader isVisible={loading} />
       <CustomHeader heading={headerComponentStrings.Claims} />
 
       {/* Claims History Section */}
@@ -25,20 +23,25 @@ const ClaimsScreen = () => {
         <AppText style={styles.columnHeader}>{claimsScreenStrings.claimSection}</AppText>
         <AppText style={[styles.columnHeader, styles.statusText]}>{claimsScreenStrings.statusSection}</AppText>
       </View>
+
+      {/* Claims List */}
       <FlatList
-        data={claimsData}
+        data={data?.claims ?? []}
         keyExtractor={(_, index) => `${index}claimItem`}
+        contentContainerStyle={styles.listContainer}
         renderItem={({ item, index }) => (
-          <ListViewCell typeOfConsultance={item.name} status={item.status} Description={item.description} key={index} />
+          <ListViewCell
+            typeOfConsultance={item.medicationName}
+            status={item.claimStatus}
+            Description={item.medicationCost}
+            key={index}
+          />
         )}
-        onEndReached={loadMore}
         onEndReachedThreshold={0.2}
-        ListFooterComponent={() =>
-          isLoadingMore ? (
-            <View style={styles.footerLoaderContainer}>
-              <ActivityIndicator size={'large'} color={Colors.primary} />
-            </View>
-          ) : null
+        ListEmptyComponent={
+          <View style={styles.listEmptyContainer}>
+            <AppText style={styles.listEmptyText}>{commonStrings.NoDataFound}</AppText>
+          </View>
         }
       />
     </SafeAreaContainer>

@@ -50,3 +50,12 @@ export const headerComponentStrings = Object.freeze({
   Settings: 'Settings',
   Notification: 'Notification',
 });
+
+export const commonStrings = Object.freeze({
+  NoDataFound: 'No Data Found',
+});
+
+export const notificationScreenStrings = Object.freeze({
+  Notification: 'Notification',
+  NoNotificationFound: 'No Notification Found',
+});

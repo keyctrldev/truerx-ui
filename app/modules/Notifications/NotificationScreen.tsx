@@ -5,7 +5,7 @@ import { BackHandler, FlatList, Image, TouchableOpacity, View } from 'react-nati
 import { Icons } from '../../assets';
 import { ParamListBase, useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { headerComponentStrings, Routes } from '../../constants';
+import { headerComponentStrings, notificationScreenStrings, Routes } from '../../constants';
 import { AsyncStorageService } from '../../utils';
 import { NotificationItem } from '../../types';
 
@@ -55,6 +55,11 @@ const NotificationScreen = () => {
               />
             );
           }}
+          ListEmptyComponent={
+            <View style={styles.listEmptyContainer}>
+              <AppText style={styles.listEmptyText}>{notificationScreenStrings.NoNotificationFound}</AppText>
+            </View>
+          }
         />
       </View>
     </SafeAreaContainer>

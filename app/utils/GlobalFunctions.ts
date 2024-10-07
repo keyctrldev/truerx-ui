@@ -11,11 +11,11 @@ export const capitalizeFLetter = (text: string): string => {
 
 export const getStatusColor = (status: string): string => {
   switch (status) {
-    case 'approved':
+    case 'Approved':
       return '#008000';
-    case 'processing':
+    case 'Processing':
       return '#FFA500';
-    case 'rejected':
+    case 'Rejected':
       return '#8F3333';
     default:
       return '#000000';

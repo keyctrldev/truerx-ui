@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
   },
   backIconStyle: {
     height: moderateScale(24),
-    width: moderateScale(24),
+    width: moderateScale(20),
     tintColor: Colors.white,
   },
   headerContainer: {
@@ -35,5 +35,17 @@ export const styles = StyleSheet.create({
 
   listContainer: {
     paddingTop: verticalScale(15),
+    flexGrow: 1,
+  },
+
+  listEmptyContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  listEmptyText: {
+    color: Colors.black,
+    fontWeight: '500',
   },
 });
