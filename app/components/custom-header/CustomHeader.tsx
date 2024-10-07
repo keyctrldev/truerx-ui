@@ -17,14 +17,14 @@ const CustomHeader = ({ heading }: { heading: string }) => {
   const handleLogOutPress = async (): Promise<void> => {
     try {
       await AsyncStorageService.clearAll().then(() => {
-        navigation.reset({
-          index: 0,
-          routes: [
-            {
-              name: Routes.login,
-            },
-          ],
-        });
+        // navigation.reset({
+        //   index: 0,
+        //   routes: [
+        //     {
+        //       name: Routes.login,
+        //     },
+        //   ],
+        // });
       });
     } catch (e) {
       throw new Error('Failed to load biometrics from async storage.');
