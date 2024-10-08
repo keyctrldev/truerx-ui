@@ -15,7 +15,7 @@ const ListViewCell = ({ typeOfConsultance, Description, status }: ListViewCellPr
     <View style={styles.listContainer}>
       <View style={styles.headingContainer}>
         <AppText style={styles.listHeading}>{typeOfConsultance}</AppText>
-        <AppText style={styles.listDetails}>{Description}</AppText>
+        <AppText style={styles.listDetails}>{`$${Description}`}</AppText>
       </View>
       <View style={styles.statusContainer}>
         <AppText style={[styles.statusTextStyle, { color: getStatusColor(status) }]}>

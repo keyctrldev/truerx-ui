@@ -63,4 +63,20 @@ export const styles = StyleSheet.create({
   footerLoaderContainer: {
     paddingVertical: verticalScale(20),
   },
+
+  listEmptyContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  listEmptyText: {
+    color: Colors.white,
+    fontWeight: '400',
+  },
+
+  listContainer: {
+    flexGrow: 1,
+    paddingTop: verticalScale(10),
+  },
 });

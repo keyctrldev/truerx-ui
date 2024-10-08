@@ -42,3 +42,20 @@ export const stepperComponentStrings = Object.freeze({
   nextButton: 'Next',
   resetButton: 'Reset',
 });
+
+export const headerComponentStrings = Object.freeze({
+  Overview: 'Overview',
+  Coverage: 'Coverage',
+  Claims: 'Claims',
+  Settings: 'Settings',
+  Notification: 'Notification',
+});
+
+export const commonStrings = Object.freeze({
+  NoDataFound: 'No Data Found',
+});
+
+export const notificationScreenStrings = Object.freeze({
+  Notification: 'Notification',
+  NoNotificationFound: 'No Notification Found',
+});

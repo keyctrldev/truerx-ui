@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { styles } from './CustomProgressStepperStyle';
-import { FlatList, Text, View } from 'react-native';
+import { FlatList, View } from 'react-native';
 import CustomButton from '../custom-button/CustomButton';
 import { stepperData } from '../../utils';
 import { StepperData } from '../../types';

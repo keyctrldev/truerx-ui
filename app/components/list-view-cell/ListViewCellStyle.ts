@@ -4,9 +4,19 @@ import { Colors, horizontalScale, moderateScale, verticalScale } from '../../the
 export const styles = StyleSheet.create({
   listContainer: {
     flexDirection: 'row',
-    backgroundColor: Colors.lightSlateGray,
+    backgroundColor: Colors.lightGray,
+    marginHorizontal: horizontalScale(10),
     padding: moderateScale(17),
-    marginVertical: verticalScale(7),
+    marginBottom: verticalScale(10),
+    borderRadius: moderateScale(5),
+    shadowColor: Colors.black,
+    elevation: moderateScale(5),
+    shadowOffset: {
+      height: verticalScale(3),
+      width: horizontalScale(3),
+    },
+    shadowRadius: moderateScale(2),
+    shadowOpacity: 0.2,
   },
   headingContainer: {
     width: '70%',
@@ -21,13 +31,13 @@ export const styles = StyleSheet.create({
     paddingTop: verticalScale(5),
   },
   listHeading: {
-    color: Colors.white,
+    color: Colors.black,
     fontWeight: '800',
     fontSize: moderateScale(18),
   },
   listDetails: {
     marginTop: verticalScale(15),
-    color: Colors.white,
+    color: Colors.black,
     fontSize: moderateScale(16),
     paddingRight: horizontalScale(30),
   },

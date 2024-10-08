@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { ParamListBase, useNavigation } from '@react-navigation/native';
 import { Routes } from '../../constants';
 import { getAllClaims } from '../../api/ClaimsApis';
@@ -36,34 +36,41 @@ const useClaimsScreen = () => {
     }
   };
 
-  // const getClaimsData = async () => {
-  //   if (!hasMore) return;
-  //   try {
-  //     claimsData.length === 0 ? setIsLoading(true) : setIsLoadingMore(true);
-  //     const response = await getAllClaims(page, limit);
-  //     if (response.length > 0) {
-  //       setClaimsData(previousData => [...previousData, ...response]);
-  //     } else {
-  //       setHasMore(false);
-  //     }
-  //   } catch (error: any) {
-  //     showToast(error?.message, 'ERROR');
-  //   } finally {
-  //     claimsData.length === 0 ? setIsLoading(false) : setIsLoadingMore(false);
-  //   }
-  // };
+  const getClaimsData = useCallback(async () => {
+    if (!hasMore) return;
 
-  const fetchClaimsData = async (memberID: string) => {
     try {
-      const { data } = await client.query({
-        query: getClaimsQuery,
-        variables: { memberId: memberID },
-      });
-      setClaimsData(data.claims);
+      if (claimsData.length === 0) {
+        setIsLoading(true);
+      } else {
+        setIsLoadingMore(true);
+      }
+
+      const response = await getAllClaims(page, limit);
+      if (response.length > 0) {
+        setClaimsData(previousData => [...previousData, ...response]);
+      } else {
+        setHasMore(false);
+      }
     } catch (error: any) {
-      return showToast(error?.message, 'ERROR');
+      showToast(error?.message, 'ERROR');
+    } finally {
+      if (claimsData.length === 0) {
+        setIsLoading(false);
+      } else {
+        setIsLoadingMore(false);
+      }
     }
+  }, [claimsData, hasMore, page, showToast]);
+
+  const handleNotificationPress = () => {
+    navigation.navigate(Routes.notifications);
   };
+
+  useEffect(() => {
+    // getClaimsData();
+  }, [getClaimsData]);
+
   const loadMore = () => {
     if (hasMore && !isLoadingMore) {
       setPage(prevState => prevState + 1);
@@ -71,15 +78,15 @@ const useClaimsScreen = () => {
   };
 
   useEffect(() => {
-    fetchClaimsData('M001');
-  }, []);
-
+    // getClaimsData();
+  }, [page, getClaimsData]);
   return {
     handleLogOutPress,
     isLoading,
     claimsData,
     loadMore,
     isLoadingMore,
+    handleNotificationPress,
   };
 };
 
