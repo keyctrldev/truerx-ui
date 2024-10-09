@@ -4,4 +4,5 @@
 
  */
 export { default as LoginScreen } from './login/LoginScreen';
-export { default as ClaimsScreen } from './Claims/ClaimsScreen'
+export { default as ClaimsScreen } from './Claims/ClaimsScreen';
+export { default as UIElements } from './UIElements/UIElements';

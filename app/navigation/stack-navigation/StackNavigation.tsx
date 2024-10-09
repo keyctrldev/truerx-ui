@@ -4,7 +4,7 @@ import {
   createNativeStackNavigator,
 } from "@react-navigation/native-stack";
 import { Routes } from "../../constants";
-import { LoginScreen } from "../../modules";
+import { LoginScreen, UIElements } from "../../modules";
 import TabNavigation from "../tab-navigation/TabNavigation";
 
 // Create a stack navigator using React Navigation.
@@ -21,10 +21,11 @@ const RootStack = () => {
   return (
     <Stack.Navigator
       screenOptions={screenOption}
-      initialRouteName={Routes.login}
+      initialRouteName={Routes.UIElements}
     >
       {/* Define the screens to be included in the stack navigator */}
       <Stack.Screen name={Routes.login} component={LoginScreen} />
+      <Stack.Screen name={Routes.UIElements} component={UIElements} />
       <Stack.Screen name={Routes.home} component={TabNavigation} />
     </Stack.Navigator>
   );

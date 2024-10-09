@@ -1,7 +1,7 @@
 // Define styles for the login screen component.
 
 import { StyleSheet } from "react-native";
-import { Colors, horizontalScale, moderateScale, verticalScale } from "../../theme";
+import { Colors, globalMetrics, horizontalScale, moderateScale, verticalScale } from "../../theme";
 
 export const styles = StyleSheet.create({
     rootContainerStyle: {
@@ -10,7 +10,10 @@ export const styles = StyleSheet.create({
     },
     scrollViewContainerStyle: {
         flex: 1,
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginHorizontal: globalMetrics.isWeb ? horizontalScale(100) : 0,
+        maxHeight: '100%',
+        maxWidth: '100%'
     },
     demoHeadingStyle: {
         fontSize: moderateScale(30),

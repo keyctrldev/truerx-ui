@@ -17,19 +17,28 @@
         {
           "faceIDPermission": "Allow TrueRx to utilize Face ID for accessing app features"
         }
-      ]
+      ],
+      "expo-router"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.app.truerx"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./app/assets/Icons/adaptiveIcon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.USE_BIOMETRIC",
+        "android.permission.USE_FINGERPRINT"
+      ],
+      "package": "com.app.truerx"
     },
     "web": {
-      "favicon": "./app/assets/Icons/favicon.png"
+      "favicon": "./app/assets/Icons/favicon.png",
+      "output": "single",
+      "bundler": "metro"
     }
   }
 }

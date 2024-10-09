@@ -6,10 +6,11 @@
 */
 
 export default {
-    login: 'Login',
-    home:'TabNavigation',
-    overview:'Overview',
-    claims:'Claims',
-    settings:'Settings',
-    coverage:'Coverage',
+  login: 'Login',
+  home: 'TabNavigation',
+  overview: 'Overview',
+  claims: 'Claims',
+  settings: 'Settings',
+  coverage: 'Coverage',
+  UIElements: 'UIElements'
 }

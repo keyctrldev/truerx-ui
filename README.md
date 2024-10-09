@@ -18,7 +18,7 @@ Here are the steps to run the project.
 
 Go to the project directory
 
-Install dependencies
+Install dependencies bvb
 
 ```bash
   yarn install

@@ -31,6 +31,7 @@ const moderateScale = (size: number, factor = 0.5): number =>
 const globalMetrics = {
     isAndroid: Platform.OS === 'android',
     isIos: Platform.OS === 'ios',
+    isWeb: Platform.OS === 'web',
     isPad: Platform.OS === 'ios' && Platform.isPad,
     isTV: Platform.isTV,
 };

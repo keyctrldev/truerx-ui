@@ -39,3 +39,11 @@ export const claimsScreenStrings = Object.freeze({
   claimSection: 'Claims',
   statusSection: 'Status'
 });
+
+export const webScreenStrings = Object.freeze({
+  expoWeb: 'Expo Web',
+  welcomeToMyApp: 'Welcome to My App',
+  SimpleUIScreen: 'This is a simple UI screen.',
+  GetStarted: 'Get Started',
+  PickAnImage: 'Pick an Image'
+});
