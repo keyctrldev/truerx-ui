@@ -1,6 +1,8 @@
 import messaging from '@react-native-firebase/messaging';
 import { Alert, PermissionsAndroid, Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { MIXPANEL_KEY, mixPanelEventsKeys } from '../constants';
+import { Mixpanel } from 'mixpanel-react-native';
 
 export const capitalizeFLetter = (text: string): string => {
   if (typeof text !== 'string' || text.length === 0) {
@@ -76,4 +78,35 @@ const getFCMToken = async () => {
       await AsyncStorage.setItem('fcm_token', token);
     }
   } catch (error) {}
+};
+
+export const mixPanel = async () => {
+  const mixPanelKey = MIXPANEL_KEY;
+  const trackAutomaticEvents = false;
+  const mixpanel = new Mixpanel(mixPanelKey, trackAutomaticEvents);
+  return mixpanel;
+};
+
+export const mixpanelTrackEvents = async (eventName: string,parameters?:any) => {
+  try {
+    let mixpanel = await mixPanel();
+    mixpanel?.track(eventName , parameters || {});
+    mixpanel?.flush();
+  } catch (e) {
+    console.log('mixPanelTrackEvents Error', e);
+  }
+};
+
+export const setMixPanelDetails = async (data: any) => {
+  let mixpanel = await mixPanel();
+  mixpanel?.init();
+  mixpanel?.reset();
+  mixpanel?.identify(data.randomId || '');
+  mixpanel?.getPeople().set({
+    $name: data?.email, 
+    $email: data?.email,
+  });
+  mixpanel?.track(mixPanelEventsKeys.user_login);
+  mixpanel?.flush();
+  return mixpanel;
 };

@@ -2,7 +2,7 @@ import { RefObject, useCallback, useEffect, useRef, useState } from 'react';
 import { TextInput, Alert } from 'react-native';
 import * as LocalAuthentication from 'expo-local-authentication';
 import { useFormik } from 'formik';
-import { AsyncStorageService, LogInSchema } from '../../utils';
+import { AsyncStorageService, LogInSchema, setMixPanelDetails } from '../../utils';
 import { TokenData, UserFormType } from '../../types';
 import { ParamListBase, useNavigation } from '@react-navigation/native';
 import { Routes } from '../../constants';
@@ -25,8 +25,11 @@ const useLoginScreen = () => {
       password: '',
     },
     validationSchema: LogInSchema,
-    onSubmit: values => onLoginPress(values),
-  });
+    onSubmit: values => {
+      console.log('values', values),
+      onLoginPress(values)},
+    }
+  );
 
   const goToPassword = (nextRef: RefObject<TextInput>): void => {
     nextRef.current?.focus();
@@ -52,7 +55,6 @@ const useLoginScreen = () => {
         showToast('Biometric authentication is not supported or not enrolled on this device.', 'ERROR');
         return;
       }
-
       const supportedBiometrics = await LocalAuthentication.supportedAuthenticationTypesAsync();
       const promptMessage = supportedBiometrics.includes(LocalAuthentication.AuthenticationType.FACIAL_RECOGNITION)
         ? 'Authenticate with Face ID'
@@ -69,31 +71,48 @@ const useLoginScreen = () => {
   }, [resetTheStack, showToast]);
 
   const onLoginPress = async (values: UserFormType) => {
-    if (values.email && values.password) {
-      try {
-        setIsLoading(true);
-        await AsyncStorageService.storeBiometrics({
-          isBiometricsAuthEnabled: enableFaceId,
-          isUserLoggedIn: true,
-          userName: rememberUserName ? values.email : '',
-        });
-        const response = await loginWithEmailPassword(values.email, values.password);
-        const tokenData: TokenData = { token: response.access_token };
-        await AsyncStorageService.storeAccessToken(tokenData);
-        navigation.reset({
-          index: 0,
-          routes: [
-            {
-              name: Routes.home,
-            },
-          ],
-        });
-      } catch (error: any) {
-        showToast(error.response?.data?.message || 'Something went wrong!', 'ERROR');
-      } finally {
-        setIsLoading(false);
-      }
-    }
+    console.log('Click on Login btn......');
+    const randomId = Math.random().toString(36).substr(2, 9);
+    const updatedValues = {
+      ...values,
+      randomId,
+    };
+
+    await setMixPanelDetails(updatedValues)
+    navigation.reset({
+      index: 0,
+      routes: [
+        {
+          name: Routes.home,
+        },
+      ],
+    });
+    // if (values.email && values.password) {
+    //   try {
+    //     setIsLoading(true);
+    //     await AsyncStorageService.storeBiometrics({
+    //       isBiometricsAuthEnabled: enableFaceId,
+    //       isUserLoggedIn: true,
+    //       userName: rememberUserName ? values.email : '',
+    //     });
+    //     const response = await loginWithEmailPassword(values.email, values.password);
+    //     const tokenData: TokenData = { token: response.access_token };
+    //     await AsyncStorageService.storeAccessToken(tokenData);
+    //     navigation.reset({
+    //       index: 0,
+    //       routes: [
+    //         {
+    //           name: Routes.home,
+    //         },
+    //       ],
+    //     });
+    //     await setMixPanelDetails(values)
+    //   } catch (error: any) {
+    //     showToast(error.response?.data?.message || 'Something went wrong!', 'ERROR');
+    //   } finally {
+    //     setIsLoading(false);
+    //   }
+    // }
   };
 
   const getInitialUserData = useCallback(async () => {

@@ -5,6 +5,8 @@ import { ParamListBase, useNavigation } from '@react-navigation/native';
 import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 import AppText from '../app-text/AppText';
 import { Colors } from '../../theme';
+import { mixpanelTrackEvents } from '../../utils';
+import { mixPanelEventsKeys } from '../../constants';
 
 interface CustomTabIconType {
   focused: boolean;
@@ -23,6 +25,7 @@ const CustomTabIcon: FC<CustomTabIconType> = ({ focused, label, icon }) => {
 
   const changeTabHandle = (): void => {
     navigation.jumpTo(label);
+    mixpanelTrackEvents(mixPanelEventsKeys.explore_screen ,{label})
   };
 
   return (

@@ -59,3 +59,13 @@ export const notificationScreenStrings = Object.freeze({
   Notification: 'Notification',
   NoNotificationFound: 'No Notification Found',
 });
+
+
+export const mixPanelEventsKeys = Object.freeze({
+  user_login: 'user_login',
+  user_logout: 'user_logout',
+  explore_screen: 'explore_screens',
+  check_notification: 'user_check_notification',
+});
+
+export const MIXPANEL_KEY = 'f2929b3621ab0b0e5726e5b307c3b9c4'
