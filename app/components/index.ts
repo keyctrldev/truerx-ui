@@ -11,3 +11,4 @@ export { default as CustomProgressStepper } from './custom-progress-stepper/Cust
 export { default as CustomHeader } from './custom-header/CustomHeader';
 export { default as NotificationTile } from './notification-tile/NotificationTile';
 export { default as SampleQuery } from './sample-query/SampleQuery';
+export { default as SampleReduxScreen } from './sample-redux-screen/SampleReduxScreen';

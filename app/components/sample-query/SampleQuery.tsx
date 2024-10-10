@@ -15,8 +15,8 @@ const SampleQuery = () => {
   const [title, setTitle] = useState<string>('');
   const [body, setBody] = useState<string>('');
 
-  if (loading) return <Text>Loading...</Text>;
-  if (error) return <Text>Error: {error.message}</Text>;
+  if (loading) return <AppText>Loading...</AppText>;
+  if (error) return <AppText>Error: {error.message}</AppText>;
 
   const handleCreate = async () => {
     try {
@@ -56,7 +56,7 @@ const SampleQuery = () => {
 
       <View>
         <TextInput placeholder="Body" value={body} onChangeText={setBody} />
-        <CustomButton title="Update" onPress={() => handleUpdate()} />
+        <CustomButton title="Update" onPress={handleUpdate} />
       </View>
       <View>
         <CustomButton title="Delete" onPress={() => handleDelete(data.post.id)} />
