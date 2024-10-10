@@ -59,3 +59,7 @@ export const notificationScreenStrings = Object.freeze({
   Notification: 'Notification',
   NoNotificationFound: 'No Notification Found',
 });
+
+export const overViewScreenStrings = Object.freeze({
+  NotFound: 'Not Found',
+});

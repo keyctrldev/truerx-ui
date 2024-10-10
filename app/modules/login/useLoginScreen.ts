@@ -3,12 +3,15 @@ import { TextInput, Alert } from 'react-native';
 import * as LocalAuthentication from 'expo-local-authentication';
 import { useFormik } from 'formik';
 import { AsyncStorageService, LogInSchema } from '../../utils';
-import { TokenData, UserFormType } from '../../types';
+import { UserFormType } from '../../types';
 import { ParamListBase, useNavigation } from '@react-navigation/native';
 import { Routes } from '../../constants';
 import { useToast } from '../../context';
-import { loginWithEmailPassword } from '../../api/AuthApis';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../../firebase';
+import { useDispatch } from 'react-redux';
+import { userActions } from '../../redux';
 
 const useLoginScreen = () => {
   const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
@@ -18,6 +21,7 @@ const useLoginScreen = () => {
   const [rememberUserName, setRememberUserName] = useState<boolean>(false);
   const [enableFaceId, setEnableFaceId] = useState<boolean>(false);
   const { showToast } = useToast();
+  const dispatch = useDispatch();
 
   const { handleChange, setFieldTouched, setFieldValue, touched, errors, handleSubmit, values } = useFormik({
     initialValues: {
@@ -77,17 +81,23 @@ const useLoginScreen = () => {
           isUserLoggedIn: true,
           userName: rememberUserName ? values.email : '',
         });
-        const response = await loginWithEmailPassword(values.email, values.password);
-        const tokenData: TokenData = { token: response.access_token };
-        await AsyncStorageService.storeAccessToken(tokenData);
-        navigation.reset({
-          index: 0,
-          routes: [
-            {
-              name: Routes.home,
-            },
-          ],
+        // const response = await loginWithEmailPassword(values.email, values.password);
+        signInWithEmailAndPassword(auth, values.email, values.password).then(userCredential => {
+          dispatch(userActions.setCurrentUserId(userCredential.user.uid));
+          dispatch(userActions.setCurrentUser(userCredential.user));
+          navigation.reset({
+            index: 0,
+            routes: [
+              {
+                name: Routes.home,
+                params: { user_id: userCredential.user.uid },
+              },
+            ],
+          });
         });
+
+        // const tokenData: TokenData = { token: response.access_token };
+        // await AsyncStorageService.storeAccessToken(tokenData);
       } catch (error: any) {
         showToast(error.response?.data?.message || 'Something went wrong!', 'ERROR');
       } finally {

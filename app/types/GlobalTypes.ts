@@ -44,3 +44,21 @@ export interface NotificationItem {
   time: string;
   title: string;
 }
+
+export interface AuthUser {
+  photoURL: string;
+  uid: string;
+  email: string;
+  name: string;
+}
+
+export interface ChatFeedParams {
+  route: {
+    params: {
+      data: {
+        uid: string;
+        name: string;
+      };
+    };
+  };
+}

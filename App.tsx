@@ -7,6 +7,8 @@ import messaging from '@react-native-firebase/messaging';
 import { requestUserPermission } from './app/utils';
 import { ApolloProvider } from '@apollo/client';
 import { client } from './app/api';
+import { Provider } from 'react-redux';
+import { store } from './app/redux';
 
 const App = () => {
   const checkNotificationPermission = async () => {
@@ -26,11 +28,13 @@ const App = () => {
 
   return (
     <ApolloProvider client={client}>
-      <ToastProvider>
-        <NavigationContainer>
-          <RootStack />
-        </NavigationContainer>
-      </ToastProvider>
+      <Provider store={store}>
+        <ToastProvider>
+          <NavigationContainer>
+            <RootStack />
+          </NavigationContainer>
+        </ToastProvider>
+      </Provider>
     </ApolloProvider>
   );
 };

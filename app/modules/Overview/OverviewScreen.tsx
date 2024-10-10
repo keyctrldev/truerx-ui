@@ -1,36 +1,37 @@
 import React from 'react';
 import { AppText, CustomHeader, SafeAreaContainer } from '../../components';
-import { Colors } from '../../theme';
-import { StyleSheet, View } from 'react-native';
-import { headerComponentStrings } from '../../constants';
+import { FlatList, Image, TouchableOpacity, View } from 'react-native';
+import { headerComponentStrings, overViewScreenStrings } from '../../constants';
+import useOverViewScreen from './useOverViewScreen';
+import { styles } from './OverViweScreen';
 
 const OverviewScreen = () => {
+  const { users, handleUserPress } = useOverViewScreen();
+
+  const renderUsers = ({ item, index }: any) => {
+    return (
+      <TouchableOpacity style={styles.subContainer} key={`user=${index}`} onPress={() => handleUserPress(item)}>
+        <Image source={{ uri: 'https://robohash.org/Ankit' }} style={styles.userImage} />
+        <View>
+          <AppText style={styles.userNameTxt}>{item?.name ? item?.name : overViewScreenStrings.NotFound}</AppText>
+        </View>
+      </TouchableOpacity>
+    );
+  };
+
   return (
     <SafeAreaContainer style={styles.containerStyle}>
       <CustomHeader heading={headerComponentStrings.Overview} />
       <View style={styles.body}>
-        <AppText style={styles.label}>{headerComponentStrings.Overview}</AppText>
+        <FlatList
+          data={users}
+          keyExtractor={item => item.id}
+          renderItem={renderUsers}
+          contentContainerStyle={styles.flatlistContainer}
+        />
       </View>
     </SafeAreaContainer>
   );
 };
 
 export default OverviewScreen;
-
-export const styles = StyleSheet.create({
-  containerStyle: {
-    flex: 1,
-    backgroundColor: Colors.skyBlue,
-  },
-
-  body: {
-    flex: 1,
-    alignContent: 'center',
-    justifyContent: 'center',
-  },
-
-  label: {
-    textAlign: 'center',
-    color: Colors.white,
-  },
-});
