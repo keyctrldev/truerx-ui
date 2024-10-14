@@ -25,3 +25,7 @@ truerxInstance.interceptors.request.use(
     return Promise.reject(error);
   },
 );
+export const productInstance: AxiosInstance = axios.create({
+  baseURL: EndPoint.productUrl,
+  timeout: 10000, // timeout to avoid hanging requests
+});

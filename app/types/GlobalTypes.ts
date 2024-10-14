@@ -44,3 +44,16 @@ export interface NotificationItem {
   time: string;
   title: string;
 }
+export interface Product {
+  id: number;
+  title: string;
+  description: string;
+  category: string;
+}
+export interface ProductsState {
+  items: Product[];
+  status: 'idle' | 'loading' | 'succeeded' | 'failed';
+  error: string | null;
+  page: number;
+  limit: number;
+}
