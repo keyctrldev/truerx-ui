@@ -91,7 +91,7 @@ const useNotification = () => {
       await saveUniqueNotification(remoteMessage);
 
       // Handle when the notification is pressed
-      notifee.onForegroundEvent(({ type, detail }) => {
+      notifee.onForegroundEvent(({ type }) => {
         if (type === EventType.PRESS && remoteMessage?.data) {
           manageNavigation(remoteMessage);
         }

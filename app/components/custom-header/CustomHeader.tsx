@@ -7,11 +7,15 @@ import { styles } from './CustomHeaderStyle';
 import { ParamListBase, useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { AsyncStorageService } from '../../utils';
+import { Colors } from '../../theme';
 
 const CustomHeader = ({ heading }: { heading: string }) => {
   const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
   const handleNotificationPress = () => {
     navigation.navigate(Routes.notifications);
+  };
+  const handleChatPress = () => {
+    navigation.navigate(Routes.chat);
   };
 
   const handleLogOutPress = async (): Promise<void> => {
@@ -37,6 +41,13 @@ const CustomHeader = ({ heading }: { heading: string }) => {
       <View style={styles.iconContainer}>
         <TouchableOpacity style={styles.iconWrapper} activeOpacity={0.8} onPress={handleNotificationPress}>
           <Image source={Icons.bellIcon} style={styles.icon} resizeMode="contain" />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.iconWrapper} activeOpacity={0.8} onPress={handleChatPress}>
+          <Image
+            source={Icons.chatIcon}
+            style={{ ...styles.icon, tintColor: Colors.overlayDark }}
+            resizeMode="contain"
+          />
         </TouchableOpacity>
         <TouchableOpacity style={styles.iconWrapper} activeOpacity={0.8} onPress={handleLogOutPress}>
           <Image source={Icons.profileIcon} style={styles.icon} resizeMode="contain" />

@@ -13,4 +13,5 @@ export default {
   settings: 'Settings',
   coverage: 'Coverage',
   notifications: 'Notifications',
+  chat: 'Chat',
 };

@@ -49,6 +49,7 @@ export const headerComponentStrings = Object.freeze({
   Claims: 'Claims',
   Settings: 'Settings',
   Notification: 'Notification',
+  chat: 'Chat',
 });
 
 export const commonStrings = Object.freeze({
@@ -59,3 +60,6 @@ export const notificationScreenStrings = Object.freeze({
   Notification: 'Notification',
   NoNotificationFound: 'No Notification Found',
 });
+
+export const soket_url = 'http://192.168.41.16:3000';
+export const sendMessageApi = 'http://192.168.41.16:3000/getChats';

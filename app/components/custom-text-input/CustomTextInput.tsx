@@ -8,8 +8,9 @@ import AppText from '../app-text/AppText';
 interface CustomInputPropType {
   setSecureEntryText?: Dispatch<SetStateAction<boolean>>;
   containerStyle?: ViewStyle;
-  error: string;
-  touched: boolean;
+  error?: string;
+  touched?: boolean;
+  sendChat?: boolean;
 }
 
 export type CustomInputType = (
@@ -33,6 +34,7 @@ const CustomTextInput: CustomInputType = (
     error,
     touched,
     value,
+    sendChat,
   },
   ref,
 ) => {
@@ -60,6 +62,13 @@ const CustomTextInput: CustomInputType = (
           <TouchableOpacity onPress={() => setSecureEntryText(!secureTextEntry)}>
             <View style={styles.eyeIconContainer}>
               <Image source={secureTextEntry ? Icons.eyeHide : Icons.eyeOpen} style={styles.eyeIcon} />
+            </View>
+          </TouchableOpacity>
+        )}
+        {sendChat && (
+          <TouchableOpacity>
+            <View style={styles.eyeIconContainer}>
+              <Image source={Icons.sendIcon} style={styles.eyeIcon} />
             </View>
           </TouchableOpacity>
         )}
