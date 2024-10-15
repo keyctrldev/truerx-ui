@@ -14,4 +14,7 @@ export default {
   coverage: 'Coverage',
   notifications: 'Notifications',
   chat: 'Chat',
+  Onboarding: 'Onboarding',
+  PreLogin: 'PreLoginScreen',
+  TextInput: 'TextInputDemo',
 };

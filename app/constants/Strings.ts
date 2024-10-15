@@ -1,3 +1,5 @@
+import { Images } from '../assets';
+
 /**
   File for storing localized strings and text constants used in the application.
   Using `Object.freeze` to ensure that the object cannot be modified at runtime
@@ -63,3 +65,39 @@ export const notificationScreenStrings = Object.freeze({
 
 export const soket_url = 'http://192.168.41.16:3000';
 export const sendMessageApi = 'http://192.168.41.16:3000/getChats';
+
+export const onboardingData = Object.freeze([
+  {
+    index: 0,
+    image: Images.slide1,
+    Header: 'Manage Your \n Prescriptions',
+    Description: 'Complete 360 view of your health data with control at your finger tips.',
+  },
+  {
+    index: 1,
+    image: Images.slide2,
+    Header: 'Find a Pharmacy',
+    Description: 'Easy to find a pharmacy neadrby and easy navigation',
+  },
+  {
+    index: 2,
+    image: Images.slide3,
+    Header: 'Check your \n Medication history',
+    Description: 'Full view of your current Prescriptions and upcoming refills.',
+  },
+]);
+
+export const loginScreenString = Object.freeze({
+  onboarding: {
+    next: 'Next',
+    skip: 'Skip',
+  },
+  preLogin: {
+    header: 'Your care is our Priority',
+    content: 'Welcome to TrueRX! We help make madications affortable, effective and accessible.',
+    terms: 'By Countining to use the mobile app, you agree to TrueRxs',
+    terms2: 'Terms, Privacy Policy and HIPAA Compliment.',
+    createAccount: 'Create Your Account',
+    signin: 'Sign in',
+  },
+});

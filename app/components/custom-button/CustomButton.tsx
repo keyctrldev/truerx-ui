@@ -5,9 +5,9 @@ import styles from './CustomButtonStyle';
 
 interface CustomButtonPropType {
   title: string;
-  customStyle?: ViewStyle;
-  onPress: () => void;
   disabled?: boolean;
+  onPress?: () => void;
+  customStyle?: ViewStyle;
   buttonLabelStyle?: TextStyle;
 }
 
