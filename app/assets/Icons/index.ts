@@ -19,4 +19,7 @@ export default {
   backIcon: require('./back.png'),
   tickCircle: require('./tickCircle.png'),
   medicineIcon: require('./medicine.png'),
+  emailIcon: require('./emailIcon.png'),
+  messageIcon: require('./messageIcon.png'),
+  voiceCallIcon: require('./phoneIcon.png'),
 };
