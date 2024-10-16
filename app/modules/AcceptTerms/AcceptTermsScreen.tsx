@@ -44,7 +44,7 @@ const AcceptTermsScreen = () => {
           item.id == 1 && styles.topContainerStyle,
         ]}>
         <View style={GlobalStyles.rowSpaceBetweenContainer}>
-          <Text style={styles.termsTitleText}>{item.title}</Text>
+          <Text style={styles.btnTitleText}>{item.title}</Text>
           <TouchableOpacity onPress={handleExpandView}>
             <Image
               source={Icons.dropDownArrowIcon}
@@ -95,25 +95,18 @@ const AcceptTermsScreen = () => {
 };
 
 const styles = StyleSheet.create({
-  backTextStyle: {
-    fontSize: moderateScale(12),
-    color: Colors.black,
-  },
   agreementTextStyle: {
     fontSize: moderateScale(26),
     color: Colors.black,
     fontWeight: 'bold',
     marginBottom: horizontalScale(12),
   },
-  backBtnContainer: {
-    marginTop: horizontalScale(12),
-  },
   expandedBtnContainer: {
     padding: horizontalScale(12),
     borderWidth: horizontalScale(1),
     borderColor: Colors.overlayDark,
   },
-  termsTitleText: {
+  btnTitleText: {
     fontSize: moderateScale(15),
     fontWeight: 'bold',
     color: Colors.black,
