@@ -7,7 +7,7 @@ const initialState: ProductsState = {
   status: 'idle',
   error: null,
   skip: 0,
-  limit: 1,
+  limit: 10,
   hasMore: true,
 };
 export const fetchProducts = createAsyncThunk(
@@ -37,8 +37,8 @@ const productsSlice = createSlice({
       })
       .addCase(fetchProducts.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.items = [state.items, ...action.payload.items];
-        state.hasMore = action.payload.hasMore;
+        state.items = [...state.items, ...action.payload];
+        state.hasMore = action.payload.length === state.limit || false;
       })
       .addCase(fetchProducts.rejected, (state, action) => {
         state.status = 'failed';
