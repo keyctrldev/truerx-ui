@@ -2,21 +2,21 @@ import React from 'react';
 import { Image, ImageBackground, View } from 'react-native';
 
 import { Images } from '../../assets';
-import { verticalScale } from '../../theme';
 import { styles } from './PreLoginScreenStyle';
+import { Colors, verticalScale } from '../../theme';
 import { loginScreenString } from '../../constants';
 import { AppText, CustomButton, SafeAreaContainer } from '../../components';
 
 const PreLoginScreen: React.FC = () => {
   return (
     <SafeAreaContainer style={styles.container}>
-      <View style={styles.center}>
-        <Image source={Images.prelogin} style={styles.prelogin} />
-        <AppText style={styles.header}>{loginScreenString.preLogin.header}</AppText>
-        <AppText style={styles.content}>{loginScreenString.preLogin.content}</AppText>
+      <View style={styles.topInterface}>
+        <Image source={Images.prelogin} style={styles.preLogin} />
+        <AppText style={styles.headerTxt}>{loginScreenString.preLogin.header}</AppText>
+        <AppText style={styles.contentTxt}>{loginScreenString.preLogin.content}</AppText>
       </View>
       <View style={styles.bottomInterface}>
-        <ImageBackground resizeMode="contain" style={styles.vectorBG} source={Images.vectorBG}>
+        <ImageBackground resizeMode="contain" style={styles.vectorImage} source={Images.vectorBG}>
           <CustomButton
             title={loginScreenString.preLogin.createAccount}
             customStyle={{ ...styles.customButtonStyle, marginTop: verticalScale(70) }}
@@ -32,7 +32,7 @@ const PreLoginScreen: React.FC = () => {
           <View>
             <AppText style={styles.terms}>
               {loginScreenString.preLogin.terms}
-              <AppText style={styles.terms2}> {loginScreenString.preLogin.terms2}</AppText>
+              <AppText style={{...styles.terms, color: Colors.primaryThemeColor}}>{loginScreenString.preLogin.secondTerm}</AppText>
             </AppText>
           </View>
         </ImageBackground>

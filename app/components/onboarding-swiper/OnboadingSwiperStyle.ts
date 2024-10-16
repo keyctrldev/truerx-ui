@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { Colors, horizontalScale, moderateScale, verticalScale } from '../../theme';
-import fonts from '../../assets/fonts';
+import { fonts } from '../../assets';
 
 export const styles = StyleSheet.create({
   container: {
@@ -23,7 +23,7 @@ export const styles = StyleSheet.create({
     fontSize: moderateScale(30),
     textAlign: 'center',
   },
-  DesTxt: {
+  desTxt: {
     fontWeight: '500',
     textAlign: 'center',
     color: Colors.white,

@@ -6,21 +6,6 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.primaryThemeColor,
   },
-  slideParent: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: verticalScale(50),
-    backgroundColor: Colors.white,
-  },
-  slide: {
-    resizeMode: 'contain',
-    height: verticalScale(300),
-    width: horizontalScale(300),
-  },
-  headerTxt: {
-    color: Colors.white,
-    fontSize: moderateScale(16),
-  },
   dotStyle: {
     height: verticalScale(10),
     width: horizontalScale(10),
@@ -37,7 +22,7 @@ export const styles = StyleSheet.create({
     bottom: verticalScale(80),
   },
   customButtonStyle: {
-    width: '87%',
+    width: '90%',
     alignSelf: 'center',
     marginTop: verticalScale(10),
     backgroundColor: Colors.white,

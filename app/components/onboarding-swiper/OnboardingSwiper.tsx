@@ -16,7 +16,7 @@ const OnboardingSwiper = ({ SwiperImage, SwiperHeader, SwiperDes }: OnboardingSw
       <View style={styles.slideParent}>
         <Image source={SwiperImage} style={styles.slide} />
         <AppText style={styles.headerTxt}>{SwiperHeader}</AppText>
-        <AppText style={styles.DesTxt}>{SwiperDes}</AppText>
+        <AppText style={styles.desTxt}>{SwiperDes}</AppText>
       </View>
     </View>
   );

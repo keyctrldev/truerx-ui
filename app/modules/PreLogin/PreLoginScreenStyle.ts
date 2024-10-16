@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import fonts from '../../assets/fonts';
+import { fonts } from '../../assets';
 import { Colors, horizontalScale, moderateScale, verticalScale } from '../../theme';
 
 export const styles = StyleSheet.create({
@@ -8,20 +8,20 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.white,
   },
-  prelogin: {
+  preLogin: {
     width: horizontalScale(85),
     height: verticalScale(50),
     resizeMode: 'contain',
     marginTop: verticalScale(24),
   },
-  header: {
+  headerTxt: {
     fontFamily: fonts.SemiBold,
     fontWeight: '500',
     fontSize: moderateScale(25),
     marginTop: verticalScale(16),
     color: Colors.black,
   },
-  content: {
+  contentTxt: {
     textAlign: 'center',
     color: Colors.black,
     fontSize: moderateScale(16),
@@ -40,22 +40,16 @@ export const styles = StyleSheet.create({
     color: Colors.white,
   },
   terms: {
-    color: Colors.black,
-    paddingHorizontal: horizontalScale(21),
     textAlign: 'center',
+    color: Colors.black,
     marginTop: verticalScale(15),
-  },
-  terms2: {
-    color: Colors.primaryThemeColor,
     paddingHorizontal: horizontalScale(21),
   },
-  vectorBG: {
-    width: '100%',
-    alignItems: 'center',
+  vectorImage: {
     justifyContent: 'center',
     height: verticalScale(300),
   },
-  center: {
+  topInterface: {
     alignItems: 'center',
   },
   bottomInterface: {

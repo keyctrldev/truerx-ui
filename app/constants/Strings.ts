@@ -93,7 +93,7 @@ export const loginScreenString = Object.freeze({
     header: 'Your care is our Priority',
     content: 'Welcome to TrueRX! We help make madications affortable, effective and accessible.',
     terms: 'By Countining to use the mobile app, you agree to TrueRxs',
-    terms2: 'Terms, Privacy Policy and HIPAA Compliment.',
+    secondTerm: 'Terms, Privacy Policy and HIPAA Compliment.',
     createAccount: 'Create Your Account',
     signin: 'Sign in',
   },

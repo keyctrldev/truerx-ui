@@ -16,10 +16,6 @@
     {
       "path": "app/assets/fonts/Gilroy-SemiBold.ttf",
       "sha1": "8663a356eb9bc23b77696208f74376daf59687ea"
-    },
-    {
-      "path": "app/assets/fonts/index.ts",
-      "sha1": "60be0470d38c002ddcafd3c080e18b481d25ccc4"
     }
   ]
 }
