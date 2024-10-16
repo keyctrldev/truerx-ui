@@ -13,4 +13,6 @@ export default {
   settings: 'Settings',
   coverage: 'Coverage',
   notifications: 'Notifications',
+  Onboarding: 'Onboarding',
+  PreLogin: 'PreLoginScreen',
 };
