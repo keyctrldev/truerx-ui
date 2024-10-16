@@ -1,44 +1,33 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { productInstance } from '../api';
-
-interface Product {
-  id: number;
-  title: string;
-  description: string;
-  category: string;
-}
-
-interface ProductsState {
-  items: Product[];
-  status: 'idle' | 'loading' | 'succeeded' | 'failed';
-  error: string | null;
-  page: number;
-  limit: number;
-}
+import { ProductsState } from '../types';
 
 const initialState: ProductsState = {
   items: [],
   status: 'idle',
   error: null,
-  page: 1,
-  limit: 10,
+  skip: 0,
+  limit: 1,
+  hasMore: true,
 };
-
 export const fetchProducts = createAsyncThunk(
   'products/fetchProducts',
-  async ({ page, limit }: { page: number; limit: number }) => {
-    const skip = (page - 1) * limit;
+  async ({ skip, limit }: { skip: number; limit: number }) => {
     const response = await productInstance.get(`products?limit=${limit}&skip=${skip}`);
     return response.data.products;
   },
 );
-
 const productsSlice = createSlice({
   name: 'products',
   initialState,
   reducers: {
-    setPage: (state, action) => {
-      state.page = action.payload;
+    resetData: state => {
+      state.items = [];
+      state.skip = 0;
+      state.hasMore = true;
+    },
+    incrementSkip: state => {
+      state.skip += state.limit;
     },
   },
   extraReducers: builder => {
@@ -48,7 +37,8 @@ const productsSlice = createSlice({
       })
       .addCase(fetchProducts.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.items = action.payload;
+        state.items = [state.items, ...action.payload.items];
+        state.hasMore = action.payload.hasMore;
       })
       .addCase(fetchProducts.rejected, (state, action) => {
         state.status = 'failed';
@@ -57,6 +47,6 @@ const productsSlice = createSlice({
   },
 });
 
-export const { setPage } = productsSlice.actions;
+export const { resetData, incrementSkip } = productsSlice.actions;
 
 export default productsSlice.reducer;

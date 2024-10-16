@@ -54,6 +54,7 @@ export interface ProductsState {
   items: Product[];
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
   error: string | null;
-  page: number;
+  skip: number;
   limit: number;
+  hasMore: boolean;
 }

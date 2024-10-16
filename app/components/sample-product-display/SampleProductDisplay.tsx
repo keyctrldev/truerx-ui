@@ -1,52 +1,44 @@
 import React, { useEffect } from 'react';
-import { View, Text, FlatList, ActivityIndicator } from 'react-native';
+import { View, FlatList, ActivityIndicator } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProducts, setPage } from '../../store/ProductSlice';
+import { fetchProducts, incrementSkip } from '../../store/ProductSlice';
 import { RootState, AppDispatch } from '../../store';
-import CustomButton from '../custom-button/CustomButton';
 import './SampleProductDisplayStyle';
 import { styles } from './SampleProductDisplayStyle';
+import AppText from '../app-text/AppText';
 
 const ProductList = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const { items, status, error, page, limit } = useSelector((state: RootState) => state.products);
-
+  const { items, skip, limit, status, hasMore } = useSelector((state: RootState) => state.products);
   useEffect(() => {
-    dispatch(fetchProducts({ page, limit }));
-  }, [dispatch, page, limit]);
+    if (hasMore) {
+      dispatch(fetchProducts({ skip, limit }));
+    }
+  }, [dispatch, skip, limit, hasMore]);
 
-  if (status === 'loading') {
-    return <ActivityIndicator size="large" color="#0000ff" />;
-  }
+  const loadMore = () => {
+    if (hasMore && status !== 'loading') {
+      dispatch(incrementSkip());
+    }
+  };
 
-  if (status === 'failed') {
-    return <Text>Error: {error}</Text>;
-  }
+  const renderItem = ({ item }: any) => (
+    <View style={styles.cardContainer}>
+      <AppText>{item.id}</AppText>
+      <AppText>{item.title}</AppText>
+    </View>
+  );
+
   return (
     <View>
       <FlatList
         data={items}
         keyExtractor={item => item.id.toString()}
-        renderItem={({ item }) => (
-          <View style={styles.cardContainer}>
-            <Text>
-              {item.id}.{item.title}
-            </Text>
-          </View>
-        )}
+        renderItem={renderItem}
+        onEndReached={loadMore}
+        onEndReachedThreshold={0.5}
+        ListFooterComponent={status === 'loading' ? <ActivityIndicator /> : null}
       />
-      <View>
-        <CustomButton
-          title="previous"
-          onPress={() => {
-            dispatch(setPage(page - 1));
-          }}></CustomButton>
-        <CustomButton
-          title="next"
-          onPress={() => {
-            dispatch(setPage(page + 1));
-          }}></CustomButton>
-      </View>
     </View>
   );
 };

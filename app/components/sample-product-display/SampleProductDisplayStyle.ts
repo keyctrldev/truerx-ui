@@ -4,8 +4,8 @@ import { Colors, moderateScale } from '../../theme';
 export const styles = StyleSheet.create({
   cardContainer: {
     borderRadius: moderateScale(3),
-    margin: moderateScale(3),
-    padding: moderateScale(12),
+    margin: moderateScale(8),
+    padding: moderateScale(4),
     backgroundColor: Colors.gray,
   },
 });
