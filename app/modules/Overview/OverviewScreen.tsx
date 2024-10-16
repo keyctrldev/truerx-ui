@@ -6,7 +6,7 @@ import useOverViewScreen from './useOverViewScreen';
 import { styles } from './OverViweScreen';
 
 const OverviewScreen = () => {
-  const { users, handleUserPress } = useOverViewScreen();
+  const { handleUserPress } = useOverViewScreen();
 
   const renderUsers = ({ item, index }: any) => {
     return (
@@ -23,12 +23,7 @@ const OverviewScreen = () => {
     <SafeAreaContainer style={styles.containerStyle}>
       <CustomHeader heading={headerComponentStrings.Overview} />
       <View style={styles.body}>
-        <FlatList
-          data={users}
-          keyExtractor={item => item.id}
-          renderItem={renderUsers}
-          contentContainerStyle={styles.flatlistContainer}
-        />
+        <FlatList data={[]} renderItem={renderUsers} contentContainerStyle={styles.flatlistContainer} />
       </View>
     </SafeAreaContainer>
   );

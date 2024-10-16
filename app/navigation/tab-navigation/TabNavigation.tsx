@@ -1,6 +1,6 @@
 import React from 'react';
 import { BottomTabNavigationOptions, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { ClaimsScreen, CoverageScreen, OverviewScreen, SettingsScreen } from '../../modules';
+import { ChatFeed, ClaimsScreen, OverviewScreen, SettingsScreen } from '../../modules';
 import { ImageSourcePropType } from 'react-native';
 import { Routes } from '../../constants';
 import { Icons } from '../../assets';
@@ -37,9 +37,9 @@ const TabNavigation = () => {
         options={getTabBarOptions(Icons.overViewIcon, Routes.overview)}
       />
       <TabNav.Screen
-        name={Routes.coverage}
-        component={CoverageScreen}
-        options={getTabBarOptions(Icons.coverageIcon, Routes.coverage)}
+        name={Routes.chatFeed}
+        component={ChatFeed}
+        options={getTabBarOptions(Icons.coverageIcon, Routes.chatFeed)}
       />
       <TabNav.Screen
         name={Routes.claims}

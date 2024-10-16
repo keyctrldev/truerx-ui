@@ -49,6 +49,7 @@ export const headerComponentStrings = Object.freeze({
   Claims: 'Claims',
   Settings: 'Settings',
   Notification: 'Notification',
+  Chat: 'Chat',
 });
 
 export const commonStrings = Object.freeze({
