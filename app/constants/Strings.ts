@@ -66,20 +66,20 @@ export const onboardingData = Object.freeze([
   {
     index: 0,
     image: Images.slide1,
-    Header: 'Manage Your \n Prescriptions',
-    Description: 'Complete 360 view of your health data with control at your finger tips.',
+    header: 'Manage Your \n Prescriptions',
+    description: 'Complete 360 view of your health data with control at your finger tips.',
   },
   {
     index: 1,
     image: Images.slide2,
-    Header: 'Find a Pharmacy',
-    Description: 'Easy to find a pharmacy neadrby and easy navigation',
+    header: 'Find a Pharmacy',
+    description: 'Easy to find a pharmacy neadrby and easy navigation.',
   },
   {
     index: 2,
     image: Images.slide3,
-    Header: 'Check your \n Medication history',
-    Description: 'Full view of your current Prescriptions and upcoming refills.',
+    header: 'Check your \n Medication history',
+    description: 'Full view of your current Prescriptions and upcoming refills.',
   },
 ]);
 
@@ -92,7 +92,7 @@ export const loginScreenString = Object.freeze({
   preLogin: {
     header: 'Your care is our Priority',
     content: 'Welcome to TrueRX! We help make madications affortable, effective and accessible.',
-    terms: 'By Countining to use the mobile app, you agree to TrueRxs',
+    terms: 'By Countining to use the mobile app, you agree to TrueRx’s ',
     secondTerm: 'Terms, Privacy Policy and HIPAA Compliment.',
     createAccount: 'Create Your Account',
     signin: 'Sign in',

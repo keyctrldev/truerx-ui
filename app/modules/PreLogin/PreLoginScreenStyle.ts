@@ -9,14 +9,14 @@ export const styles = StyleSheet.create({
     backgroundColor: Colors.white,
   },
   preLogin: {
-    width: horizontalScale(85),
-    height: verticalScale(50),
+    width: horizontalScale(86),
+    height: verticalScale(86),
     resizeMode: 'contain',
-    marginTop: verticalScale(24),
+    marginTop: verticalScale(30),
   },
   headerTxt: {
     fontFamily: fonts.SemiBold,
-    fontWeight: '500',
+    fontWeight: 700,
     fontSize: moderateScale(25),
     marginTop: verticalScale(16),
     color: Colors.black,
@@ -31,13 +31,25 @@ export const styles = StyleSheet.create({
     width: '87%',
     alignSelf: 'center',
     marginTop: verticalScale(10),
-    borderRadius: moderateScale(20),
+    borderRadius: moderateScale(30),
     backgroundColor: Colors.primaryThemeColor,
+  },
+  signInCustomButtonStyle: {
+    width: '87%',
+    alignSelf: 'center',
+    marginTop: verticalScale(10),
+    borderRadius: moderateScale(30),
+    backgroundColor: Colors.transparent,
+    borderColor: Colors.primaryThemeColor,
+    borderWidth: 2
   },
   buttonLabelStyle: {
     fontSize: moderateScale(18),
-    fontWeight: '400',
     color: Colors.white,
+  },
+  signInButtonLabelStyle: {
+    fontSize: moderateScale(18),
+    color: Colors.primaryThemeColor,
   },
   terms: {
     textAlign: 'center',

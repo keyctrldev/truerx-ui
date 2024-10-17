@@ -1,38 +1,33 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 import { Colors, horizontalScale, moderateScale, verticalScale } from '../../theme';
 import { fonts } from '../../assets';
 
 export const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: Colors.primaryThemeColor,
-  },
   slideParent: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: verticalScale(80),
+    marginTop: verticalScale(155),
   },
   slide: {
     resizeMode: 'contain',
-    width: horizontalScale(300),
-    height: verticalScale(300),
+    width: horizontalScale(345),
+    height: verticalScale(250),
   },
   headerTxt: {
-    fontFamily: fonts.SemiBold,
-    color: Colors.white,
-    fontSize: moderateScale(30),
     textAlign: 'center',
+    color: Colors.white,
+    fontFamily: fonts.SemiBold,
+    fontSize: moderateScale(32),
+    marginTop: Platform.OS === 'android'? verticalScale(78) :verticalScale(50),
+    lineHeight: verticalScale(41),
   },
   desTxt: {
-    fontWeight: '500',
     textAlign: 'center',
     color: Colors.white,
-    fontSize: moderateScale(18),
     marginTop: verticalScale(15),
-    marginHorizontal: horizontalScale(30),
+    marginHorizontal: horizontalScale(50),
   },
   buttonLabelStyle: {
-    fontWeight: '400',
     fontSize: moderateScale(18),
     color: Colors.primaryThemeColor,
   },

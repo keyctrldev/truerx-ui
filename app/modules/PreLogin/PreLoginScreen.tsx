@@ -16,7 +16,7 @@ const PreLoginScreen: React.FC = () => {
         <AppText style={styles.contentTxt}>{loginScreenString.preLogin.content}</AppText>
       </View>
       <View style={styles.bottomInterface}>
-        <ImageBackground resizeMode="contain" style={styles.vectorImage} source={Images.vectorBG}>
+        <ImageBackground resizeMode="cover" style={styles.vectorImage} source={Images.vectorBG}>
           <CustomButton
             title={loginScreenString.preLogin.createAccount}
             customStyle={{ ...styles.customButtonStyle, marginTop: verticalScale(70) }}
@@ -25,16 +25,14 @@ const PreLoginScreen: React.FC = () => {
           />
           <CustomButton
             title={loginScreenString.preLogin.signin}
-            customStyle={styles.customButtonStyle}
-            buttonLabelStyle={styles.buttonLabelStyle}
+            customStyle={styles.signInCustomButtonStyle}
+            buttonLabelStyle={styles.signInButtonLabelStyle}
             onPress={() => {}}
           />
-          <View>
             <AppText style={styles.terms}>
               {loginScreenString.preLogin.terms}
               <AppText style={{...styles.terms, color: Colors.primaryThemeColor}}>{loginScreenString.preLogin.secondTerm}</AppText>
             </AppText>
-          </View>
         </ImageBackground>
       </View>
     </SafeAreaContainer>

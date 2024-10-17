@@ -16,6 +16,8 @@ type ColorType =
   | 'cyan'
   | 'lightGray'
   | 'darkTheme'
+  | 'dotColor'
+  | 'transparent'
   | 'primaryThemeColor';
 
 // This object provides a centralized way to manage and reference color values throughout the application, ensuring consistency in color usage.
@@ -38,4 +40,6 @@ export const Colors: Record<ColorType, string> = {
   lightGray: '#F2F2F2',
   darkTheme: '00545A',
   primaryThemeColor: '#00909A',
+  dotColor: '#00545A',
+  transparent:'transparent'
 };

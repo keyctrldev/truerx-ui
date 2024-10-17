@@ -1,23 +1,21 @@
 import React from 'react';
-import { Image, View } from 'react-native';
+import { Image, ImageSourcePropType, View } from 'react-native';
 
 import AppText from '../app-text/AppText';
 import { styles } from './OnboadingSwiperStyle';
 
 interface OnboardingSwiperProps {
-  SwiperDes?: string;
-  SwiperImage?: number;
-  SwiperHeader?: string;
+  swiperDes?: string;
+  swiperImage?: ImageSourcePropType;
+  swiperHeader?: string;
 }
 
-const OnboardingSwiper = ({ SwiperImage, SwiperHeader, SwiperDes }: OnboardingSwiperProps) => {
+const OnboardingSwiper = ({ swiperImage, swiperHeader, swiperDes }: OnboardingSwiperProps) => {
   return (
-    <View style={styles.container}>
-      <View style={styles.slideParent}>
-        <Image source={SwiperImage} style={styles.slide} />
-        <AppText style={styles.headerTxt}>{SwiperHeader}</AppText>
-        <AppText style={styles.desTxt}>{SwiperDes}</AppText>
-      </View>
+    <View style={styles.slideParent}>
+      <Image source={swiperImage} style={styles.slide} />
+      <AppText style={styles.headerTxt}>{swiperHeader}</AppText>
+      <AppText style={styles.desTxt}>{swiperDes}</AppText>
     </View>
   );
 };

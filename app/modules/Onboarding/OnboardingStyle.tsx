@@ -14,12 +14,12 @@ export const styles = StyleSheet.create({
   activeDotStyle: {
     borderStyle: 'solid',
     height: verticalScale(10),
-    width: horizontalScale(30),
+    width: horizontalScale(22),
   },
   dotPaginationStyle: {
     alignItems: 'center',
     justifyContent: 'center',
-    bottom: verticalScale(80),
+    bottom: verticalScale(50),
   },
   customButtonStyle: {
     width: '90%',
@@ -29,9 +29,7 @@ export const styles = StyleSheet.create({
     borderRadius: moderateScale(20),
   },
   buttonLabelStyle: {
-    fontWeight: '400',
-    fontSize: moderateScale(18),
     color: Colors.primaryThemeColor,
   },
-  bottom: { bottom: verticalScale(40) },
+  bottom: { bottom: verticalScale(10) },
 });

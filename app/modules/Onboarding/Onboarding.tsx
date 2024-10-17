@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { View } from 'react-native';
+import { ImageSourcePropType, View } from 'react-native';
 
 import Swiper from 'react-native-swiper';
 import { useNavigation } from '@react-navigation/native';
@@ -11,9 +11,9 @@ import { loginScreenString, onboardingData, Routes } from '../../constants';
 import OnboardingSwiper from '../../components/onboarding-swiper/OnboardingSwiper';
 
 interface OnboardingProps {
-  image: number;
-  Header: string;
-  Description: string;
+  image: ImageSourcePropType;
+  header: string;
+  description: string;
 }
 
 const Onboarding: React.FC = () => {
@@ -46,7 +46,7 @@ const Onboarding: React.FC = () => {
       <Swiper
         loop={false}
         ref={swiperRef}
-        dotColor={Colors.black}
+        dotColor={Colors.dotColor}
         dotStyle={styles.dotStyle}
         activeDotColor={Colors.white}
         activeDotStyle={styles.activeDotStyle}
@@ -55,9 +55,9 @@ const Onboarding: React.FC = () => {
         {onboardingData?.map((item: OnboardingProps, index: number) => (
           <OnboardingSwiper
             key={index}
-            SwiperImage={item?.image}
-            SwiperHeader={item?.Header}
-            SwiperDes={item?.Description}
+            swiperImage={item?.image}
+            swiperHeader={item?.header}
+            swiperDes={item?.description}
           />
         ))}
       </Swiper>
