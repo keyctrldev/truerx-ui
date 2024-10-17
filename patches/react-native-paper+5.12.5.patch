@@ -1,0 +1,15 @@
+diff --git a/node_modules/react-native-paper/src/components/TextInput/TextInputFlat.tsx b/node_modules/react-native-paper/src/components/TextInput/TextInputFlat.tsx
+index 8a0dcb1..583c656 100644
+--- a/node_modules/react-native-paper/src/components/TextInput/TextInputFlat.tsx
++++ b/node_modules/react-native-paper/src/components/TextInput/TextInputFlat.tsx
+@@ -363,8 +363,8 @@ const TextInputFlat = ({
+               StyleSheet.absoluteFill,
+               dense ? styles.densePatchContainer : styles.patchContainer,
+               {
+-                backgroundColor:
+-                  viewStyle.backgroundColor || containerStyle.backgroundColor,
++                // backgroundColor:
++                //   viewStyle.backgroundColor || containerStyle.backgroundColor,
+                 left: paddingLeft,
+                 right: paddingRight,
+               },

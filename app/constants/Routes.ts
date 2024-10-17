@@ -13,4 +13,5 @@ export default {
   settings: 'Settings',
   coverage: 'Coverage',
   notifications: 'Notifications',
+  InputText: 'InputText',
 };

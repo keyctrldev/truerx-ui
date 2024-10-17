@@ -49,6 +49,7 @@ export const headerComponentStrings = Object.freeze({
   Claims: 'Claims',
   Settings: 'Settings',
   Notification: 'Notification',
+  TextInput: 'Custom Text Input'
 });
 
 export const commonStrings = Object.freeze({
