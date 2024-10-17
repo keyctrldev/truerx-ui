@@ -11,7 +11,7 @@ const PreLoginScreen: React.FC = () => {
   return (
     <SafeAreaContainer style={styles.container}>
       <View style={styles.topInterface}>
-        <Image source={Images.prelogin} style={styles.preLogin} />
+        <Image source={Images.preLogin} style={styles.preLogin} />
         <AppText style={styles.headerTxt}>{loginScreenString.preLogin.header}</AppText>
         <AppText style={styles.contentTxt}>{loginScreenString.preLogin.content}</AppText>
       </View>
