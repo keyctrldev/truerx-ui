@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, ImageBackground, View } from 'react-native';
+import { Image, ImageBackground, StatusBar, View } from 'react-native';
 
 import { Images } from '../../assets';
 import { styles } from './PreLoginScreenStyle';
@@ -31,7 +31,7 @@ const PreLoginScreen: React.FC = () => {
           />
             <AppText style={styles.terms}>
               {loginScreenString.preLogin.terms}
-              <AppText style={{...styles.terms, color: Colors.primaryThemeColor}}>{loginScreenString.preLogin.secondTerm}</AppText>
+              <AppText onPress={()=>{}} style={{...styles.terms, color: Colors.primaryThemeColor}}>{loginScreenString.preLogin.secondTerm}</AppText>
             </AppText>
         </ImageBackground>
       </View>
