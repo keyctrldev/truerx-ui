@@ -15,6 +15,8 @@ type ColorType =
   | 'overlayDark'
   | 'cyan'
   | 'lightGray'
+  | 'secondaryBackground'
+  | 'primaryBtnBackground'
   | 'viridianGreen'
   | 'argent';
 
@@ -36,6 +38,8 @@ export const Colors: Record<ColorType, string> = {
   overlayDark: 'rgba(0,0,0,0.2)',
   cyan: '#E4FFFF',
   lightGray: '#F2F2F2',
+  secondaryBackground: '#F2F2F7',
+  primaryBtnBackground: '#00909A',
   viridianGreen: '#00909A',
   argent: '#939393',
 };

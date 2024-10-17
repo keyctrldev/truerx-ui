@@ -59,3 +59,13 @@ export const notificationScreenStrings = Object.freeze({
   Notification: 'Notification',
   NoNotificationFound: 'No Notification Found',
 });
+
+export const acceptTermsScreenStrings = Object.freeze({
+  Back: 'Back',
+  AgreementToTerms: 'Agreement to terms',
+  TermsServices: 'Terms of service',
+  PrivacyPolicy: 'Privacy Policy',
+  HippaCompliance: 'HIPAA Compliance',
+  Accept: 'Accept',
+  Decline: 'Decline',
+});
