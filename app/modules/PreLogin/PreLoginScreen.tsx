@@ -24,7 +24,7 @@ const PreLoginScreen: React.FC = () => {
             onPress={() => {}}
           />
           <CustomButton
-            title={loginScreenString.preLogin.signin}
+            title={loginScreenString.preLogin.signIn}
             customStyle={styles.signInCustomButtonStyle}
             buttonLabelStyle={styles.signInButtonLabelStyle}
             onPress={() => {}}

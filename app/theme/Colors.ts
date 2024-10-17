@@ -18,7 +18,9 @@ type ColorType =
   | 'darkTheme'
   | 'dotColor'
   | 'transparent'
-  | 'primaryThemeColor';
+  | 'primaryThemeColor'
+  | 'secondaryBackground'
+  | 'primaryBtnBackground';
 
 // This object provides a centralized way to manage and reference color values throughout the application, ensuring consistency in color usage.
 // Color code should be Hex values.
@@ -26,7 +28,7 @@ type ColorType =
 export const Colors: Record<ColorType, string> = {
   black: '#000000',
   white: '#ffffff',
-  primary: '#007BFF',
+  primary: '#00909A',
   lightSlateGray: '#99A8B9',
   skyBlue: '#34639A',
   red: '#FE4130',
@@ -41,5 +43,7 @@ export const Colors: Record<ColorType, string> = {
   darkTheme: '00545A',
   primaryThemeColor: '#00909A',
   dotColor: '#00545A',
-  transparent:'transparent'
+  transparent:'transparent',
+  secondaryBackground: '#F2F2F7',
+  primaryBtnBackground: '#00909A',
 };

@@ -91,10 +91,20 @@ export const loginScreenString = Object.freeze({
   },
   preLogin: {
     header: 'Your care is our Priority',
-    content: 'Welcome to TrueRX! We help make madications affortable, effective and accessible.',
-    terms: 'By Countining to use the mobile app, you agree to TrueRx’s ',
+    content: 'Welcome to trueRX! We help make medications affordable, effective and accessible.',
+    terms: 'By continuing to use the mobile app, you agree to TrueRx’s ',
     secondTerm: 'Terms, Privacy Policy and HIPAA Compliment.',
     createAccount: 'Create Your Account',
-    signin: 'Sign in',
+    signIn: 'Sign in',
   },
+});
+
+export const acceptTermsScreenStrings = Object.freeze({
+  Back: 'Back',
+  AgreementToTerms: 'Agreement to terms',
+  TermsServices: 'Terms of service',
+  PrivacyPolicy: 'Privacy Policy',
+  HippaCompliance: 'HIPAA Compliance',
+  Accept: 'Accept',
+  Decline: 'Decline',
 });
