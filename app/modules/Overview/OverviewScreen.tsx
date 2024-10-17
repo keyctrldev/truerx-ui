@@ -1,16 +1,32 @@
 import React from 'react';
-import { AppText, CustomHeader, SafeAreaContainer } from '../../components';
-import { Colors } from '../../theme';
-import { StyleSheet, View } from 'react-native';
-import { headerComponentStrings } from '../../constants';
+import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+
+import { CustomHeader, SafeAreaContainer } from '../../components';
+import { Colors, verticalScale } from '../../theme';
+import { headerComponentStrings, Routes } from '../../constants';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { ParamListBase, useNavigation } from '@react-navigation/native';
+import { componentListProps, componentListView } from '../../utils';
 
 const OverviewScreen = () => {
+  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+
+  const renderComponentList = ({ item }: { item: componentListProps }) => {
+    return (
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate(item.screenName);
+        }}
+        style={styles.btnContainer}>
+        <Text>{item.componentTitle}</Text>
+      </TouchableOpacity>
+    );
+  };
+
   return (
     <SafeAreaContainer style={styles.containerStyle}>
       <CustomHeader heading={headerComponentStrings.Overview} />
-      <View style={styles.body}>
-        <AppText style={styles.label}>{headerComponentStrings.Overview}</AppText>
-      </View>
+      <FlatList data={componentListView} renderItem={renderComponentList} />
     </SafeAreaContainer>
   );
 };
@@ -22,15 +38,11 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.skyBlue,
   },
-
-  body: {
-    flex: 1,
-    alignContent: 'center',
-    justifyContent: 'center',
-  },
-
-  label: {
-    textAlign: 'center',
-    color: Colors.white,
+  btnContainer: {
+    backgroundColor: Colors.white,
+    padding: verticalScale(9),
+    margin: verticalScale(5),
+    borderRadius: verticalScale(8),
+    alignItems: 'center',
   },
 });

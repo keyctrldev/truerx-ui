@@ -22,7 +22,7 @@ type ColorType =
 export const Colors: Record<ColorType, string> = {
   black: '#000000',
   white: '#ffffff',
-  primary: '#007BFF',
+  primary: '#00909A',
   lightSlateGray: '#99A8B9',
   skyBlue: '#34639A',
   red: '#FE4130',
