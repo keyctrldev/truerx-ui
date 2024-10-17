@@ -44,3 +44,11 @@ export interface NotificationItem {
   time: string;
   title: string;
 }
+
+export interface MedicationDetails {
+  MedicineName: string;
+  Count: number;
+  Dosage: number;
+  Supply: number;
+  Refill: number;
+}

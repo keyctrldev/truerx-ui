@@ -108,4 +108,9 @@ export const componentListView: componentListProps[] = [
     componentTitle: 'NotificationTile',
     screenName: Routes.NotificationTile,
   },
+  {
+    id: 13,
+    componentTitle: 'MedicationList',
+    screenName: Routes.MedicationList,
+  },
 ];

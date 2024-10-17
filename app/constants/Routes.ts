@@ -27,4 +27,5 @@ export default {
   CustomProgressStepper: 'CustomProgressStepper',
   CustomHeader: 'CustomHeader',
   NotificationTile: 'NotificationTile',
+  MedicationList: 'MedicationList',
 };

@@ -19,4 +19,5 @@ export default {
   backIcon: require('./back.png'),
   tickCircle: require('./tickCircle.png'),
   medicineIcon: require('./medicine.png'),
+  pillsIcon: require('./pills.png'),
 };

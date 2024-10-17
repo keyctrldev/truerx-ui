@@ -15,8 +15,8 @@ import CustomTabIconScreen from '../../modules/ComponentScreens/CustomTabIconScr
 import ActivityLoaderScreen from '../../modules/ComponentScreens/ActivityLoaderScreen';
 import CustomProgressBarScreen from '../../modules/ComponentScreens/CustomProgressBarScreen';
 import NotificationTileScreen from '../../modules/ComponentScreens/NotificationTileScreen';
-import CustomHeaderScreen from '../../modules/ComponentScreens/CustomHeaderScreen';
-
+import CustomHeaderScreen from '../../modules/ComponentScreens/CustomHeaderscreen';
+import MedicationListScreen from '../../modules/ComponentScreens/MedicationListScreen';
 {
   //! Below Imports Are Visualization of Custom Components UI */
 }
@@ -51,6 +51,7 @@ const RootStack = () => {
       <Stack.Screen name={Routes.CustomProgressStepper} component={CustomProgressBarScreen} />
       <Stack.Screen name={Routes.CustomHeader} component={CustomHeaderScreen} />
       <Stack.Screen name={Routes.NotificationTile} component={NotificationTileScreen} />
+      <Stack.Screen name={Routes.MedicationList} component={MedicationListScreen} />
     </Stack.Navigator>
   );
 };
