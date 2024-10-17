@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Routes } from '../../constants';
-import { NotificationScreen } from '../../modules';
+import { NotificationScreen, AcceptTermsScreen } from '../../modules';
 import TabNavigation from '../tab-navigation/TabNavigation';
 import { createStackNavigator, StackNavigationOptions } from '@react-navigation/stack';
 import { useNotification } from '../../utils';
@@ -51,6 +51,7 @@ const RootStack = () => {
       <Stack.Screen name={Routes.CustomProgressStepper} component={CustomProgressBarScreen} />
       <Stack.Screen name={Routes.CustomHeader} component={CustomHeaderScreen} />
       <Stack.Screen name={Routes.NotificationTile} component={NotificationTileScreen} />
+      <Stack.Screen name={Routes.AcceptTerms} component={AcceptTermsScreen} />
     </Stack.Navigator>
   );
 };

@@ -9,3 +9,4 @@ export { default as CoverageScreen } from './Coverage/CoverageScreen';
 export { default as SettingsScreen } from './Settings/SettingsScreen';
 export { default as OverviewScreen } from './Overview/OverviewScreen';
 export { default as NotificationScreen } from './Notifications/NotificationScreen';
+export { default as AcceptTermsScreen } from './AcceptTerms/AcceptTermsScreen';
