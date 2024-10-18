@@ -31,5 +31,7 @@ export const styles = StyleSheet.create({
   buttonLabelStyle: {
     color: Colors.primaryThemeColor,
   },
-  bottom: { bottom: verticalScale(10) },
+  bottom: {
+    bottom: verticalScale(10),
+  },
 });
