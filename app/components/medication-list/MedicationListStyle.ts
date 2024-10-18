@@ -1,22 +1,23 @@
 import { StyleSheet } from 'react-native';
-import { Colors, moderateScale, verticalScale } from '../../theme';
+import { Colors, horizontalScale, moderateScale, verticalScale } from '../../theme';
 
 export const styles = StyleSheet.create({
   medicineContainer: {
     justifyContent: 'center',
     alignItems: 'center',
+    marginHorizontal: horizontalScale(16),
+    marginVertical: verticalScale(6),
   },
   medicine: {
     flexDirection: 'row',
-    width: '90%',
     backgroundColor: Colors.white,
     borderRadius: moderateScale(10),
   },
   medicineIcon: {
-    width: '25%',
+    backgroundColor: Colors.viridianGreen,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: Colors.viridianGreen,
+    paddingHorizontal: horizontalScale(25),
     borderTopLeftRadius: moderateScale(10),
     borderBottomLeftRadius: moderateScale(10),
   },
