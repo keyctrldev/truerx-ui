@@ -4,42 +4,46 @@ import { Colors, horizontalScale, moderateScale, verticalScale } from '../../the
 export const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    padding: moderateScale(16),
     backgroundColor: Colors.white,
-    borderRadius: moderateScale(8),
-    marginBottom: verticalScale(12),
-    shadowColor: Colors.black,
-    shadowOffset: { width: 0, height: verticalScale(2) },
+    paddingVertical: verticalScale(25),
+    paddingHorizontal: horizontalScale(20),
     shadowOpacity: 0.1,
-    shadowRadius: moderateScale(8),
+    shadowColor: Colors.black,
     elevation: moderateScale(3),
+    shadowOffset: { width: 0, height: verticalScale(2) },
   },
   highlighted: {
     backgroundColor: Colors.cyan,
   },
   iconContainer: {
-    justifyContent: 'center',
     alignItems: 'center',
-    marginRight: horizontalScale(12),
+    justifyContent: 'center',
+    marginRight: horizontalScale(20),
   },
   textContainer: {
     flex: 1,
   },
   title: {
     fontWeight: 'bold',
+    fontSize: moderateScale(18),
     marginBottom: verticalScale(4),
   },
   message: {
-    fontSize: moderateScale(14),
-    color: Colors.lightBlack,
+    color: Colors.darkGrey,
+    fontSize: moderateScale(16),
   },
   time: {
-    fontSize: moderateScale(12),
     color: Colors.gray,
+    fontSize: moderateScale(12),
     marginTop: verticalScale(4),
   },
-  userImageStyle: {
-    height: moderateScale(24),
-    width: moderateScale(24),
+  iconStyle: {
+    width: moderateScale(32),
+    height: moderateScale(32),
+    resizeMode: "contain"
+  },
+  separator: {
+    height: verticalScale(1),
+    backgroundColor: Colors.gray
   },
 });
