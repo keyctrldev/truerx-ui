@@ -6,7 +6,7 @@ import { styles } from './MedicationListStyle';
 import { Icons } from '../../assets';
 import { MedicationDetails } from '../../types';
 
-const MedicationList = ({ MedicineName, Count, Dosage, Supply, Refill }: MedicationDetails) => {
+const MedicationList = ({ medicineName, count, dosage, supply, refill }: MedicationDetails) => {
   return (
     <View style={styles.medicineContainer}>
       <View style={styles.medicine}>
@@ -16,16 +16,18 @@ const MedicationList = ({ MedicineName, Count, Dosage, Supply, Refill }: Medicat
         </View>
 
         <View style={styles.medicineDetails}>
-          <AppText style={styles.medicineName}>{MedicineName}</AppText>
+          <AppText style={styles.medicineName} numberOfLines={1}>
+            {medicineName}
+          </AppText>
 
           <View style={styles.medicineDosage}>
-            <AppText style={styles.textDosage}>{Count} CT,</AppText>
-            <AppText style={styles.textDosage}>{Dosage} mg</AppText>
+            <AppText style={styles.textDosage}>{count} CT,</AppText>
+            <AppText style={styles.textDosage}>{dosage} mg</AppText>
           </View>
 
           <View style={styles.medicineRefill}>
-            <AppText style={styles.textRefill}>{Supply} day supply</AppText>
-            <AppText style={styles.textRefill}>{`\u2022 ${Refill}`} days to refill</AppText>
+            <AppText style={styles.textRefill}>{supply} day supply</AppText>
+            <AppText style={styles.textRefill}>{`\u2022 ${refill}`} days to refill</AppText>
           </View>
         </View>
       </View>

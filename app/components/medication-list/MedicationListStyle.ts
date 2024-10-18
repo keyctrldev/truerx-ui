@@ -3,41 +3,37 @@ import { Colors, moderateScale, verticalScale } from '../../theme';
 
 export const styles = StyleSheet.create({
   medicineContainer: {
-    flexDirection: 'row',
-    marginBottom: verticalScale(12),
-    borderRadius: moderateScale(5),
     justifyContent: 'center',
     alignItems: 'center',
   },
   medicine: {
     flexDirection: 'row',
+    width: '90%',
     backgroundColor: Colors.white,
-    width: moderateScale(364),
-    height: moderateScale(74),
     borderRadius: moderateScale(10),
   },
   medicineIcon: {
+    width: '25%',
+    justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: Colors.viridianGreen,
     borderTopLeftRadius: moderateScale(10),
     borderBottomLeftRadius: moderateScale(10),
-    width: moderateScale(100),
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   pillsImage: {
     width: moderateScale(30),
     height: moderateScale(30),
   },
   medicineDetails: {
-    padding: moderateScale(4),
-    paddingLeft: moderateScale(6),
+    flex: 1,
     justifyContent: 'center',
     alignContent: 'center',
+    padding: moderateScale(6),
   },
 
   medicineName: {
+    fontSize: moderateScale(20),
     fontWeight: '800',
-    fontSize: moderateScale(16),
   },
 
   medicineDosage: {
@@ -46,8 +42,8 @@ export const styles = StyleSheet.create({
   },
 
   textDosage: {
-    fontWeight: '500',
     fontSize: moderateScale(14),
+    fontWeight: '500',
   },
 
   medicineRefill: {

@@ -46,9 +46,9 @@ export interface NotificationItem {
 }
 
 export interface MedicationDetails {
-  MedicineName: string;
-  Count: number;
-  Dosage: number;
-  Supply: number;
-  Refill: number;
+  medicineName: string;
+  count: number;
+  dosage: number;
+  supply: number;
+  refill: number;
 }
