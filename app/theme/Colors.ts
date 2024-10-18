@@ -17,7 +17,9 @@ type ColorType =
   | 'lightGray'
   | 'secondaryBackground'
   | 'darkGrey'
-  | 'primaryBtnBackground';
+  | 'primaryBtnBackground'
+  | 'viridianGreen'
+  | 'argent';
 
 // This object provides a centralized way to manage and reference color values throughout the application, ensuring consistency in color usage.
 // Color code should be Hex values.
@@ -40,4 +42,6 @@ export const Colors: Record<ColorType, string> = {
   lightGray: '#F2F2F2',
   secondaryBackground: '#F2F2F7',
   primaryBtnBackground: '#00909A',
+  viridianGreen: '#00909A',
+  argent: '#939393',
 };
