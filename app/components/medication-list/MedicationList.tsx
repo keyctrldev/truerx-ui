@@ -16,9 +16,7 @@ const MedicationList = ({ medicineName, count, dosage, supply, refill }: Medicat
         </View>
 
         <View style={styles.medicineDetails}>
-          <AppText style={styles.medicineName} numberOfLines={1}>
-            {medicineName}
-          </AppText>
+          <AppText style={styles.medicineName}>{medicineName}</AppText>
 
           <View style={styles.medicineDosage}>
             <AppText style={styles.textDosage}>{count} CT,</AppText>
