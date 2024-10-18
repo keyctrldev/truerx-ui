@@ -16,6 +16,7 @@ type ColorType =
   | 'cyan'
   | 'lightGray'
   | 'secondaryBackground'
+  | 'darkGrey'
   | 'primaryBtnBackground'
   | 'viridianGreen'
   | 'argent';
@@ -32,6 +33,7 @@ export const Colors: Record<ColorType, string> = {
   red: '#FE4130',
   green: '#1A7968',
   gray: '#D9D9D9',
+  darkGrey: '#757575',
   horizonBlue: '#3B76A1',
   lightBlack: '#4F4F4F',
   lightGreen: '#34C759',
