@@ -1,73 +1,43 @@
-
 import React from 'react';
-import { ImageSourcePropType, ImageStyle, StyleProp, View, ViewStyle } from 'react-native';
+import { View } from 'react-native';
 
 import { TextInput } from 'react-native-paper';
 
 import AppText from '../app-text/AppText';
+import { CustomInputType } from '../../types';
 import { styles } from './CustomInputTextStyle';
 import { Colors, moderateScale } from '../../theme';
 
-interface CustomInputTextPops {
-  onBlur?: any;
-  inputRef?: any;
-  error?: string;
-  label?: string;
-  rightIcon?: any;
-  leftIcon?: any;
-  touched?: boolean;
-  keyboardType?: any;
-  editable?: boolean;
-  maxLength?: number;
-  defaultValue?: any;
-  onChangeText?: any;
-  returnKeyType?: any;
-  autoFocus?: boolean;
-  multiline?: boolean;
-  textInputView?: any;
-  onPress?: () => void;
-  placeholder?: string;
-  onSubmitEditing?: any;
-  emailIcon?: ImageStyle;
-  secureTextEntry?: boolean;
-  onRightPress?: () => void;
-  value?: string | undefined;
-  source?: ImageSourcePropType;
-  onLeftIconPress?: () => void;
-  mainViewStyle?: StyleProp<ViewStyle>;
-  textInputStyle?: StyleProp<ViewStyle>;
-  mainTextStyle?: StyleProp<ViewStyle>;
-  rightIconAdditionalStyle?: StyleProp<ImageStyle>;
-  additionalContainerStyle?: StyleProp<ViewStyle>;
-}
-
-const CustomInputText: React.FC<CustomInputTextPops> = ({
-  label,
-  value,
-  inputRef,
-  leftIcon,
-  rightIcon,
-  maxLength,
-  autoFocus,
-  placeholder,
-  keyboardType,
-  defaultValue,
-  onChangeText,
-  returnKeyType,
-  textInputStyle,
-  onSubmitEditing,
-  secureTextEntry,
-  editable = true,
-  multiline = false,
-  onRightPress,
-  additionalContainerStyle,
-}) => {
+const CustomInputText: CustomInputType = (
+  {
+    label,
+    value,
+    leftIcon,
+    rightIcon,
+    maxLength,
+    autoFocus,
+    placeholder,
+    keyboardType,
+    defaultValue,
+    onChangeText,
+    returnKeyType,
+    textInputStyle,
+    onSubmitEditing,
+    secureTextEntry,
+    onLeftIconPress,
+    editable = true,
+    onRightIconPress,
+    multiline = false,
+    additionalContainerStyle,
+  },
+  ref,
+) => {
   return (
     <View style={additionalContainerStyle}>
       <TextInput
+        ref={ref}
         mode="flat"
         value={value}
-        ref={inputRef}
         editable={editable}
         autoCorrect={false}
         disabled={!editable}
@@ -81,27 +51,17 @@ const CustomInputText: React.FC<CustomInputTextPops> = ({
         underlineColor="transparent"
         returnKeyType={returnKeyType}
         autoFocus={autoFocus || false}
-        activeUnderlineColor='transparent'
+        activeUnderlineColor="transparent"
         onSubmitEditing={onSubmitEditing}
         secureTextEntry={secureTextEntry}
-        style={[styles.input,textInputStyle]}
+        style={[styles.input, textInputStyle]}
         placeholderTextColor={Colors.mediumGray}
-        label={
-          <AppText style={{ color: Colors.mediumGray, fontSize: moderateScale(18) }}>
-            {label}
-          </AppText>
-        }
-        left={leftIcon && <TextInput.Icon icon={() => leftIcon} />}
-        right={
-          rightIcon && (
-            <TextInput.Icon icon={() => rightIcon} onPress={onRightPress} />
-          )
-        }
+        left={leftIcon && <TextInput.Icon icon={() => leftIcon} onPress={onLeftIconPress} />}
+        right={rightIcon && <TextInput.Icon icon={() => rightIcon} onPress={onRightIconPress} />}
+        label={<AppText style={{ color: Colors.mediumGray, fontSize: moderateScale(18) }}>{label}</AppText>}
       />
     </View>
   );
 };
 
-export default CustomInputText;
-
-
+export default React.forwardRef(CustomInputText);
