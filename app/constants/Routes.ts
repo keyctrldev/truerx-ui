@@ -13,4 +13,21 @@ export default {
   settings: 'Settings',
   coverage: 'Coverage',
   notifications: 'Notifications',
+
+  // !  Below Screens Are Visualization of Custom Components UI
+  ListViewCellScreen: 'ListViewCellScreen',
+  AppText: 'AppText',
+  CustomToast: 'CustomToast',
+  CustomButton: 'CustomButton',
+  CustomTextInput: 'CustomTextInput',
+  CustomSwitch: 'CustomSwitch',
+  SafeAreaContainer: 'SafeAreaContainer',
+  CustomTabIcon: 'CustomTabIcon',
+  ActivityLoader: 'ActivityLoader',
+  CustomProgressStepper: 'CustomProgressStepper',
+  CustomHeader: 'CustomHeader',
+  NotificationTile: 'NotificationTile',
+  AcceptTerms: 'AcceptTerms',
+  MedicationList: 'MedicationList',
+  resetPasswordMethod: 'ResetPasswordMethod',
 };

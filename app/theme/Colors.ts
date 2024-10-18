@@ -14,7 +14,11 @@ type ColorType =
   | 'lightGreen'
   | 'overlayDark'
   | 'cyan'
-  | 'lightGray';
+  | 'lightGray'
+  | 'secondaryBackground'
+  | 'primaryBtnBackground'
+  | 'viridianGreen'
+  | 'argent';
 
 // This object provides a centralized way to manage and reference color values throughout the application, ensuring consistency in color usage.
 // Color code should be Hex values.
@@ -22,7 +26,7 @@ type ColorType =
 export const Colors: Record<ColorType, string> = {
   black: '#000000',
   white: '#ffffff',
-  primary: '#007BFF',
+  primary: '#00909A',
   lightSlateGray: '#99A8B9',
   skyBlue: '#34639A',
   red: '#FE4130',
@@ -34,4 +38,8 @@ export const Colors: Record<ColorType, string> = {
   overlayDark: 'rgba(0,0,0,0.2)',
   cyan: '#E4FFFF',
   lightGray: '#F2F2F2',
+  secondaryBackground: '#F2F2F7',
+  primaryBtnBackground: '#00909A',
+  viridianGreen: '#00909A',
+  argent: '#939393',
 };

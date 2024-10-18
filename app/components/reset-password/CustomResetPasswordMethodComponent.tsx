@@ -1,27 +1,8 @@
 import React, { memo } from 'react';
-import {
-  View,
-  Text,
-  Image,
-  TextStyle,
-  ImageStyle,
-  TouchableOpacity,
-  ImageSourcePropType,
-  TouchableOpacityProps,
-  StyleSheet,
-} from 'react-native';
-import { Colors, horizontalScale, moderateScale, verticalScale } from '../../theme';
+import { View, Text, Image, TouchableOpacity, TouchableOpacityProps, StyleSheet } from 'react-native';
 
-interface CustomResetPasswordMethodComponentProps {
-  isSelected: boolean;
-  onSelectMethod: () => void;
-  icon: ImageSourcePropType;
-  iconStyle?: ImageStyle;
-  title: string;
-  subTitle?: string;
-  titleTextStyle?: TextStyle;
-  subTitleTextStyle?: TextStyle;
-}
+import { CustomResetPasswordMethodComponentProps } from '../../types';
+import { Colors, horizontalScale, moderateScale, verticalScale } from '../../theme';
 
 const CustomResetPasswordMethodComponent = (props: CustomResetPasswordMethodComponentProps & TouchableOpacityProps) => {
   return (
@@ -31,7 +12,7 @@ const CustomResetPasswordMethodComponent = (props: CustomResetPasswordMethodComp
       onPress={props.onSelectMethod}>
       <View style={styles.rowContainer}>
         <Image source={props.icon} style={[styles.iconStyle, props.iconStyle]} />
-        <Text style={[styles.titleTextStyle, props.titleTextStyle]}>{props.title}</Text>
+        <Text style={[styles.titleTextStyle, props.titleTextStyle]}>{props.title} </Text>
       </View>
       {props.subTitle && <Text style={[styles.subTitleTextStyle, props.subTitleTextStyle]}>{props.subTitle}</Text>}
     </TouchableOpacity>
