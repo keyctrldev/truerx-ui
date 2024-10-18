@@ -114,6 +114,11 @@ export const componentListView: componentListProps[] = [
     componentTitle: 'Collapsible Component',
     screenName: Routes.AcceptTerms,
   },
+  {
+    id: 14,
+    componentTitle: 'MedicationList',
+    screenName: Routes.MedicationList,
+  },
 ];
 
 export const agreementTermsList: { id: number; title: string; subText?: string }[] = [

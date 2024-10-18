@@ -30,4 +30,5 @@ export default {
   CustomHeader: 'CustomHeader',
   NotificationTile: 'NotificationTile',
   AcceptTerms: 'AcceptTerms',
+  MedicationList: 'MedicationList',
 };

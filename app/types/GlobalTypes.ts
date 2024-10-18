@@ -47,7 +47,15 @@ export interface NotificationItem {
 }
 
 export interface OnboardingProps {
-  image: ImageSourcePropType;
   header: string;
   description: string;
+  image: ImageSourcePropType;
+}
+
+export interface MedicationDetails {
+  medicineName: string;
+  count: number;
+  dosage: number;
+  supply: number;
+  refill: number;
 }
