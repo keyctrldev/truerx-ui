@@ -14,7 +14,7 @@ interface CustomInputTextPops {
   error?: string;
   label?: string;
   rightIcon?: any;
-  LeftIcon?: any;
+  leftIcon?: any;
   touched?: boolean;
   keyboardType?: any;
   editable?: boolean;
@@ -45,7 +45,7 @@ const CustomInputText: React.FC<CustomInputTextPops> = ({
   label,
   value,
   inputRef,
-  LeftIcon,
+  leftIcon,
   rightIcon,
   maxLength,
   autoFocus,
@@ -91,7 +91,7 @@ const CustomInputText: React.FC<CustomInputTextPops> = ({
             {label}
           </AppText>
         }
-        left={LeftIcon && <TextInput.Icon icon={() => LeftIcon} />}
+        left={leftIcon && <TextInput.Icon icon={() => leftIcon} />}
         right={
           rightIcon && (
             <TextInput.Icon icon={() => rightIcon} onPress={onRightPress} />

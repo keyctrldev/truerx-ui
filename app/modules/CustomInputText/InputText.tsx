@@ -1,12 +1,12 @@
 import React, { RefObject, useRef, useState } from 'react';
-import { ScrollView, Text, TextInput, View, KeyboardAvoidingView, Platform } from 'react-native';
+import { ScrollView, TextInput, View, KeyboardAvoidingView, Platform } from 'react-native';
 
 import { Eye, Mail } from '../../assets';
 import { styles } from './InputTextStyle';
 import { SVGIcon } from '../../components/common/SVGIcon';
 import { AppText, SafeAreaContainer } from '../../components';
 import CustomInputText from '../../components/custom-input-text/CustomInputText';
-import { Colors, horizontalScale, verticalScale } from '../../theme';
+import { Colors, horizontalScale, moderateScale, verticalScale } from '../../theme';
 
 const InputText = () => {
   const newPasswordRef = useRef<TextInput>(null);
@@ -27,16 +27,16 @@ const InputText = () => {
         <ScrollView bounces={false} style={styles.contain} showsVerticalScrollIndicator={false}>
           <View style={styles.textInput}>
             <AppText>Placeholder::</AppText>
-            <CustomInputText label={'Enter Your Name'} placeholder={'Smith Jhon'} />
+            <CustomInputText label={'Enter Your Name'} placeholder={'Smith John'} />
 
-            <AppText>multiline::</AppText>
-            <CustomInputText label={'Address'} placeholder={'Smith Jhon'} multiline={true}/>
+            <AppText>Multiline::</AppText>
+            <CustomInputText label={'Address'} placeholder={'Smith John'} multiline={true}/>
 
-            <AppText>numberOfLines::</AppText>
-            <CustomInputText label={'Address'} placeholder={'Smith Jhon'} multiline={true} />
+            <AppText>NumberOfLines::</AppText>
+            <CustomInputText label={'Address'} placeholder={'Smith John'} multiline={true} />
 
             <AppText>Pass additionalContainerStyle::</AppText>
-            <CustomInputText label={'Address'} placeholder={'Smith Jhon'} additionalContainerStyle={{
+            <CustomInputText label={'Address'} placeholder={'Smith John'} additionalContainerStyle={{
               shadowColor: Colors.black,
               shadowOffset: {
                 width: 0,
@@ -48,31 +48,31 @@ const InputText = () => {
             }} />
 
             <AppText>Pass textInputStyle::</AppText>
-            <CustomInputText label={'Address'} placeholder={'Smith Jhon'} multiline={true} textInputStyle={{ borderColor: Colors.green }} />
+            <CustomInputText label={'Address'} placeholder={'Smith John'} multiline={true} textInputStyle={{ borderColor: Colors.green }} />
 
             <AppText>Focus::</AppText>
             <CustomInputText label={'Email ID'} autoFocus={true} />
 
-            <AppText>keyboardType & maxLength::</AppText>
+            <AppText>KeyboardType & maxLength::</AppText>
             <CustomInputText label={'Phone Number'} keyboardType='numeric' maxLength={10} />
 
-            <AppText>returnKeyType::</AppText>
+            <AppText>ReturnKeyType::</AppText>
             <CustomInputText label={'Phone Number'} returnKeyType={'done'} />
 
             <AppText>OnSubmitEditing::</AppText>
             <CustomInputText label={'Email'} onSubmitEditing={() => goToNext(newPasswordRef)} />
 
-            <AppText>secureTextEntry::</AppText>
+            <AppText>SecureTextEntry::</AppText>
             <CustomInputText inputRef={newPasswordRef} label={'Password'} secureTextEntry={true} />
 
-            <AppText>editable::</AppText>
+            <AppText>Editable::</AppText>
             <CustomInputText label={'Email'} value={isValue} editable={false} />
 
             <AppText>Value & onChangeText::</AppText>
-            <CustomInputText label={'Email'} value={isValue} onChangeText={(text: string) => { setIsValue(text); }} />
+            <CustomInputText label={'Email'} value={isValue} onChangeText={(text: string) => { setIsValue(text) }} />
 
             <AppText>LeftIcon::</AppText>
-            <CustomInputText label={'Email Address'} LeftIcon={<SVGIcon component={<Mail width={horizontalScale(24)} height={verticalScale(24)} />} />} />
+            <CustomInputText label={'Email Address'} leftIcon={<SVGIcon component={<Mail width={horizontalScale(24)} height={verticalScale(24)} />} />} />
 
             <AppText>RightIcon::</AppText>
             <CustomInputText
@@ -81,14 +81,13 @@ const InputText = () => {
               onRightPress={() => setIsPasswordVisible(!isPasswordVisible)}
               rightIcon={<SVGIcon component={<Eye width={24} height={24} />} />}
             />
-
             <AppText>LeftIcon & RightIcon::</AppText>
             <CustomInputText
               label={'Password'}
               secureTextEntry={!isPasswordVisible}
               onRightPress={() => setIsPasswordVisible(!isPasswordVisible)}
-              LeftIcon={<SVGIcon component={<Mail width={24} height={24} />} />}
-              rightIcon={<SVGIcon component={<Eye width={24} height={24} />} />}
+              leftIcon={<SVGIcon component={<Mail width={moderateScale(24)} height={verticalScale(24)} />} />}
+              rightIcon={<SVGIcon component={<Eye width={moderateScale(24)} height={verticalScale(24)} />} />}
             />
           </View>
         </ScrollView>
