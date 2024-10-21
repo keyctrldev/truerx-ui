@@ -32,4 +32,5 @@ export default {
   AcceptTerms: 'AcceptTerms',
   MedicationList: 'MedicationList',
   resetPasswordMethod: 'ResetPasswordMethod',
+  svgScreen: 'SvgScreen'
 };

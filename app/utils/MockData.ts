@@ -123,4 +123,9 @@ export const componentListView: componentListProps[] = [
     componentTitle: 'Reset Password Method',
     screenName: Routes.resetPasswordMethod,
   },
+  {
+    id: 16,
+    componentTitle: 'Svg',
+    screenName: Routes.svgScreen,
+  },
 ];

@@ -20,7 +20,9 @@ import CustomProgressBarScreen from '../../modules/ComponentScreens/CustomProgre
 import NotificationTileScreen from '../../modules/ComponentScreens/NotificationTileScreen';
 import CustomHeaderScreen from '../../modules/ComponentScreens/CustomHeaderScreen';
 import MedicationListScreen from '../../modules/ComponentScreens/MedicationListScreen';
-import ResetPasswordMethodScreen from '../../modules/ComponentScreens/ResetPasswordMethodScreen';
+import ResetPasswordMethodScreen from '../../modules/ComponentScreens/reset-password-screen/ResetPasswordMethodScreen';
+import SvgScreen from '../../modules/ComponentScreens/svg-screen/SvgScreen';
+
 {
   //! Below Imports Are Visualization of Custom Components UI */
 }
@@ -36,7 +38,7 @@ const RootStack = () => {
     notificationListener();
   }, []);
   return (
-    <Stack.Navigator screenOptions={screenOption} initialRouteName={Routes.Onboarding}>
+    <Stack.Navigator screenOptions={screenOption} initialRouteName={Routes.home}>
       {/* Define the screens to be included in the stack navigator */}
       <Stack.Screen name={Routes.login} component={LoginScreen} />
       <Stack.Screen name={Routes.home} component={TabNavigation} />
@@ -60,6 +62,7 @@ const RootStack = () => {
       <Stack.Screen name={Routes.AcceptTerms} component={AcceptTermsScreen} />
       <Stack.Screen name={Routes.MedicationList} component={MedicationListScreen} />
       <Stack.Screen name={Routes.resetPasswordMethod} component={ResetPasswordMethodScreen} />
+      <Stack.Screen name={Routes.svgScreen} component={SvgScreen} />
     </Stack.Navigator>
   );
 };
