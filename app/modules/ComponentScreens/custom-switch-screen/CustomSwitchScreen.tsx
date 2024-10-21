@@ -1,6 +1,8 @@
-import { StyleSheet, View } from 'react-native';
 import React, { useState } from 'react';
-import { CustomSwitch } from '../../components';
+import { View } from 'react-native';
+
+import { CustomSwitch } from '../../../components';
+import { styles } from './CustomSwitchScreenStyles';
 
 const CustomSwitchScreen = () => {
   const [isToggleSwitch, setIsToggleSwitch] = useState<boolean>(false);
@@ -13,11 +15,3 @@ const CustomSwitchScreen = () => {
 };
 
 export default CustomSwitchScreen;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
