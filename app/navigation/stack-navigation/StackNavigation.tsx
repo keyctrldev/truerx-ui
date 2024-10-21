@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react';
 import { Routes } from '../../constants';
-import { NotificationScreen, AcceptTermsScreen } from '../../modules';
 import TabNavigation from '../tab-navigation/TabNavigation';
 import { createStackNavigator, StackNavigationOptions } from '@react-navigation/stack';
 import { useNotification } from '../../utils';
+import Onboarding from '../../modules/Onboarding/Onboarding';
+import { LoginScreen, NotificationScreen } from '../../modules';
+import PreLoginScreen from '../../modules/PreLogin/PreLoginScreen';
+import { AcceptTermsScreen } from '../../modules';
 import ListViewCellScreen from '../../modules/ComponentScreens/ListViewCellScreen';
 import AppTextScreen from '../../modules/ComponentScreens/AppTextScreen';
 import CustomToastScreen from '../../modules/ComponentScreens/CustomToastScreen';
@@ -15,8 +18,9 @@ import CustomTabIconScreen from '../../modules/ComponentScreens/CustomTabIconScr
 import ActivityLoaderScreen from '../../modules/ComponentScreens/ActivityLoaderScreen';
 import CustomProgressBarScreen from '../../modules/ComponentScreens/CustomProgressBarScreen';
 import NotificationTileScreen from '../../modules/ComponentScreens/NotificationTileScreen';
-import CustomHeaderScreen from '../../modules/ComponentScreens/CustomHeaderScreen';
+import CustomHeaderScreen from '../../modules/ComponentScreens/CustomHeaderscreen';
 import MedicationListScreen from '../../modules/ComponentScreens/MedicationListScreen';
+import ResetPasswordMethodScreen from '../../modules/ComponentScreens/reset-password-screen/ResetPasswordMethodScreen';
 import PharmacyPriceListScreen from '../../modules/ComponentScreens/PharmacyPriceListScreen';
 {
   //! Below Imports Are Visualization of Custom Components UI */
@@ -33,11 +37,13 @@ const RootStack = () => {
     notificationListener();
   }, []);
   return (
-    <Stack.Navigator screenOptions={screenOption} initialRouteName={Routes.login}>
+    <Stack.Navigator screenOptions={screenOption} initialRouteName={Routes.Onboarding}>
       {/* Define the screens to be included in the stack navigator */}
-      {/* <Stack.Screen name={Routes.login} component={LoginScreen} /> */}
+      <Stack.Screen name={Routes.login} component={LoginScreen} />
       <Stack.Screen name={Routes.home} component={TabNavigation} />
       <Stack.Screen name={Routes.notifications} component={NotificationScreen} />
+      <Stack.Screen name={Routes.Onboarding} component={Onboarding} />
+      <Stack.Screen name={Routes.PreLogin} component={PreLoginScreen} />
 
       {/* //! Below Screens Are Visualization of Custom Components UI */}
       <Stack.Screen name={Routes.ListViewCellScreen} component={ListViewCellScreen} />
@@ -54,6 +60,7 @@ const RootStack = () => {
       <Stack.Screen name={Routes.NotificationTile} component={NotificationTileScreen} />
       <Stack.Screen name={Routes.AcceptTerms} component={AcceptTermsScreen} />
       <Stack.Screen name={Routes.MedicationList} component={MedicationListScreen} />
+      <Stack.Screen name={Routes.resetPasswordMethod} component={ResetPasswordMethodScreen} />
       <Stack.Screen name={Routes.PharmacyPriceList} component={PharmacyPriceListScreen} />
     </Stack.Navigator>
   );

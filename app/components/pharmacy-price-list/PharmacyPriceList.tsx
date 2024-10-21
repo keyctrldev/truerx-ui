@@ -3,13 +3,7 @@ import AppText from '../app-text/AppText';
 import { Image, ImageSourcePropType, View } from 'react-native';
 import { Icons } from '../../assets';
 import { styles } from './PharmacyPriceListStyle';
-
-interface PharmacyDetails {
-  pharmacyLogo: ImageSourcePropType;
-  pharmacyName: string;
-  pharmacyDistance: string;
-  price: number;
-}
+import { PharmacyDetails } from '../../types';
 
 const PharmacyPriceList = ({ pharmacyLogo, pharmacyName, pharmacyDistance, price }: PharmacyDetails) => {
   return (
