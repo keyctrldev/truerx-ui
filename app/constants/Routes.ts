@@ -13,6 +13,8 @@ export default {
   settings: 'Settings',
   coverage: 'Coverage',
   notifications: 'Notifications',
+  Onboarding: 'Onboarding',
+  PreLogin: 'PreLoginScreen',
 
   // !  Below Screens Are Visualization of Custom Components UI
   ListViewCellScreen: 'ListViewCellScreen',

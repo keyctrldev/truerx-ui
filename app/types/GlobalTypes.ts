@@ -1,4 +1,5 @@
 // Define TypeScript interfaces for global types used throughout the application.
+import { ImageSourcePropType } from 'react-native';
 
 import { ImageSourcePropType, ImageStyle, TextStyle } from 'react-native';
 
@@ -45,6 +46,12 @@ export interface NotificationItem {
   messageId: string;
   time: string;
   title: string;
+}
+
+export interface OnboardingProps {
+  header: string;
+  description: string;
+  image: ImageSourcePropType;
 }
 
 export interface MedicationDetails {
