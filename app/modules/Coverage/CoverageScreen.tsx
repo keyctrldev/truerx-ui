@@ -1,8 +1,9 @@
 import React from 'react';
-import { AppText, CustomHeader, SafeAreaContainer } from '../../components';
-import { Colors } from '../../theme';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
+
+import { styles } from './CoverageScreenStyles';
 import { headerComponentStrings } from '../../constants';
+import { AppText, CustomHeader, SafeAreaContainer } from '../../components';
 
 const CoverageScreen = () => {
   return (
@@ -16,21 +17,3 @@ const CoverageScreen = () => {
 };
 
 export default CoverageScreen;
-
-export const styles = StyleSheet.create({
-  containerStyle: {
-    flex: 1,
-    backgroundColor: Colors.skyBlue,
-  },
-
-  body: {
-    flex: 1,
-    alignContent: 'center',
-    justifyContent: 'center',
-  },
-
-  label: {
-    textAlign: 'center',
-    color: Colors.white,
-  },
-});

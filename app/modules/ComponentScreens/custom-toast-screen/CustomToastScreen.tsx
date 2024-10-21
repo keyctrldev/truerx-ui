@@ -1,6 +1,8 @@
-import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import React from 'react';
-import { useToast } from '../../context';
+import { Text, TouchableOpacity } from 'react-native';
+
+import { styles } from './CustomToastScreenStyles';
+import { useToast } from '../../../context';
 
 const CustomToastScreen = () => {
   const toast = useToast();
@@ -17,11 +19,3 @@ const CustomToastScreen = () => {
 };
 
 export default CustomToastScreen;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});

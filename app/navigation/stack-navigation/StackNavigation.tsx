@@ -4,26 +4,28 @@ import TabNavigation from '../tab-navigation/TabNavigation';
 import { createStackNavigator, StackNavigationOptions } from '@react-navigation/stack';
 import { useNotification } from '../../utils';
 import Onboarding from '../../modules/Onboarding/Onboarding';
-import { LoginScreen, NotificationScreen } from '../../modules';
 import PreLoginScreen from '../../modules/PreLogin/PreLoginScreen';
-import { AcceptTermsScreen } from '../../modules';
-import ListViewCellScreen from '../../modules/ComponentScreens/ListViewCellScreen';
-import AppTextScreen from '../../modules/ComponentScreens/AppTextScreen';
-import CustomToastScreen from '../../modules/ComponentScreens/CustomToastScreen';
-import CustomButtonScreen from '../../modules/ComponentScreens/CustomButtonScreen';
-import CustomTextInputScreen from '../../modules/ComponentScreens/CustomTextInputScreen';
-import CustomSwitchScreen from '../../modules/ComponentScreens/CustomSwitchScreen';
-import SafeAreaContainerScreen from '../../modules/ComponentScreens/SafeAreaContainerScreen';
-import CustomTabIconScreen from '../../modules/ComponentScreens/CustomTabIconScreen';
-import ActivityLoaderScreen from '../../modules/ComponentScreens/ActivityLoaderScreen';
-import CustomProgressBarScreen from '../../modules/ComponentScreens/CustomProgressBarScreen';
-import NotificationTileScreen from '../../modules/ComponentScreens/NotificationTileScreen';
-import CustomHeaderScreen from '../../modules/ComponentScreens/CustomHeaderScreen';
-import MedicationListScreen from '../../modules/ComponentScreens/MedicationListScreen';
-import ResetPasswordMethodScreen from '../../modules/ComponentScreens/ResetPasswordMethodScreen';
-{
-  //! Below Imports Are Visualization of Custom Components UI */
-}
+
+//! Below Imports Are Visualization of Custom Components UI */
+import {
+  LoginScreen,
+  AppTextScreen,
+  AcceptTermsScreen,
+  CustomToastScreen,
+  ListViewCellScreen,
+  CustomButtonScreen,
+  CustomHeaderScreen,
+  CustomSwitchScreen,
+  NotificationScreen,
+  CustomTabIconScreen,
+  MedicationListScreen,
+  ActivityLoaderScreen,
+  CustomTextInputScreen,
+  NotificationTileScreen,
+  CustomProgressBarScreen,
+  SafeAreaContainerScreen,
+  ResetPasswordMethodScreen,
+} from '../../modules';
 
 const Stack = createStackNavigator();
 const RootStack = () => {
@@ -36,7 +38,7 @@ const RootStack = () => {
     notificationListener();
   }, []);
   return (
-    <Stack.Navigator screenOptions={screenOption} initialRouteName={Routes.Onboarding}>
+    <Stack.Navigator screenOptions={screenOption} initialRouteName={Routes.home}>
       {/* Define the screens to be included in the stack navigator */}
       <Stack.Screen name={Routes.login} component={LoginScreen} />
       <Stack.Screen name={Routes.home} component={TabNavigation} />

@@ -1,6 +1,7 @@
 import React from 'react';
-import { Alert, StyleSheet, View } from 'react-native';
-import { CustomButton } from '../../components';
+import { Alert, View } from 'react-native';
+import { styles } from './CustomButtonScreenStyles';
+import { CustomButton } from '../../../components';
 
 const CustomButtonScreen = () => {
   return (
@@ -16,11 +17,3 @@ const CustomButtonScreen = () => {
 };
 
 export default CustomButtonScreen;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});

@@ -1,6 +1,6 @@
 import { View } from 'react-native';
 import React from 'react';
-import { CustomProgressStepper } from '../../components';
+import { CustomProgressStepper } from '../../../components';
 
 const CustomProgressBarScreen = () => {
   return (
