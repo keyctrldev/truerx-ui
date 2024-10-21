@@ -5,7 +5,7 @@ import { Colors } from '../../theme';
 import { Icons } from '../../assets';
 import { NotificationTile } from '../../components';
 
-const NotificationTileScreen:React.FC = () => {
+const NotificationTileScreen: React.FC = () => {
   return (
     <View style={styles.container}>
       <NotificationTile
@@ -42,5 +42,5 @@ const styles = StyleSheet.create({
   },
   additionalStyle: {
     backgroundColor: Colors.cyan,
-  }
+  },
 });

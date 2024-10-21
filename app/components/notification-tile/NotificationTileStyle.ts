@@ -40,10 +40,10 @@ export const styles = StyleSheet.create({
   iconStyle: {
     width: moderateScale(32),
     height: moderateScale(32),
-    resizeMode: "contain"
+    resizeMode: 'contain',
   },
   separator: {
     height: verticalScale(1),
-    backgroundColor: Colors.gray
+    backgroundColor: Colors.gray,
   },
 });

@@ -15,6 +15,10 @@ type ColorType =
   | 'overlayDark'
   | 'cyan'
   | 'lightGray'
+  | 'darkTheme'
+  | 'dotColor'
+  | 'transparent'
+  | 'primaryThemeColor'
   | 'secondaryBackground'
   | 'darkGrey'
   | 'primaryBtnBackground'
@@ -40,6 +44,10 @@ export const Colors: Record<ColorType, string> = {
   overlayDark: 'rgba(0,0,0,0.2)',
   cyan: '#E4FFFF',
   lightGray: '#F2F2F2',
+  darkTheme: '00545A',
+  primaryThemeColor: '#00909A',
+  dotColor: '#00545A',
+  transparent: 'transparent',
   secondaryBackground: '#F2F2F7',
   primaryBtnBackground: '#00909A',
   viridianGreen: '#00909A',
