@@ -13,10 +13,9 @@ import {
 } from 'react-native';
 
 import { Icons } from '../../assets';
-import { agreementTermsList } from '../../utils';
 import { useGlobalStyles } from '../../utils/GlobalStyles';
-import { acceptTermsScreenStrings } from '../../constants';
 import { CustomButton, SafeAreaContainer } from '../../components';
+import { acceptTermsScreenStrings, agreementTermsList } from '../../constants';
 import { Colors, horizontalScale, moderateScale, verticalScale } from '../../theme';
 
 if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {

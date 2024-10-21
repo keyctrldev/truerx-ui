@@ -20,6 +20,7 @@ import CustomProgressBarScreen from '../../modules/ComponentScreens/CustomProgre
 import NotificationTileScreen from '../../modules/ComponentScreens/NotificationTileScreen';
 import CustomHeaderScreen from '../../modules/ComponentScreens/CustomHeaderScreen';
 import MedicationListScreen from '../../modules/ComponentScreens/MedicationListScreen';
+import ResetPasswordMethodScreen from '../../modules/ComponentScreens/ResetPasswordMethodScreen';
 {
   //! Below Imports Are Visualization of Custom Components UI */
 }
@@ -58,6 +59,7 @@ const RootStack = () => {
       <Stack.Screen name={Routes.NotificationTile} component={NotificationTileScreen} />
       <Stack.Screen name={Routes.AcceptTerms} component={AcceptTermsScreen} />
       <Stack.Screen name={Routes.MedicationList} component={MedicationListScreen} />
+      <Stack.Screen name={Routes.resetPasswordMethod} component={ResetPasswordMethodScreen} />
     </Stack.Navigator>
   );
 };

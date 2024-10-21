@@ -16,7 +16,7 @@ export default {
   Onboarding: 'Onboarding',
   PreLogin: 'PreLoginScreen',
 
-  // !  Below Screens Are Visulization of Custom Components UI
+  // !  Below Screens Are Visualization of Custom Components UI
   ListViewCellScreen: 'ListViewCellScreen',
   AppText: 'AppText',
   CustomToast: 'CustomToast',
@@ -31,4 +31,5 @@ export default {
   NotificationTile: 'NotificationTile',
   AcceptTerms: 'AcceptTerms',
   MedicationList: 'MedicationList',
+  resetPasswordMethod: 'ResetPasswordMethod',
 };
