@@ -29,4 +29,5 @@ export default {
   NotificationTile: 'NotificationTile',
   AcceptTerms: 'AcceptTerms',
   MedicationList: 'MedicationList',
+  PharmacyPriceList: 'PharmacyPriceList',
 };

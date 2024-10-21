@@ -10,3 +10,4 @@ export { default as SettingsScreen } from './Settings/SettingsScreen';
 export { default as OverviewScreen } from './Overview/OverviewScreen';
 export { default as NotificationScreen } from './Notifications/NotificationScreen';
 export { default as AcceptTermsScreen } from './AcceptTerms/AcceptTermsScreen';
+export { default as PharmacyPriceListScreen } from './ComponentScreens/PharmacyPriceListScreen';

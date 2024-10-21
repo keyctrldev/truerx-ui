@@ -21,4 +21,6 @@ export default {
   medicineIcon: require('./medicine.png'),
   pillsIcon: require('./pills.png'),
   dropDownArrowIcon: require('./dropDownArrowIcon.png'),
+  pharmacyLogo: require('./pharmacyLogo.png'),
+  chevronRight: require('./chevron-right.png'),
 };

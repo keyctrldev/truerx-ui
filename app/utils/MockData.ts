@@ -119,6 +119,11 @@ export const componentListView: componentListProps[] = [
     componentTitle: 'MedicationList',
     screenName: Routes.MedicationList,
   },
+  {
+    id: 15,
+    componentTitle: 'PharmacyPriceList',
+    screenName: Routes.PharmacyPriceList,
+  },
 ];
 
 export const agreementTermsList: { id: number; title: string; subText?: string }[] = [
