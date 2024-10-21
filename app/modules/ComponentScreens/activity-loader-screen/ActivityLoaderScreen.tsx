@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ActivityLoader } from '../../components';
+import { ActivityLoader } from '../../../components';
 
 const ActivityLoaderScreen = () => {
   const [isLoading, setIsLoading] = useState(true);

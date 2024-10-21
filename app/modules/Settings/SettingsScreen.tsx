@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { AppText, CustomHeader, SafeAreaContainer } from '../../components';
-import { Colors, horizontalScale } from '../../theme';
-import { Alert, StyleSheet, View } from 'react-native';
+import { Alert, View } from 'react-native';
+
+import { styles } from './SettingScreenStyles';
 import { headerComponentStrings } from '../../constants';
+import { AppText, CustomHeader, SafeAreaContainer } from '../../components';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const SettingsScreen = () => {
@@ -31,22 +32,3 @@ const SettingsScreen = () => {
 };
 
 export default SettingsScreen;
-
-export const styles = StyleSheet.create({
-  containerStyle: {
-    flex: 1,
-    backgroundColor: Colors.skyBlue,
-  },
-
-  body: {
-    flex: 1,
-    alignContent: 'center',
-    justifyContent: 'center',
-  },
-
-  label: {
-    textAlign: 'center',
-    color: Colors.white,
-    paddingHorizontal: horizontalScale(10),
-  },
-});

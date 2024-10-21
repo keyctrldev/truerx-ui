@@ -1,9 +1,9 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 
-import { Colors } from '../../theme';
-import { Icons } from '../../assets';
-import { NotificationTile } from '../../components';
+import { Icons } from '../../../assets';
+import { NotificationTile } from '../../../components';
+import { styles } from './NotificationTileScreenStyles';
 
 const NotificationTileScreen: React.FC = () => {
   return (
@@ -30,17 +30,3 @@ const NotificationTileScreen: React.FC = () => {
 };
 
 export default NotificationTileScreen;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  iconAdditionalStyles: {
-    tintColor: Colors.red,
-  },
-  additionalStyle: {
-    backgroundColor: Colors.cyan,
-  },
-});

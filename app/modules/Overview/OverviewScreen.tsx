@@ -1,12 +1,12 @@
 import React from 'react';
-import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { FlatList, Text, TouchableOpacity } from 'react-native';
 
-import { CustomHeader, SafeAreaContainer } from '../../components';
-import { Colors, verticalScale } from '../../theme';
-import { headerComponentStrings, Routes } from '../../constants';
+import { styles } from './OverviewScreenStyles';
+import { headerComponentStrings } from '../../constants';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { ParamListBase, useNavigation } from '@react-navigation/native';
+import { CustomHeader, SafeAreaContainer } from '../../components';
 import { componentListProps, componentListView } from '../../utils';
+import { ParamListBase, useNavigation } from '@react-navigation/native';
 
 const OverviewScreen = () => {
   const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
@@ -32,17 +32,3 @@ const OverviewScreen = () => {
 };
 
 export default OverviewScreen;
-
-export const styles = StyleSheet.create({
-  containerStyle: {
-    flex: 1,
-    backgroundColor: Colors.skyBlue,
-  },
-  btnContainer: {
-    backgroundColor: Colors.white,
-    padding: verticalScale(9),
-    margin: verticalScale(5),
-    borderRadius: verticalScale(8),
-    alignItems: 'center',
-  },
-});
