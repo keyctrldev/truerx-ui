@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { FlatList, StyleSheet } from 'react-native';
+import { FlatList } from 'react-native';
 
-import { resetPasswordMethods } from '../../utils';
-import { ResetPasswordMethodProps } from '../../types';
-import { Colors, horizontalScale, verticalScale } from '../../theme';
-import { CustomResetPasswordMethodComponent, SafeAreaContainer } from '../../components';
+import { resetPasswordMethods } from '../../../constants';
+import { ResetPasswordMethodProps } from '../../../types';
+import { styles } from './ResetPasswordMethodScreenStyles';
+import { CustomResetPasswordMethodComponent, SafeAreaContainer } from '../../../components';
 
 const ResetPasswordMethodScreen = () => {
   const [isSelected, setIsSelected] = useState<number>(0);
@@ -33,14 +33,3 @@ const ResetPasswordMethodScreen = () => {
 };
 
 export default ResetPasswordMethodScreen;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: Colors.white,
-    paddingHorizontal: horizontalScale(10),
-  },
-  resetPasswordContainer: {
-    marginVertical: verticalScale(8),
-  },
-});
