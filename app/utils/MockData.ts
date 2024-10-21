@@ -128,4 +128,9 @@ export const componentListView: componentListProps[] = [
     componentTitle: 'Svg',
     screenName: Routes.svgScreen,
   },
+  {
+    id: 17,
+    componentTitle: 'Input Text',
+    screenName: Routes.inputText,
+  },
 ];

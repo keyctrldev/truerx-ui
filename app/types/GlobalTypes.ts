@@ -1,7 +1,8 @@
 // Define TypeScript interfaces for global types used throughout the application.
-import { ImageSourcePropType } from 'react-native';
+import { ForwardedRef } from 'react';
+import { ImageSourcePropType, KeyboardTypeOptions, ReturnKeyTypeOptions, StyleProp, TextInput, ViewStyle } from 'react-native';
 
-import { ImageSourcePropType, ImageStyle, TextStyle } from 'react-native';
+import { ImageStyle, TextStyle } from 'react-native';
 
 export interface UserFormType {
   email: string;
@@ -79,3 +80,29 @@ export interface CustomResetPasswordMethodComponentProps {
   titleTextStyle?: TextStyle;
   subTitleTextStyle?: TextStyle;
 }
+
+
+export interface CustomInputTextPops {
+  label: string;
+  touched?: boolean;
+  editable?: boolean;
+  maxLength?: number;
+  autoFocus?: boolean;
+  multiline?: boolean;
+  placeholder?: string;
+  defaultValue?: string;
+  secureTextEntry?: boolean;
+  value?: string | undefined;
+  leftIcon?: React.ReactNode;
+  rightIcon?: React.ReactNode;
+  onSubmitEditing?: () => void;
+  onLeftIconPress?: () => void;
+  onRightIconPress?: () => void;
+  keyboardType?: KeyboardTypeOptions;
+  onChangeText: (text: string) => void;
+  returnKeyType?: ReturnKeyTypeOptions;
+  textInputStyle?: StyleProp<ViewStyle>;
+  additionalContainerStyle?: StyleProp<ViewStyle>;
+}
+
+export type CustomInputType = (props: CustomInputTextPops, ref: ForwardedRef<TextInput>) => React.JSX.Element;

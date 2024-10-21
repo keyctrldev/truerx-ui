@@ -10,6 +10,7 @@ import PreLoginScreen from '../../modules/PreLogin/PreLoginScreen';
 import {
   LoginScreen,
   AppTextScreen,
+  InputTextScreen,
   AcceptTermsScreen,
   CustomToastScreen,
   ListViewCellScreen,
@@ -64,6 +65,7 @@ const RootStack = () => {
       <Stack.Screen name={Routes.MedicationList} component={MedicationListScreen} />
       <Stack.Screen name={Routes.resetPasswordMethod} component={ResetPasswordMethodScreen} />
       <Stack.Screen name={Routes.svgScreen} component={SvgScreen} />
+      <Stack.Screen name={Routes.inputText} component={InputTextScreen} />
     </Stack.Navigator>
   );
 };
