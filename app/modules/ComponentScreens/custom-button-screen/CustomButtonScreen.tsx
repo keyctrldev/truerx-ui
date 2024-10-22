@@ -1,18 +1,30 @@
 import React from 'react';
 import { Alert, View } from 'react-native';
+
 import { styles } from './CustomButtonScreenStyles';
-import { CustomButton } from '../../../components';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { CustomBackButton, CustomButton } from '../../../components';
+import { ParamListBase, useNavigation } from '@react-navigation/native';
 
 const CustomButtonScreen = () => {
+  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+
+  const handleBackPress = () => {
+    navigation.goBack();
+  };
+
   return (
-    <View style={styles.container}>
-      <CustomButton
-        title="Custom Btn Component"
-        onPress={() => {
-          Alert.alert('THIS IS DEMO CUSTOM BTN');
-        }}
-      />
-    </View>
+    <>
+      <CustomBackButton onBackPress={handleBackPress} />
+      <View style={styles.container}>
+        <CustomButton
+          title="Custom Btn Component"
+          onPress={() => {
+            Alert.alert('THIS IS DEMO CUSTOM BTN');
+          }}
+        />
+      </View>
+    </>
   );
 };
 

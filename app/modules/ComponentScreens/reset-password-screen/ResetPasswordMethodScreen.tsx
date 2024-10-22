@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, View } from 'react-native';
 
 import { resetPasswordMethods } from '../../../constants';
 import { ResetPasswordMethodProps } from '../../../types';
 import { styles } from './ResetPasswordMethodScreenStyles';
-import { CustomResetPasswordMethodComponent, SafeAreaContainer } from '../../../components';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { ParamListBase, useNavigation } from '@react-navigation/native';
+import { CustomBackButton, CustomResetPasswordMethodComponent } from '../../../components';
 
 const ResetPasswordMethodScreen = () => {
   const [isSelected, setIsSelected] = useState<number>(0);
+  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+
+  const handleBackPress = () => {
+    navigation.goBack();
+  };
 
   const renderResetPasswordMethodItem = ({ item }: { item: ResetPasswordMethodProps }) => {
     const handleSelectPasswordMethod = () => {
@@ -26,9 +33,10 @@ const ResetPasswordMethodScreen = () => {
   };
 
   return (
-    <SafeAreaContainer style={styles.container}>
+    <View style={styles.container}>
+      <CustomBackButton onBackPress={handleBackPress} />
       <FlatList data={resetPasswordMethods} renderItem={renderResetPasswordMethodItem} />
-    </SafeAreaContainer>
+    </View>
   );
 };
 
