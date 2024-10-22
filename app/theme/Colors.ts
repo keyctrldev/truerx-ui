@@ -23,6 +23,7 @@ type ColorType =
   | 'darkGrey'
   | 'primaryBtnBackground'
   | 'viridianGreen'
+  | 'primaryLightTheme'
   | 'argent';
 
 // This object provides a centralized way to manage and reference color values throughout the application, ensuring consistency in color usage.
@@ -52,4 +53,5 @@ export const Colors: Record<ColorType, string> = {
   primaryBtnBackground: '#00909A',
   viridianGreen: '#00909A',
   argent: '#939393',
+  primaryLightTheme: '#f2fbff',
 };

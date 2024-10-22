@@ -1,7 +1,6 @@
 // Define TypeScript interfaces for global types used throughout the application.
-import { ImageSourcePropType } from 'react-native';
 
-import { ImageSourcePropType, ImageStyle, TextStyle } from 'react-native';
+import { ImageSourcePropType, ImageStyle, TextStyle, StyleProp, ViewStyle } from 'react-native';
 
 export interface UserFormType {
   email: string;
@@ -78,4 +77,14 @@ export interface CustomResetPasswordMethodComponentProps {
   subTitle?: string;
   titleTextStyle?: TextStyle;
   subTitleTextStyle?: TextStyle;
+}
+export interface CustomTextButtonProps {
+  leftIcon?: any;
+  rightIcon?: any;
+  onPress: () => void;
+  textContent: string;
+  textStyle?: StyleProp<TextStyle>;
+  containerStyle?: StyleProp<ViewStyle>;
+  leftIconStyles?: StyleProp<ViewStyle>;
+  rightIconStyles?: StyleProp<ViewStyle>;
 }
