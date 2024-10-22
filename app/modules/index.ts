@@ -14,6 +14,7 @@ export { default as AcceptTermsScreen } from './AcceptTerms/AcceptTermsScreen';
 export { default as ListViewCellScreen } from './ComponentScreens/list-view-cell-screen/ListViewCellScreen';
 export { default as AppTextScreen } from './ComponentScreens/app-text-screen/AppTextScreen';
 export { default as CustomToastScreen } from './ComponentScreens/custom-toast-screen/CustomToastScreen';
+export { default as InputTextScreen } from './ComponentScreens/custom-input-text-screen/InputTextScreen';
 export { default as CustomButtonScreen } from './ComponentScreens/custom-button-screen/CustomButtonScreen';
 export { default as CustomTextInputScreen } from './ComponentScreens/custom-textinput-screen/CustomTextInputScreen';
 export { default as CustomSwitchScreen } from './ComponentScreens/custom-switch-screen/CustomSwitchScreen';
