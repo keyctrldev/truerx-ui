@@ -1,10 +1,11 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import { Icons } from '../../../assets';
-import { styles } from './NotificationTileScreenStyles';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { ParamListBase, useNavigation } from '@react-navigation/native';
+
+import { Icons } from '../../../assets';
+import { styles } from './NotificationTileScreenStyles';
 import { CustomBackButton, NotificationTile, SafeAreaContainer } from '../../../components';
 
 const NotificationTileScreen: React.FC = () => {

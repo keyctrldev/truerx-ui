@@ -26,6 +26,7 @@ import {
   CustomProgressBarScreen,
   SafeAreaContainerScreen,
   ResetPasswordMethodScreen,
+  OtpInputScreen,
 } from '../../modules';
 import SvgScreen from '../../modules/ComponentScreens/svg-screen/SvgScreen';
 
@@ -66,6 +67,7 @@ const RootStack = () => {
       <Stack.Screen name={Routes.resetPasswordMethod} component={ResetPasswordMethodScreen} />
       <Stack.Screen name={Routes.svgScreen} component={SvgScreen} />
       <Stack.Screen name={Routes.inputText} component={InputTextScreen} />
+      <Stack.Screen name={Routes.otpInput} component={OtpInputScreen} />
     </Stack.Navigator>
   );
 };

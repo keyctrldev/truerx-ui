@@ -121,3 +121,8 @@ export interface CustomInputTextPops {
 }
 
 export type CustomInputType = (props: CustomInputTextPops, ref: ForwardedRef<TextInput>) => React.JSX.Element;
+
+export interface otpInputComponentProps {
+  setOtp: (otp: string) => void;
+  pinCount: number;
+}
