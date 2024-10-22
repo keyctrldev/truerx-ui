@@ -1,17 +1,25 @@
 import React, { RefObject, useRef, useState } from 'react';
 import { ScrollView, TextInput, View, KeyboardAvoidingView, Platform } from 'react-native';
 
-import { AppText } from '../../../components';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { ParamListBase, useNavigation } from '@react-navigation/native';
+
 import { verticalScale } from '../../../theme';
 import { styles } from './InputTextScreenStyles';
 import { MailIcon, EyeOpenIcon } from '../../../assets/svgs';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { AppText, CustomBackButton } from '../../../components';
 import CustomInputText from '../../../components/custom-input-text/CustomInputText';
 
 const InputTextScreen = () => {
   const newPasswordRef = useRef<TextInput>(null);
   const [defaultValue, setDefaultValue] = useState<string>('Nick Ben');
   const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
+  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+
+  const handleBackPress = () => {
+    navigation.goBack();
+  };
 
   const goToNext = (nextRef: RefObject<TextInput>): void => {
     nextRef?.current?.focus();
@@ -23,6 +31,7 @@ const InputTextScreen = () => {
 
   return (
     <SafeAreaView style={styles.containerStyle}>
+      <CustomBackButton onBackPress={handleBackPress} />
       <KeyboardAvoidingView
         style={styles.avoidingView}
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
