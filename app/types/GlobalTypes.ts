@@ -115,5 +115,5 @@ export type CustomInputType = (props: CustomInputTextPops, ref: ForwardedRef<Tex
 
 export interface otpInputComponentProps {
   setOtp: (otp: string) => void;
-  digits?: number;
+  pinCount: number;
 }

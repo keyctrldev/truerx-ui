@@ -5,18 +5,16 @@ import { Colors, horizontalScale, moderateScale } from '../../theme';
 
 export const styles = StyleSheet.create({
   otpContainerStyle: {
-    paddingHorizontal: horizontalScale(8),
+    paddingHorizontal: horizontalScale(10),
     justifyContent: 'space-evenly',
   },
   otpInputContainer: {
     backgroundColor: Colors.white,
-    width: horizontalScale(50),
-    height: horizontalScale(55),
+    width: horizontalScale(52),
+    height: horizontalScale(58),
     borderWidth: horizontalScale(1),
     borderColor: Colors.boxBorderColor,
-    borderRadius: horizontalScale(10),
-  },
-  otpInputTextStyle: {
+    borderRadius: horizontalScale(8),
     fontFamily: fonts.SemiBold,
     color: Colors.black,
     fontSize: moderateScale(22),
@@ -24,8 +22,5 @@ export const styles = StyleSheet.create({
   focusedContainerStyle: {
     borderColor: Colors.primary,
     borderWidth: horizontalScale(1),
-  },
-  focusContainerCursorStyle: {
-    backgroundColor: Colors.primary,
   },
 });

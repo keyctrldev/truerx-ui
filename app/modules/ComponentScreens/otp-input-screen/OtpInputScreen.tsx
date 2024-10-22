@@ -8,7 +8,7 @@ const OtpInputScreen = () => {
 
   return (
     <SafeAreaContainer style={GlobalStyles.centerContainer}>
-      <CustomOtpInputComponent digits={6} setOtp={otp => {}} autoFocus={true} />
+      <CustomOtpInputComponent setOtp={otp => {}} pinCount={6} />
     </SafeAreaContainer>
   );
 };
