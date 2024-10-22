@@ -138,4 +138,9 @@ export const componentListView: componentListProps[] = [
     componentTitle: 'Otp Input',
     screenName: Routes.otpInput,
   },
+  {
+    id: 19,
+    componentTitle: 'Text Button Component',
+    screenName: Routes.textButton,
+  },
 ];

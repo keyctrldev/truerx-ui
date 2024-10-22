@@ -23,6 +23,8 @@ type ColorType =
   | 'darkGrey'
   | 'primaryBtnBackground'
   | 'viridianGreen'
+  | 'primaryLightTheme'
+  | 'argent'
   | 'argent'
   | 'mediumGray'
   | 'boxBorderColor';
@@ -54,6 +56,7 @@ export const Colors: Record<ColorType, string> = {
   primaryBtnBackground: '#00909A',
   viridianGreen: '#00909A',
   argent: '#939393',
+  primaryLightTheme: '#f2fbff',
   mediumGray: '#a3a3a3',
   boxBorderColor: '#D5D5D5',
 };

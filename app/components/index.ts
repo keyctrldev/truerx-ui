@@ -14,3 +14,4 @@ export { default as CustomResetPasswordMethodComponent } from './reset-password/
 export { default as MedicationList } from './medication-list/MedicationList';
 export { default as CustomOtpInputComponent } from './otp-input/CustomOtpInputComponent';
 export { default as CustomBackButton } from './custom-back-button/CustomBackButton';
+export { default as CustomTextButton } from './custom-text-button/CustomTextButton';

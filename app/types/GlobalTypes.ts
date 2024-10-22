@@ -10,6 +10,7 @@ import {
   KeyboardTypeOptions,
   ReturnKeyTypeOptions,
 } from 'react-native';
+
 import { SvgProps } from 'react-native-svg';
 
 export interface UserFormType {
@@ -87,6 +88,16 @@ export interface CustomResetPasswordMethodComponentProps {
   subTitle?: string;
   titleTextStyle?: TextStyle;
   subTitleTextStyle?: TextStyle;
+}
+export interface CustomTextButtonProps {
+  leftIcon?: React.ReactElement<SvgProps>;
+  rightIcon?: React.ReactElement<SvgProps>;
+  onPress: () => void;
+  textContent: string;
+  textStyle?: StyleProp<TextStyle>;
+  containerStyle?: StyleProp<ViewStyle>;
+  leftIconStyles?: StyleProp<ViewStyle>;
+  rightIconStyles?: StyleProp<ViewStyle>;
 }
 
 export interface CustomBackButtonProps {
