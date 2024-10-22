@@ -33,5 +33,5 @@ export default {
   MedicationList: 'MedicationList',
   resetPasswordMethod: 'ResetPasswordMethod',
   svgScreen: 'SvgScreen',
-  inputText: 'InputTextScreen'
+  inputText: 'InputTextScreen',
 };

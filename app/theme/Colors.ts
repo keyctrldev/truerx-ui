@@ -53,5 +53,5 @@ export const Colors: Record<ColorType, string> = {
   primaryBtnBackground: '#00909A',
   viridianGreen: '#00909A',
   argent: '#939393',
-  mediumGray:'#a3a3a3'
+  mediumGray: '#a3a3a3',
 };

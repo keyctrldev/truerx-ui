@@ -1,8 +1,16 @@
 // Define TypeScript interfaces for global types used throughout the application.
 import { ForwardedRef } from 'react';
-import { ImageSourcePropType, KeyboardTypeOptions, ReturnKeyTypeOptions, StyleProp, TextInput, ViewStyle } from 'react-native';
-
-import { ImageStyle, TextStyle } from 'react-native';
+import {
+  StyleProp,
+  TextInput,
+  TextStyle,
+  ViewStyle,
+  ImageStyle,
+  ImageSourcePropType,
+  KeyboardTypeOptions,
+  ReturnKeyTypeOptions,
+} from 'react-native';
+import { SvgProps } from 'react-native-svg';
 
 export interface UserFormType {
   email: string;
@@ -81,6 +89,13 @@ export interface CustomResetPasswordMethodComponentProps {
   subTitleTextStyle?: TextStyle;
 }
 
+export interface CustomBackButtonProps {
+  icon?: React.ReactElement<SvgProps>;
+  title?: string;
+  titleTextStyle?: TextStyle;
+  btnContainerStyle?: ViewStyle;
+  onBackPress: () => void;
+}
 
 export interface CustomInputTextPops {
   label: string;

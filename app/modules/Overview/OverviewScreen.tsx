@@ -18,7 +18,7 @@ const OverviewScreen = () => {
           navigation.navigate(item.screenName);
         }}
         style={styles.btnContainer}>
-        <Text>{item.componentTitle}</Text>
+        <Text style={styles.buttonTextStyle}>{item.componentTitle}</Text>
       </TouchableOpacity>
     );
   };
@@ -26,7 +26,12 @@ const OverviewScreen = () => {
   return (
     <SafeAreaContainer style={styles.containerStyle}>
       <CustomHeader heading={headerComponentStrings.Overview} />
-      <FlatList data={componentListView} renderItem={renderComponentList} />
+      <FlatList
+        showsVerticalScrollIndicator={false}
+        data={componentListView}
+        renderItem={renderComponentList}
+        style={styles.listViewContainer}
+      />
     </SafeAreaContainer>
   );
 };

@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     backgroundColor: Colors.gray,
   },
   textInputStyle: {
-    borderWidth:1,
+    borderWidth: 1,
     overflow: 'hidden',
     backgroundColor: Colors.white,
     borderColor: Colors.mediumGray,

@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
   },
   additionalContainerStyle: {
     padding: 5,
-    backgroundColor: 'green'
+    backgroundColor: 'green',
   },
   avoidingView: {
     flex: 1,
