@@ -1,12 +1,11 @@
 import React from 'react';
-import { View } from 'react-native';
 
-import { ListViewCell } from '../../../components';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { ParamListBase, useNavigation } from '@react-navigation/native';
-import CustomBackButton from '../../../components/custom-back-button/CustomBackButton';
 
-const ListViewCellScreen = () => {
+import { CustomBackButton, CustomOtpInputComponent, SafeAreaContainer } from '../../../components';
+
+const OtpInputScreen = () => {
   const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
 
   const handleBackPress = () => {
@@ -14,11 +13,11 @@ const ListViewCellScreen = () => {
   };
 
   return (
-    <View>
+    <SafeAreaContainer>
       <CustomBackButton onBackPress={handleBackPress} />
-      <ListViewCell Description="23" status="Online" typeOfConsultance="Demo233" />
-    </View>
+      <CustomOtpInputComponent setOtp={otp => {}} pinCount={6} />
+    </SafeAreaContainer>
   );
 };
 
-export default ListViewCellScreen;
+export default OtpInputScreen;

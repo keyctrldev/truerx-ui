@@ -3,13 +3,24 @@ import { View } from 'react-native';
 
 import { Icons } from '../../../assets';
 import { styles } from './CustomTabIconScreenStyles';
-import { CustomTabIcon } from '../../../components';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { CustomBackButton, CustomTabIcon } from '../../../components';
+import { ParamListBase, useNavigation } from '@react-navigation/native';
 
 const CustomTabIconScreen = () => {
+  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+
+  const handleBackPress = () => {
+    navigation.goBack();
+  };
+
   return (
-    <View style={styles.container}>
-      <CustomTabIcon focused={true} icon={Icons.claimsIcon} label="TEST" />
-    </View>
+    <>
+      <CustomBackButton onBackPress={handleBackPress} />
+      <View style={styles.container}>
+        <CustomTabIcon focused={true} icon={Icons.claimsIcon} label="TEST" />
+      </View>
+    </>
   );
 };
 

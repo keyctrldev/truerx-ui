@@ -6,18 +6,20 @@ import {
   Platform,
   FlatList,
   UIManager,
-  StyleSheet,
   ScrollView,
   TouchableOpacity,
   LayoutAnimation,
 } from 'react-native';
 
+import { StackNavigationProp } from '@react-navigation/stack';
+import { ParamListBase, useNavigation } from '@react-navigation/native';
+
 import { Colors } from '../../theme';
 import { Icons } from '../../assets';
 import { styles } from './AcceptTermsScreenStyles';
 import { useGlobalStyles } from '../../utils/GlobalStyles';
-import { CustomButton, SafeAreaContainer } from '../../components';
 import { acceptTermsScreenStrings, agreementTermsList } from '../../constants';
+import { CustomBackButton, CustomButton, SafeAreaContainer } from '../../components';
 
 if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
   UIManager.setLayoutAnimationEnabledExperimental(true);
@@ -27,6 +29,11 @@ const AcceptTermsScreen = () => {
   const GlobalStyles = useGlobalStyles();
 
   const [isExpandView, setIsExpandView] = useState<number>(0);
+  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+
+  const handleBackPress = () => {
+    navigation.goBack();
+  };
 
   const renderItem = ({ item }: { item: { id: number; title: string; subText?: string } }) => {
     const isExpandedView = isExpandView === item.id;
@@ -83,6 +90,7 @@ const AcceptTermsScreen = () => {
 
   return (
     <SafeAreaContainer style={GlobalStyles.mainContainerStyle} statusBarColor={Colors.secondaryBackground}>
+      <CustomBackButton onBackPress={handleBackPress} />
       <Text style={styles.agreementTextStyle}>{acceptTermsScreenStrings.AgreementToTerms}</Text>
       <FlatList
         data={agreementTermsList}

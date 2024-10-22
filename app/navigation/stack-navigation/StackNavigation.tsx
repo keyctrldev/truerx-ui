@@ -10,6 +10,8 @@ import PreLoginScreen from '../../modules/PreLogin/PreLoginScreen';
 import {
   LoginScreen,
   AppTextScreen,
+  OtpInputScreen,
+  InputTextScreen,
   AcceptTermsScreen,
   CustomToastScreen,
   ListViewCellScreen,
@@ -21,13 +23,13 @@ import {
   MedicationListScreen,
   ActivityLoaderScreen,
   CustomTextInputScreen,
+  CustomTextButtonScreen,
   NotificationTileScreen,
-  CustomProgressBarScreen,
   SafeAreaContainerScreen,
+  CustomProgressBarScreen,
   ResetPasswordMethodScreen,
 } from '../../modules';
 import SvgScreen from '../../modules/ComponentScreens/svg-screen/SvgScreen';
-import CustomTextButtonScreen from '../../modules/ComponentScreens/custom-text-button-screen/CustomTextButtonScreen';
 
 const Stack = createStackNavigator();
 const RootStack = () => {
@@ -66,6 +68,9 @@ const RootStack = () => {
       <Stack.Screen name={Routes.resetPasswordMethod} component={ResetPasswordMethodScreen} />
       <Stack.Screen name={Routes.svgScreen} component={SvgScreen} />
       <Stack.Screen name={Routes.CustomTextButton} component={CustomTextButtonScreen} />
+      <Stack.Screen name={Routes.inputText} component={InputTextScreen} />
+      <Stack.Screen name={Routes.otpInput} component={OtpInputScreen} />
+      <Stack.Screen name={Routes.textButton} component={CustomTextButtonScreen} />
     </Stack.Navigator>
   );
 };

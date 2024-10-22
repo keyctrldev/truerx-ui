@@ -34,4 +34,7 @@ export default {
   resetPasswordMethod: 'ResetPasswordMethod',
   svgScreen: 'SvgScreen',
   CustomTextButton: 'CustomTextButtonScreen',
+  inputText: 'InputTextScreen',
+  otpInput: 'OtpInputScreen',
+  textButton: 'TextbuttonScreen',
 };

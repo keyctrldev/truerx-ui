@@ -12,3 +12,6 @@ export { default as CustomHeader } from './custom-header/CustomHeader';
 export { default as NotificationTile } from './notification-tile/NotificationTile';
 export { default as CustomResetPasswordMethodComponent } from './reset-password/CustomResetPasswordMethodComponent';
 export { default as MedicationList } from './medication-list/MedicationList';
+export { default as CustomOtpInputComponent } from './otp-input/CustomOtpInputComponent';
+export { default as CustomBackButton } from './custom-back-button/CustomBackButton';
+export { default as CustomTextButton } from './custom-text-button/CustomTextButton';
