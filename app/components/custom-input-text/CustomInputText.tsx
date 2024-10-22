@@ -55,7 +55,7 @@ const CustomInputText: CustomInputType = (
         activeUnderlineColor="transparent"
         onSubmitEditing={onSubmitEditing}
         secureTextEntry={secureTextEntry}
-        style={[styles.input, textInputStyle]}
+        style={[styles.textInputStyle, textInputStyle]}
         placeholderTextColor={Colors.mediumGray}
         left={leftIcon && <TextInput.Icon icon={() => <SVGIcon component={leftIcon} disabled={!onLeftIconPress} onPress={onLeftIconPress} />} />}
         right={rightIcon && <TextInput.Icon icon={() => <SVGIcon component={rightIcon} disabled={!onRightIconPress} onPress={onRightIconPress} />} />}

@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.gray,
   },
-  input: {
+  textInputStyle: {
     borderWidth:1,
     overflow: 'hidden',
     backgroundColor: Colors.white,
