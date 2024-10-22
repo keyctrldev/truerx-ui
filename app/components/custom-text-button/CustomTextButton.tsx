@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pressable, View } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 
 import { SVGIcon } from '../common';
 import AppText from '../app-text/AppText';
@@ -17,7 +17,7 @@ const CustomTextButton: React.FC<CustomTextButtonProps> = ({
   rightIconStyles,
 }) => {
   return (
-    <Pressable style={[styles.container, containerStyle]} onPress={onPress}>
+    <TouchableOpacity activeOpacity={0.8} style={[styles.container, containerStyle]} onPress={onPress}>
       {leftIcon && (
         <View style={[styles.svgIconStyles,leftIconStyles]}>
           <SVGIcon component={leftIcon} disabled={true}/>
@@ -29,7 +29,7 @@ const CustomTextButton: React.FC<CustomTextButtonProps> = ({
           <SVGIcon component={rightIcon} disabled={true}/>
         </View>
       )}
-    </Pressable>
+    </TouchableOpacity>
   );
 };
 

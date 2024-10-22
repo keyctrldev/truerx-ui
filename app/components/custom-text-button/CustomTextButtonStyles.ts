@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-import { Colors, horizontalScale, moderateScale, verticalScale } from "../../theme";
+import { Colors, horizontalScale, moderateScale } from "../../theme";
 
 export const styles = StyleSheet.create({
     container: {
@@ -8,7 +8,6 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent:'center',
-        paddingVertical: verticalScale(20),
     },
     customText: {
         flex:1,

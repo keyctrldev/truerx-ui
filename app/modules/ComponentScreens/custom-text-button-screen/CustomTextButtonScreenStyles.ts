@@ -17,6 +17,7 @@ export const styles = StyleSheet.create({
         fontSize: moderateScale(18)
     },
     containerStyle: {
+        borderWidth: 1,
         backgroundColor: Colors.primaryLightTheme,
     },
     rightIconStyles: {
