@@ -1,7 +1,7 @@
 import React from 'react';
 import { SafeAreaView, TouchableOpacity } from 'react-native';
-import { PharmacyPriceList } from '../../components';
-import { Icons } from '../../assets';
+import { PharmacyPriceList } from '../../../components';
+import { Icons } from '../../../assets';
 
 const PharmacyPriceListScreen = () => {
   return (

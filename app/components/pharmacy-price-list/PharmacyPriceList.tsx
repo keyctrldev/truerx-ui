@@ -1,6 +1,6 @@
 import React from 'react';
 import AppText from '../app-text/AppText';
-import { Image, ImageSourcePropType, View } from 'react-native';
+import { Image, View } from 'react-native';
 import { Icons } from '../../assets';
 import { styles } from './PharmacyPriceListStyle';
 import { PharmacyDetails } from '../../types';

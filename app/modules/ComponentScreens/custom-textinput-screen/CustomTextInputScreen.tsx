@@ -1,6 +1,8 @@
-import { StyleSheet, View } from 'react-native';
 import React from 'react';
-import { CustomTextInput } from '../../components';
+import { View } from 'react-native';
+
+import { styles } from './CustomTextInputScreenStyles';
+import { CustomTextInput } from '../../../components';
 
 const CustomTextInputScreen = () => {
   return (
@@ -11,11 +13,3 @@ const CustomTextInputScreen = () => {
 };
 
 export default CustomTextInputScreen;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

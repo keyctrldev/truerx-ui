@@ -125,6 +125,11 @@ export const componentListView: componentListProps[] = [
   },
   {
     id: 16,
+    componentTitle: 'Svg',
+    screenName: Routes.svgScreen,
+  },
+  {
+    id: 17,
     componentTitle: 'PharmacyPriceList',
     screenName: Routes.PharmacyPriceList,
   },

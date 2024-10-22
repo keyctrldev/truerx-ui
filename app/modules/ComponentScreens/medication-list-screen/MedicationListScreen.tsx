@@ -1,6 +1,6 @@
 import React from 'react';
-import { MedicationList } from '../../components';
 import { SafeAreaView } from 'react-native';
+import { MedicationList } from '../../../components';
 
 const MedicationListScreen = () => {
   return (
