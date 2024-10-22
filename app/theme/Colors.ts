@@ -24,7 +24,8 @@ type ColorType =
   | 'primaryBtnBackground'
   | 'viridianGreen'
   | 'argent'
-  | 'mediumGray';
+  | 'mediumGray'
+  | 'boxBorderColor';
 
 // This object provides a centralized way to manage and reference color values throughout the application, ensuring consistency in color usage.
 // Color code should be Hex values.
@@ -53,5 +54,6 @@ export const Colors: Record<ColorType, string> = {
   primaryBtnBackground: '#00909A',
   viridianGreen: '#00909A',
   argent: '#939393',
-  mediumGray:'#a3a3a3'
+  mediumGray: '#a3a3a3',
+  boxBorderColor: '#D5D5D5',
 };

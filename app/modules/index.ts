@@ -26,3 +26,4 @@ export { default as CustomHeaderScreen } from './ComponentScreens/custom-header-
 export { default as NotificationTileScreen } from './ComponentScreens/notification-tile-screen/NotificationTileScreen';
 export { default as MedicationListScreen } from './ComponentScreens/medication-list-screen/MedicationListScreen';
 export { default as ResetPasswordMethodScreen } from './ComponentScreens/reset-password-screen/ResetPasswordMethodScreen';
+export { default as OtpInputScreen } from './ComponentScreens/otp-input-screen/OtpInputScreen';
