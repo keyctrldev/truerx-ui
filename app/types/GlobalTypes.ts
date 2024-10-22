@@ -83,4 +83,6 @@ export interface PharmacyDetails {
   pharmacyName: string;
   pharmacyDistance: string;
   price: number;
+  additionalPriceStyle?: TextStyle;
+  onPress: () => void;
 }

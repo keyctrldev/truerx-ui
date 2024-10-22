@@ -1,13 +1,20 @@
 import React from 'react';
 import AppText from '../app-text/AppText';
-import { Image, View } from 'react-native';
+import { Image, TouchableOpacity, View } from 'react-native';
 import { Icons } from '../../assets';
 import { styles } from './PharmacyPriceListStyle';
 import { PharmacyDetails } from '../../types';
 
-const PharmacyPriceList = ({ pharmacyLogo, pharmacyName, pharmacyDistance, price }: PharmacyDetails) => {
+const PharmacyPriceList = ({
+  pharmacyLogo,
+  pharmacyName,
+  pharmacyDistance,
+  price,
+  additionalPriceStyle,
+  onPress,
+}: PharmacyDetails) => {
   return (
-    <View style={styles.pharmacyItem}>
+    <TouchableOpacity style={styles.pharmacyItem} onPress={onPress}>
       <View style={styles.pharmacy}>
         <Image source={pharmacyLogo} style={styles.pharmacyLogo} />
         <View style={styles.pharmacyDetails}>
@@ -17,10 +24,10 @@ const PharmacyPriceList = ({ pharmacyLogo, pharmacyName, pharmacyDistance, price
       </View>
 
       <View style={styles.priceDetails}>
-        <AppText style={styles.price}>${price}</AppText>
+        <AppText style={[styles.price, additionalPriceStyle]}>${price}</AppText>
         <Image source={Icons.chevronRight} style={styles.navigationArrow} />
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 export default PharmacyPriceList;
