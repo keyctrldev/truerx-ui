@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert } from 'react-native';
+import { Alert, View } from 'react-native';
 
 import { styles } from './SvgScreenStyles';
 import { MailIcon } from '../../../assets/svgs';
@@ -16,17 +16,17 @@ const SvgScreen = () => {
   };
 
   return (
-    <>
+    <SafeAreaContainer>
       <CustomBackButton onBackPress={handleBackPress} />
-      <SafeAreaContainer style={styles.container}>
+      <View style={styles.container}>
         <SVGIcon
           component={<MailIcon />}
           onPress={() => {
             Alert.alert('SVG pressed!!');
           }}
         />
-      </SafeAreaContainer>
-    </>
+      </View>
+    </SafeAreaContainer>
   );
 };
 

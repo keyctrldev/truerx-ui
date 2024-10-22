@@ -5,7 +5,7 @@ import { Icons } from '../../../assets';
 import { styles } from './NotificationTileScreenStyles';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { ParamListBase, useNavigation } from '@react-navigation/native';
-import { CustomBackButton, NotificationTile } from '../../../components';
+import { CustomBackButton, NotificationTile, SafeAreaContainer } from '../../../components';
 
 const NotificationTileScreen: React.FC = () => {
   const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
@@ -15,7 +15,7 @@ const NotificationTileScreen: React.FC = () => {
   };
 
   return (
-    <>
+    <SafeAreaContainer>
       <CustomBackButton onBackPress={handleBackPress} />
       <View style={styles.container}>
         <NotificationTile
@@ -36,7 +36,7 @@ const NotificationTileScreen: React.FC = () => {
           message="Your Ozempic medication is due for a refill.Please call your pharmacy today."
         />
       </View>
-    </>
+    </SafeAreaContainer>
   );
 };
 

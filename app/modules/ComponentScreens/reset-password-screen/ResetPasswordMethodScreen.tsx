@@ -6,7 +6,7 @@ import { ResetPasswordMethodProps } from '../../../types';
 import { styles } from './ResetPasswordMethodScreenStyles';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { ParamListBase, useNavigation } from '@react-navigation/native';
-import { CustomBackButton, CustomResetPasswordMethodComponent } from '../../../components';
+import { CustomBackButton, CustomResetPasswordMethodComponent, SafeAreaContainer } from '../../../components';
 
 const ResetPasswordMethodScreen = () => {
   const [isSelected, setIsSelected] = useState<number>(0);
@@ -33,10 +33,10 @@ const ResetPasswordMethodScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaContainer style={styles.container}>
       <CustomBackButton onBackPress={handleBackPress} />
       <FlatList data={resetPasswordMethods} renderItem={renderResetPasswordMethodItem} />
-    </View>
+    </SafeAreaContainer>
   );
 };
 

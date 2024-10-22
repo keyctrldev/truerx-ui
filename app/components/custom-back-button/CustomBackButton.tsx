@@ -7,21 +7,18 @@ import { styles } from './CustomBackButtonStyles';
 import { backBtnComponent } from '../../constants';
 import { CustomBackButtonProps } from '../../types';
 import { useGlobalStyles } from '../../utils/GlobalStyles';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 const CustomBackButton = (props: CustomBackButtonProps & TouchableOpacityProps) => {
   const GlobalStyles = useGlobalStyles();
 
   return (
-    <SafeAreaView edges={['top']}>
-      <TouchableOpacity
-        style={[GlobalStyles.rowContainer, styles.btnContainerStyle, props.btnContainerStyle]}
-        {...props}
-        onPress={props.onBackPress}>
-        {props.icon ?? <LeftIcon width={verticalScale(15)} height={verticalScale(15)} />}
-        <Text style={[styles.backTextStyle, props.titleTextStyle]}>{props.title ?? backBtnComponent.back}</Text>
-      </TouchableOpacity>
-    </SafeAreaView>
+    <TouchableOpacity
+      style={[GlobalStyles.rowContainer, styles.btnContainerStyle, props.btnContainerStyle]}
+      {...props}
+      onPress={props.onBackPress}>
+      {props.icon ?? <LeftIcon width={verticalScale(15)} height={verticalScale(15)} />}
+      <Text style={[styles.backTextStyle, props.titleTextStyle]}>{props.title ?? backBtnComponent.back}</Text>
+    </TouchableOpacity>
   );
 };
 
