@@ -1,13 +1,20 @@
 import React from 'react';
 
-import { useGlobalStyles } from '../../../utils/GlobalStyles';
-import { CustomOtpInputComponent, SafeAreaContainer } from '../../../components';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { ParamListBase, useNavigation } from '@react-navigation/native';
+
+import { CustomBackButton, CustomOtpInputComponent, SafeAreaContainer } from '../../../components';
 
 const OtpInputScreen = () => {
-  const GlobalStyles = useGlobalStyles();
+  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+
+  const handleBackPress = () => {
+    navigation.goBack();
+  };
 
   return (
-    <SafeAreaContainer style={GlobalStyles.centerContainer}>
+    <SafeAreaContainer>
+      <CustomBackButton onBackPress={handleBackPress} />
       <CustomOtpInputComponent setOtp={otp => {}} pinCount={6} />
     </SafeAreaContainer>
   );

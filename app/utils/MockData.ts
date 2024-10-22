@@ -48,61 +48,61 @@ export interface componentListProps {
 }
 
 export const componentListView: componentListProps[] = [
-  {
-    id: 1,
-    componentTitle: 'ListViewCell',
-    screenName: Routes.ListViewCellScreen,
-  },
-  {
-    id: 2,
-    componentTitle: 'BaseText',
-    screenName: Routes.AppText,
-  },
-  {
-    id: 3,
-    componentTitle: 'CustomToast',
-    screenName: Routes.CustomToast,
-  },
-  {
-    id: 4,
-    componentTitle: 'CustomButton',
-    screenName: Routes.CustomButton,
-  },
-  {
-    id: 5,
-    componentTitle: 'CustomTextInput',
-    screenName: Routes.CustomTextInput,
-  },
-  {
-    id: 6,
-    componentTitle: 'CustomSwitch',
-    screenName: Routes.CustomSwitch,
-  },
-  {
-    id: 7,
-    componentTitle: 'SafeAreaContainer',
-    screenName: Routes.SafeAreaContainer,
-  },
-  {
-    id: 8,
-    componentTitle: 'CustomTabIcon',
-    screenName: Routes.CustomTabIcon,
-  },
-  {
-    id: 9,
-    componentTitle: 'ActivityLoader',
-    screenName: Routes.ActivityLoader,
-  },
-  {
-    id: 10,
-    componentTitle: 'CustomProgressStepper',
-    screenName: Routes.CustomProgressStepper,
-  },
-  {
-    id: 11,
-    componentTitle: 'CustomHeader',
-    screenName: Routes.CustomHeader,
-  },
+  // {
+  //   id: 1,
+  //   componentTitle: 'ListViewCell',
+  //   screenName: Routes.ListViewCellScreen,
+  // },
+  // {
+  //   id: 2,
+  //   componentTitle: 'BaseText',
+  //   screenName: Routes.AppText,
+  // },
+  // {
+  //   id: 3,
+  //   componentTitle: 'CustomToast',
+  //   screenName: Routes.CustomToast,
+  // },
+  // {
+  //   id: 4,
+  //   componentTitle: 'CustomButton',
+  //   screenName: Routes.CustomButton,
+  // },
+  // {
+  //   id: 5,
+  //   componentTitle: 'CustomTextInput',
+  //   screenName: Routes.CustomTextInput,
+  // },
+  // {
+  //   id: 6,
+  //   componentTitle: 'CustomSwitch',
+  //   screenName: Routes.CustomSwitch,
+  // },
+  // {
+  //   id: 7,
+  //   componentTitle: 'SafeAreaContainer',
+  //   screenName: Routes.SafeAreaContainer,
+  // },
+  // {
+  //   id: 8,
+  //   componentTitle: 'CustomTabIcon',
+  //   screenName: Routes.CustomTabIcon,
+  // },
+  // {
+  //   id: 9,
+  //   componentTitle: 'ActivityLoader',
+  //   screenName: Routes.ActivityLoader,
+  // },
+  // {
+  //   id: 10,
+  //   componentTitle: 'CustomProgressStepper',
+  //   screenName: Routes.CustomProgressStepper,
+  // },
+  // {
+  //   id: 11,
+  //   componentTitle: 'CustomHeader',
+  //   screenName: Routes.CustomHeader,
+  // },
   {
     id: 12,
     componentTitle: 'NotificationTile',

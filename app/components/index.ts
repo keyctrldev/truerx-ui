@@ -13,3 +13,4 @@ export { default as NotificationTile } from './notification-tile/NotificationTil
 export { default as CustomResetPasswordMethodComponent } from './reset-password/CustomResetPasswordMethodComponent';
 export { default as MedicationList } from './medication-list/MedicationList';
 export { default as CustomOtpInputComponent } from './otp-input/CustomOtpInputComponent';
+export { default as CustomBackButton } from './custom-back-button/CustomBackButton';

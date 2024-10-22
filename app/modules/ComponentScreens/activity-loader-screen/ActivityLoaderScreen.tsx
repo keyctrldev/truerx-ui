@@ -1,8 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { ActivityLoader } from '../../../components';
+import { ActivityLoader, CustomBackButton } from '../../../components';
+import { ParamListBase, useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
 
 const ActivityLoaderScreen = () => {
   const [isLoading, setIsLoading] = useState(true);
+
+  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+
+  const handleBackPress = () => {
+    navigation.goBack();
+  };
 
   useEffect(() => {
     setTimeout(() => {
@@ -10,7 +18,12 @@ const ActivityLoaderScreen = () => {
     }, 2000);
   }, []);
 
-  return <ActivityLoader isVisible={isLoading} color={'black'} />;
+  return (
+    <>
+      <CustomBackButton onBackPress={handleBackPress} />
+      <ActivityLoader isVisible={isLoading} color={'black'} />
+    </>
+  );
 };
 
 export default ActivityLoaderScreen;
