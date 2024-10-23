@@ -37,4 +37,5 @@ export default {
   inputText: 'InputTextScreen',
   otpInput: 'OtpInputScreen',
   textButton: 'TextbuttonScreen',
+  linearProgressBar: 'LinearProgressBarScreen',
 };

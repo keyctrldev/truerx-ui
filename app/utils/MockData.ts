@@ -143,4 +143,9 @@ export const componentListView: componentListProps[] = [
     componentTitle: 'Text Button Component',
     screenName: Routes.textButton,
   },
+  {
+    id: 20,
+    componentTitle: 'Linear Progress Bar',
+    screenName: Routes.linearProgressBar,
+  },
 ];

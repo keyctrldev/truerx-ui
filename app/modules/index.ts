@@ -28,3 +28,4 @@ export { default as MedicationListScreen } from './ComponentScreens/medication-l
 export { default as ResetPasswordMethodScreen } from './ComponentScreens/reset-password-screen/ResetPasswordMethodScreen';
 export { default as OtpInputScreen } from './ComponentScreens/otp-input-screen/OtpInputScreen';
 export { default as CustomTextButtonScreen } from './ComponentScreens/custom-text-button-screen/CustomTextButtonScreen';
+export { default as LinearProgressBarScreen } from './ComponentScreens/linear-progress-bar-screen/LinearProgressBarScreen';
