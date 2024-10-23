@@ -1,5 +1,5 @@
 import React from 'react';
-import {TouchableOpacity, ViewStyle, StyleProp} from 'react-native';
+import { TouchableOpacity, ViewStyle, StyleProp } from 'react-native';
 
 interface SVGIconProps {
   component: any;
@@ -9,7 +9,7 @@ interface SVGIconProps {
 }
 
 const SVGIcon: React.FC<SVGIconProps> = (props: SVGIconProps) => {
-  const {onPress, containerStyle, component, disabled} = props;
+  const { onPress, containerStyle, component, disabled } = props;
   return (
     <TouchableOpacity
       onPress={onPress}
@@ -26,4 +26,4 @@ const SVGIcon: React.FC<SVGIconProps> = (props: SVGIconProps) => {
   );
 };
 
-export {SVGIcon};
+export { SVGIcon };

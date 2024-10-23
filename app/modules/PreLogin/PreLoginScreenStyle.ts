@@ -41,7 +41,7 @@ export const styles = StyleSheet.create({
     borderRadius: moderateScale(30),
     backgroundColor: Colors.transparent,
     borderColor: Colors.primaryThemeColor,
-    borderWidth: 2
+    borderWidth: 2,
   },
   buttonLabelStyle: {
     fontSize: moderateScale(18),

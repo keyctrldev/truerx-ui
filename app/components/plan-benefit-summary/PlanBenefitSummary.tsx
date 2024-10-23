@@ -2,8 +2,8 @@ import React, { memo } from 'react';
 import { TouchableOpacity, TouchableOpacityProps, View } from 'react-native';
 
 import AppText from '../app-text/AppText';
+import { ChevronRight } from '../../assets/svgs';
 import { styles } from './PlanBenefitSummaryStyles';
-import { ChevronRightIcon } from '../../assets/svgs';
 import { PlanBenefitSummaryProps } from '../../types';
 import { useGlobalStyles } from '../../utils/GlobalStyles';
 import { planBenefitSummaryComponent } from '../../constants';
@@ -35,7 +35,7 @@ const PlanBenefitSummary = (props: PlanBenefitSummaryProps & TouchableOpacityPro
     <TouchableOpacity style={styles.mainContainerStyle} activeOpacity={0.8} {...props}>
       <View style={GlobalStyles.rowSpaceBetweenContainer}>
         <AppText style={[styles.titleTextStyle, props.titleTextStyle]}>{props.title}</AppText>
-        {props.icon ?? <ChevronRightIcon />}
+        {props.icon ?? <ChevronRight fill={Colors.white} />}
       </View>
       <View style={[GlobalStyles.rowSpaceBetweenContainer, styles.planDetailsContainer]}>
         {renderProgressBar(

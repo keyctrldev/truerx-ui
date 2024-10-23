@@ -147,3 +147,11 @@ export interface PlanBenefitSummaryProps {
   deductiveProgressValue: number;
   outOfPocketMaxProgressValue: number;
 }
+export interface PharmacyDetails {
+  pharmacyLogo: ImageSourcePropType;
+  pharmacyName: string;
+  pharmacyDistance: string;
+  price: number;
+  additionalPriceStyle?: TextStyle;
+  onPress: () => void;
+}

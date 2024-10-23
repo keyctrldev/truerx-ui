@@ -17,3 +17,4 @@ export { default as CustomBackButton } from './custom-back-button/CustomBackButt
 export { default as CustomTextButton } from './custom-text-button/CustomTextButton';
 export { default as CustomLinearProgressBar } from './linear-progress-bar/CustomLinearProgressBar';
 export { default as PlanBenefitSummary } from './plan-benefit-summary/PlanBenefitSummary';
+export { default as PharmacyPriceList } from './pharmacy-price-list/PharmacyPriceList';
