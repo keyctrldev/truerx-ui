@@ -38,4 +38,5 @@ export default {
   otpInput: 'OtpInputScreen',
   textButton: 'TextbuttonScreen',
   linearProgressBar: 'LinearProgressBarScreen',
+  yourPlanBenefit: 'YourPlanBenefitScreen',
 };

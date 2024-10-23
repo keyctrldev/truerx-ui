@@ -27,7 +27,9 @@ type ColorType =
   | 'argent'
   | 'argent'
   | 'mediumGray'
-  | 'boxBorderColor';
+  | 'boxBorderColor'
+  | 'lightOrange'
+  | 'offWhite';
 
 // This object provides a centralized way to manage and reference color values throughout the application, ensuring consistency in color usage.
 // Color code should be Hex values.
@@ -59,4 +61,6 @@ export const Colors: Record<ColorType, string> = {
   primaryLightTheme: '#f2fbff',
   mediumGray: '#a3a3a3',
   boxBorderColor: '#D5D5D5',
+  lightOrange: '#FF937F',
+  offWhite: '#FFE9E5',
 };

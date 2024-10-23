@@ -148,4 +148,9 @@ export const componentListView: componentListProps[] = [
     componentTitle: 'Linear Progress Bar',
     screenName: Routes.linearProgressBar,
   },
+  {
+    id: 21,
+    componentTitle: 'Your Plan Benefit',
+    screenName: Routes.yourPlanBenefit,
+  },
 ];
