@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
     color: Colors.white,
     fontFamily: fonts.SemiBold,
     fontSize: moderateScale(32),
-    marginTop: Platform.OS === 'android'? verticalScale(78) :verticalScale(50),
+    marginTop: Platform.OS === 'android' ? verticalScale(78) : verticalScale(50),
     lineHeight: verticalScale(41),
   },
   desTxt: {

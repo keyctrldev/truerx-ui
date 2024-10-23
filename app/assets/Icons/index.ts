@@ -24,4 +24,5 @@ export default {
   voiceCallIcon: require('./phoneIcon.png'),
   pillsIcon: require('./pills.png'),
   dropDownArrowIcon: require('./dropDownArrowIcon.png'),
+  pharmacyLogo: require('./pharmacyLogo.png'),
 };

@@ -16,3 +16,4 @@ export { default as CustomOtpInputComponent } from './otp-input/CustomOtpInputCo
 export { default as CustomBackButton } from './custom-back-button/CustomBackButton';
 export { default as CustomTextButton } from './custom-text-button/CustomTextButton';
 export { default as CustomLinearProgressBar } from './linear-progress-bar/CustomLinearProgressBar';
+export { default as PharmacyPriceList } from './pharmacy-price-list/PharmacyPriceList';

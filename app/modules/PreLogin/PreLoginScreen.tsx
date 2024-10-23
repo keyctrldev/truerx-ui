@@ -29,10 +29,12 @@ const PreLoginScreen: React.FC = () => {
             buttonLabelStyle={styles.signInButtonLabelStyle}
             onPress={() => {}}
           />
-            <AppText style={styles.terms}>
-              {loginScreenString.preLogin.terms}
-              <AppText onPress={()=>{}} style={{...styles.terms, color: Colors.primaryThemeColor}}>{loginScreenString.preLogin.secondTerm}</AppText>
+          <AppText style={styles.terms}>
+            {loginScreenString.preLogin.terms}
+            <AppText onPress={() => {}} style={{ ...styles.terms, color: Colors.primaryThemeColor }}>
+              {loginScreenString.preLogin.secondTerm}
             </AppText>
+          </AppText>
         </ImageBackground>
       </View>
     </SafeAreaContainer>

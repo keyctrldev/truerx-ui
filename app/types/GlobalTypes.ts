@@ -137,3 +137,12 @@ export interface otpInputComponentProps {
   setOtp: (otp: string) => void;
   pinCount: number;
 }
+
+export interface PharmacyDetails {
+  pharmacyLogo: ImageSourcePropType;
+  pharmacyName: string;
+  pharmacyDistance: string;
+  price: number;
+  additionalPriceStyle?: TextStyle;
+  onPress: () => void;
+}

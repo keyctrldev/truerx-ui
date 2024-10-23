@@ -148,4 +148,9 @@ export const componentListView: componentListProps[] = [
     componentTitle: 'Linear Progress Bar',
     screenName: Routes.linearProgressBar,
   },
+  {
+    id: 21,
+    componentTitle: 'PharmacyPriceList',
+    screenName: Routes.PharmacyPriceList,
+  },
 ];
