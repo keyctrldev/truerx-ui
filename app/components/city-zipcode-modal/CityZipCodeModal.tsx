@@ -10,7 +10,7 @@ import CustomButton from '../custom-button/CustomButton';
 import { cityZipCodeModalComponent } from '../../constants';
 import CustomTextInput from '../custom-text-input/CustomTextInput';
 
-const CityZipcodeModal = (props: CityZipModalProps) => {
+const CityZipCodeModal = (props: CityZipModalProps) => {
   const [cityText, setCityText] = useState<string>('');
 
   const handleOnDonePress = () => {
@@ -19,7 +19,11 @@ const CityZipcodeModal = (props: CityZipModalProps) => {
   };
 
   return (
-    <Modal isVisible={props.isVisible} onBackButtonPress={props.onClose} onBackdropPress={props.onClose}>
+    <Modal
+      statusBarTranslucent={true}
+      isVisible={props.isVisible}
+      onBackButtonPress={props.onClose}
+      onBackdropPress={props.onClose}>
       <View style={styles.modalContainer}>
         <Text style={styles.titleTextStyle}>{cityZipCodeModalComponent.enterCityZipCode}</Text>
         <CustomTextInput
@@ -48,4 +52,4 @@ const CityZipcodeModal = (props: CityZipModalProps) => {
   );
 };
 
-export default memo(CityZipcodeModal);
+export default memo(CityZipCodeModal);

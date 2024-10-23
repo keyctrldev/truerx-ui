@@ -4,7 +4,6 @@ import { fonts } from '../../assets';
 
 export const styles = StyleSheet.create({
   modalContainer: {
-    paddingHorizontal: verticalScale(10),
     paddingVertical: verticalScale(18),
     backgroundColor: Colors.white,
     borderRadius: verticalScale(8),
