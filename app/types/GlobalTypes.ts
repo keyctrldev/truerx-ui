@@ -138,6 +138,15 @@ export interface otpInputComponentProps {
   pinCount: number;
 }
 
+export interface PlanBenefitSummaryProps {
+  title: string;
+  titleTextStyle?: TextStyle;
+  icon?: React.ReactElement<SvgProps>;
+  deductibleAmount: string;
+  outOfPocketAmount: string;
+  deductiveProgressValue: number;
+  outOfPocketMaxProgressValue: number;
+}
 export interface PharmacyDetails {
   pharmacyLogo: ImageSourcePropType;
   pharmacyName: string;

@@ -150,6 +150,11 @@ export const componentListView: componentListProps[] = [
   },
   {
     id: 21,
+    componentTitle: 'Your Plan Benefit',
+    screenName: Routes.yourPlanBenefit,
+  },
+  {
+    id: 22,
     componentTitle: 'PharmacyPriceList',
     screenName: Routes.PharmacyPriceList,
   },

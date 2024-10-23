@@ -156,3 +156,9 @@ export const agreementTermsList: { id: number; title: string; subText?: string }
 export const backBtnComponent = {
   back: 'Back',
 };
+
+export const planBenefitSummaryComponent = Object.freeze({
+  remaining: 'Remaining',
+  deductible: 'Deductible',
+  outOfPocketMax: 'Out-of-pocket max',
+});

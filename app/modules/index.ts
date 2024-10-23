@@ -29,4 +29,5 @@ export { default as ResetPasswordMethodScreen } from './ComponentScreens/reset-p
 export { default as OtpInputScreen } from './ComponentScreens/otp-input-screen/OtpInputScreen';
 export { default as CustomTextButtonScreen } from './ComponentScreens/custom-text-button-screen/CustomTextButtonScreen';
 export { default as LinearProgressBarScreen } from './ComponentScreens/linear-progress-bar-screen/LinearProgressBarScreen';
+export { default as PlanBenefitSummaryScreen } from './ComponentScreens/plan-benefit-summary-screen/PlanBenefitSummaryScreen';
 export { default as PharmacyPriceListScreen } from './ComponentScreens/pharmacy-price-list-screen/PharmacyPriceListScreen';
