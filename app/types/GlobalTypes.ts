@@ -155,3 +155,9 @@ export interface PharmacyDetails {
   additionalPriceStyle?: TextStyle;
   onPress: () => void;
 }
+
+export interface CityZipModalProps {
+  isVisible: boolean;
+  onClose: () => void;
+  onDonePress: (text: string) => void;
+}
