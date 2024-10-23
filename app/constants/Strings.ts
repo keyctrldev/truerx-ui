@@ -162,3 +162,10 @@ export const planBenefitSummaryComponent = Object.freeze({
   deductible: 'Deductible',
   outOfPocketMax: 'Out-of-pocket max',
 });
+
+export const cityZipCodeModalComponent = Object.freeze({
+  enterCityZipCode: 'Enter a city or ZIP Code',
+  placeHolderText: 'Ex. "West Lafayette" or "11106"',
+  done: 'Done',
+  cancel: 'Cancel',
+});

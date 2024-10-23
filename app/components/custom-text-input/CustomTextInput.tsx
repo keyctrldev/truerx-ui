@@ -33,6 +33,8 @@ const CustomTextInput: CustomInputType = (
     error,
     touched,
     value,
+    placeholderTextColor,
+    style,
   },
   ref,
 ) => {
@@ -43,8 +45,8 @@ const CustomTextInput: CustomInputType = (
           autoCapitalize="none"
           multiline={multiline}
           placeholder={placeholder}
-          style={styles.inputStyle}
-          placeholderTextColor={Colors.white}
+          style={[styles.inputStyle, style]}
+          placeholderTextColor={placeholderTextColor ?? Colors.white}
           ref={ref}
           onSubmitEditing={onSubmitEditing}
           defaultValue={defaultValue}
