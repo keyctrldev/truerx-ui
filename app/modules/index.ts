@@ -14,6 +14,7 @@ export { default as AcceptTermsScreen } from './AcceptTerms/AcceptTermsScreen';
 export { default as ListViewCellScreen } from './ComponentScreens/list-view-cell-screen/ListViewCellScreen';
 export { default as AppTextScreen } from './ComponentScreens/app-text-screen/AppTextScreen';
 export { default as CustomToastScreen } from './ComponentScreens/custom-toast-screen/CustomToastScreen';
+export { default as InputTextScreen } from './ComponentScreens/custom-input-text-screen/InputTextScreen';
 export { default as CustomButtonScreen } from './ComponentScreens/custom-button-screen/CustomButtonScreen';
 export { default as CustomTextInputScreen } from './ComponentScreens/custom-textinput-screen/CustomTextInputScreen';
 export { default as CustomSwitchScreen } from './ComponentScreens/custom-switch-screen/CustomSwitchScreen';
@@ -25,4 +26,7 @@ export { default as CustomHeaderScreen } from './ComponentScreens/custom-header-
 export { default as NotificationTileScreen } from './ComponentScreens/notification-tile-screen/NotificationTileScreen';
 export { default as MedicationListScreen } from './ComponentScreens/medication-list-screen/MedicationListScreen';
 export { default as ResetPasswordMethodScreen } from './ComponentScreens/reset-password-screen/ResetPasswordMethodScreen';
+export { default as OtpInputScreen } from './ComponentScreens/otp-input-screen/OtpInputScreen';
+export { default as CustomTextButtonScreen } from './ComponentScreens/custom-text-button-screen/CustomTextButtonScreen';
+export { default as LinearProgressBarScreen } from './ComponentScreens/linear-progress-bar-screen/LinearProgressBarScreen';
 export { default as PharmacyPriceListScreen } from './ComponentScreens/pharmacy-price-list-screen/PharmacyPriceListScreen';

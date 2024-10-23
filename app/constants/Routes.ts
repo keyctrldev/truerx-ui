@@ -33,5 +33,10 @@ export default {
   MedicationList: 'MedicationList',
   resetPasswordMethod: 'ResetPasswordMethod',
   svgScreen: 'SvgScreen',
+  inputText: 'InputTextScreen',
   PharmacyPriceList: 'PharmacyPriceList',
+  CustomTextButton: 'CustomTextButtonScreen',
+  otpInput: 'OtpInputScreen',
+  textButton: 'TextbuttonScreen',
+  linearProgressBar: 'LinearProgressBarScreen',
 };

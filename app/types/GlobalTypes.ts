@@ -1,5 +1,17 @@
 // Define TypeScript interfaces for global types used throughout the application.
-import { ImageSourcePropType, ImageStyle, TextStyle } from 'react-native';
+import { ForwardedRef } from 'react';
+import {
+  StyleProp,
+  TextInput,
+  TextStyle,
+  ViewStyle,
+  ImageStyle,
+  ImageSourcePropType,
+  KeyboardTypeOptions,
+  ReturnKeyTypeOptions,
+} from 'react-native';
+
+import { SvgProps } from 'react-native-svg';
 
 export interface UserFormType {
   email: string;
@@ -76,6 +88,54 @@ export interface CustomResetPasswordMethodComponentProps {
   subTitle?: string;
   titleTextStyle?: TextStyle;
   subTitleTextStyle?: TextStyle;
+}
+export interface CustomTextButtonProps {
+  leftIcon?: React.ReactElement<SvgProps>;
+  rightIcon?: React.ReactElement<SvgProps>;
+  onPress: () => void;
+  textContent: string;
+  textStyle?: StyleProp<TextStyle>;
+  containerStyle?: StyleProp<ViewStyle>;
+  leftIconStyles?: StyleProp<ViewStyle>;
+  rightIconStyles?: StyleProp<ViewStyle>;
+}
+
+export interface CustomBackButtonProps {
+  icon?: React.ReactElement<SvgProps>;
+  title?: string;
+  titleTextStyle?: TextStyle;
+  btnContainerStyle?: ViewStyle;
+  onBackPress: () => void;
+}
+
+export interface CustomInputTextPops {
+  label: string;
+  touched?: boolean;
+  editable?: boolean;
+  maxLength?: number;
+  autoFocus?: boolean;
+  multiline?: boolean;
+  placeholder?: string;
+  defaultValue?: string;
+  secureTextEntry?: boolean;
+  value?: string | undefined;
+  leftIcon?: React.ReactNode;
+  rightIcon?: React.ReactNode;
+  onSubmitEditing?: () => void;
+  onLeftIconPress?: () => void;
+  onRightIconPress?: () => void;
+  keyboardType?: KeyboardTypeOptions;
+  onChangeText: (text: string) => void;
+  returnKeyType?: ReturnKeyTypeOptions;
+  textInputStyle?: StyleProp<ViewStyle>;
+  additionalContainerStyle?: StyleProp<ViewStyle>;
+}
+
+export type CustomInputType = (props: CustomInputTextPops, ref: ForwardedRef<TextInput>) => React.JSX.Element;
+
+export interface otpInputComponentProps {
+  setOtp: (otp: string) => void;
+  pinCount: number;
 }
 
 export interface PharmacyDetails {

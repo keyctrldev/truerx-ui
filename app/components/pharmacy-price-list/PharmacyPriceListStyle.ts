@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { Colors, horizontalScale, moderateScale, verticalScale } from '../../theme';
+import { Colors, moderateScale } from '../../theme';
 
 export const styles = StyleSheet.create({
   pharmacyItem: {
@@ -47,9 +47,5 @@ export const styles = StyleSheet.create({
     fontWeight: '800',
     fontSize: moderateScale(20),
     padding: moderateScale(2),
-  },
-  navigationArrow: {
-    width: moderateScale(30),
-    height: moderateScale(30),
   },
 });

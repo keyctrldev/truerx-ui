@@ -1,9 +1,10 @@
 import React from 'react';
 import AppText from '../app-text/AppText';
 import { Image, TouchableOpacity, View } from 'react-native';
-import { Icons } from '../../assets';
 import { styles } from './PharmacyPriceListStyle';
 import { PharmacyDetails } from '../../types';
+import { ChevronRight } from '../../assets/svgs';
+import { SVGIcon } from '../common';
 
 const PharmacyPriceList = ({
   pharmacyLogo,
@@ -25,7 +26,7 @@ const PharmacyPriceList = ({
 
       <View style={styles.priceDetails}>
         <AppText style={[styles.price, additionalPriceStyle]}>${price}</AppText>
-        <Image source={Icons.chevronRight} style={styles.navigationArrow} />
+        <SVGIcon component={<ChevronRight />} />
       </View>
     </TouchableOpacity>
   );
