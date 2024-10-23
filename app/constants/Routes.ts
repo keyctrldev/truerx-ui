@@ -41,4 +41,5 @@ export default {
   linearProgressBar: 'LinearProgressBarScreen',
   yourPlanBenefit: 'YourPlanBenefitScreen',
   cityZipCodeModalScreen: 'CityZipCodeModalScreen',
+  SearchBar: 'SearchBarScreen',
 };

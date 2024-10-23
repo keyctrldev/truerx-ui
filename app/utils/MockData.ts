@@ -163,4 +163,9 @@ export const componentListView: componentListProps[] = [
     componentTitle: 'CityZipCodeModal',
     screenName: Routes.cityZipCodeModalScreen,
   },
+  {
+    id: 24,
+    componentTitle: 'SearchBar',
+    screenName: Routes.SearchBar,
+  },
 ];
