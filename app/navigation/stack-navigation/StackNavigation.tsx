@@ -25,6 +25,7 @@ import {
   CustomTextInputScreen,
   CustomTextButtonScreen,
   NotificationTileScreen,
+  LinearProgressBarScreen,
   SafeAreaContainerScreen,
   CustomProgressBarScreen,
   ResetPasswordMethodScreen,
@@ -71,6 +72,7 @@ const RootStack = () => {
       <Stack.Screen name={Routes.inputText} component={InputTextScreen} />
       <Stack.Screen name={Routes.otpInput} component={OtpInputScreen} />
       <Stack.Screen name={Routes.textButton} component={CustomTextButtonScreen} />
+      <Stack.Screen name={Routes.linearProgressBar} component={LinearProgressBarScreen} />
     </Stack.Navigator>
   );
 };
