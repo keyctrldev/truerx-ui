@@ -41,15 +41,16 @@ const PrescriptionList: React.FC<PrescriptionListProps> = props => {
       <View style={styles.bottomInterface}>
         <AppText style={styles.note}>{'To transfer your prescription:'}</AppText>
         <CustomButton
-          customStyle={styles.firstBtnCustomStyle}
+          style={styles.firstBtnCustomStyle}
+          titleTextStyle={styles.buttonLabelStyle}
           title={'Call the pharmacy'}
           onPress={props.firstButtonOnPress}
         />
         <CustomButton
           onPress={props.secondButtonOnPress}
           title={'Call your health strategist'}
-          customStyle={styles.secondBtnCustomStyle}
-          buttonLabelStyle={styles.secondBtnLabelStyle}
+          style={styles.secondBtnCustomStyle}
+          titleTextStyle={styles.secondBtnLabelStyle}
         />
       </View>
     </View>

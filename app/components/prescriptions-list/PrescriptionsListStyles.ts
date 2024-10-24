@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
 import { fonts } from '../../assets';
 import { Colors, horizontalScale, moderateScale, verticalScale } from '../../theme';
@@ -21,12 +21,11 @@ export const styles = StyleSheet.create({
   },
   darkContent: {
     color: Colors.black,
-    // fontFamily: fonts.ArialBlack,
+    fontWeight: 600,
   },
   lightContent: {
     color: Colors.mediumGray,
     fontSize: moderateScale(12),
-    // fontFamily: fonts.ArialBol
   },
   separator: {
     borderColor: Colors.separatorColor,
@@ -53,12 +52,13 @@ export const styles = StyleSheet.create({
     fontSize: moderateScale(8),
   },
   bottomInterface: {
-    gap: verticalScale(15),
+    gap: verticalScale(10),
   },
   firstBtnCustomStyle: {
     width: '100%',
     borderRadius: moderateScale(30),
     backgroundColor: Colors.primaryThemeColor,
+    paddingVertical: moderateScale(10),
   },
   note: {
     fontFamily: fonts.SemiBold,
@@ -68,10 +68,13 @@ export const styles = StyleSheet.create({
     width: '100%',
     fontSize: moderateScale(18),
     borderRadius: moderateScale(30),
+    paddingVertical: moderateScale(10),
     backgroundColor: Colors.lightGray,
+    borderWidth: 0,
   },
   secondBtnLabelStyle: {
     color: Colors.mediumGray,
+    fontSize: moderateScale(12),
   },
   staticBuyerName: {
     resizeMode: 'contain',
@@ -80,5 +83,8 @@ export const styles = StyleSheet.create({
   },
   labelView: {
     justifyContent: 'space-between',
+  },
+  buttonLabelStyle: {
+    fontSize: moderateScale(12),
   },
 });
