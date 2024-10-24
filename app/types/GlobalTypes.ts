@@ -161,3 +161,9 @@ export interface CityZipModalProps {
   onClose: () => void;
   onDonePress: (text: string) => void;
 }
+export interface ProgressStepperComponentProps {
+  progressCount: number;
+  eventList: StepperData[];
+  currentStep: number;
+  status: 'Pending' | 'Denied' | 'Approved';
+}
