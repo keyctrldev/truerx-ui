@@ -40,4 +40,6 @@ export default {
   textButton: 'TextbuttonScreen',
   linearProgressBar: 'LinearProgressBarScreen',
   yourPlanBenefit: 'YourPlanBenefitScreen',
+  cityZipCodeModalScreen: 'CityZipCodeModalScreen',
+  trackerMedicationList: 'TrackerMedicationListScreen',
 };

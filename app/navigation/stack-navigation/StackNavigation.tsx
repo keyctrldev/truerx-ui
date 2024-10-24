@@ -29,8 +29,9 @@ import {
   SafeAreaContainerScreen,
   CustomProgressBarScreen,
   ResetPasswordMethodScreen,
-  PlanBenefitSummaryScreen,
   PharmacyPriceListScreen,
+  CityZipCodeModalScreen,
+  TrackerMedicationListScreen,
 } from '../../modules';
 import SvgScreen from '../../modules/ComponentScreens/svg-screen/SvgScreen';
 
@@ -75,8 +76,9 @@ const RootStack = () => {
       <Stack.Screen name={Routes.otpInput} component={OtpInputScreen} />
       <Stack.Screen name={Routes.textButton} component={CustomTextButtonScreen} />
       <Stack.Screen name={Routes.linearProgressBar} component={LinearProgressBarScreen} />
-      <Stack.Screen name={Routes.yourPlanBenefit} component={PlanBenefitSummaryScreen} />
       <Stack.Screen name={Routes.PharmacyPriceList} component={PharmacyPriceListScreen} />
+      <Stack.Screen name={Routes.cityZipCodeModalScreen} component={CityZipCodeModalScreen} />
+      <Stack.Screen name={Routes.trackerMedicationList} component={TrackerMedicationListScreen} />
     </Stack.Navigator>
   );
 };
