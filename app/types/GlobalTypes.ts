@@ -161,3 +161,20 @@ export interface CityZipModalProps {
   onClose: () => void;
   onDonePress: (text: string) => void;
 }
+export interface TrackerMedicationItemProps {
+  date: string;
+  type: string;
+  dosage: number;
+  drugName: string;
+  dosageType: string;
+  onInfoIconPress: () => void;
+}
+
+export interface TrackerMedicationListDataProps {
+  id: number;
+  date: string;
+  type: string;
+  dosage: number;
+  drugName: string;
+  dosageType: string;
+}
