@@ -29,7 +29,8 @@ type ColorType =
   | 'mediumGray'
   | 'boxBorderColor'
   | 'lightOrange'
-  | 'offWhite';
+  | 'offWhite'
+  | 'separatorColor';
 
 // This object provides a centralized way to manage and reference color values throughout the application, ensuring consistency in color usage.
 // Color code should be Hex values.
@@ -63,4 +64,5 @@ export const Colors: Record<ColorType, string> = {
   boxBorderColor: '#D5D5D5',
   lightOrange: '#FF937F',
   offWhite: '#FFE9E5',
+  separatorColor: '#D5D5D5',
 };
