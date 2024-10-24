@@ -76,14 +76,10 @@ const AcceptTermsScreen = () => {
         <CustomButton
           title={acceptTermsScreenStrings.Decline}
           onPress={() => {}}
-          customStyle={styles.declineBtnContainer}
-          buttonLabelStyle={styles.declineBtnText}
+          style={styles.declineBtnContainer}
+          titleTextStyle={styles.declineBtnText}
         />
-        <CustomButton
-          title={acceptTermsScreenStrings.Accept}
-          onPress={() => {}}
-          customStyle={styles.acceptBtnContainer}
-        />
+        <CustomButton title={acceptTermsScreenStrings.Accept} onPress={() => {}} style={styles.acceptBtnContainer} />
       </View>
     );
   };

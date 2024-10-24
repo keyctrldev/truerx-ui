@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { styles } from './CustomProgressStepperStyle';
 import { FlatList, View } from 'react-native';
-import CustomButton from '../custom-button/CustomButton';
 import { stepperData } from '../../utils';
 import { StepperData } from '../../types';
-import AppText from '../app-text/AppText';
+import { AppText, CustomButton } from '../../components';
 import { stepperComponentStrings } from '../../constants';
 
 const stepperEvents: StepperData[] = stepperData;
@@ -51,16 +50,8 @@ const CustomProgressStepper = () => {
       </View>
 
       <View style={styles.buttonContainer}>
-        <CustomButton
-          title={stepperComponentStrings.nextButton}
-          onPress={onNextStepPress}
-          customStyle={styles.stepButton}
-        />
-        <CustomButton
-          title={stepperComponentStrings.resetButton}
-          onPress={onRestPress}
-          customStyle={styles.stepButton}
-        />
+        <CustomButton title={stepperComponentStrings.nextButton} onPress={onNextStepPress} style={styles.stepButton} />
+        <CustomButton title={stepperComponentStrings.resetButton} onPress={onRestPress} style={styles.stepButton} />
       </View>
     </View>
   );

@@ -68,4 +68,10 @@ export const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-end',
   },
+  createAccountBtnContainer: {
+    marginTop: verticalScale(70),
+  },
+  termsTextStyle: {
+    color: Colors.primaryThemeColor,
+  },
 });

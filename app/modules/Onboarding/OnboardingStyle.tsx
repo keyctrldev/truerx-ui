@@ -22,16 +22,20 @@ export const styles = StyleSheet.create({
     bottom: verticalScale(50),
   },
   customButtonStyle: {
-    width: '90%',
-    alignSelf: 'center',
+    marginHorizontal: verticalScale(15),
     marginTop: verticalScale(10),
     backgroundColor: Colors.white,
-    borderRadius: moderateScale(20),
   },
   buttonLabelStyle: {
     color: Colors.primaryThemeColor,
   },
   bottom: {
     bottom: verticalScale(10),
+  },
+  skipBtnContainer: {
+    backgroundColor: 'transparent',
+  },
+  skipBtnTextStyle: {
+    color: Colors.white,
   },
 });

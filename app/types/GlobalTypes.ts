@@ -155,3 +155,13 @@ export interface PharmacyDetails {
   additionalPriceStyle?: TextStyle;
   onPress: () => void;
 }
+
+export interface CustomButtonProps {
+  title: string;
+  disabled?: boolean;
+  titleTextStyle?: StyleProp<TextStyle>;
+  childViewContainer?: StyleProp<ViewStyle>;
+  leftIcon?: React.ReactElement<SvgProps>;
+  rightIcon?: React.ReactElement<SvgProps>;
+  isSecondaryButton?: boolean;
+}

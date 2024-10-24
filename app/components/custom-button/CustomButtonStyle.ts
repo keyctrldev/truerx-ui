@@ -1,18 +1,31 @@
 import { StyleSheet } from 'react-native';
 import { Colors, moderateScale, verticalScale } from '../../theme';
+import { fonts } from '../../assets';
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: Colors.lightSlateGray,
-    justifyContent: 'center',
+export const styles = StyleSheet.create({
+  buttonContainerStyle: {
     alignItems: 'center',
-    width: '60%',
+    padding: verticalScale(12),
+    borderWidth: verticalScale(1),
+    borderRadius: verticalScale(50),
   },
-  label: {
-    color: Colors.white,
+  titleTextStyle: {
+    maxWidth: '82%',
+    fontFamily: fonts.Medium,
     fontSize: moderateScale(16),
-    paddingVertical: verticalScale(12),
+  },
+  primaryBtnContainer: {
+    borderColor: Colors.primary,
+    backgroundColor: Colors.primary,
+  },
+  secondaryBtnContainer: {
+    borderColor: Colors.primary,
+    backgroundColor: Colors.transparent,
+  },
+  primaryBtnTitle: {
+    color: Colors.white,
+  },
+  secondaryBtnTitle: {
+    color: Colors.primary,
   },
 });
-
-export default styles;

@@ -158,4 +158,9 @@ export const componentListView: componentListProps[] = [
     componentTitle: 'PharmacyPriceList',
     screenName: Routes.PharmacyPriceList,
   },
+  {
+    id: 23,
+    componentTitle: 'CustomButton',
+    screenName: Routes.CustomButton,
+  },
 ];
