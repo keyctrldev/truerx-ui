@@ -173,6 +173,11 @@ export const componentListView: componentListProps[] = [
     componentTitle: 'PATrackerMedicationList',
     screenName: Routes.trackerMedicationList,
   },
+  {
+    id: 25,
+    componentTitle: 'Save Money View',
+    screenName: Routes.saveMoneyView,
+  },
 ];
 
 export const PATrackerMedicationData: TrackerMedicationListDataProps[] = [

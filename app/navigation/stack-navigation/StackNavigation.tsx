@@ -34,6 +34,7 @@ import {
   TrackerMedicationListScreen,
 } from '../../modules';
 import SvgScreen from '../../modules/ComponentScreens/svg-screen/SvgScreen';
+import SaveMoneyViewScreen from '../../modules/ComponentScreens/save-money-view-screen/SaveMoneyViewScreen';
 
 const Stack = createStackNavigator();
 const RootStack = () => {
@@ -79,6 +80,7 @@ const RootStack = () => {
       <Stack.Screen name={Routes.PharmacyPriceList} component={PharmacyPriceListScreen} />
       <Stack.Screen name={Routes.cityZipCodeModalScreen} component={CityZipCodeModalScreen} />
       <Stack.Screen name={Routes.trackerMedicationList} component={TrackerMedicationListScreen} />
+      <Stack.Screen name={Routes.saveMoneyView} component={SaveMoneyViewScreen} />
     </Stack.Navigator>
   );
 };
