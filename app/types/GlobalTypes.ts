@@ -178,3 +178,25 @@ export interface TrackerMedicationListDataProps {
   drugName: string;
   dosageType: string;
 }
+export interface prescriptionListDataProps {
+  id: number;
+  buyerName: string;
+  buyerImage?: string;
+  deliveryType: string;
+  totalPrice: string;
+  drugName: string;
+  dosage: string;
+  count: number;
+}
+export interface PrescriptionListProps {
+  id?: number;
+  count?: number;
+  dosage?: string;
+  drugName?: string;
+  buyerName?: string;
+  totalPrice?: string;
+  deliveryType?: string;
+  buyerImage?: string;
+  firstButtonOnPress: () => void;
+  secondButtonOnPress: () => void;
+}
