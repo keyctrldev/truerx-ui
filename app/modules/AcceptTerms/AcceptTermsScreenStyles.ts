@@ -25,10 +25,14 @@ export const styles = StyleSheet.create({
   declineBtnContainer: {
     width: '50%',
     backgroundColor: Colors.overlayDark,
+    borderRadius: verticalScale(0),
+    borderColor: Colors.transparent,
     borderBottomLeftRadius: horizontalScale(10),
   },
   acceptBtnContainer: {
     width: '50%',
+    borderRadius: verticalScale(0),
+    borderColor: Colors.transparent,
     backgroundColor: Colors.primaryBtnBackground,
     borderBottomRightRadius: horizontalScale(10),
   },

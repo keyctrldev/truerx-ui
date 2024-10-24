@@ -74,10 +74,10 @@ const LoginScreen = () => {
         </View>
         <CustomButton
           title={loginScreenStrings.loginBtn}
-          customStyle={styles.customButtonStyle}
-          buttonLabelStyle={styles.buttonLabelStyle}
+          style={styles.customButtonStyle}
+          titleTextStyle={styles.buttonLabelStyle}
           disabled={isLoading}
-          onPress={handleSubmit}
+          onPress={() => handleSubmit()}
         />
       </ScrollView>
     </SafeAreaView>

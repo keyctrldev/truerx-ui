@@ -160,11 +160,16 @@ export const componentListView: componentListProps[] = [
   },
   {
     id: 23,
+    componentTitle: 'CustomButton',
+    screenName: Routes.CustomButton,
+  },
+  {
+    id: 24,
     componentTitle: 'CityZipCodeModal',
     screenName: Routes.cityZipCodeModalScreen,
   },
   {
-    id: 24,
+    id: 25,
     componentTitle: 'PATrackerMedicationList',
     screenName: Routes.trackerMedicationList,
   },

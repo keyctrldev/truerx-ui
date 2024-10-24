@@ -156,6 +156,15 @@ export interface PharmacyDetails {
   onPress: () => void;
 }
 
+export interface CustomButtonProps {
+  title: string;
+  disabled?: boolean;
+  titleTextStyle?: StyleProp<TextStyle>;
+  childViewContainer?: StyleProp<ViewStyle>;
+  leftIcon?: React.ReactElement<SvgProps>;
+  rightIcon?: React.ReactElement<SvgProps>;
+  isSecondaryButton?: boolean;
+}
 export interface CityZipModalProps {
   isVisible: boolean;
   onClose: () => void;
