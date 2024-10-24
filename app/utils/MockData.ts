@@ -1,5 +1,5 @@
 import { Routes } from '../constants';
-import { ClaimsData, StepperData } from '../types';
+import { ClaimsData, StepperData, TrackerMedicationListDataProps } from '../types';
 
 export const claimsData: ClaimsData[] = [
   {
@@ -165,7 +165,39 @@ export const componentListView: componentListProps[] = [
   },
   {
     id: 24,
+    componentTitle: 'PATrackerMedicationList',
+    screenName: Routes.trackerMedicationList,
+  },
+  {
+    id: 25,
     componentTitle: 'SearchBar',
     screenName: Routes.SearchBar,
+  },
+];
+
+export const PATrackerMedicationData: TrackerMedicationListDataProps[] = [
+  {
+    id: 1,
+    dosage: 1000,
+    date: '28Aug',
+    type: 'Tablet',
+    dosageType: 'mg',
+    drugName: 'Mounjaro',
+  },
+  {
+    id: 2,
+    dosage: 12,
+    date: '29Aug',
+    type: 'Tablet',
+    dosageType: 'mg',
+    drugName: 'Ozempic',
+  },
+  {
+    id: 3,
+    dosage: 20,
+    date: '29Aug',
+    type: 'Tablet',
+    dosageType: 'gm',
+    drugName: 'Rybelsus',
   },
 ];

@@ -3,16 +3,16 @@ import { Colors, horizontalScale, moderateScale, verticalScale } from '../../the
 
 export const styles = StyleSheet.create({
   searchContainer: {
-    backgroundColor: '#263845',
+    backgroundColor: Colors.indigo,
     paddingHorizontal: horizontalScale(20),
     paddingVertical: verticalScale(20),
   },
   searchBar: {
     alignItems: 'center',
+    backgroundColor: Colors.white,
     paddingHorizontal: horizontalScale(4),
-    paddingVertical: verticalScale(4),
+    paddingVertical: verticalScale(2),
     borderRadius: moderateScale(10),
-    textTransform: 'capitalize',
   },
   input: {
     fontSize: moderateScale(16),
