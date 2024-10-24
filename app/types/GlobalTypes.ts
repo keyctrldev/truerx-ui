@@ -183,6 +183,4 @@ export interface SearchBarProps {
   value: string;
   placeHolder?: string;
   onChangeText: (search: string) => void;
-  iconName: string;
-  size: number;
 }

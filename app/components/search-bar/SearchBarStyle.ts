@@ -8,25 +8,17 @@ export const styles = StyleSheet.create({
     paddingVertical: verticalScale(20),
   },
   searchBar: {
+    flexDirection: 'row',
     alignItems: 'center',
+    gap: moderateScale(6),
     backgroundColor: Colors.white,
-    paddingHorizontal: horizontalScale(4),
-    paddingVertical: verticalScale(2),
+    paddingHorizontal: horizontalScale(14),
+    paddingVertical: verticalScale(10),
     borderRadius: moderateScale(10),
   },
   input: {
+    flex: 1,
     fontSize: moderateScale(16),
     color: Colors.black,
-  },
-  locationContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginHorizontal: horizontalScale(8),
-    marginVertical: verticalScale(4),
-    gap: moderateScale(2),
-  },
-  location: {
-    fontSize: moderateScale(16),
-    color: Colors.white,
   },
 });
