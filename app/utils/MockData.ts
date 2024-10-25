@@ -1,5 +1,5 @@
 import { Routes } from '../constants';
-import { ClaimsData, StepperData } from '../types';
+import { ClaimsData, prescriptionListDataProps, StepperData, TrackerMedicationListDataProps } from '../types';
 
 export const claimsData: ClaimsData[] = [
   {
@@ -24,20 +24,20 @@ export const claimsData: ClaimsData[] = [
 
 export const stepperData: StepperData[] = [
   {
-    date: '14 Nov',
-    event: 'Accept Offer',
+    date: 'Submitted by Dr. Smith on Aug 25 2024, 9:23am',
+    event: 'Request Received',
   },
   {
-    date: '18 Nov',
-    event: 'Schedule Your Assesment',
+    date: 'Aug 25 2024, 9:23am',
+    event: 'Under Clinical Review',
   },
   {
-    date: '23 Nov',
-    event: 'Review Repairs',
+    date: 'Aug 25 2024, 9:23am',
+    event: 'Clinical Review',
   },
   {
-    date: '30 Nov',
-    event: 'Closing',
+    date: 'Aug 25 2024, 9:23am',
+    event: 'Prior Authorization Status',
   },
 ];
 
@@ -92,11 +92,6 @@ export const componentListView: componentListProps[] = [
   //   id: 9,
   //   componentTitle: 'ActivityLoader',
   //   screenName: Routes.ActivityLoader,
-  // },
-  // {
-  //   id: 10,
-  //   componentTitle: 'CustomProgressStepper',
-  //   screenName: Routes.CustomProgressStepper,
   // },
   // {
   //   id: 11,
@@ -160,11 +155,27 @@ export const componentListView: componentListProps[] = [
   },
   {
     id: 23,
-    componentTitle: 'CityZipCodeModal',
-    screenName: Routes.cityZipCodeModalScreen,
+    componentTitle: 'CustomButton',
+    screenName: Routes.CustomButton,
   },
   {
     id: 24,
+    componentTitle: 'CityZipCodeModal',
+    screenName: Routes.cityZipCodeModalScreen,
+  },
+  { id: 25, componentTitle: 'CustomProgressStepper', screenName: Routes.CustomProgressStepper },
+  {
+    id: 26,
+    componentTitle: 'PATrackerMedicationList',
+    screenName: Routes.trackerMedicationList,
+  },
+  {
+    id: 27,
+    componentTitle: 'Prescription List',
+    screenName: Routes.PrescriptionsList,
+  },
+  {
+    id: 28,
     componentTitle: 'Claim History Item',
     screenName: Routes.ClaimHistoryItem,
   },
@@ -224,5 +235,95 @@ export const claimsHistoryData = [
     medicationCost: 700,
     date: 'October 20, 2024',
     medicationName: 'Orencia',
+  },
+];
+
+export const PATrackerMedicationData: TrackerMedicationListDataProps[] = [
+  {
+    id: 1,
+    dosage: 1000,
+    date: '28Aug',
+    type: 'Tablet',
+    dosageType: 'mg',
+    drugName: 'Mounjaro',
+  },
+  {
+    id: 2,
+    dosage: 12,
+    date: '29Aug',
+    type: 'Tablet',
+    dosageType: 'mg',
+    drugName: 'Ozempic',
+  },
+  {
+    id: 3,
+    dosage: 20,
+    date: '29Aug',
+    type: 'Tablet',
+    dosageType: 'gm',
+    drugName: 'Rybelsus',
+  },
+];
+
+export const prescriptionListData: prescriptionListDataProps[] = [
+  {
+    id: 1,
+    buyerName: 'Williams Brothers',
+    buyerImage: '',
+    deliveryType: 'Cash on delivery',
+    totalPrice: '$5.00',
+    drugName: 'Atorvastatin',
+    dosage: '10 mg',
+    count: 30,
+  },
+  {
+    id: 2,
+    buyerName: 'Health First Pharmacy',
+    buyerImage: '',
+    deliveryType: 'Insurance billed',
+    totalPrice: '$25.00',
+    drugName: 'Lisinopril',
+    dosage: '20 mg',
+    count: 90,
+  },
+  {
+    id: 3,
+    buyerName: 'Sunnydale Medical Center',
+    buyerImage: '',
+    deliveryType: 'Pickup',
+    totalPrice: '$15.00',
+    drugName: 'Metformin',
+    dosage: '500 mg',
+    count: 60,
+  },
+  {
+    id: 4,
+    buyerName: 'City Pharmacy',
+    buyerImage: '',
+    deliveryType: 'Home delivery',
+    totalPrice: '$10.00',
+    drugName: 'Amoxicillin',
+    dosage: '250 mg',
+    count: 21,
+  },
+  {
+    id: 5,
+    buyerName: 'Greenwood Clinic',
+    buyerImage: '',
+    deliveryType: 'Cash on delivery',
+    totalPrice: '$12.00',
+    drugName: 'Simvastatin',
+    dosage: '5 mg',
+    count: 30,
+  },
+  {
+    id: 6,
+    buyerName: 'Oakwood Family Health',
+    buyerImage: '',
+    deliveryType: 'Insurance billed',
+    totalPrice: '$30.00',
+    drugName: 'Omeprazole',
+    dosage: '20 mg',
+    count: 60,
   },
 ];

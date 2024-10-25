@@ -1,68 +1,105 @@
-import React, { useState } from 'react';
-import { styles } from './CustomProgressStepperStyle';
+import React, { memo } from 'react';
 import { FlatList, View } from 'react-native';
-import CustomButton from '../custom-button/CustomButton';
-import { stepperData } from '../../utils';
-import { StepperData } from '../../types';
+
 import AppText from '../app-text/AppText';
-import { stepperComponentStrings } from '../../constants';
+import Dash from '../dash-line-component/Dash';
+import { Colors, verticalScale } from '../../theme';
+import { styles } from './CustomProgressStepperStyle';
+import { CheckIcon, InfoIcon } from '../../assets/svgs';
+import { ProgressStepperComponentProps, StepperData } from '../../types';
+import { useGlobalStyles } from '../../utils/GlobalStyles';
 
-const stepperEvents: StepperData[] = stepperData;
+const CustomProgressStepper = (props: ProgressStepperComponentProps) => {
+  const { progressCount, eventList, currentStep, status } = props;
 
-const CustomProgressStepper = () => {
-  const steps: number[] = [1, 2, 3, 4];
-
-  const [currentStep, setCurrentStep] = useState<number>(0);
-
-  const onNextStepPress = () => {
-    setCurrentStep(currentStep + 1);
+  const generateProgressSteps = () => {
+    return Array.from({ length: progressCount }, (_, index) => index + 1);
   };
-
-  const onRestPress = () => {
-    setCurrentStep(0);
-  };
+  const steps: number[] = generateProgressSteps();
+  const GlobalStyles = useGlobalStyles();
 
   const renderStep = ({ index }: { index: number }) => {
     const isActive = index === currentStep ? true : false;
     const isComplete = index < currentStep ? true : false;
+    const isPending = !isActive && !isComplete;
+    const lastStepContainer = index == steps.length - 1;
+    const firstStepContainer = index == 0;
+    const isDeniedStatus = status == 'Denied';
 
     return (
-      <View style={styles.stepContainer}>
-        <View style={[styles.circle, isComplete && styles.completedCircle, isActive && styles.activeCircle]}></View>
-        {index < steps.length - 1 && <View style={[styles.line, isComplete && styles.completedCircle]} />}
+      <View style={[styles.stepContainer]}>
+        <View
+          style={[
+            styles.circle,
+            isActive && styles.activeCircle,
+            firstStepContainer && styles.firstStepContainer,
+            isPending && styles.pendingContainer,
+            lastStepContainer && styles.lastStepContainer,
+          ]}>
+          {!lastStepContainer && <View style={(isActive || isComplete) && styles.completedProgressStep} />}
+          {lastStepContainer && (
+            <View
+              style={[
+                styles.lastStepContainerStyle,
+                isDeniedStatus ? styles.declineContainerStyle : styles.approvedContainerStyle,
+              ]}>
+              {isDeniedStatus ? (
+                <InfoIcon height={styles.iconStyle.height} width={styles.iconStyle.width} />
+              ) : (
+                <CheckIcon height={styles.iconStyle.height} width={styles.iconStyle.width} />
+              )}
+            </View>
+          )}
+        </View>
+        {index < steps.length - 1 &&
+          (isComplete ? (
+            <View style={styles.completedProgressView} />
+          ) : (
+            <Dash
+              style={styles.dashLineContainer}
+              dashColor={Colors.overlayDark}
+              dashLength={verticalScale(9)}
+              dashGap={5}
+              dashStyle={styles.dashLineStyle}
+            />
+          ))}
       </View>
     );
   };
 
-  const renderEvents = ({ item }: { item: StepperData }) => {
+  const renderEvents = ({ item, index }: { item: StepperData; index: number }) => {
+    const lastStepContainer = index == steps.length - 1;
     return (
-      <View style={styles.stepData}>
-        <AppText style={styles.eventList}>{item.date}</AppText>
-        <AppText style={styles.eventList}>{item.event}</AppText>
+      <View style={styles.eventTextContainer}>
+        <View style={GlobalStyles.rowSpaceBetweenContainer}>
+          <AppText style={styles.eventNameText}>{item.event}</AppText>
+          {status != 'Pending' && lastStepContainer && (
+            <View
+              style={[
+                styles.statusContainer,
+                status == 'Denied' ? styles.declineContainerStyle : styles.approvedContainerStyle,
+              ]}>
+              <AppText style={[styles.deniedTextContainer]}>{status}</AppText>
+            </View>
+          )}
+        </View>
+        <View style={styles.stepData}>
+          <AppText style={styles.eventTimeTexT}>{item.date}</AppText>
+        </View>
       </View>
     );
   };
 
   return (
-    <View>
-      <View style={styles.progressStepper}>
-        <FlatList data={steps} keyExtractor={item => item.toString()} renderItem={renderStep} />
-        <FlatList data={stepperEvents} keyExtractor={(item, index) => index.toString()} renderItem={renderEvents} />
-      </View>
-
-      <View style={styles.buttonContainer}>
-        <CustomButton
-          title={stepperComponentStrings.nextButton}
-          onPress={onNextStepPress}
-          customStyle={styles.stepButton}
-        />
-        <CustomButton
-          title={stepperComponentStrings.resetButton}
-          onPress={onRestPress}
-          customStyle={styles.stepButton}
-        />
-      </View>
+    <View style={styles.progressStepper}>
+      <FlatList data={steps} keyExtractor={(_i, index) => index.toString()} renderItem={renderStep} bounces={false} />
+      <FlatList
+        data={eventList}
+        bounces={false}
+        keyExtractor={(_i, index) => index.toString()}
+        renderItem={renderEvents}
+      />
     </View>
   );
 };
-export default CustomProgressStepper;
+export default memo(CustomProgressStepper);

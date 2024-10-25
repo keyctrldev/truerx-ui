@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { View } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 
 import { SVGIcon } from '../common';
 import AppText from '../app-text/AppText';
@@ -20,25 +20,18 @@ const InfoItem: React.FC<{
   );
 };
 
-const ClaimHistoryItem: React.FC<ClaimHistoryItemProps> = ({
-  date,
-  status,
-  claimID,
-  planPaid,
-  memberPaid,
-  balancePaid,
-  medicationCost,
-  medicationName,
-}) => {
+const ClaimHistoryItem: React.FC<ClaimHistoryItemProps> = props => {
+  const { date, status, claimID, planPaid, memberPaid, balancePaid, medicationCost, medicationName, onDotsPress } =
+    props;
   return (
     <View style={styles.claimContainer}>
       <View style={styles.statusInterface}>
         <View style={styles.status}>
           <AppText style={styles.processedText}>{status}</AppText>
         </View>
-        <View style={styles.moreIconContainer}>
-          <SVGIcon component={<MoreVert />} onPress={() => {}} />
-        </View>
+        <TouchableOpacity style={styles.moreIconContainer} onPress={onDotsPress}>
+          <SVGIcon component={<MoreVert />} />
+        </TouchableOpacity>
       </View>
       <View style={styles.middleAlignment}>
         <AppText style={styles.drugName}>{medicationName}</AppText>

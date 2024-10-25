@@ -1,22 +1,37 @@
-import React from 'react';
-import { TextStyle, TouchableOpacity, ViewStyle } from 'react-native';
+import React, { memo } from 'react';
+import { TouchableOpacity, TouchableOpacityProps, View } from 'react-native';
+
 import AppText from '../app-text/AppText';
-import styles from './CustomButtonStyle';
+import { CustomButtonProps } from '../../types';
+import { useGlobalStyles } from '../../utils/GlobalStyles';
+import { styles } from './CustomButtonStyle';
 
-interface CustomButtonPropType {
-  title: string;
-  customStyle?: ViewStyle;
-  onPress: () => void;
-  disabled?: boolean;
-  buttonLabelStyle?: TextStyle;
-}
+const CustomButton = (props: CustomButtonProps & TouchableOpacityProps) => {
+  const GlobalStyles = useGlobalStyles();
 
-const CustomButton = ({ title, customStyle, onPress, disabled, buttonLabelStyle }: CustomButtonPropType) => {
   return (
-    <TouchableOpacity style={[styles.container, customStyle]} onPress={onPress} activeOpacity={0.6} disabled={disabled}>
-      <AppText style={[styles.label, buttonLabelStyle]}>{title}</AppText>
+    <TouchableOpacity
+      {...props}
+      style={[
+        styles.buttonContainerStyle,
+        props.isSecondaryButton ? styles.secondaryBtnContainer : styles.primaryBtnContainer,
+        props.style,
+      ]}
+      activeOpacity={0.6}>
+      <View style={[GlobalStyles.rowContainer, props.childViewContainer]}>
+        {props.leftIcon}
+        <AppText
+          style={[
+            styles.titleTextStyle,
+            props.isSecondaryButton ? styles.secondaryBtnTitle : styles.primaryBtnTitle,
+            props.titleTextStyle,
+          ]}>
+          {props.title}
+        </AppText>
+        {props.rightIcon}
+      </View>
     </TouchableOpacity>
   );
 };
 
-export default CustomButton;
+export default memo(CustomButton);

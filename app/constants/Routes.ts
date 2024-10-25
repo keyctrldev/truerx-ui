@@ -42,4 +42,6 @@ export default {
   yourPlanBenefit: 'YourPlanBenefitScreen',
   cityZipCodeModalScreen: 'CityZipCodeModalScreen',
   ClaimHistoryItem: 'ClaimHistoryItemScreen',
+  trackerMedicationList: 'TrackerMedicationListScreen',
+  PrescriptionsList: 'PrescriptionsListScreen',
 };
