@@ -16,7 +16,8 @@ export const styles = StyleSheet.create({
     paddingTop: verticalScale(20),
   },
   itemSeparatorContainer: {
-    marginVertical: verticalScale(15),
+    marginTop: verticalScale(15),
+    marginBottom: verticalScale(10),
   },
   filerNameStyle: {
     color: Colors.black,
