@@ -35,7 +35,13 @@ const CustomFilterModal = (props: FilterModalProps) => {
   };
 
   return (
-    <Modal statusBarTranslucent={true} isVisible={isVisible} onBackButtonPress={onClose} onBackdropPress={onClose}>
+    <Modal
+      statusBarTranslucent={true}
+      isVisible={isVisible}
+      onBackButtonPress={onClose}
+      onBackdropPress={onClose}
+      animationIn={'slideInLeft'}
+      animationOut={'slideOutRight'}>
       <View style={styles.modalContainer}>
         <Text style={styles.titleTextStyle}>{customFilterModalComponent.filterByDateRange}</Text>
         <View style={[GlobalStyles.itemSeparatorStyle, styles.itemSeparatorContainer]} />

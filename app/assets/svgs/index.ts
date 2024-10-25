@@ -6,6 +6,7 @@ import EyeOpenIcon from '../svgs/eye_open.svg';
 import MedicineIcon from '../svgs/medicine.svg';
 import RefreshIcon from '../svgs/refreshIcon.svg';
 import ChevronRight from '../svgs/chevron-right.svg';
+import CheckIcon from '../svgs/circleCheck.svg';
 import ActiveRadioIcon from '../svgs/activeRadioIcon.svg';
 import InActiveRadioIcon from '../svgs/inActiveRadioIcon.svg';
 
@@ -18,6 +19,7 @@ export {
   InfoIcon,
   MedicineIcon,
   PriceLabel,
+  CheckIcon,
   ActiveRadioIcon,
   InActiveRadioIcon,
 };

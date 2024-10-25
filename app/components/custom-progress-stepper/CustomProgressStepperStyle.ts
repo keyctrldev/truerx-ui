@@ -1,53 +1,110 @@
 import { StyleSheet } from 'react-native';
-import { Colors, horizontalScale, verticalScale } from '../../theme';
-import { moderateScale } from '../../theme';
+import { fonts } from '../../assets';
+import { Colors, verticalScale, moderateScale, horizontalScale } from '../../theme';
 
 export const styles = StyleSheet.create({
   progressStepper: {
     flexDirection: 'row',
-    marginTop: verticalScale(60),
-    marginLeft: horizontalScale(20),
   },
   stepContainer: {
     alignItems: 'center',
   },
   circle: {
-    width: horizontalScale(20),
-    height: verticalScale(20),
-    borderRadius: moderateScale(20),
-    backgroundColor: Colors.gray,
-    justifyContent: 'center',
     alignItems: 'center',
+    justifyContent: 'center',
+    width: verticalScale(15),
+    height: verticalScale(15),
+    backgroundColor: Colors.primary,
+    marginBottom: -verticalScale(0.3),
   },
   activeCircle: {
-    borderWidth: horizontalScale(3),
-    borderColor: Colors.skyBlue,
-  },
-  completedCircle: {
-    backgroundColor: Colors.skyBlue,
-  },
-  buttonContainer: {
-    gap: moderateScale(20),
-    alignItems: 'center',
-  },
-  stepButton: {
-    backgroundColor: Colors.skyBlue,
-    borderRadius: moderateScale(10),
-    fontSize: moderateScale(18),
+    width: verticalScale(15),
+    height: verticalScale(15),
+    backgroundColor: Colors.primary,
+    borderBottomRightRadius: moderateScale(20),
+    borderBottomLeftRadius: moderateScale(20),
   },
   line: {
     width: moderateScale(3),
     height: moderateScale(40),
-    backgroundColor: Colors.gray,
-  },
-  eventList: {
-    height: moderateScale(60),
-    marginRight: horizontalScale(10),
-    fontSize: moderateScale(16),
-    fontWeight: '500',
+    backgroundColor: Colors.red,
   },
   stepData: {
     flexDirection: 'row',
-    gap: moderateScale(10),
+  },
+  firstStepContainer: {
+    borderTopRightRadius: moderateScale(20),
+    borderTopLeftRadius: moderateScale(20),
+  },
+  lastStepContainer: {
+    width: 'auto',
+    height: 'auto',
+    borderRadius: 50,
+    backgroundColor: Colors.transparent,
+  },
+  pendingContainer: {
+    borderRadius: verticalScale(20),
+  },
+  iconStyle: {
+    width: verticalScale(18),
+    height: verticalScale(18),
+  },
+  lastStepContainerStyle: {
+    padding: verticalScale(5),
+    marginTop: -moderateScale(2),
+    borderRadius: moderateScale(50),
+  },
+  completedProgressView: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: verticalScale(15),
+    height: verticalScale(52),
+    backgroundColor: Colors.primary,
+  },
+  dashLineContainer: {
+    flexDirection: 'column',
+    width: verticalScale(4),
+    height: verticalScale(52),
+  },
+  dashLineStyle: {
+    width: verticalScale(3.5),
+    borderRadius: verticalScale(15),
+  },
+  completedProgressStep: {
+    alignSelf: 'center',
+    width: horizontalScale(9),
+    height: horizontalScale(9),
+    backgroundColor: Colors.white,
+    borderRadius: verticalScale(50),
+  },
+  eventNameText: {
+    color: Colors.black,
+    fontSize: moderateScale(15),
+    fontFamily: fonts.SemiBold,
+  },
+  eventTimeTexT: {
+    color: Colors.mediumGray,
+    fontFamily: fonts.Medium,
+    fontSize: moderateScale(13),
+  },
+  approvedContainerStyle: {
+    backgroundColor: Colors.primary,
+  },
+  declineContainerStyle: {
+    backgroundColor: Colors.red,
+  },
+  eventTextContainer: {
+    height: verticalScale(65),
+  },
+  deniedTextContainer: {
+    fontSize: moderateScale(12),
+    fontFamily: fonts.SemiBold,
+    color: Colors.white,
+  },
+  statusContainer: {
+    paddingVertical: verticalScale(5),
+    paddingHorizontal: verticalScale(12),
+    borderRadius: verticalScale(50),
+    alignItems: 'center',
   },
 });
