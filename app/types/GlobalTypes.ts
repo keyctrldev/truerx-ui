@@ -209,3 +209,30 @@ export interface PrescriptionListProps {
   firstButtonOnPress: () => void;
   secondButtonOnPress: () => void;
 }
+
+export interface PlanDetailCardProps {
+  erisa: string;
+  bpdDate: string;
+  tpaName: string;
+  firmName: string;
+  formulary: string;
+  posRebates: string;
+  memberName: string;
+  acctNumber: number;
+  groupNumber: number;
+  thresholdAmt: number;
+}
+
+export interface PlanDetailCardDataProps {
+  id: number;
+  erisa: string;
+  bpdDate: string;
+  tpaName: string;
+  firmName: string;
+  formulary: string;
+  posRebates: string;
+  memberName: string;
+  acctNumber: number;
+  groupNumber: number;
+  thresholdAmt: number;
+}

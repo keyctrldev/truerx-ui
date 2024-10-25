@@ -33,6 +33,7 @@ import {
   CityZipCodeModalScreen,
   TrackerMedicationListScreen,
   PrescriptionsListScreen,
+  PlanDetailCardScreen,
 } from '../../modules';
 import SvgScreen from '../../modules/ComponentScreens/svg-screen/SvgScreen';
 
@@ -81,6 +82,7 @@ const RootStack = () => {
       <Stack.Screen name={Routes.cityZipCodeModalScreen} component={CityZipCodeModalScreen} />
       <Stack.Screen name={Routes.trackerMedicationList} component={TrackerMedicationListScreen} />
       <Stack.Screen name={Routes.PrescriptionsList} component={PrescriptionsListScreen} />
+      <Stack.Screen name={Routes.PlanDetailCard} component={PlanDetailCardScreen} />
     </Stack.Navigator>
   );
 };
