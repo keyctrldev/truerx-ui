@@ -26,5 +26,10 @@ export const useGlobalStyles = () => {
       alignItems: 'center',
       justifyContent: 'space-between',
     },
+    itemSeparatorStyle: {
+      width: '100%',
+      height: '0.5%',
+      backgroundColor: Colors.overlayDark,
+    },
   });
 };
