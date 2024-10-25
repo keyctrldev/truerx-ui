@@ -227,3 +227,10 @@ export interface PrescriptionListProps {
   firstButtonOnPress: () => void;
   secondButtonOnPress: () => void;
 }
+
+export interface MessageCardComponentProps {
+  containerStyle?: StyleProp<ViewStyle>;
+  titleText: string;
+  status: 'Active' | 'InActive';
+  statusText: string;
+}

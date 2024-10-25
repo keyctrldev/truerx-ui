@@ -169,3 +169,9 @@ export const cityZipCodeModalComponent = Object.freeze({
   done: 'Done',
   cancel: 'Cancel',
 });
+
+export const messageCardComponentData = Object.freeze({
+  chatWithHealthStrategist: 'Chat with a Health Strategist',
+  availableOnline: 'Available online',
+  weBeBackOnline: 'We’ll be back online at 8am EST',
+});

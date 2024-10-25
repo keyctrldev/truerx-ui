@@ -44,4 +44,5 @@ export default {
   ClaimHistoryItem: 'ClaimHistoryItemScreen',
   trackerMedicationList: 'TrackerMedicationListScreen',
   PrescriptionsList: 'PrescriptionsListScreen',
+  messageCardComponent: 'MessageCardComponentScreen',
 };
