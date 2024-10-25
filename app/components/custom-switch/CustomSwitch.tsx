@@ -22,7 +22,7 @@ const CustomSwitch: React.FC<SwitchProps> = ({
 
   useEffect(() => {
     Animated.timing(switchTranslate, {
-      toValue: horizontalScale(value ? 22 : 1),
+      toValue: horizontalScale(value ? 25 : 1),
       duration: 200,
       useNativeDriver: true,
     }).start();

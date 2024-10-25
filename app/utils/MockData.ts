@@ -179,6 +179,11 @@ export const componentListView: componentListProps[] = [
     componentTitle: 'Claim History Item',
     screenName: Routes.ClaimHistoryItem,
   },
+  {
+    id: 29,
+    componentTitle: 'Action List Item',
+    screenName: Routes.ActionListItem,
+  },
 ];
 
 export const claimsHistoryData = [

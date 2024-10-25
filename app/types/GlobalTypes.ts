@@ -227,3 +227,15 @@ export interface PrescriptionListProps {
   firstButtonOnPress: () => void;
   secondButtonOnPress: () => void;
 }
+
+export interface ActionListItemProps {
+  label: string;
+  value?: boolean;
+  onPress: () => void;
+  isDisabled?: boolean;
+  isSwitched?: boolean;
+  isSeparator?: boolean;
+  customStyles?: StyleProp<ViewStyle>;
+  actionNameStyles?: StyleProp<TextStyle>;
+  onValueChange?: (value: boolean) => void;
+}
