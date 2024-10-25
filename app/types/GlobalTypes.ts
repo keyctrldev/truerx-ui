@@ -170,6 +170,18 @@ export interface CityZipModalProps {
   onClose: () => void;
   onDonePress: (text: string) => void;
 }
+
+export interface ClaimHistoryItemProps {
+  date: string;
+  status: string;
+  claimID: string;
+  planPaid: number;
+  memberPaid?: number;
+  balancePaid?: number;
+  medicationCost: number;
+  medicationName: string;
+  onDotsPress?: () => {};
+}
 export interface ProgressStepperComponentProps {
   progressCount: number;
   eventList: StepperData[];
