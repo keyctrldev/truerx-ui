@@ -14,7 +14,7 @@ const SVGIcon: React.FC<SVGIconProps> = (props: SVGIconProps) => {
     <TouchableOpacity
       onPress={onPress}
       style={containerStyle}
-      disabled={disabled}
+      disabled={!onPress || disabled}
       hitSlop={{
         top: 10,
         bottom: 10,

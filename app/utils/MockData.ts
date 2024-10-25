@@ -163,11 +163,7 @@ export const componentListView: componentListProps[] = [
     componentTitle: 'CityZipCodeModal',
     screenName: Routes.cityZipCodeModalScreen,
   },
-  {
-    id: 25,
-    componentTitle: 'CustomProgressStepper',
-    screenName: Routes.CustomProgressStepper,
-  },
+  { id: 25, componentTitle: 'CustomProgressStepper', screenName: Routes.CustomProgressStepper },
   {
     id: 26,
     componentTitle: 'PATrackerMedicationList',
@@ -177,6 +173,68 @@ export const componentListView: componentListProps[] = [
     id: 27,
     componentTitle: 'Prescription List',
     screenName: Routes.PrescriptionsList,
+  },
+  {
+    id: 28,
+    componentTitle: 'Claim History Item',
+    screenName: Routes.ClaimHistoryItem,
+  },
+];
+
+export const claimsHistoryData = [
+  {
+    planPaid: 725,
+    balancePaid: 25,
+    medicationCost: 750,
+    claimID: '#XX000000',
+    status: 'Processed',
+    date: 'August 19, 2024',
+    medicationName: 'Humira',
+  },
+  {
+    planPaid: 600,
+    memberPaid: 40,
+    claimID: '#XX000001',
+    status: 'Processed',
+    medicationCost: 640,
+    medicationName: 'Enbrel',
+    date: 'September 1, 2024',
+  },
+  {
+    planPaid: 850,
+    balancePaid: 70,
+    status: 'Processed',
+    claimID: '#XX000002',
+    medicationCost: 920,
+    date: 'September 10, 2024',
+    medicationName: 'Remicade',
+  },
+  {
+    balancePaid: 40,
+    planPaid: 780,
+    medicationCost: 820,
+    claimID: '#XX000003',
+    status: 'Processed',
+    date: 'October 5, 2024',
+    medicationName: 'Stelara',
+  },
+  {
+    planPaid: 100,
+    memberPaid: 500,
+    status: 'Processed',
+    medicationCost: 500,
+    claimID: '#XX000004',
+    date: 'October 15, 2024',
+    medicationName: 'Xeljanz',
+  },
+  {
+    planPaid: 680,
+    memberPaid: 40,
+    claimID: '#XX000005',
+    status: 'Processed',
+    medicationCost: 700,
+    date: 'October 20, 2024',
+    medicationName: 'Orencia',
   },
 ];
 
