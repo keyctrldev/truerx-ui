@@ -38,6 +38,7 @@ import {
   ResetPasswordMethodScreen,
   TrackerMedicationListScreen,
   PlanBenefitSummaryScreen,
+  ChatInputBoxScreen,
 } from '../../modules';
 import SvgScreen from '../../modules/ComponentScreens/svg-screen/SvgScreen';
 
@@ -91,6 +92,7 @@ const RootStack = () => {
       <Stack.Screen name={Routes.PlanDetailCard} component={PlanDetailCardScreen} />
       <Stack.Screen name={Routes.filterModalScreen} component={CustomFilterModalScreen} />
       <Stack.Screen name={Routes.yourPlanBenefit} component={PlanBenefitSummaryScreen} />
+      <Stack.Screen name={Routes.chatInputBox} component={ChatInputBoxScreen} />
     </Stack.Navigator>
   );
 };

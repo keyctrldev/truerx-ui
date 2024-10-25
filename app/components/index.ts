@@ -20,3 +20,4 @@ export { default as PlanBenefitSummary } from './plan-benefit-summary/PlanBenefi
 export { default as PharmacyPriceList } from './pharmacy-price-list/PharmacyPriceList';
 export { default as MessageCardComponent } from './message-card-component/MessageCardComponent';
 export { default as CustomFilterModal } from './custom-filter-modal/CustomFilterModal';
+export { default as ChatInputBox } from './chat-input-box/ChatInputBox';

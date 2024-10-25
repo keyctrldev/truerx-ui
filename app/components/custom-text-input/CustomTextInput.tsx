@@ -10,6 +10,7 @@ interface CustomInputPropType {
   containerStyle?: ViewStyle;
   error: string;
   touched: boolean;
+  contentContainerStyle?: ViewStyle;
 }
 
 export type CustomInputType = (
@@ -35,12 +36,13 @@ const CustomTextInput: CustomInputType = (
     value,
     placeholderTextColor,
     style,
+    contentContainerStyle,
   },
   ref,
 ) => {
   return (
     <View style={[styles.textInputViewStyle, containerStyle]}>
-      <View style={styles.inputViewStyle}>
+      <View style={[styles.inputViewStyle, contentContainerStyle]}>
         <TextInput
           autoCapitalize="none"
           multiline={multiline}
