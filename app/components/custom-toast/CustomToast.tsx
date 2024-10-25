@@ -1,4 +1,4 @@
-import React, { forwardRef, useImperativeHandle, useRef, useState, useCallback } from 'react';
+import React, { forwardRef, useImperativeHandle, useRef, useState, useCallback, memo } from 'react';
 import { View, Animated } from 'react-native';
 import { styles } from './CustomToastStyle';
 import AppText from '../app-text/AppText';
@@ -91,4 +91,4 @@ const CustomToast = forwardRef<ToastRef, ToastProps>(({ duration = 3000 }, ref) 
   );
 });
 
-export default CustomToast;
+export default memo(CustomToast);

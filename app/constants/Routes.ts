@@ -44,5 +44,6 @@ export default {
   ClaimHistoryItem: 'ClaimHistoryItemScreen',
   trackerMedicationList: 'TrackerMedicationListScreen',
   PrescriptionsList: 'PrescriptionsListScreen',
+  PlanDetailCard: 'PlanDetailCardScreen',
   filterModalScreen: 'CustomFilterModalScreen',
 };

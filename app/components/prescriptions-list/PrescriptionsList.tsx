@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Image, View } from 'react-native';
 
 import { SVGIcon } from '../common';
@@ -57,4 +57,4 @@ const PrescriptionList: React.FC<PrescriptionListProps> = props => {
   );
 };
 
-export default PrescriptionList;
+export default memo(PrescriptionList);

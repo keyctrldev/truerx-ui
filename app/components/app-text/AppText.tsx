@@ -1,7 +1,7 @@
 // Custom Text component that wraps the native Text component.
 // This component allows for consistent styling across the app
 
-import React from 'react';
+import React, { memo } from 'react';
 import { Text, TextProps } from 'react-native';
 import { styles } from './AppTextStyle';
 
@@ -14,4 +14,4 @@ const AppText = (props: TextProps) => {
   );
 };
 
-export default AppText;
+export default memo(AppText);
