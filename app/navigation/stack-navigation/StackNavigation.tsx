@@ -31,6 +31,8 @@ import {
   ResetPasswordMethodScreen,
   PharmacyPriceListScreen,
   CityZipCodeModalScreen,
+  TrackerMedicationListScreen,
+  PrescriptionsListScreen,
 } from '../../modules';
 import SvgScreen from '../../modules/ComponentScreens/svg-screen/SvgScreen';
 
@@ -77,6 +79,8 @@ const RootStack = () => {
       <Stack.Screen name={Routes.linearProgressBar} component={LinearProgressBarScreen} />
       <Stack.Screen name={Routes.PharmacyPriceList} component={PharmacyPriceListScreen} />
       <Stack.Screen name={Routes.cityZipCodeModalScreen} component={CityZipCodeModalScreen} />
+      <Stack.Screen name={Routes.trackerMedicationList} component={TrackerMedicationListScreen} />
+      <Stack.Screen name={Routes.PrescriptionsList} component={PrescriptionsListScreen} />
     </Stack.Navigator>
   );
 };

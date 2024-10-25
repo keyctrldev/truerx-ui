@@ -29,20 +29,12 @@ const CustomProgressBarScreen = () => {
   return (
     <SafeAreaContainer>
       <CustomBackButton onBackPress={handleBackPress} />
-      <View style={styles.mainContaineStyles}>
+      <View style={styles.mainContainerStyles}>
         <CustomProgressStepper progressCount={4} eventList={stepperData} currentStep={currentStep} status="Pending" />
       </View>
       <View style={styles.buttonContainer}>
-        <CustomButton
-          title={stepperComponentStrings.nextButton}
-          onPress={onNextStepPress}
-          customStyle={styles.stepButton}
-        />
-        <CustomButton
-          title={stepperComponentStrings.resetButton}
-          onPress={onRestPress}
-          customStyle={styles.stepButton}
-        />
+        <CustomButton title={stepperComponentStrings.nextButton} onPress={onNextStepPress} />
+        <CustomButton title={stepperComponentStrings.resetButton} onPress={onRestPress} isSecondaryButton={true} />
       </View>
     </SafeAreaContainer>
   );

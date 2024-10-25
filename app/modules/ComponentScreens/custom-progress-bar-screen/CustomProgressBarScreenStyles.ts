@@ -8,10 +8,10 @@ export const styles = StyleSheet.create({
     borderRadius: moderateScale(10),
   },
   buttonContainer: {
-    alignItems: 'center',
+    paddingHorizontal: moderateScale(20),
     gap: moderateScale(20),
   },
-  mainContaineStyles: {
+  mainContainerStyles: {
     backgroundColor: Colors.white,
     paddingVertical: moderateScale(20),
     paddingHorizontal: moderateScale(10),

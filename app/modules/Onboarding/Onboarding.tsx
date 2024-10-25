@@ -68,14 +68,14 @@ const Onboarding: React.FC = () => {
       <View style={styles.bottom}>
         <CustomButton
           title={nextBtnTitleText}
-          customStyle={styles.customButtonStyle}
-          buttonLabelStyle={styles.buttonLabelStyle}
+          style={styles.customButtonStyle}
+          titleTextStyle={styles.buttonLabelStyle}
           onPress={handleNext}
         />
         <CustomButton
           title={loginScreenString.onboarding.skip}
-          customStyle={{ ...styles.customButtonStyle, backgroundColor: 'transparent' }}
-          buttonLabelStyle={{ ...styles.buttonLabelStyle, color: Colors.white }}
+          style={[styles.customButtonStyle, styles.skipBtnContainer]}
+          titleTextStyle={[styles.buttonLabelStyle, styles.skipBtnTextStyle]}
           onPress={handleSkip}
         />
       </View>

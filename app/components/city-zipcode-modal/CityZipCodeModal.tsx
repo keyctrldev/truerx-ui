@@ -36,16 +36,12 @@ const CityZipCodeModal = (props: CityZipModalProps) => {
           secureTextEntry={false}
           style={styles.textInputContainerStyle}
         />
-        <CustomButton
-          title={cityZipCodeModalComponent.done}
-          onPress={handleOnDonePress}
-          customStyle={styles.buttonStyle}
-        />
+        <CustomButton title={cityZipCodeModalComponent.done} onPress={handleOnDonePress} style={styles.buttonStyle} />
         <CustomButton
           title={cityZipCodeModalComponent.cancel}
           onPress={props.onClose}
-          customStyle={styles.cancelBtnContainer}
-          buttonLabelStyle={styles.cancelTextStyle}
+          style={styles.cancelBtnContainer}
+          titleTextStyle={styles.cancelTextStyle}
         />
       </View>
     </Modal>

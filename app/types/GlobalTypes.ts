@@ -156,6 +156,15 @@ export interface PharmacyDetails {
   onPress: () => void;
 }
 
+export interface CustomButtonProps {
+  title: string;
+  disabled?: boolean;
+  titleTextStyle?: StyleProp<TextStyle>;
+  childViewContainer?: StyleProp<ViewStyle>;
+  leftIcon?: React.ReactElement<SvgProps>;
+  rightIcon?: React.ReactElement<SvgProps>;
+  isSecondaryButton?: boolean;
+}
 export interface CityZipModalProps {
   isVisible: boolean;
   onClose: () => void;
@@ -166,4 +175,43 @@ export interface ProgressStepperComponentProps {
   eventList: StepperData[];
   currentStep: number;
   status: 'Pending' | 'Denied' | 'Approved';
+}
+export interface TrackerMedicationItemProps {
+  date: string;
+  type: string;
+  dosage: number;
+  drugName: string;
+  dosageType: string;
+  onInfoIconPress: () => void;
+}
+
+export interface TrackerMedicationListDataProps {
+  id: number;
+  date: string;
+  type: string;
+  dosage: number;
+  drugName: string;
+  dosageType: string;
+}
+export interface prescriptionListDataProps {
+  id: number;
+  buyerName: string;
+  buyerImage?: string;
+  deliveryType: string;
+  totalPrice: string;
+  drugName: string;
+  dosage: string;
+  count: number;
+}
+export interface PrescriptionListProps {
+  id?: number;
+  count?: number;
+  dosage?: string;
+  drugName?: string;
+  buyerName?: string;
+  totalPrice?: string;
+  deliveryType?: string;
+  buyerImage?: string;
+  firstButtonOnPress: () => void;
+  secondButtonOnPress: () => void;
 }
