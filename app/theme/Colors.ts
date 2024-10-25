@@ -30,6 +30,8 @@ type ColorType =
   | 'boxBorderColor'
   | 'lightOrange'
   | 'offWhite'
+  | 'separatorColor'
+  | 'yellow'
   | 'dustGray'
   | 'separatorColor';
 
@@ -66,5 +68,6 @@ export const Colors: Record<ColorType, string> = {
   lightOrange: '#FF937F',
   offWhite: '#FFE9E5',
   separatorColor: '#D5D5D5',
+  yellow: '#EDC26E',
   dustGray: '#535353',
 };

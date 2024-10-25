@@ -18,4 +18,5 @@ export { default as CustomTextButton } from './custom-text-button/CustomTextButt
 export { default as CustomLinearProgressBar } from './linear-progress-bar/CustomLinearProgressBar';
 export { default as PlanBenefitSummary } from './plan-benefit-summary/PlanBenefitSummary';
 export { default as PharmacyPriceList } from './pharmacy-price-list/PharmacyPriceList';
+export { default as MessageCardComponent } from './message-card-component/MessageCardComponent';
 export { default as CustomFilterModal } from './custom-filter-modal/CustomFilterModal';

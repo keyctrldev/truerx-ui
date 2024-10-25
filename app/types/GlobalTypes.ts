@@ -229,6 +229,12 @@ export interface PrescriptionListProps {
   secondButtonOnPress: () => void;
 }
 
+export interface MessageCardComponentProps {
+  containerStyle?: StyleProp<ViewStyle>;
+  titleText: string;
+  status: 'Active' | 'InActive';
+  statusText: string;
+}
 export interface PlanDetailCardProps {
   erisa: string;
   bpdDate: string;
