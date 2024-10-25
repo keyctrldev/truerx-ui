@@ -4,10 +4,12 @@ import { FlatList, Text } from 'react-native';
 import { planDesignData } from '../../../utils';
 import { PlanDetailCardDataProps } from '../../../types';
 import { styles } from './PlanDetailCardScreenStyles';
-import { SafeAreaContainer } from '../../../components';
+import { CustomBackButton, SafeAreaContainer } from '../../../components';
 import PlanDetailCard from '../../../components/plan-detail-card/PlanDetailCard';
+import { useNavigation } from '@react-navigation/native';
 
 const PlanDetailCardScreen = () => {
+  const navigation = useNavigation();
   const renderItem = ({ item }: { item: PlanDetailCardDataProps }) => {
     return (
       <PlanDetailCard
@@ -24,9 +26,13 @@ const PlanDetailCardScreen = () => {
       />
     );
   };
-
+  const handleBackPress = () => {
+    navigation.goBack();
+  };
   return (
     <SafeAreaContainer style={styles.container}>
+      <CustomBackButton onBackPress={handleBackPress} />
+
       <Text style={styles.text}>{'Plan DetailCard Screen'}</Text>
       <FlatList
         data={planDesignData}
