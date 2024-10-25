@@ -51,9 +51,6 @@ const ActionListItemScreen: React.FC = () => {
       <ActionListItem customStyles={styles.customStyles} label={'Profile'} onPress={() => {}} />
 
       <AppText style={styles.textStyles}>{'Pass Separator::'}</AppText>
-      <ActionListItem label={'Profile'} onPress={() => {}} isSeparator />
-
-      <AppText style={styles.textStyles}>{'Pass Separator::'}</AppText>
       <ActionListItem
         isSeparator
         label={'Profile'}
