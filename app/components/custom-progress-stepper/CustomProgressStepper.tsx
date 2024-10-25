@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import { styles } from './CustomProgressStepperStyle';
 import { FlatList, View } from 'react-native';
 import { stepperData } from '../../utils';
@@ -56,4 +56,4 @@ const CustomProgressStepper = () => {
     </View>
   );
 };
-export default CustomProgressStepper;
+export default memo(CustomProgressStepper);

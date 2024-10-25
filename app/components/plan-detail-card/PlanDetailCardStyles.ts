@@ -23,8 +23,8 @@ export const styles = StyleSheet.create({
     fontSize: moderateScale(16),
   },
   separator: {
-    height: verticalScale(2),
-    margin: moderateScale(8),
+    height: verticalScale(1),
+    marginVertical: moderateScale(8),
     backgroundColor: Colors.separatorColor,
   },
   detailContainer: {

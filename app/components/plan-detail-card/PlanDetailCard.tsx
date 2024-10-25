@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Text, View } from 'react-native';
 
 import { SVGIcon } from '../common';
-import AppText from '../app-text/AppText';
 import { styles } from './PlanDetailCardStyles';
 import { PlanDetailCardProps } from '../../types';
 import { TrueRxContent, TrueRxIcon } from '../../assets/svgs';
+import InfoContainer from './ItemContainer';
 
-const PlanDetailCard = (props: PlanDetailCardProps) => {
+const PlanDetailCard: React.FC<PlanDetailCardProps> = props => {
   const {
     erisa,
     bpdDate,
@@ -20,17 +20,6 @@ const PlanDetailCard = (props: PlanDetailCardProps) => {
     groupNumber,
     thresholdAmt,
   } = props;
-
-  const InfoContainer: React.FC<{ label: string; value?: string | number }> = ({ label, value }) => {
-    if (!value) return <></>;
-    return (
-      <View style={styles.detailContainer}>
-        <AppText style={styles.detailKeyName}>{label}</AppText>
-        <AppText style={styles.detailKeyValue}>{label === 'Threshold Amt' ? '\u0024' + value : value}</AppText>
-      </View>
-    );
-  };
-
   return (
     <View style={styles.detailCardContainer}>
       <View style={styles.headerContainer}>
@@ -55,4 +44,4 @@ const PlanDetailCard = (props: PlanDetailCardProps) => {
   );
 };
 
-export default PlanDetailCard;
+export default memo(PlanDetailCard);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Image, View } from 'react-native';
 import AppText from '../app-text/AppText';
 import './MedicationListStyle';
@@ -32,4 +32,4 @@ const MedicationList = ({ medicineName, count, dosage, supply, refill }: Medicat
     </View>
   );
 };
-export default MedicationList;
+export default memo(MedicationList);

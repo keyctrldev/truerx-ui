@@ -1,5 +1,5 @@
 import { Image, ImageSourcePropType, StyleSheet, TouchableOpacity, View } from 'react-native';
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 import { styles } from './CustomTabIconStyle';
 import { ParamListBase, useNavigation } from '@react-navigation/native';
 import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
@@ -35,4 +35,4 @@ const CustomTabIcon: FC<CustomTabIconType> = ({ focused, label, icon }) => {
   );
 };
 
-export default CustomTabIcon;
+export default memo(CustomTabIcon);
