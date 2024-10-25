@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import AppText from '../app-text/AppText';
 import { Image, TouchableOpacity, View } from 'react-native';
 import { styles } from './PharmacyPriceListStyle';
@@ -31,4 +31,4 @@ const PharmacyPriceList = ({
     </TouchableOpacity>
   );
 };
-export default PharmacyPriceList;
+export default memo(PharmacyPriceList);

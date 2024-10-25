@@ -175,3 +175,10 @@ export const messageCardComponentData = Object.freeze({
   availableOnline: 'Available online',
   weBeBackOnline: 'We’ll be back online at 8am EST',
 });
+
+export const customFilterModalComponent = Object.freeze({
+  filterByDateRange: 'Filter by date range',
+  last30Days: 'Last 30 days',
+  last60Days: 'Last 60 days',
+  last90Days: 'Last 90 days',
+});

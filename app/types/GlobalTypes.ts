@@ -188,6 +188,7 @@ export interface ProgressStepperComponentProps {
   currentStep: number;
   status: 'Pending' | 'Denied' | 'Approved';
 }
+
 export interface TrackerMedicationItemProps {
   date: string;
   type: string;
@@ -233,4 +234,41 @@ export interface MessageCardComponentProps {
   titleText: string;
   status: 'Active' | 'InActive';
   statusText: string;
+}
+export interface PlanDetailCardProps {
+  erisa: string;
+  bpdDate: string;
+  tpaName: string;
+  firmName: string;
+  formulary: string;
+  posRebates: string;
+  memberName: string;
+  acctNumber: number;
+  groupNumber: number;
+  thresholdAmt: number;
+}
+
+export interface PlanDetailCardDataProps {
+  id: number;
+  erisa: string;
+  bpdDate: string;
+  tpaName: string;
+  firmName: string;
+  formulary: string;
+  posRebates: string;
+  memberName: string;
+  acctNumber: number;
+  groupNumber: number;
+  thresholdAmt: number;
+}
+
+export interface FilterDataListProps {
+  id: number;
+  filterName: string;
+}
+
+export interface FilterModalProps {
+  isVisible: boolean;
+  onClose: () => void;
+  onDonePress: (filterId: number) => void;
 }

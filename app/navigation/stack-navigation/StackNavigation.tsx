@@ -24,17 +24,20 @@ import {
   ActivityLoaderScreen,
   CustomTextInputScreen,
   CustomTextButtonScreen,
+  CityZipCodeModalScreen,
   NotificationTileScreen,
   LinearProgressBarScreen,
   SafeAreaContainerScreen,
   CustomProgressBarScreen,
   PharmacyPriceListScreen,
-  CityZipCodeModalScreen,
   ClaimHistoryItemScreen,
   PrescriptionsListScreen,
-  ResetPasswordMethodScreen,
   MessageCardComponentScreen,
+  PlanDetailCardScreen,
+  CustomFilterModalScreen,
+  ResetPasswordMethodScreen,
   TrackerMedicationListScreen,
+  PlanBenefitSummaryScreen,
 } from '../../modules';
 import SvgScreen from '../../modules/ComponentScreens/svg-screen/SvgScreen';
 
@@ -85,6 +88,9 @@ const RootStack = () => {
       <Stack.Screen name={Routes.trackerMedicationList} component={TrackerMedicationListScreen} />
       <Stack.Screen name={Routes.PrescriptionsList} component={PrescriptionsListScreen} />
       <Stack.Screen name={Routes.messageCardComponent} component={MessageCardComponentScreen} />
+      <Stack.Screen name={Routes.PlanDetailCard} component={PlanDetailCardScreen} />
+      <Stack.Screen name={Routes.filterModalScreen} component={CustomFilterModalScreen} />
+      <Stack.Screen name={Routes.yourPlanBenefit} component={PlanBenefitSummaryScreen} />
     </Stack.Navigator>
   );
 };

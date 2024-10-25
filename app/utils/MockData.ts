@@ -1,5 +1,12 @@
-import { Routes } from '../constants';
-import { ClaimsData, prescriptionListDataProps, StepperData, TrackerMedicationListDataProps } from '../types';
+import { customFilterModalComponent, Routes } from '../constants';
+import {
+  ClaimsData,
+  StepperData,
+  FilterDataListProps,
+  prescriptionListDataProps,
+  TrackerMedicationListDataProps,
+  PlanDetailCardDataProps,
+} from '../types';
 
 export const claimsData: ClaimsData[] = [
   {
@@ -175,7 +182,17 @@ export const componentListView: componentListProps[] = [
     screenName: Routes.PrescriptionsList,
   },
   {
+    id: 26,
+    componentTitle: 'Plan Detail Card',
+    screenName: Routes.PlanDetailCard,
+  },
+  {
     id: 28,
+    componentTitle: 'Date Range Filter Modal',
+    screenName: Routes.filterModalScreen,
+  },
+  {
+    id: 29,
     componentTitle: 'Claim History Item',
     screenName: Routes.ClaimHistoryItem,
   },
@@ -330,5 +347,88 @@ export const prescriptionListData: prescriptionListDataProps[] = [
     drugName: 'Omeprazole',
     dosage: '20 mg',
     count: 60,
+  },
+];
+
+export const planDesignData: PlanDetailCardDataProps[] = [
+  {
+    id: 1,
+    memberName: 'Alex Johnson',
+    acctNumber: 56342,
+    groupNumber: 2145,
+    bpdDate: '10/05/2024',
+    erisa: 'No',
+    tpaName: 'Blue Cross',
+    posRebates: 'Yes',
+    firmName: 'Hartford Inc.',
+    formulary: 'Closed',
+    thresholdAmt: 3000,
+  },
+  {
+    id: 2,
+    memberName: 'Sarah Lee',
+    acctNumber: 34218,
+    groupNumber: 1092,
+    bpdDate: '08/20/2024',
+    erisa: 'Yes',
+    tpaName: 'Aetna',
+    posRebates: 'No',
+    firmName: 'Zenith Co.',
+    formulary: 'Open',
+    thresholdAmt: 2500,
+  },
+  {
+    id: 3,
+    memberName: 'Michael Brown',
+    acctNumber: 47820,
+    groupNumber: 3342,
+    bpdDate: '12/15/2024',
+    erisa: 'Yes',
+    tpaName: 'UMR',
+    posRebates: 'Yes',
+    firmName: 'GlobalCorp',
+    formulary: 'Open',
+    thresholdAmt: 2750,
+  },
+  {
+    id: 4,
+    memberName: 'Emily Davis',
+    acctNumber: 91234,
+    groupNumber: 5671,
+    bpdDate: '07/01/2024',
+    erisa: 'No',
+    tpaName: 'Cigna',
+    posRebates: 'No',
+    firmName: 'Omega Ltd.',
+    formulary: 'Closed',
+    thresholdAmt: 1500,
+  },
+  {
+    id: 5,
+    memberName: 'John Miller',
+    acctNumber: 67391,
+    groupNumber: 8902,
+    bpdDate: '11/10/2024',
+    erisa: 'Yes',
+    tpaName: 'Anthem',
+    posRebates: 'Yes',
+    firmName: 'AlphaCo',
+    formulary: 'Open',
+    thresholdAmt: 3500,
+  },
+];
+
+export const filterDataList: FilterDataListProps[] = [
+  {
+    id: 1,
+    filterName: customFilterModalComponent.last30Days,
+  },
+  {
+    id: 2,
+    filterName: customFilterModalComponent.last60Days,
+  },
+  {
+    id: 3,
+    filterName: customFilterModalComponent.last90Days,
   },
 ];

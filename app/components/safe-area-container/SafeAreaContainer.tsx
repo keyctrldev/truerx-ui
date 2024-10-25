@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { memo, ReactNode } from 'react';
 import { View, Platform, StatusBar, ViewStyle, ColorValue } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Colors } from '../../theme';
@@ -22,4 +22,4 @@ const SafeAreaContainer: React.FC<SafeAreaContainerProps> = ({ children, style, 
     </SafeAreaView>
   );
 };
-export default SafeAreaContainer;
+export default memo(SafeAreaContainer);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Image, ImageSourcePropType, View } from 'react-native';
 
 import AppText from '../app-text/AppText';
@@ -20,4 +20,4 @@ const OnboardingSwiper = ({ swiperImage, swiperHeader, swiperDes }: OnboardingSw
   );
 };
 
-export default OnboardingSwiper;
+export default memo(OnboardingSwiper);

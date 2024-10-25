@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { ActivityIndicator, Modal } from 'react-native';
 import { Colors } from '../../theme';
 import { styles } from './ActivityLoaderStyle';
@@ -11,4 +11,4 @@ const ActivityLoader = ({ isVisible, color }: { isVisible: boolean; color?: stri
   );
 };
 
-export default ActivityLoader;
+export default memo(ActivityLoader);
