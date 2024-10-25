@@ -1,5 +1,11 @@
-import { Routes } from '../constants';
-import { ClaimsData, prescriptionListDataProps, StepperData, TrackerMedicationListDataProps } from '../types';
+import { customFilterModalComponent, Routes } from '../constants';
+import {
+  ClaimsData,
+  StepperData,
+  FilterDataListProps,
+  prescriptionListDataProps,
+  TrackerMedicationListDataProps,
+} from '../types';
 
 export const claimsData: ClaimsData[] = [
   {
@@ -178,6 +184,11 @@ export const componentListView: componentListProps[] = [
     componentTitle: 'Prescription List',
     screenName: Routes.PrescriptionsList,
   },
+  {
+    id: 28,
+    componentTitle: 'Date Range Filter Modal',
+    screenName: Routes.filterModalScreen,
+  },
 ];
 
 export const PATrackerMedicationData: TrackerMedicationListDataProps[] = [
@@ -267,5 +278,20 @@ export const prescriptionListData: prescriptionListDataProps[] = [
     drugName: 'Omeprazole',
     dosage: '20 mg',
     count: 60,
+  },
+];
+
+export const filterDataList: FilterDataListProps[] = [
+  {
+    id: 1,
+    filterName: customFilterModalComponent.last30Days,
+  },
+  {
+    id: 2,
+    filterName: customFilterModalComponent.last60Days,
+  },
+  {
+    id: 3,
+    filterName: customFilterModalComponent.last90Days,
   },
 ];

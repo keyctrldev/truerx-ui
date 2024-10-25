@@ -34,3 +34,4 @@ export { default as PharmacyPriceListScreen } from './ComponentScreens/pharmacy-
 export { default as CityZipCodeModalScreen } from './ComponentScreens/city-zip-code-modal-screen/CityZipCodeModalScreen';
 export { default as TrackerMedicationListScreen } from './ComponentScreens/tracker-medication-list/TrackerMedicationListScreen';
 export { default as PrescriptionsListScreen } from './ComponentScreens/prescriptions-list/PrescriptionsListScreen';
+export { default as CustomFilterModalScreen } from './ComponentScreens/custom-filter-modal-screen/CustomFilterModalScreen';

@@ -209,3 +209,14 @@ export interface PrescriptionListProps {
   firstButtonOnPress: () => void;
   secondButtonOnPress: () => void;
 }
+
+export interface FilterDataListProps {
+  id: number;
+  filterName: string;
+}
+
+export interface FilterModalProps {
+  isVisible: boolean;
+  onClose: () => void;
+  onDonePress: (filterId: number) => void;
+}

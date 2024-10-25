@@ -43,4 +43,5 @@ export default {
   cityZipCodeModalScreen: 'CityZipCodeModalScreen',
   trackerMedicationList: 'TrackerMedicationListScreen',
   PrescriptionsList: 'PrescriptionsListScreen',
+  filterModalScreen: 'CustomFilterModalScreen',
 };

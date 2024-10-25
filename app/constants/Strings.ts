@@ -169,3 +169,10 @@ export const cityZipCodeModalComponent = Object.freeze({
   done: 'Done',
   cancel: 'Cancel',
 });
+
+export const customFilterModalComponent = Object.freeze({
+  filterByDateRange: 'Filter by date range',
+  last30Days: 'Last 30 days',
+  last60Days: 'Last 60 days',
+  last90Days: 'Last 90 days',
+});
