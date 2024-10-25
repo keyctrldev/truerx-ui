@@ -24,20 +24,20 @@ export const claimsData: ClaimsData[] = [
 
 export const stepperData: StepperData[] = [
   {
-    date: '14 Nov',
-    event: 'Accept Offer',
+    date: 'Submitted by Dr. Smith on Aug 25 2024, 9:23am',
+    event: 'Request Received',
   },
   {
-    date: '18 Nov',
-    event: 'Schedule Your Assesment',
+    date: 'Aug 25 2024, 9:23am',
+    event: 'Under Clinical Review',
   },
   {
-    date: '23 Nov',
-    event: 'Review Repairs',
+    date: 'Aug 25 2024, 9:23am',
+    event: 'Clinical Review',
   },
   {
-    date: '30 Nov',
-    event: 'Closing',
+    date: 'Aug 25 2024, 9:23am',
+    event: 'Prior Authorization Status',
   },
 ];
 
@@ -92,11 +92,6 @@ export const componentListView: componentListProps[] = [
   //   id: 9,
   //   componentTitle: 'ActivityLoader',
   //   screenName: Routes.ActivityLoader,
-  // },
-  // {
-  //   id: 10,
-  //   componentTitle: 'CustomProgressStepper',
-  //   screenName: Routes.CustomProgressStepper,
   // },
   // {
   //   id: 11,
@@ -170,11 +165,16 @@ export const componentListView: componentListProps[] = [
   },
   {
     id: 25,
+    componentTitle: 'CustomProgressStepper',
+    screenName: Routes.CustomProgressStepper,
+  },
+  {
+    id: 26,
     componentTitle: 'PATrackerMedicationList',
     screenName: Routes.trackerMedicationList,
   },
   {
-    id: 25,
+    id: 27,
     componentTitle: 'Prescription List',
     screenName: Routes.PrescriptionsList,
   },
