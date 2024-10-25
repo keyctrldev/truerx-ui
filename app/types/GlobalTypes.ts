@@ -170,6 +170,25 @@ export interface CityZipModalProps {
   onClose: () => void;
   onDonePress: (text: string) => void;
 }
+
+export interface ClaimHistoryItemProps {
+  date: string;
+  status: string;
+  claimID: string;
+  planPaid: number;
+  memberPaid?: number;
+  balancePaid?: number;
+  medicationCost: number;
+  medicationName: string;
+  onDotsPress?: () => {};
+}
+export interface ProgressStepperComponentProps {
+  progressCount: number;
+  eventList: StepperData[];
+  currentStep: number;
+  status: 'Pending' | 'Denied' | 'Approved';
+}
+
 export interface TrackerMedicationItemProps {
   date: string;
   type: string;
@@ -235,4 +254,15 @@ export interface PlanDetailCardDataProps {
   acctNumber: number;
   groupNumber: number;
   thresholdAmt: number;
+}
+
+export interface FilterDataListProps {
+  id: number;
+  filterName: string;
+}
+
+export interface FilterModalProps {
+  isVisible: boolean;
+  onClose: () => void;
+  onDonePress: (filterId: number) => void;
 }

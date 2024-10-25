@@ -26,6 +26,7 @@ export const styles = StyleSheet.create({
   },
   cancelBtnContainer: {
     backgroundColor: Colors.transparent,
+    borderColor: Colors.transparent,
   },
   textInputContainerStyle: {
     borderWidth: verticalScale(1),
