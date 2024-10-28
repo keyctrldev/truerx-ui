@@ -1,4 +1,3 @@
-import { Icons, Images } from '../assets';
 import { customFilterModalComponent, Routes } from '../constants';
 import {
   ClaimsData,
@@ -172,7 +171,11 @@ export const componentListView: componentListProps[] = [
     componentTitle: 'CityZipCodeModal',
     screenName: Routes.cityZipCodeModalScreen,
   },
-  { id: 25, componentTitle: 'CustomProgressStepper', screenName: Routes.CustomProgressStepper },
+  {
+    id: 25,
+    componentTitle: 'CustomProgressStepper',
+    screenName: Routes.CustomProgressStepper,
+  },
   {
     id: 26,
     componentTitle: 'PATrackerMedicationList',
@@ -207,6 +210,16 @@ export const componentListView: componentListProps[] = [
     id: 31,
     componentTitle: 'Profile Icons Screen',
     screenName: Routes.profileIcons,
+  },
+  {
+    id: 32,
+    componentTitle: 'SaveMoneyView',
+    screenName: Routes.saveMoneyView,
+  },
+  {
+    id: 33,
+    componentTitle: 'Chat Input Box',
+    screenName: Routes.chatInputBox,
   },
 ];
 
