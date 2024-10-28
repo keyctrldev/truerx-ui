@@ -3,8 +3,7 @@ import { FlatList, Text } from 'react-native';
 import { profileIconsData } from '../../../utils';
 import { styles } from './ProfileIconsScreenStyles';
 import { profileIconsDataProps } from '../../../types';
-import { SafeAreaContainer } from '../../../components';
-import ProfileIconsItem from '../../../components/profile-icons/ProfileIconsItem';
+import { ProfileIconsItem, SafeAreaContainer } from '../../../components';
 
 const ProfileIconsScreen = () => {
   const renderItem = ({ item, index }: { item: profileIconsDataProps; index: number }) => {
