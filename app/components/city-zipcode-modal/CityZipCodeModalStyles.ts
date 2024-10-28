@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 import { Colors, moderateScale, verticalScale } from '../../theme';
 import { fonts } from '../../assets';
 
@@ -10,15 +10,15 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   titleTextStyle: {
-    fontSize: moderateScale(18),
+    fontSize: moderateScale(20),
     fontFamily: fonts.SemiBold,
     color: Colors.black,
+    paddingVertical: verticalScale(5),
   },
   buttonStyle: {
-    width: '85%',
+    width: '92%',
     borderRadius: verticalScale(50),
     backgroundColor: Colors.primary,
-    marginBottom: verticalScale(10),
   },
   cancelTextStyle: {
     fontSize: moderateScale(13),
@@ -27,12 +27,16 @@ export const styles = StyleSheet.create({
   cancelBtnContainer: {
     backgroundColor: Colors.transparent,
     borderColor: Colors.transparent,
+    marginTop: verticalScale(10),
   },
   textInputContainerStyle: {
     borderWidth: verticalScale(1),
     borderColor: Colors.overlayDark,
     borderRadius: verticalScale(6),
-    paddingVertical: verticalScale(14),
+    paddingVertical: Platform.OS == 'android' ? verticalScale(10) : verticalScale(14),
     color: Colors.black,
+  },
+  textInputContentContainerStyle: {
+    width: '92%',
   },
 });

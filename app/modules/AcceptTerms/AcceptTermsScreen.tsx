@@ -50,18 +50,16 @@ const AcceptTermsScreen = () => {
           isExpandedView ? styles.expandedContainer : styles.closeContainer,
           item.id == 1 && styles.topContainerStyle,
         ]}>
-        <View style={GlobalStyles.rowSpaceBetweenContainer}>
+        <TouchableOpacity activeOpacity={0.8} style={GlobalStyles.rowSpaceBetweenContainer} onPress={handleExpandView}>
           <Text style={styles.btnTitleText}>{item.title}</Text>
-          <TouchableOpacity onPress={handleExpandView}>
-            <Image
-              source={Icons.dropDownArrowIcon}
-              style={[GlobalStyles.commonIconStyle, isExpandedView ? styles.downIconStyle : styles.upIconStyle]}
-            />
-          </TouchableOpacity>
-        </View>
+          <Image
+            source={Icons.dropDownArrowIcon}
+            style={[GlobalStyles.commonIconStyle, isExpandedView ? styles.downIconStyle : styles.upIconStyle]}
+          />
+        </TouchableOpacity>
         {isExpandedView && (
           <View style={styles.scrollableContentContainer}>
-            <ScrollView showsVerticalScrollIndicator={false} nestedScrollEnabled={true}>
+            <ScrollView showsVerticalScrollIndicator={false} nestedScrollEnabled={true} bounces={false}>
               <Text style={styles.subTitleText}>{item.subText}</Text>
             </ScrollView>
           </View>
@@ -74,10 +72,10 @@ const AcceptTermsScreen = () => {
     return (
       <View style={[GlobalStyles.rowContainer]}>
         <CustomButton
-          title={acceptTermsScreenStrings.Decline}
           onPress={() => {}}
           style={styles.declineBtnContainer}
           titleTextStyle={styles.declineBtnText}
+          title={acceptTermsScreenStrings.Decline}
         />
         <CustomButton title={acceptTermsScreenStrings.Accept} onPress={() => {}} style={styles.acceptBtnContainer} />
       </View>
@@ -89,9 +87,10 @@ const AcceptTermsScreen = () => {
       <CustomBackButton onBackPress={handleBackPress} />
       <Text style={styles.agreementTextStyle}>{acceptTermsScreenStrings.AgreementToTerms}</Text>
       <FlatList
+        bounces={false}
+        renderItem={renderItem}
         data={agreementTermsList}
         showsVerticalScrollIndicator={false}
-        renderItem={renderItem}
         ListFooterComponent={footerBtnContainer}
       />
     </SafeAreaContainer>
