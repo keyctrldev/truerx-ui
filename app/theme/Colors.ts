@@ -34,6 +34,9 @@ type ColorType =
   | 'separatorColor'
   | 'yellow'
   | 'dustGray'
+  | 'darkCyan'
+  | 'darkGreen'
+  | 'separatorColor'
   | 'separatorColor'
   | 'placeHolderTextColor'
   | 'dustGray';
@@ -74,5 +77,7 @@ export const Colors: Record<ColorType, string> = {
   separatorColor: '#D5D5D5',
   yellow: '#EDC26E',
   dustGray: '#535353',
+  darkCyan: '#8AE0E3',
+  darkGreen: '#00363A',
   placeHolderTextColor: '#A3A3A3',
 };

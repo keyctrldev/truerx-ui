@@ -6,6 +6,7 @@ import {
   prescriptionListDataProps,
   TrackerMedicationListDataProps,
   PlanDetailCardDataProps,
+  profileIconsDataProps,
 } from '../types';
 
 export const claimsData: ClaimsData[] = [
@@ -207,13 +208,18 @@ export const componentListView: componentListProps[] = [
   },
   {
     id: 31,
-    componentTitle: 'Chat Input Box',
-    screenName: Routes.chatInputBox,
+    componentTitle: 'Profile Icons Screen',
+    screenName: Routes.profileIcons,
   },
   {
     id: 32,
     componentTitle: 'SaveMoneyView',
     screenName: Routes.saveMoneyView,
+  },
+  {
+    id: 33,
+    componentTitle: 'Chat Input Box',
+    screenName: Routes.chatInputBox,
   },
 ];
 
@@ -444,5 +450,25 @@ export const filterDataList: FilterDataListProps[] = [
   {
     id: 3,
     filterName: customFilterModalComponent.last90Days,
+  },
+];
+
+export const profileIconsData: profileIconsDataProps[] = [
+  {
+    id: 1,
+    firstName: 'John',
+    lastName: 'Doe',
+    profileIcon: 'https://cdn3.pixelcut.app/1/3/profile_picture_1728ecf2bd.jpg',
+  },
+  {
+    id: 2,
+    firstName: 'Jane',
+    lastName: 'Reacher',
+  },
+  {
+    id: 3,
+    firstName: 'Alice',
+    lastName: 'Brown',
+    profileIcon: 'https://cdn3.pixelcut.app/1/3/profile_picture_1728ecf2bd.jpg',
   },
 ];
