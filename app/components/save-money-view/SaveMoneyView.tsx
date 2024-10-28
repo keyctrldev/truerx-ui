@@ -1,19 +1,19 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
-import AppText from '../app-text/AppText';
-import CustomButton from '../custom-button/CustomButton';
-import { styles } from './SaveMoneyViewStyle';
-import { Images } from '../../assets';
-import { SaveMoneyViewProp } from '../../types';
+import { View, ImageBackground } from 'react-native';
 
-const SaveMoneyView = ({ heading, buttonTitle, onPress }: SaveMoneyViewProp) => {
+import { Images } from '../../assets';
+import AppText from '../app-text/AppText';
+import { styles } from './SaveMoneyViewStyle';
+import { SaveMoneyViewProp } from '../../types';
+import CustomButton from '../custom-button/CustomButton';
+
+const SaveMoneyView = ({ heading, buttonTitle, containerStyle, onPress }: SaveMoneyViewProp) => {
   return (
-    <View style={styles.viewContainer}>
-      <Image source={Images.backgroundImg} />
-      <View style={styles.textContainer}>
+    <View style={[styles.viewContainer, containerStyle]}>
+      <ImageBackground source={Images.backgroundImg} style={styles.imageBackgroundContainer} resizeMode="cover">
         <AppText style={styles.headingText}>{heading}</AppText>
         <CustomButton title={buttonTitle} onPress={onPress} style={styles.savingsButton} />
-      </View>
+      </ImageBackground>
     </View>
   );
 };

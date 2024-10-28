@@ -274,5 +274,6 @@ export interface FilterModalProps {
 export interface SaveMoneyViewProp {
   heading: string;
   buttonTitle: string;
+  containerStyle?: StyleProp<ViewStyle>;
   onPress: () => void;
 }
