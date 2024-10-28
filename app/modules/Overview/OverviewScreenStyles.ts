@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
-import { Colors, horizontalScale, moderateScale, verticalScale } from '../../theme';
-import { fonts } from '../../assets';
+import { Colors, moderateScale, verticalScale } from '../../theme';
+import { arial } from '../../assets';
 
 export const styles = StyleSheet.create({
   containerStyle: {
@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   buttonTextStyle: {
-    fontFamily: fonts.SemiBold,
+    fontFamily: arial.Bold,
     fontSize: moderateScale(16),
     color: Colors.black,
   },

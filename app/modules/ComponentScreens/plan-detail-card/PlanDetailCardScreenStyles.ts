@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { fonts } from '../../../assets';
+import { gilroy } from '../../../assets';
 import { Colors, horizontalScale, moderateScale } from '../../../theme';
 
 export const styles = StyleSheet.create({
@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
   text: {
     textAlign: 'center',
     margin: moderateScale(20),
-    fontFamily: fonts.SemiBold,
+    fontFamily: gilroy.SemiBold,
     fontSize: moderateScale(20),
   },
 });
