@@ -1,6 +1,6 @@
 import { Platform, StyleSheet } from 'react-native';
 import { Colors, moderateScale, verticalScale } from '../../theme';
-import { fonts } from '../../assets';
+import { gilroy } from '../../assets';
 
 export const styles = StyleSheet.create({
   modalContainer: {
@@ -10,8 +10,8 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   titleTextStyle: {
-    fontSize: moderateScale(20),
-    fontFamily: fonts.SemiBold,
+    fontSize: moderateScale(18),
+    fontFamily: gilroy.SemiBold,
     color: Colors.black,
     paddingVertical: verticalScale(5),
   },

@@ -31,7 +31,7 @@ const CityZipCodeModal = (props: CityZipModalProps) => {
         <Text style={styles.titleTextStyle}>{cityZipCodeModalComponent.enterCityZipCode}</Text>
         <CustomTextInput
           placeholder={cityZipCodeModalComponent.placeHolderText}
-          placeholderTextColor={Colors.placeHolderColor}
+          placeholderTextColor={Colors.placeHolderTextColor}
           value={cityText}
           onChangeText={setCityText}
           error=""

@@ -188,7 +188,6 @@ export interface ProgressStepperComponentProps {
   currentStep: number;
   status: 'Pending' | 'Denied' | 'Approved';
 }
-
 export interface TrackerMedicationItemProps {
   date: string;
   type: string;
@@ -266,9 +265,32 @@ export interface FilterDataListProps {
   id: number;
   filterName: string;
 }
-
 export interface FilterModalProps {
   isVisible: boolean;
   onClose: () => void;
   onDonePress: (filterId: number) => void;
+}
+
+export interface ProfileIconsItemProps {
+  lastName: string;
+  firstName: string;
+  isFirstItem: boolean;
+  profileIcon?: string;
+}
+
+export interface profileIconsDataProps {
+  id: number;
+  lastName: string;
+  firstName: string;
+  profileIcon?: string;
+}
+export interface ChatInputBoxProps {
+  onMessageSend: (msg: string) => void;
+  onOpenMedia: () => void;
+}
+export interface SaveMoneyViewProp {
+  heading: string;
+  buttonTitle: string;
+  containerStyle?: StyleProp<ViewStyle>;
+  onPress: () => void;
 }
