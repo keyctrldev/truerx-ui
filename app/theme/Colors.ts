@@ -30,7 +30,10 @@ type ColorType =
   | 'boxBorderColor'
   | 'lightOrange'
   | 'offWhite'
-  | 'indigo';
+  | 'indigo'
+  | 'separatorColor'
+  | 'yellow'
+  | 'dustGray';
 
 // This object provides a centralized way to manage and reference color values throughout the application, ensuring consistency in color usage.
 // Color code should be Hex values.
@@ -65,4 +68,7 @@ export const Colors: Record<ColorType, string> = {
   lightOrange: '#FF937F',
   offWhite: '#FFE9E5',
   indigo: '#263845',
+  separatorColor: '#D5D5D5',
+  yellow: '#EDC26E',
+  dustGray: '#535353',
 };

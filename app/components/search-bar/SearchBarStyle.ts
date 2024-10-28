@@ -2,11 +2,6 @@ import { StyleSheet } from 'react-native';
 import { Colors, horizontalScale, moderateScale, verticalScale } from '../../theme';
 
 export const styles = StyleSheet.create({
-  searchContainer: {
-    backgroundColor: Colors.indigo,
-    paddingHorizontal: horizontalScale(20),
-    paddingVertical: verticalScale(20),
-  },
   searchBar: {
     flexDirection: 'row',
     alignItems: 'center',

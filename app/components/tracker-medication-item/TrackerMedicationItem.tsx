@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { View } from 'react-native';
 
 import { SVGIcon } from '../common';
@@ -30,4 +30,4 @@ const TrackerMedicationItem: React.FC<TrackerMedicationItemProps> = props => {
   );
 };
 
-export default TrackerMedicationItem;
+export default memo(TrackerMedicationItem);

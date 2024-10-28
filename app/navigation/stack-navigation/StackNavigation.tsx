@@ -24,17 +24,24 @@ import {
   ActivityLoaderScreen,
   CustomTextInputScreen,
   CustomTextButtonScreen,
+  CityZipCodeModalScreen,
   NotificationTileScreen,
   LinearProgressBarScreen,
   SafeAreaContainerScreen,
   CustomProgressBarScreen,
-  ResetPasswordMethodScreen,
   PharmacyPriceListScreen,
-  CityZipCodeModalScreen,
   SearchBarScreen,
+  ClaimHistoryItemScreen,
+  PrescriptionsListScreen,
+  MessageCardComponentScreen,
+  PlanDetailCardScreen,
+  CustomFilterModalScreen,
+  ResetPasswordMethodScreen,
   TrackerMedicationListScreen,
+  PlanBenefitSummaryScreen,
 } from '../../modules';
 import SvgScreen from '../../modules/ComponentScreens/svg-screen/SvgScreen';
+import SaveMoneyViewScreen from '../../modules/ComponentScreens/save-money-view-screen/SaveMoneyViewScreen';
 
 const Stack = createStackNavigator();
 const RootStack = () => {
@@ -80,7 +87,14 @@ const RootStack = () => {
       <Stack.Screen name={Routes.PharmacyPriceList} component={PharmacyPriceListScreen} />
       <Stack.Screen name={Routes.cityZipCodeModalScreen} component={CityZipCodeModalScreen} />
       <Stack.Screen name={Routes.SearchBar} component={SearchBarScreen} />
+      <Stack.Screen name={Routes.ClaimHistoryItem} component={ClaimHistoryItemScreen} />
       <Stack.Screen name={Routes.trackerMedicationList} component={TrackerMedicationListScreen} />
+      <Stack.Screen name={Routes.saveMoneyView} component={SaveMoneyViewScreen} />
+      <Stack.Screen name={Routes.PrescriptionsList} component={PrescriptionsListScreen} />
+      <Stack.Screen name={Routes.messageCardComponent} component={MessageCardComponentScreen} />
+      <Stack.Screen name={Routes.PlanDetailCard} component={PlanDetailCardScreen} />
+      <Stack.Screen name={Routes.filterModalScreen} component={CustomFilterModalScreen} />
+      <Stack.Screen name={Routes.yourPlanBenefit} component={PlanBenefitSummaryScreen} />
     </Stack.Navigator>
   );
 };

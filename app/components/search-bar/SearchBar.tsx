@@ -7,15 +7,11 @@ import { SearchBarProps } from '../../types';
 import { SVGIcon } from '../common';
 import { CloseIcon, SearchIcon } from '../../assets/svgs';
 
-const SearchBar = ({ value, placeHolder, onChangeText }: SearchBarProps) => {
-  const clearSearch = () => {
-    onChangeText('');
-  };
-
+const SearchBar = ({ value, placeHolder, onChangeText, containerStyle, clearSearch }: SearchBarProps) => {
   return (
-    <View style={styles.searchContainer}>
+    <View style={[containerStyle]}>
       <View style={styles.searchBar}>
-        <SVGIcon component={<SearchIcon />} />
+        <SVGIcon component={<SearchIcon />} disabled />
         <TextInput
           onChangeText={onChangeText}
           value={value}

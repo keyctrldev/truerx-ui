@@ -33,4 +33,9 @@ export { default as PlanBenefitSummaryScreen } from './ComponentScreens/plan-ben
 export { default as PharmacyPriceListScreen } from './ComponentScreens/pharmacy-price-list-screen/PharmacyPriceListScreen';
 export { default as CityZipCodeModalScreen } from './ComponentScreens/city-zip-code-modal-screen/CityZipCodeModalScreen';
 export { default as SearchBarScreen } from './ComponentScreens/search-bar-screen/SearchBarScreen';
+export { default as ClaimHistoryItemScreen } from './ComponentScreens/claim-history-item-screen/ClaimHistoryItemScreen';
 export { default as TrackerMedicationListScreen } from './ComponentScreens/tracker-medication-list/TrackerMedicationListScreen';
+export { default as PrescriptionsListScreen } from './ComponentScreens/prescriptions-list/PrescriptionsListScreen';
+export { default as MessageCardComponentScreen } from './ComponentScreens/message-card-component-screen/MessageCardComponentScreen';
+export { default as PlanDetailCardScreen } from './ComponentScreens/plan-detail-card/PlanDetailCardScreen';
+export { default as CustomFilterModalScreen } from './ComponentScreens/custom-filter-modal-screen/CustomFilterModalScreen';
