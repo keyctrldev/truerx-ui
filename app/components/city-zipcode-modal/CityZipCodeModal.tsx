@@ -40,7 +40,8 @@ const CityZipCodeModal = (props: CityZipModalProps) => {
         <CustomButton
           title={cityZipCodeModalComponent.cancel}
           onPress={props.onClose}
-          style={styles.cancelBtnContainer}
+          isSecondaryButton
+          style={[styles.buttonStyle, styles.cancelBtnContainer]}
           titleTextStyle={styles.cancelTextStyle}
         />
       </View>

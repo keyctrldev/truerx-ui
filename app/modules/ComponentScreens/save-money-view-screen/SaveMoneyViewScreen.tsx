@@ -9,8 +9,8 @@ const SaveMoneyViewScreen = () => {
   return (
     <SafeAreaView>
       <SaveMoneyView
-        heading="Save your money on medications"
-        buttonTitle="Explore Savings Center"
+        heading="Save money on your medications"
+        buttonTitle="Explore savings center"
         onPress={handlePress}
       />
     </SafeAreaView>

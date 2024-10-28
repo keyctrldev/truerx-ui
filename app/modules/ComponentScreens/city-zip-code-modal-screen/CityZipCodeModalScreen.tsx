@@ -24,7 +24,7 @@ const CityZipCodeModalScreen = () => {
     <SafeAreaContainer>
       <CustomBackButton onBackPress={handleBackPress} />
       <CityZipCodeModal isVisible={isOpenModal} onClose={isHideModal} onDonePress={isHideModal} />
-      <CustomButton title="Show Modal" onPress={openModal} customStyle={{ alignSelf: 'center' }} />
+      <CustomButton title="Show Modal" onPress={openModal} style={{ alignSelf: 'center' }} />
     </SafeAreaContainer>
   );
 };

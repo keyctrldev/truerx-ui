@@ -1,5 +1,12 @@
-import { Routes } from '../constants';
-import { ClaimsData, prescriptionListDataProps, StepperData, TrackerMedicationListDataProps } from '../types';
+import { customFilterModalComponent, Routes } from '../constants';
+import {
+  ClaimsData,
+  StepperData,
+  FilterDataListProps,
+  prescriptionListDataProps,
+  TrackerMedicationListDataProps,
+  PlanDetailCardDataProps,
+} from '../types';
 
 export const claimsData: ClaimsData[] = [
   {
@@ -24,20 +31,20 @@ export const claimsData: ClaimsData[] = [
 
 export const stepperData: StepperData[] = [
   {
-    date: '14 Nov',
-    event: 'Accept Offer',
+    date: 'Submitted by Dr. Smith on Aug 25 2024, 9:23am',
+    event: 'Request Received',
   },
   {
-    date: '18 Nov',
-    event: 'Schedule Your Assesment',
+    date: 'Aug 25 2024, 9:23am',
+    event: 'Under Clinical Review',
   },
   {
-    date: '23 Nov',
-    event: 'Review Repairs',
+    date: 'Aug 25 2024, 9:23am',
+    event: 'Clinical Review',
   },
   {
-    date: '30 Nov',
-    event: 'Closing',
+    date: 'Aug 25 2024, 9:23am',
+    event: 'Prior Authorization Status',
   },
 ];
 
@@ -92,11 +99,6 @@ export const componentListView: componentListProps[] = [
   //   id: 9,
   //   componentTitle: 'ActivityLoader',
   //   screenName: Routes.ActivityLoader,
-  // },
-  // {
-  //   id: 10,
-  //   componentTitle: 'CustomProgressStepper',
-  //   screenName: Routes.CustomProgressStepper,
   // },
   // {
   //   id: 11,
@@ -168,20 +170,98 @@ export const componentListView: componentListProps[] = [
     componentTitle: 'CityZipCodeModal',
     screenName: Routes.cityZipCodeModalScreen,
   },
+  { id: 25, componentTitle: 'CustomProgressStepper', screenName: Routes.CustomProgressStepper },
   {
-    id: 25,
+    id: 26,
     componentTitle: 'PATrackerMedicationList',
     screenName: Routes.trackerMedicationList,
   },
   {
-    id: 25,
+    id: 27,
     componentTitle: 'Prescription List',
     screenName: Routes.PrescriptionsList,
   },
   {
     id: 26,
-    componentTitle: 'Save Money View',
+    componentTitle: 'Plan Detail Card',
+    screenName: Routes.PlanDetailCard,
+  },
+  {
+    id: 28,
+    componentTitle: 'Date Range Filter Modal',
+    screenName: Routes.filterModalScreen,
+  },
+  {
+    id: 29,
+    componentTitle: 'Claim History Item',
+    screenName: Routes.ClaimHistoryItem,
+  },
+  {
+    id: 30,
+    componentTitle: 'Message Card Component',
+    screenName: Routes.messageCardComponent,
+  },
+  {
+    id: 31,
+    componentTitle: 'SaveMoneyView',
     screenName: Routes.saveMoneyView,
+  },
+];
+
+export const claimsHistoryData = [
+  {
+    planPaid: 725,
+    balancePaid: 25,
+    medicationCost: 750,
+    claimID: '#XX000000',
+    status: 'Processed',
+    date: 'August 19, 2024',
+    medicationName: 'Humira',
+  },
+  {
+    planPaid: 600,
+    memberPaid: 40,
+    claimID: '#XX000001',
+    status: 'Processed',
+    medicationCost: 640,
+    medicationName: 'Enbrel',
+    date: 'September 1, 2024',
+  },
+  {
+    planPaid: 850,
+    balancePaid: 70,
+    status: 'Processed',
+    claimID: '#XX000002',
+    medicationCost: 920,
+    date: 'September 10, 2024',
+    medicationName: 'Remicade',
+  },
+  {
+    balancePaid: 40,
+    planPaid: 780,
+    medicationCost: 820,
+    claimID: '#XX000003',
+    status: 'Processed',
+    date: 'October 5, 2024',
+    medicationName: 'Stelara',
+  },
+  {
+    planPaid: 100,
+    memberPaid: 500,
+    status: 'Processed',
+    medicationCost: 500,
+    claimID: '#XX000004',
+    date: 'October 15, 2024',
+    medicationName: 'Xeljanz',
+  },
+  {
+    planPaid: 680,
+    memberPaid: 40,
+    claimID: '#XX000005',
+    status: 'Processed',
+    medicationCost: 700,
+    date: 'October 20, 2024',
+    medicationName: 'Orencia',
   },
 ];
 
@@ -272,5 +352,88 @@ export const prescriptionListData: prescriptionListDataProps[] = [
     drugName: 'Omeprazole',
     dosage: '20 mg',
     count: 60,
+  },
+];
+
+export const planDesignData: PlanDetailCardDataProps[] = [
+  {
+    id: 1,
+    memberName: 'Alex Johnson',
+    acctNumber: 56342,
+    groupNumber: 2145,
+    bpdDate: '10/05/2024',
+    erisa: 'No',
+    tpaName: 'Blue Cross',
+    posRebates: 'Yes',
+    firmName: 'Hartford Inc.',
+    formulary: 'Closed',
+    thresholdAmt: 3000,
+  },
+  {
+    id: 2,
+    memberName: 'Sarah Lee',
+    acctNumber: 34218,
+    groupNumber: 1092,
+    bpdDate: '08/20/2024',
+    erisa: 'Yes',
+    tpaName: 'Aetna',
+    posRebates: 'No',
+    firmName: 'Zenith Co.',
+    formulary: 'Open',
+    thresholdAmt: 2500,
+  },
+  {
+    id: 3,
+    memberName: 'Michael Brown',
+    acctNumber: 47820,
+    groupNumber: 3342,
+    bpdDate: '12/15/2024',
+    erisa: 'Yes',
+    tpaName: 'UMR',
+    posRebates: 'Yes',
+    firmName: 'GlobalCorp',
+    formulary: 'Open',
+    thresholdAmt: 2750,
+  },
+  {
+    id: 4,
+    memberName: 'Emily Davis',
+    acctNumber: 91234,
+    groupNumber: 5671,
+    bpdDate: '07/01/2024',
+    erisa: 'No',
+    tpaName: 'Cigna',
+    posRebates: 'No',
+    firmName: 'Omega Ltd.',
+    formulary: 'Closed',
+    thresholdAmt: 1500,
+  },
+  {
+    id: 5,
+    memberName: 'John Miller',
+    acctNumber: 67391,
+    groupNumber: 8902,
+    bpdDate: '11/10/2024',
+    erisa: 'Yes',
+    tpaName: 'Anthem',
+    posRebates: 'Yes',
+    firmName: 'AlphaCo',
+    formulary: 'Open',
+    thresholdAmt: 3500,
+  },
+];
+
+export const filterDataList: FilterDataListProps[] = [
+  {
+    id: 1,
+    filterName: customFilterModalComponent.last30Days,
+  },
+  {
+    id: 2,
+    filterName: customFilterModalComponent.last60Days,
+  },
+  {
+    id: 3,
+    filterName: customFilterModalComponent.last90Days,
   },
 ];

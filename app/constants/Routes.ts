@@ -41,7 +41,11 @@ export default {
   linearProgressBar: 'LinearProgressBarScreen',
   yourPlanBenefit: 'YourPlanBenefitScreen',
   cityZipCodeModalScreen: 'CityZipCodeModalScreen',
+  ClaimHistoryItem: 'ClaimHistoryItemScreen',
   trackerMedicationList: 'TrackerMedicationListScreen',
   saveMoneyView: 'SaveMoneyViewScreen',
   PrescriptionsList: 'PrescriptionsListScreen',
+  messageCardComponent: 'MessageCardComponentScreen',
+  PlanDetailCard: 'PlanDetailCardScreen',
+  filterModalScreen: 'CustomFilterModalScreen',
 };
