@@ -1,3 +1,4 @@
+import { Icons, Images } from '../assets';
 import { customFilterModalComponent, Routes } from '../constants';
 import {
   ClaimsData,
@@ -6,6 +7,7 @@ import {
   prescriptionListDataProps,
   TrackerMedicationListDataProps,
   PlanDetailCardDataProps,
+  profileIconsDataProps,
 } from '../types';
 
 export const claimsData: ClaimsData[] = [
@@ -200,6 +202,11 @@ export const componentListView: componentListProps[] = [
     id: 30,
     componentTitle: 'Message Card Component',
     screenName: Routes.messageCardComponent,
+  },
+  {
+    id: 31,
+    componentTitle: 'Profile Icons Screen',
+    screenName: Routes.profileIcons,
   },
 ];
 
@@ -430,5 +437,25 @@ export const filterDataList: FilterDataListProps[] = [
   {
     id: 3,
     filterName: customFilterModalComponent.last90Days,
+  },
+];
+
+export const profileIconsData: profileIconsDataProps[] = [
+  {
+    id: 1,
+    firstName: 'John',
+    lastName: 'Doe',
+    profileIcon: 'https://cdn3.pixelcut.app/1/3/profile_picture_1728ecf2bd.jpg',
+  },
+  {
+    id: 2,
+    firstName: 'Jane',
+    lastName: 'Reacher',
+  },
+  {
+    id: 3,
+    firstName: 'Alice',
+    lastName: 'Brown',
+    profileIcon: 'https://cdn3.pixelcut.app/1/3/profile_picture_1728ecf2bd.jpg',
   },
 ];
