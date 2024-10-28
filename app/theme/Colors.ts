@@ -33,6 +33,9 @@ type ColorType =
   | 'indigo'
   | 'separatorColor'
   | 'yellow'
+  | 'dustGray'
+  | 'separatorColor'
+  | 'placeHolderTextColor'
   | 'dustGray';
 
 // This object provides a centralized way to manage and reference color values throughout the application, ensuring consistency in color usage.
@@ -71,4 +74,5 @@ export const Colors: Record<ColorType, string> = {
   separatorColor: '#D5D5D5',
   yellow: '#EDC26E',
   dustGray: '#535353',
+  placeHolderTextColor: '#A3A3A3',
 };

@@ -170,7 +170,11 @@ export const componentListView: componentListProps[] = [
     componentTitle: 'CityZipCodeModal',
     screenName: Routes.cityZipCodeModalScreen,
   },
-  { id: 25, componentTitle: 'CustomProgressStepper', screenName: Routes.CustomProgressStepper },
+  {
+    id: 25,
+    componentTitle: 'CustomProgressStepper',
+    screenName: Routes.CustomProgressStepper,
+  },
   {
     id: 26,
     componentTitle: 'PATrackerMedicationList',
@@ -203,6 +207,11 @@ export const componentListView: componentListProps[] = [
   },
   {
     id: 31,
+    componentTitle: 'Chat Input Box',
+    screenName: Routes.chatInputBox,
+  },
+  {
+    id: 32,
     componentTitle: 'SaveMoneyView',
     screenName: Routes.saveMoneyView,
   },

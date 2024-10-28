@@ -38,3 +38,4 @@ export { default as PrescriptionsListScreen } from './ComponentScreens/prescript
 export { default as MessageCardComponentScreen } from './ComponentScreens/message-card-component-screen/MessageCardComponentScreen';
 export { default as PlanDetailCardScreen } from './ComponentScreens/plan-detail-card/PlanDetailCardScreen';
 export { default as CustomFilterModalScreen } from './ComponentScreens/custom-filter-modal-screen/CustomFilterModalScreen';
+export { default as ChatInputBoxScreen } from './ComponentScreens/chat-input-box-screen/ChatInputBoxScreen';

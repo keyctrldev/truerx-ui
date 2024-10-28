@@ -265,11 +265,15 @@ export interface FilterDataListProps {
   id: number;
   filterName: string;
 }
-
 export interface FilterModalProps {
   isVisible: boolean;
   onClose: () => void;
   onDonePress: (filterId: number) => void;
+}
+
+export interface ChatInputBoxProps {
+  onMessageSend: (msg: string) => void;
+  onOpenMedia: () => void;
 }
 export interface SaveMoneyViewProp {
   heading: string;
