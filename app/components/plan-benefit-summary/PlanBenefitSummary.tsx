@@ -13,41 +13,52 @@ import CustomLinearProgressBar from '../linear-progress-bar/CustomLinearProgress
 const PlanBenefitSummary = (props: PlanBenefitSummaryProps & TouchableOpacityProps) => {
   const GlobalStyles = useGlobalStyles();
 
-  const renderProgressBar = (amount: string, progressValue: number, title: string) => (
-    <View style={{ flex: 1 }}>
-      <AppText style={styles.subTitleText}>{title}</AppText>
+  const renderAmountDetails = (amount: string, title: string, progressValue?: number) => (
+    <View style={styles.renderAmountDetailsContainer}>
+      <AppText style={[styles.subTitleText, props.isDeducible && styles.deducibleTextStyle]}>{title}</AppText>
       <View style={GlobalStyles.rowContainer}>
-        <AppText style={styles.amountTextStyle}>{amount}</AppText>
-        <AppText style={styles.remainingTextStyle}>{planBenefitSummaryComponent.remaining}</AppText>
+        <AppText style={[styles.amountTextStyle, props.isDeducible && styles.deducibleTextStyle]}>{amount}</AppText>
+        {!!progressValue && (
+          <AppText style={styles.remainingTextStyle}>{planBenefitSummaryComponent.remaining}</AppText>
+        )}
       </View>
-      <CustomLinearProgressBar
-        width={horizontalScale(150)}
-        height={verticalScale(8)}
-        progress={progressValue}
-        color={Colors.lightOrange}
-        unfilledColor={Colors.offWhite}
-        borderWidth={horizontalScale(0)}
-      />
+      {!!progressValue && (
+        <CustomLinearProgressBar
+          width={horizontalScale(150)}
+          height={verticalScale(8)}
+          progress={progressValue}
+          color={Colors.lightOrange}
+          unfilledColor={Colors.offWhite}
+          borderWidth={horizontalScale(0)}
+        />
+      )}
     </View>
   );
 
   return (
-    <TouchableOpacity style={styles.mainContainerStyle} activeOpacity={0.8} {...props}>
+    <TouchableOpacity
+      {...props}
+      style={[styles.mainContainerStyle, props.isDeducible && styles.deducibleContainer, props.style]}
+      activeOpacity={0.8}>
       <View style={GlobalStyles.rowSpaceBetweenContainer}>
-        <AppText style={[styles.titleTextStyle, props.titleTextStyle]}>{props.title}</AppText>
-        {props.icon ?? <ChevronRight fill={Colors.white} />}
+        <AppText style={[styles.titleTextStyle, props.isDeducible && styles.deducibleTextStyle, props.titleTextStyle]}>
+          {props.title}
+        </AppText>
+        {props.icon ?? <ChevronRight fill={props.isDeducible ? Colors.placeHolderTextColor : Colors.white} />}
       </View>
       <View style={[GlobalStyles.rowSpaceBetweenContainer, styles.planDetailsContainer]}>
-        {renderProgressBar(
-          props.deductibleAmount,
-          props.deductiveProgressValue,
-          planBenefitSummaryComponent.deductible,
-        )}
-        {renderProgressBar(
-          props.outOfPocketAmount,
-          props.outOfPocketMaxProgressValue,
-          planBenefitSummaryComponent.outOfPocketMax,
-        )}
+        <>
+          {renderAmountDetails(
+            props.deductibleAmount,
+            planBenefitSummaryComponent.deductible,
+            props.deductiveProgressValue,
+          )}
+          {renderAmountDetails(
+            props.outOfPocketAmount,
+            planBenefitSummaryComponent.outOfPocketMax,
+            props.outOfPocketMaxProgressValue,
+          )}
+        </>
       </View>
     </TouchableOpacity>
   );

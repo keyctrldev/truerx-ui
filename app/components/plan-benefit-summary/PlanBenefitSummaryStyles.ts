@@ -35,4 +35,13 @@ export const styles = StyleSheet.create({
     fontSize: moderateScale(12),
     paddingLeft: verticalScale(5),
   },
+  renderAmountDetailsContainer: {
+    flex: 1,
+  },
+  deducibleContainer: {
+    backgroundColor: Colors.white,
+  },
+  deducibleTextStyle: {
+    color: Colors.black,
+  },
 });

@@ -20,7 +20,10 @@ import {
   CustomSwitchScreen,
   NotificationScreen,
   CustomTabIconScreen,
+  ChatInputBoxScreen,
+  DeducibleCardScreen,
   MedicationListScreen,
+  PlanDetailCardScreen,
   ActivityLoaderScreen,
   CustomTextInputScreen,
   CustomTextButtonScreen,
@@ -32,14 +35,12 @@ import {
   PharmacyPriceListScreen,
   ClaimHistoryItemScreen,
   PrescriptionsListScreen,
-  MessageCardComponentScreen,
-  PlanDetailCardScreen,
   CustomFilterModalScreen,
-  ResetPasswordMethodScreen,
-  TrackerMedicationListScreen,
   PlanBenefitSummaryScreen,
   ProfileIconsScreen,
-  ChatInputBoxScreen,
+  ResetPasswordMethodScreen,
+  MessageCardComponentScreen,
+  TrackerMedicationListScreen,
 } from '../../modules';
 import SvgScreen from '../../modules/ComponentScreens/svg-screen/SvgScreen';
 import SaveMoneyViewScreen from '../../modules/ComponentScreens/save-money-view-screen/SaveMoneyViewScreen';
@@ -97,6 +98,7 @@ const RootStack = () => {
       <Stack.Screen name={Routes.yourPlanBenefit} component={PlanBenefitSummaryScreen} />
       <Stack.Screen name={Routes.profileIcons} component={ProfileIconsScreen} />
       <Stack.Screen name={Routes.chatInputBox} component={ChatInputBoxScreen} />
+      <Stack.Screen name={Routes.deducibleCard} component={DeducibleCardScreen} />
     </Stack.Navigator>
   );
 };

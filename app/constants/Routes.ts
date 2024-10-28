@@ -50,4 +50,5 @@ export default {
   filterModalScreen: 'CustomFilterModalScreen',
   profileIcons: 'ProfileIconsScreen',
   chatInputBox: 'ChatInputBoxScreen',
+  deducibleCard: 'DeductibleCardScreen',
 };

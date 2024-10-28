@@ -40,3 +40,4 @@ export { default as PlanDetailCardScreen } from './ComponentScreens/plan-detail-
 export { default as CustomFilterModalScreen } from './ComponentScreens/custom-filter-modal-screen/CustomFilterModalScreen';
 export { default as ProfileIconsScreen } from './ComponentScreens/profile-icons-screen/ProfileIconsScreen';
 export { default as ChatInputBoxScreen } from './ComponentScreens/chat-input-box-screen/ChatInputBoxScreen';
+export { default as DeducibleCardScreen } from './ComponentScreens/deductible-card-screen/DeducibleCardScreen';
