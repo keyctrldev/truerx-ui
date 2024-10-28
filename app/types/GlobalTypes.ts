@@ -271,6 +271,19 @@ export interface FilterModalProps {
   onDonePress: (filterId: number) => void;
 }
 
+export interface ProfileIconsItemProps {
+  lastName: string;
+  firstName: string;
+  isFirstItem: boolean;
+  profileIcon?: string;
+}
+
+export interface profileIconsDataProps {
+  id: number;
+  lastName: string;
+  firstName: string;
+  profileIcon?: string;
+}
 export interface ChatInputBoxProps {
   onMessageSend: (msg: string) => void;
   onOpenMedia: () => void;
