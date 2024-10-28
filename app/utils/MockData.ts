@@ -210,6 +210,11 @@ export const componentListView: componentListProps[] = [
     componentTitle: 'Chat Input Box',
     screenName: Routes.chatInputBox,
   },
+  {
+    id: 32,
+    componentTitle: 'SaveMoneyView',
+    screenName: Routes.saveMoneyView,
+  },
 ];
 
 export const claimsHistoryData = [
