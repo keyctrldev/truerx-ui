@@ -188,7 +188,6 @@ export interface ProgressStepperComponentProps {
   currentStep: number;
   status: 'Pending' | 'Denied' | 'Approved';
 }
-
 export interface TrackerMedicationItemProps {
   date: string;
   type: string;
@@ -271,4 +270,10 @@ export interface FilterModalProps {
   isVisible: boolean;
   onClose: () => void;
   onDonePress: (filterId: number) => void;
+}
+export interface SaveMoneyViewProp {
+  heading: string;
+  buttonTitle: string;
+  containerStyle?: StyleProp<ViewStyle>;
+  onPress: () => void;
 }

@@ -201,6 +201,11 @@ export const componentListView: componentListProps[] = [
     componentTitle: 'Message Card Component',
     screenName: Routes.messageCardComponent,
   },
+  {
+    id: 31,
+    componentTitle: 'SaveMoneyView',
+    screenName: Routes.saveMoneyView,
+  },
 ];
 
 export const claimsHistoryData = [
