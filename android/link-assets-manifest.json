@@ -2,6 +2,22 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "app/assets/fonts/Arial-Black.ttf",
+      "sha1": "e6528182997a46a5daf8008fab9ec5fed0a84ce2"
+    },
+    {
+      "path": "app/assets/fonts/Arial-BoldMT.ttf",
+      "sha1": "03ea55d42903c041b1ff64c2bd593fb7b9d3a843"
+    },
+    {
+      "path": "app/assets/fonts/Arial-Mdm.ttf",
+      "sha1": "f500ce2af19b434fcca06e91ac27747155bf2f91"
+    },
+    {
+      "path": "app/assets/fonts/ArialMT.ttf",
+      "sha1": "94ed380f23abc185b81be96b94001368e79164ae"
+    },
+    {
       "path": "app/assets/fonts/Gilroy-Black.ttf",
       "sha1": "41d7d53d34ae67d9dc54979abee04f3514163740"
     },
