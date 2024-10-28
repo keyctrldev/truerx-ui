@@ -6,6 +6,7 @@ import {
   prescriptionListDataProps,
   TrackerMedicationListDataProps,
   PlanDetailCardDataProps,
+  chatDataProps,
 } from '../types';
 
 export const claimsData: ClaimsData[] = [
@@ -205,6 +206,11 @@ export const componentListView: componentListProps[] = [
     id: 31,
     componentTitle: 'SaveMoneyView',
     screenName: Routes.saveMoneyView,
+  },
+  {
+    id: 32,
+    componentTitle: 'ChatDetail Component',
+    screenName: Routes.chatDetail,
   },
 ];
 
@@ -435,5 +441,43 @@ export const filterDataList: FilterDataListProps[] = [
   {
     id: 3,
     filterName: customFilterModalComponent.last90Days,
+  },
+];
+
+export const chatData: chatDataProps[] = [
+  {
+    id: 1,
+    isSender: false,
+    chat: 'Hello Kris 👋 Thank you for for contacting trueRx Health Strategist. I would be happy to assist you. May I please start with your date of birth and mailing address?',
+  },
+  {
+    id: 2,
+    isSender: true,
+    chat: 'My DOB is 1.1.1950 and my address is 1234 Lazy Lane Hyperville, Indiana 45285',
+  },
+  {
+    id: 3,
+    isSender: false,
+    chat: 'Kris, thank you for this information. How may I assist you today?',
+  },
+  {
+    id: 4,
+    isSender: true,
+    chat: 'I need to see if Wegovy is covered by my insurance.  ',
+  },
+  {
+    id: 5,
+    isSender: false,
+    chat: 'I would be happy to see if Wegovy is covered. Please give me a few moments.',
+  },
+  {
+    id: 6,
+    isSender: true,
+    chat: 'Yes, can you provide more information about this?',
+  },
+  {
+    id: 7,
+    isSender: false,
+    chat: 'I would be happy to help. Please give me a few moments.',
   },
 ];

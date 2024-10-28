@@ -277,3 +277,14 @@ export interface SaveMoneyViewProp {
   containerStyle?: StyleProp<ViewStyle>;
   onPress: () => void;
 }
+
+export interface chatDataProps {
+  id: number;
+  chat: string;
+  isSender?: boolean;
+}
+
+export interface chatDataItemProps {
+  chat: string;
+  sender?: boolean;
+}
