@@ -39,3 +39,5 @@ export { default as MessageCardComponentScreen } from './ComponentScreens/messag
 export { default as PlanDetailCardScreen } from './ComponentScreens/plan-detail-card/PlanDetailCardScreen';
 export { default as CustomFilterModalScreen } from './ComponentScreens/custom-filter-modal-screen/CustomFilterModalScreen';
 export { default as ChatDetailListScreen } from './ComponentScreens/chat-detail-item/ChatListScreen';
+export { default as ProfileIconsScreen } from './ComponentScreens/profile-icons-screen/ProfileIconsScreen';
+export { default as ChatInputBoxScreen } from './ComponentScreens/chat-input-box-screen/ChatInputBoxScreen';

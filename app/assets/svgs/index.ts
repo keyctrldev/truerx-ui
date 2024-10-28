@@ -13,6 +13,7 @@ import ActiveRadioIcon from '../svgs/activeRadioIcon.svg';
 import InActiveRadioIcon from '../svgs/inActiveRadioIcon.svg';
 import MoreVert from '../svgs/more_vert.svg';
 import SendMessage from '../svgs/sendIcon.svg';
+import MediaIcon from '../svgs/mediaIcon.svg';
 
 export {
   MailIcon,
@@ -30,4 +31,5 @@ export {
   InActiveRadioIcon,
   MoreVert,
   SendMessage,
+  MediaIcon,
 };

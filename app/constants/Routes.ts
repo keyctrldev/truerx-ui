@@ -49,4 +49,6 @@ export default {
   PlanDetailCard: 'PlanDetailCardScreen',
   filterModalScreen: 'CustomFilterModalScreen',
   chatDetail: 'ChatDetailListScreen',
+  profileIcons: 'ProfileIconsScreen',
+  chatInputBox: 'ChatInputBoxScreen',
 };

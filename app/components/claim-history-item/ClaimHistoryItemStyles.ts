@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { Colors, horizontalScale, moderateScale, verticalScale } from '../../theme';
-import { fonts } from '../../assets';
+import { gilroy } from '../../assets';
 
 export const styles = StyleSheet.create({
   claimContainer: {
@@ -35,7 +35,7 @@ export const styles = StyleSheet.create({
   },
   drugName: {
     color: Colors.black,
-    fontFamily: fonts.SemiBold,
+    fontFamily: gilroy.SemiBold,
     fontSize: moderateScale(18),
   },
   infoStyles: {

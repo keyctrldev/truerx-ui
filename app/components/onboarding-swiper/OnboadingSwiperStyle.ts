@@ -1,6 +1,6 @@
 import { Platform, StyleSheet } from 'react-native';
 import { Colors, horizontalScale, moderateScale, verticalScale } from '../../theme';
-import { fonts } from '../../assets';
+import { gilroy } from '../../assets';
 
 export const styles = StyleSheet.create({
   slideParent: {
@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
   headerTxt: {
     textAlign: 'center',
     color: Colors.white,
-    fontFamily: fonts.SemiBold,
+    fontFamily: gilroy.SemiBold,
     fontSize: moderateScale(32),
     marginTop: Platform.OS === 'android' ? verticalScale(78) : verticalScale(50),
     lineHeight: verticalScale(41),
