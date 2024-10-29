@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
     marginVertical: moderateScale(20),
   },
   customStyles: {
-    padding: moderateScale(10),
+    padding: moderateScale(12),
     backgroundColor: Colors.gray,
     borderRadius: moderateScale(10),
   },

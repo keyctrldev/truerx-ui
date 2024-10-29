@@ -233,7 +233,7 @@ export interface ActionListItemProps {
   value?: boolean;
   onPress: () => void;
   isDisabled?: boolean;
-  isSwitched?: boolean;
+  isSwitch?: boolean;
   isSeparator?: boolean;
   customStyles?: StyleProp<ViewStyle>;
   actionNameStyles?: StyleProp<TextStyle>;

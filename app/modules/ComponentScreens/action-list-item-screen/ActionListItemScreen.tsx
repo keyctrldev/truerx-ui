@@ -1,20 +1,27 @@
 import React, { useState } from 'react';
 import { Alert, Text } from 'react-native';
 
-import { Colors } from '../../../theme';
+import { useNavigation } from '@react-navigation/native';
+
 import { styles } from './ActionListItemScreenStyles';
-import { AppText, SafeAreaContainer } from '../../../components';
 import ActionListItem from '../../../components/action-list-item/ActionListItem';
+import { AppText, CustomBackButton, SafeAreaContainer } from '../../../components';
 
 const ActionListItemScreen: React.FC = () => {
+  const navigation = useNavigation();
   const [isBiometricsEnabled, setIsBiometricsEnabled] = useState<boolean>(false);
 
   const handleSwitchChange = (newValue: boolean) => {
     setIsBiometricsEnabled(newValue);
   };
 
+  const handleBackPress = () => {
+    navigation.goBack();
+  };
+
   return (
     <SafeAreaContainer style={styles.container}>
+      <CustomBackButton onBackPress={handleBackPress} />
       <Text style={styles.heading}>{'Action ListItem Screen'}</Text>
 
       <AppText style={styles.textStyles}>{'Action with Chevron Icon::'}</AppText>
@@ -27,7 +34,7 @@ const ActionListItemScreen: React.FC = () => {
 
       <AppText style={styles.textStyles}>{'Profile with Switch::'}</AppText>
       <ActionListItem
-        isSwitched
+        isSwitch
         onPress={() => {}}
         label={'Enable Biometrics'}
         value={isBiometricsEnabled}
@@ -40,7 +47,7 @@ const ActionListItemScreen: React.FC = () => {
       <AppText style={styles.textStyles}>{'Disable Option with Switch::'}</AppText>
       <ActionListItem
         isDisabled
-        isSwitched
+        isSwitch
         onPress={() => {}}
         onValueChange={() => {}}
         label={'Enable Biometrics'}
@@ -51,12 +58,7 @@ const ActionListItemScreen: React.FC = () => {
       <ActionListItem customStyles={styles.customStyles} label={'Profile'} onPress={() => {}} />
 
       <AppText style={styles.textStyles}>{'Pass Separator::'}</AppText>
-      <ActionListItem
-        isSeparator
-        label={'Profile'}
-        onPress={() => {}}
-        customStyles={{ ...styles.customStyles, backgroundColor: Colors.transparent }}
-      />
+      <ActionListItem isSeparator label={'Profile'} onPress={() => {}} />
     </SafeAreaContainer>
   );
 };
