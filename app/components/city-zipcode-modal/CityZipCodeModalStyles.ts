@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { Colors, moderateScale, verticalScale } from '../../theme';
-import { fonts } from '../../assets';
+import { gilroy } from '../../assets';
 
 export const styles = StyleSheet.create({
   modalContainer: {
@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
   },
   titleTextStyle: {
     fontSize: moderateScale(18),
-    fontFamily: fonts.SemiBold,
+    fontFamily: gilroy.SemiBold,
     color: Colors.black,
   },
   buttonStyle: {
@@ -26,6 +26,7 @@ export const styles = StyleSheet.create({
   },
   cancelBtnContainer: {
     backgroundColor: Colors.transparent,
+    borderColor: Colors.transparent,
   },
   textInputContainerStyle: {
     borderWidth: verticalScale(1),

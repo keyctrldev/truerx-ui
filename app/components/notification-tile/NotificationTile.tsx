@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { View, Image, ImageSourcePropType, ImageStyle, ViewStyle } from 'react-native';
 
 import AppText from '../app-text/AppText';
@@ -40,4 +40,4 @@ const NotificationTile: React.FC<NotificationTileProps> = ({
   );
 };
 
-export default NotificationTile;
+export default memo(NotificationTile);

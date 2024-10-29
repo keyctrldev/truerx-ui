@@ -8,4 +8,5 @@ export default {
   preLogin: require('./preLogin.png'),
   vectorBG: require('./vectorBG.png'),
   wb: require('./wb.png'),
+  backgroundImg: require('./backgroundImage.png'),
 };

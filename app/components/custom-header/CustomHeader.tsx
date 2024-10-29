@@ -1,5 +1,5 @@
 import { View, TouchableOpacity, Image } from 'react-native';
-import React from 'react';
+import React, { memo } from 'react';
 import AppText from '../app-text/AppText';
 import { Icons } from '../../assets';
 import { Routes } from '../../constants';
@@ -46,4 +46,4 @@ const CustomHeader = ({ heading }: { heading: string }) => {
   );
 };
 
-export default CustomHeader;
+export default memo(CustomHeader);

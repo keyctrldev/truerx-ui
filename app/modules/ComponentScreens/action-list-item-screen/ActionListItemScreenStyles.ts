@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
-import { Colors, horizontalScale, moderateScale, verticalScale } from '../../../theme';
-import { fonts } from '../../../assets';
+
+import { gilroy } from '../../../assets';
+import { Colors, horizontalScale, moderateScale } from '../../../theme';
 
 export const styles = StyleSheet.create({
   container: {
@@ -10,13 +11,13 @@ export const styles = StyleSheet.create({
   },
   heading: {
     textAlign: 'center',
-    fontFamily: fonts.SemiBold,
+    fontFamily: gilroy.SemiBold,
     padding: moderateScale(10),
     fontSize: moderateScale(20),
   },
   textStyles: {
     color: Colors.darkGrey,
-    fontFamily: fonts.SemiBold,
+    fontFamily: gilroy.SemiBold,
     fontSize: moderateScale(18),
     marginVertical: moderateScale(20),
   },

@@ -1,6 +1,6 @@
-import { Platform, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 
-import { fonts } from '../../assets';
+import { gilroy } from '../../assets';
 import { Colors, horizontalScale, moderateScale, verticalScale } from '../../theme';
 
 export const styles = StyleSheet.create({
@@ -36,7 +36,7 @@ export const styles = StyleSheet.create({
   },
   priceText: {
     fontSize: moderateScale(24),
-    fontFamily: fonts.SemiBold,
+    fontFamily: gilroy.SemiBold,
   },
   labelStyle: {
     flexDirection: 'row',
@@ -61,7 +61,7 @@ export const styles = StyleSheet.create({
     paddingVertical: moderateScale(10),
   },
   note: {
-    fontFamily: fonts.SemiBold,
+    fontFamily: gilroy.SemiBold,
     fontSize: moderateScale(18),
   },
   secondBtnCustomStyle: {

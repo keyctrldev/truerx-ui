@@ -239,3 +239,80 @@ export interface ActionListItemProps {
   actionNameStyles?: StyleProp<TextStyle>;
   onValueChange?: (value: boolean) => void;
 }
+export interface MessageCardComponentProps {
+  containerStyle?: StyleProp<ViewStyle>;
+  titleText: string;
+  status: 'Active' | 'InActive';
+  statusText: string;
+}
+export interface PlanDetailCardProps {
+  erisa: string;
+  bpdDate: string;
+  tpaName: string;
+  firmName: string;
+  formulary: string;
+  posRebates: string;
+  memberName: string;
+  acctNumber: number;
+  groupNumber: number;
+  thresholdAmt: number;
+}
+
+export interface PlanDetailCardDataProps {
+  id: number;
+  erisa: string;
+  bpdDate: string;
+  tpaName: string;
+  firmName: string;
+  formulary: string;
+  posRebates: string;
+  memberName: string;
+  acctNumber: number;
+  groupNumber: number;
+  thresholdAmt: number;
+}
+
+export interface FilterDataListProps {
+  id: number;
+  filterName: string;
+}
+export interface FilterModalProps {
+  isVisible: boolean;
+  onClose: () => void;
+  onDonePress: (filterId: number) => void;
+}
+
+export interface ProfileIconsItemProps {
+  lastName: string;
+  firstName: string;
+  isFirstItem: boolean;
+  profileIcon?: string;
+}
+
+export interface profileIconsDataProps {
+  id: number;
+  lastName: string;
+  firstName: string;
+  profileIcon?: string;
+}
+export interface ChatInputBoxProps {
+  onMessageSend: (msg: string) => void;
+  onOpenMedia: () => void;
+}
+export interface SaveMoneyViewProp {
+  heading: string;
+  buttonTitle: string;
+  containerStyle?: StyleProp<ViewStyle>;
+  onPress: () => void;
+}
+
+export interface chatDataProps {
+  id: number;
+  chat: string;
+  isSender?: boolean;
+}
+
+export interface chatDataItemProps {
+  chat: string;
+  sender?: boolean;
+}

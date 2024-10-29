@@ -43,6 +43,13 @@ export default {
   cityZipCodeModalScreen: 'CityZipCodeModalScreen',
   ClaimHistoryItem: 'ClaimHistoryItemScreen',
   trackerMedicationList: 'TrackerMedicationListScreen',
+  saveMoneyView: 'SaveMoneyViewScreen',
   PrescriptionsList: 'PrescriptionsListScreen',
   ActionListItem: 'ActionListItemScreen',
+  messageCardComponent: 'MessageCardComponentScreen',
+  PlanDetailCard: 'PlanDetailCardScreen',
+  filterModalScreen: 'CustomFilterModalScreen',
+  chatDetail: 'ChatDetailListScreen',
+  profileIcons: 'ProfileIconsScreen',
+  chatInputBox: 'ChatInputBoxScreen',
 };

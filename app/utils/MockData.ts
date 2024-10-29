@@ -1,5 +1,14 @@
-import { Routes } from '../constants';
-import { ClaimsData, prescriptionListDataProps, StepperData, TrackerMedicationListDataProps } from '../types';
+import { customFilterModalComponent, Routes } from '../constants';
+import {
+  ClaimsData,
+  StepperData,
+  FilterDataListProps,
+  prescriptionListDataProps,
+  TrackerMedicationListDataProps,
+  PlanDetailCardDataProps,
+  chatDataProps,
+  profileIconsDataProps,
+} from '../types';
 
 export const claimsData: ClaimsData[] = [
   {
@@ -163,7 +172,11 @@ export const componentListView: componentListProps[] = [
     componentTitle: 'CityZipCodeModal',
     screenName: Routes.cityZipCodeModalScreen,
   },
-  { id: 25, componentTitle: 'CustomProgressStepper', screenName: Routes.CustomProgressStepper },
+  {
+    id: 25,
+    componentTitle: 'CustomProgressStepper',
+    screenName: Routes.CustomProgressStepper,
+  },
   {
     id: 26,
     componentTitle: 'PATrackerMedicationList',
@@ -175,14 +188,49 @@ export const componentListView: componentListProps[] = [
     screenName: Routes.PrescriptionsList,
   },
   {
+    id: 26,
+    componentTitle: 'Plan Detail Card',
+    screenName: Routes.PlanDetailCard,
+  },
+  {
     id: 28,
+    componentTitle: 'Date Range Filter Modal',
+    screenName: Routes.filterModalScreen,
+  },
+  {
+    id: 29,
     componentTitle: 'Claim History Item',
     screenName: Routes.ClaimHistoryItem,
   },
   {
-    id: 29,
+    id: 30,
     componentTitle: 'Action List Item',
     screenName: Routes.ActionListItem,
+  },
+  {
+    id: 31,
+    componentTitle: 'Message Card Component',
+    screenName: Routes.messageCardComponent,
+  },
+  {
+    id: 32,
+    componentTitle: 'Profile Icons Screen',
+    screenName: Routes.profileIcons,
+  },
+  {
+    id: 33,
+    componentTitle: 'SaveMoneyView',
+    screenName: Routes.saveMoneyView,
+  },
+  {
+    id: 34,
+    componentTitle: 'ChatDetail Component',
+    screenName: Routes.chatDetail,
+  },
+  {
+    id: 35,
+    componentTitle: 'Chat Input Box',
+    screenName: Routes.chatInputBox,
   },
 ];
 
@@ -330,5 +378,145 @@ export const prescriptionListData: prescriptionListDataProps[] = [
     drugName: 'Omeprazole',
     dosage: '20 mg',
     count: 60,
+  },
+];
+
+export const planDesignData: PlanDetailCardDataProps[] = [
+  {
+    id: 1,
+    memberName: 'Alex Johnson',
+    acctNumber: 56342,
+    groupNumber: 2145,
+    bpdDate: '10/05/2024',
+    erisa: 'No',
+    tpaName: 'Blue Cross',
+    posRebates: 'Yes',
+    firmName: 'Hartford Inc.',
+    formulary: 'Closed',
+    thresholdAmt: 3000,
+  },
+  {
+    id: 2,
+    memberName: 'Sarah Lee',
+    acctNumber: 34218,
+    groupNumber: 1092,
+    bpdDate: '08/20/2024',
+    erisa: 'Yes',
+    tpaName: 'Aetna',
+    posRebates: 'No',
+    firmName: 'Zenith Co.',
+    formulary: 'Open',
+    thresholdAmt: 2500,
+  },
+  {
+    id: 3,
+    memberName: 'Michael Brown',
+    acctNumber: 47820,
+    groupNumber: 3342,
+    bpdDate: '12/15/2024',
+    erisa: 'Yes',
+    tpaName: 'UMR',
+    posRebates: 'Yes',
+    firmName: 'GlobalCorp',
+    formulary: 'Open',
+    thresholdAmt: 2750,
+  },
+  {
+    id: 4,
+    memberName: 'Emily Davis',
+    acctNumber: 91234,
+    groupNumber: 5671,
+    bpdDate: '07/01/2024',
+    erisa: 'No',
+    tpaName: 'Cigna',
+    posRebates: 'No',
+    firmName: 'Omega Ltd.',
+    formulary: 'Closed',
+    thresholdAmt: 1500,
+  },
+  {
+    id: 5,
+    memberName: 'John Miller',
+    acctNumber: 67391,
+    groupNumber: 8902,
+    bpdDate: '11/10/2024',
+    erisa: 'Yes',
+    tpaName: 'Anthem',
+    posRebates: 'Yes',
+    firmName: 'AlphaCo',
+    formulary: 'Open',
+    thresholdAmt: 3500,
+  },
+];
+
+export const filterDataList: FilterDataListProps[] = [
+  {
+    id: 1,
+    filterName: customFilterModalComponent.last30Days,
+  },
+  {
+    id: 2,
+    filterName: customFilterModalComponent.last60Days,
+  },
+  {
+    id: 3,
+    filterName: customFilterModalComponent.last90Days,
+  },
+];
+
+export const chatData: chatDataProps[] = [
+  {
+    id: 1,
+    isSender: false,
+    chat: 'Hello Kris 👋 Thank you for for contacting trueRx Health Strategist. I would be happy to assist you. May I please start with your date of birth and mailing address?',
+  },
+  {
+    id: 2,
+    isSender: true,
+    chat: 'My DOB is 1.1.1950 and my address is 1234 Lazy Lane Hyperville, Indiana 45285',
+  },
+  {
+    id: 3,
+    isSender: false,
+    chat: 'Kris, thank you for this information. How may I assist you today?',
+  },
+  {
+    id: 4,
+    isSender: true,
+    chat: 'I need to see if Wegovy is covered by my insurance.  ',
+  },
+  {
+    id: 5,
+    isSender: false,
+    chat: 'I would be happy to see if Wegovy is covered. Please give me a few moments.',
+  },
+  {
+    id: 6,
+    isSender: true,
+    chat: 'Yes, can you provide more information about this?',
+  },
+  {
+    id: 7,
+    isSender: false,
+    chat: 'I would be happy to help. Please give me a few moments.',
+  },
+];
+export const profileIconsData: profileIconsDataProps[] = [
+  {
+    id: 1,
+    firstName: 'John',
+    lastName: 'Doe',
+    profileIcon: 'https://cdn3.pixelcut.app/1/3/profile_picture_1728ecf2bd.jpg',
+  },
+  {
+    id: 2,
+    firstName: 'Jane',
+    lastName: 'Reacher',
+  },
+  {
+    id: 3,
+    firstName: 'Alice',
+    lastName: 'Brown',
+    profileIcon: 'https://cdn3.pixelcut.app/1/3/profile_picture_1728ecf2bd.jpg',
   },
 ];

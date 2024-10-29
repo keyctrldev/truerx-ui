@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { fonts } from '../../assets';
+import { gilroy } from '../../assets';
 import { Colors, verticalScale, moderateScale, horizontalScale } from '../../theme';
 
 export const styles = StyleSheet.create({
@@ -80,11 +80,11 @@ export const styles = StyleSheet.create({
   eventNameText: {
     color: Colors.black,
     fontSize: moderateScale(15),
-    fontFamily: fonts.SemiBold,
+    fontFamily: gilroy.SemiBold,
   },
   eventTimeTexT: {
     color: Colors.mediumGray,
-    fontFamily: fonts.Medium,
+    fontFamily: gilroy.Medium,
     fontSize: moderateScale(13),
   },
   approvedContainerStyle: {
@@ -98,7 +98,7 @@ export const styles = StyleSheet.create({
   },
   deniedTextContainer: {
     fontSize: moderateScale(12),
-    fontFamily: fonts.SemiBold,
+    fontFamily: gilroy.SemiBold,
     color: Colors.white,
   },
   statusContainer: {

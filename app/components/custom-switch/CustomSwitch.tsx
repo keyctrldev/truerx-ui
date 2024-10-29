@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from 'react';
+import React, { memo, useCallback, useEffect, useRef } from 'react';
 import { TouchableWithoutFeedback, Animated } from 'react-native';
 import { styles } from './CustomSwitchStyle';
 import { Colors, horizontalScale } from '../../theme';
@@ -54,4 +54,4 @@ const CustomSwitch: React.FC<SwitchProps> = ({
   );
 };
 
-export default CustomSwitch;
+export default memo(CustomSwitch);
