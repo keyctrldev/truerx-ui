@@ -11,13 +11,25 @@ import { Colors, horizontalScale, verticalScale } from '../../theme';
 import CustomLinearProgressBar from '../linear-progress-bar/CustomLinearProgressBar';
 
 const PlanBenefitSummary = (props: PlanBenefitSummaryProps & TouchableOpacityProps) => {
+  const {
+    title,
+    style,
+    icon,
+    isDeducible,
+    titleTextStyle,
+    deductibleAmount,
+    outOfPocketAmount,
+    deductiveProgressValue,
+    outOfPocketMaxProgressValue,
+  } = props;
+
   const GlobalStyles = useGlobalStyles();
 
   const renderAmountDetails = (amount: string, title: string, progressValue?: number) => (
     <View style={styles.renderAmountDetailsContainer}>
-      <AppText style={[styles.subTitleText, props.isDeducible && styles.deducibleTextStyle]}>{title}</AppText>
+      <AppText style={[styles.subTitleText, isDeducible && styles.deducibleTextStyle]}>{title}</AppText>
       <View style={GlobalStyles.rowContainer}>
-        <AppText style={[styles.amountTextStyle, props.isDeducible && styles.deducibleTextStyle]}>{amount}</AppText>
+        <AppText style={[styles.amountTextStyle, isDeducible && styles.deducibleTextStyle]}>{amount}</AppText>
         {!!progressValue && (
           <AppText style={styles.remainingTextStyle}>{planBenefitSummaryComponent.remaining}</AppText>
         )}
@@ -38,25 +50,21 @@ const PlanBenefitSummary = (props: PlanBenefitSummaryProps & TouchableOpacityPro
   return (
     <TouchableOpacity
       {...props}
-      style={[styles.mainContainerStyle, props.isDeducible && styles.deducibleContainer, props.style]}
+      style={[styles.mainContainerStyle, isDeducible && styles.deducibleContainer, style]}
       activeOpacity={0.8}>
       <View style={GlobalStyles.rowSpaceBetweenContainer}>
-        <AppText style={[styles.titleTextStyle, props.isDeducible && styles.deducibleTextStyle, props.titleTextStyle]}>
-          {props.title}
+        <AppText style={[styles.titleTextStyle, isDeducible && styles.deducibleTextStyle, titleTextStyle]}>
+          {title}
         </AppText>
-        {props.icon ?? <ChevronRight fill={props.isDeducible ? Colors.placeHolderTextColor : Colors.white} />}
+        {icon ?? <ChevronRight fill={isDeducible ? Colors.placeHolderTextColor : Colors.white} />}
       </View>
       <View style={[GlobalStyles.rowSpaceBetweenContainer, styles.planDetailsContainer]}>
         <>
+          {renderAmountDetails(deductibleAmount, planBenefitSummaryComponent.deductible, deductiveProgressValue)}
           {renderAmountDetails(
-            props.deductibleAmount,
-            planBenefitSummaryComponent.deductible,
-            props.deductiveProgressValue,
-          )}
-          {renderAmountDetails(
-            props.outOfPocketAmount,
+            outOfPocketAmount,
             planBenefitSummaryComponent.outOfPocketMax,
-            props.outOfPocketMaxProgressValue,
+            outOfPocketMaxProgressValue,
           )}
         </>
       </View>

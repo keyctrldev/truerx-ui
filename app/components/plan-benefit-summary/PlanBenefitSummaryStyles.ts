@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { gilroy } from '../../assets';
+import { arial, gilroy } from '../../assets';
 import { Colors, moderateScale, verticalScale } from '../../theme';
 
 export const styles = StyleSheet.create({
@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
   },
   titleTextStyle: {
     color: Colors.white,
-    fontFamily: gilroy.SemiBold,
+    fontFamily: arial.SemiBold,
     fontSize: moderateScale(16),
   },
   planDetailsContainer: {
@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
   },
   subTitleText: {
     color: Colors.white,
-    fontFamily: gilroy.Medium,
+    fontFamily: arial.Regular,
     fontSize: moderateScale(14),
   },
   amountTextStyle: {
@@ -31,7 +31,7 @@ export const styles = StyleSheet.create({
   },
   remainingTextStyle: {
     color: Colors.white,
-    fontFamily: gilroy.Bold,
+    fontFamily: arial.SemiBold,
     fontSize: moderateScale(12),
     paddingLeft: verticalScale(5),
   },
