@@ -1,6 +1,7 @@
 import messaging from '@react-native-firebase/messaging';
 import { Alert, PermissionsAndroid, Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { passwordValidationError, passwordValidationRegx } from '../constants';
 
 export const capitalizeFLetter = (text: string): string => {
   if (typeof text !== 'string' || text.length === 0) {
@@ -76,4 +77,33 @@ const getFCMToken = async () => {
       await AsyncStorage.setItem('fcm_token', token);
     }
   } catch (error) {}
+};
+
+export const getValidationMessages = (value: string) => {
+  return [
+    {
+      condition: value.length >= 8,
+      message: passwordValidationError.min8Character,
+    },
+    {
+      condition: value.length <= 20,
+      message: passwordValidationError.max20Character,
+    },
+    {
+      condition: passwordValidationRegx.upperCase.test(value),
+      message: passwordValidationError.oneUpperCase,
+    },
+    {
+      condition: passwordValidationRegx.lowerCase.test(value),
+      message: passwordValidationError.oneLowerCase,
+    },
+    {
+      condition: passwordValidationRegx.digit.test(value),
+      message: passwordValidationError.oneDigits,
+    },
+    {
+      condition: passwordValidationRegx.specialCharacter.test(value),
+      message: passwordValidationError.oneSpecialCharacter,
+    },
+  ];
 };
