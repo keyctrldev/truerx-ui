@@ -42,4 +42,5 @@ export { default as CustomFilterModalScreen } from './ComponentScreens/custom-fi
 export { default as ChatDetailListScreen } from './ComponentScreens/chat-detail-item/ChatListScreen';
 export { default as ProfileIconsScreen } from './ComponentScreens/profile-icons-screen/ProfileIconsScreen';
 export { default as ChatInputBoxScreen } from './ComponentScreens/chat-input-box-screen/ChatInputBoxScreen';
+export { default as DeducibleCardScreen } from './ComponentScreens/deductible-card-screen/DeducibleCardScreen';
 export { default as MembershipCardScreen } from './ComponentScreens/membership-card-screen/MembershipCardScreen';

@@ -20,7 +20,10 @@ import {
   CustomSwitchScreen,
   NotificationScreen,
   CustomTabIconScreen,
+  ChatInputBoxScreen,
+  DeducibleCardScreen,
   MedicationListScreen,
+  PlanDetailCardScreen,
   ActivityLoaderScreen,
   CustomTextInputScreen,
   CustomTextButtonScreen,
@@ -33,15 +36,13 @@ import {
   ClaimHistoryItemScreen,
   PrescriptionsListScreen,
   ActionListItemScreen,
-  MessageCardComponentScreen,
-  PlanDetailCardScreen,
   CustomFilterModalScreen,
-  ResetPasswordMethodScreen,
-  TrackerMedicationListScreen,
   PlanBenefitSummaryScreen,
   ChatDetailListScreen,
   ProfileIconsScreen,
-  ChatInputBoxScreen,
+  ResetPasswordMethodScreen,
+  MessageCardComponentScreen,
+  TrackerMedicationListScreen,
   MembershipCardScreen,
 } from '../../modules';
 import SvgScreen from '../../modules/ComponentScreens/svg-screen/SvgScreen';
@@ -102,6 +103,7 @@ const RootStack = () => {
       <Stack.Screen name={Routes.chatDetail} component={ChatDetailListScreen} />
       <Stack.Screen name={Routes.profileIcons} component={ProfileIconsScreen} />
       <Stack.Screen name={Routes.chatInputBox} component={ChatInputBoxScreen} />
+      <Stack.Screen name={Routes.deducibleCard} component={DeducibleCardScreen} />
       <Stack.Screen name={Routes.membershipCard} component={MembershipCardScreen} />
     </Stack.Navigator>
   );
