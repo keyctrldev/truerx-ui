@@ -15,6 +15,7 @@ const CityZipCodeModal = (props: CityZipModalProps) => {
 
   const handleOnDonePress = () => {
     props.onDonePress(cityText);
+    setCityText('');
     props.onClose();
   };
 
@@ -22,19 +23,22 @@ const CityZipCodeModal = (props: CityZipModalProps) => {
     <Modal
       statusBarTranslucent={true}
       isVisible={props.isVisible}
+      animationIn={'fadeIn'}
+      animationOut={'fadeOut'}
       onBackButtonPress={props.onClose}
       onBackdropPress={props.onClose}>
       <View style={styles.modalContainer}>
         <Text style={styles.titleTextStyle}>{cityZipCodeModalComponent.enterCityZipCode}</Text>
         <CustomTextInput
           placeholder={cityZipCodeModalComponent.placeHolderText}
-          placeholderTextColor={Colors.overlayDark}
+          placeholderTextColor={Colors.placeHolderTextColor}
           value={cityText}
           onChangeText={setCityText}
           error=""
           touched={false}
           secureTextEntry={false}
           style={styles.textInputContainerStyle}
+          containerStyle={styles.textInputContentContainerStyle}
         />
         <CustomButton title={cityZipCodeModalComponent.done} onPress={handleOnDonePress} style={styles.buttonStyle} />
         <CustomButton

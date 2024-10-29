@@ -8,6 +8,8 @@ export const styles = StyleSheet.create({
     gap: moderateScale(10),
     backgroundColor: Colors.white,
     borderRadius: moderateScale(10),
+    paddingHorizontal: horizontalScale(16),
+    paddingVertical: verticalScale(20),
   },
   input: {
     flex: 1,

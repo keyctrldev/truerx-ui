@@ -46,3 +46,5 @@ export { default as ChatInputBoxScreen } from './ComponentScreens/chat-input-box
 export { default as PasswordValidationScreen } from './ComponentScreens/password-validation-screen/PasswordValidationScreen';
 export { default as DeducibleCardScreen } from './ComponentScreens/deductible-card-screen/DeducibleCardScreen';
 export { default as MembershipCardScreen } from './ComponentScreens/membership-card-screen/MembershipCardScreen';
+export { default as SaveMoneyViewScreen } from './ComponentScreens/save-money-view-screen/SaveMoneyViewScreen';
+export { default as SvgScreen } from './ComponentScreens/svg-screen/SvgScreen';

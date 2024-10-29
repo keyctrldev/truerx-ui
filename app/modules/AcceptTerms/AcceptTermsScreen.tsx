@@ -19,7 +19,7 @@ import { Icons } from '../../assets';
 import { styles } from './AcceptTermsScreenStyles';
 import { useGlobalStyles } from '../../utils/GlobalStyles';
 import { acceptTermsScreenStrings, agreementTermsList } from '../../constants';
-import { CustomBackButton, CustomButton, SafeAreaContainer } from '../../components';
+import { AppText, CustomBackButton, CustomButton, SafeAreaContainer } from '../../components';
 
 if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
   UIManager.setLayoutAnimationEnabledExperimental(true);
@@ -50,18 +50,16 @@ const AcceptTermsScreen = () => {
           isExpandedView ? styles.expandedContainer : styles.closeContainer,
           item.id == 1 && styles.topContainerStyle,
         ]}>
-        <View style={GlobalStyles.rowSpaceBetweenContainer}>
-          <Text style={styles.btnTitleText}>{item.title}</Text>
-          <TouchableOpacity onPress={handleExpandView}>
-            <Image
-              source={Icons.dropDownArrowIcon}
-              style={[GlobalStyles.commonIconStyle, isExpandedView ? styles.downIconStyle : styles.upIconStyle]}
-            />
-          </TouchableOpacity>
-        </View>
+        <TouchableOpacity activeOpacity={0.8} style={GlobalStyles.rowSpaceBetweenContainer} onPress={handleExpandView}>
+          <AppText style={styles.btnTitleText}>{item.title}</AppText>
+          <Image
+            source={Icons.dropDownArrowIcon}
+            style={[GlobalStyles.commonIconStyle, isExpandedView ? styles.downIconStyle : styles.upIconStyle]}
+          />
+        </TouchableOpacity>
         {isExpandedView && (
           <View style={styles.scrollableContentContainer}>
-            <ScrollView showsVerticalScrollIndicator={false} nestedScrollEnabled={true}>
+            <ScrollView showsVerticalScrollIndicator={false} nestedScrollEnabled={true} bounces={false}>
               <Text style={styles.subTitleText}>{item.subText}</Text>
             </ScrollView>
           </View>
@@ -74,10 +72,10 @@ const AcceptTermsScreen = () => {
     return (
       <View style={[GlobalStyles.rowContainer]}>
         <CustomButton
-          title={acceptTermsScreenStrings.Decline}
           onPress={() => {}}
           style={styles.declineBtnContainer}
           titleTextStyle={styles.declineBtnText}
+          title={acceptTermsScreenStrings.Decline}
         />
         <CustomButton title={acceptTermsScreenStrings.Accept} onPress={() => {}} style={styles.acceptBtnContainer} />
       </View>
@@ -89,9 +87,10 @@ const AcceptTermsScreen = () => {
       <CustomBackButton onBackPress={handleBackPress} />
       <Text style={styles.agreementTextStyle}>{acceptTermsScreenStrings.AgreementToTerms}</Text>
       <FlatList
+        bounces={false}
+        renderItem={renderItem}
         data={agreementTermsList}
         showsVerticalScrollIndicator={false}
-        renderItem={renderItem}
         ListFooterComponent={footerBtnContainer}
       />
     </SafeAreaContainer>

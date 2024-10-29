@@ -20,7 +20,10 @@ const ChatInputBox = ({ onMessageSend, onOpenMedia }: ChatInputBoxProps) => {
   };
 
   return (
-    <KeyboardAwareScrollView contentContainerStyle={styles.keyboardAwareViewStyle} keyboardShouldPersistTaps>
+    <KeyboardAwareScrollView
+      contentContainerStyle={styles.keyboardAwareViewStyle}
+      keyboardOpeningTime={Number.MAX_SAFE_INTEGER}
+      keyboardShouldPersistTaps={'handled'}>
       <View style={styles.mainContainer}>
         <View style={[GlobalStyles.rowContainer, styles.chatBoxContainer]}>
           <CustomTextInput

@@ -25,12 +25,13 @@ const CustomFilterModal = (props: FilterModalProps) => {
   const renderFilterList = ({ item }: { item: FilterDataListProps }) => {
     const selectedFilter = item.id == isSelectFilter;
     return (
-      <View style={[GlobalStyles.rowSpaceBetweenContainer, styles.radioBtnContainer]}>
+      <TouchableOpacity
+        activeOpacity={0.8}
+        onPress={() => handleSelectFilter(item.id)}
+        style={[GlobalStyles.rowSpaceBetweenContainer, styles.radioBtnContainer]}>
         <AppText style={styles.filerNameStyle}>{item.filterName}</AppText>
-        <TouchableOpacity activeOpacity={0.8} onPress={() => handleSelectFilter(item.id)}>
-          {selectedFilter ? <ActiveRadioIcon /> : <InActiveRadioIcon />}
-        </TouchableOpacity>
-      </View>
+        {selectedFilter ? <ActiveRadioIcon disabled={true} /> : <InActiveRadioIcon disabled={true} />}
+      </TouchableOpacity>
     );
   };
 
@@ -40,8 +41,8 @@ const CustomFilterModal = (props: FilterModalProps) => {
       isVisible={isVisible}
       onBackButtonPress={onClose}
       onBackdropPress={onClose}
-      animationIn={'slideInLeft'}
-      animationOut={'slideOutRight'}>
+      animationIn={'fadeIn'}
+      animationOut={'fadeOut'}>
       <View style={styles.modalContainer}>
         <Text style={styles.titleTextStyle}>{customFilterModalComponent.filterByDateRange}</Text>
         <View style={[GlobalStyles.itemSeparatorStyle, styles.itemSeparatorContainer]} />

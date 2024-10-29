@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { Colors, moderateScale, verticalScale } from '../../theme';
-import { fonts } from '../../assets';
+import { gilroy } from '../../assets';
 
 export const styles = StyleSheet.create({
   mainContainer: {
@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
   inputStyle: {
     color: Colors.black,
     fontSize: moderateScale(18),
-    fontFamily: fonts.Regular,
+    fontFamily: gilroy.Regular,
     paddingHorizontal: verticalScale(5),
   },
   placeHolderStyle: {

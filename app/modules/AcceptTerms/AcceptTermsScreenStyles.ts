@@ -9,17 +9,17 @@ export const styles = StyleSheet.create({
     marginBottom: horizontalScale(12),
   },
   expandedBtnContainer: {
-    padding: horizontalScale(12),
+    padding: horizontalScale(16),
     borderWidth: horizontalScale(1),
     borderColor: Colors.overlayDark,
   },
   btnTitleText: {
-    fontSize: moderateScale(15),
+    fontSize: moderateScale(18),
     fontWeight: 'bold',
     color: Colors.black,
   },
   subTitleText: {
-    fontSize: moderateScale(12),
+    fontSize: moderateScale(16),
     color: Colors.black,
   },
   declineBtnContainer: {

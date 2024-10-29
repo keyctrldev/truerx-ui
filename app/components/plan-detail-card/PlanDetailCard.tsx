@@ -2,10 +2,10 @@ import React, { memo } from 'react';
 import { Text, View } from 'react-native';
 
 import { SVGIcon } from '../common';
+import InfoContainer from './InfoContainer';
 import { styles } from './PlanDetailCardStyles';
 import { PlanDetailCardProps } from '../../types';
 import { TrueRxContent, TrueRxIcon } from '../../assets/svgs';
-import InfoContainer from './ItemContainer';
 
 const PlanDetailCard: React.FC<PlanDetailCardProps> = props => {
   const {

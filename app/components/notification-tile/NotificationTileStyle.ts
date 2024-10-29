@@ -5,8 +5,8 @@ export const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     backgroundColor: Colors.white,
-    paddingVertical: verticalScale(25),
-    paddingHorizontal: horizontalScale(20),
+    paddingVertical: verticalScale(23),
+    paddingHorizontal: horizontalScale(16),
     shadowOpacity: 0.1,
     shadowColor: Colors.black,
     elevation: moderateScale(3),
@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
   iconContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    marginRight: horizontalScale(20),
+    marginRight: horizontalScale(16),
   },
   textContainer: {
     flex: 1,

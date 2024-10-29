@@ -27,7 +27,7 @@ export const styles = StyleSheet.create({
   subTitleTextStyle: {
     paddingHorizontal: horizontalScale(45),
     paddingVertical: verticalScale(6),
-    fontSize: moderateScale(14),
+    fontSize: moderateScale(16),
     color: Colors.lightBlack,
   },
   activeContainer: {

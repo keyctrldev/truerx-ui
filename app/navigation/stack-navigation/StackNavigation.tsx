@@ -46,9 +46,9 @@ import {
   MessageCardComponentScreen,
   TrackerMedicationListScreen,
   MembershipCardScreen,
+  SaveMoneyViewScreen,
+  SvgScreen,
 } from '../../modules';
-import SvgScreen from '../../modules/ComponentScreens/svg-screen/SvgScreen';
-import SaveMoneyViewScreen from '../../modules/ComponentScreens/save-money-view-screen/SaveMoneyViewScreen';
 
 const Stack = createStackNavigator();
 const RootStack = () => {
