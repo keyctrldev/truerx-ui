@@ -35,8 +35,10 @@ import {
   PharmacyPriceListScreen,
   ClaimHistoryItemScreen,
   PrescriptionsListScreen,
+  ActionListItemScreen,
   CustomFilterModalScreen,
   PlanBenefitSummaryScreen,
+  ChatDetailListScreen,
   ProfileIconsScreen,
   ResetPasswordMethodScreen,
   MessageCardComponentScreen,
@@ -92,10 +94,12 @@ const RootStack = () => {
       <Stack.Screen name={Routes.trackerMedicationList} component={TrackerMedicationListScreen} />
       <Stack.Screen name={Routes.saveMoneyView} component={SaveMoneyViewScreen} />
       <Stack.Screen name={Routes.PrescriptionsList} component={PrescriptionsListScreen} />
+      <Stack.Screen name={Routes.ActionListItem} component={ActionListItemScreen} />
       <Stack.Screen name={Routes.messageCardComponent} component={MessageCardComponentScreen} />
       <Stack.Screen name={Routes.PlanDetailCard} component={PlanDetailCardScreen} />
       <Stack.Screen name={Routes.filterModalScreen} component={CustomFilterModalScreen} />
       <Stack.Screen name={Routes.yourPlanBenefit} component={PlanBenefitSummaryScreen} />
+      <Stack.Screen name={Routes.chatDetail} component={ChatDetailListScreen} />
       <Stack.Screen name={Routes.profileIcons} component={ProfileIconsScreen} />
       <Stack.Screen name={Routes.chatInputBox} component={ChatInputBoxScreen} />
       <Stack.Screen name={Routes.deducibleCard} component={DeducibleCardScreen} />

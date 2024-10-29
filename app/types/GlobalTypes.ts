@@ -241,6 +241,17 @@ export interface PrescriptionListProps {
   secondButtonOnPress: () => void;
 }
 
+export interface ActionListItemProps {
+  label: string;
+  value?: boolean;
+  onPress: () => void;
+  isDisabled?: boolean;
+  isSwitch?: boolean;
+  isSeparator?: boolean;
+  customStyles?: StyleProp<ViewStyle>;
+  actionNameStyles?: StyleProp<TextStyle>;
+  onValueChange?: (value: boolean) => void;
+}
 export interface MessageCardComponentProps {
   containerStyle?: StyleProp<ViewStyle>;
   titleText: string;
@@ -306,4 +317,15 @@ export interface SaveMoneyViewProp {
   buttonTitle: string;
   containerStyle?: StyleProp<ViewStyle>;
   onPress: () => void;
+}
+
+export interface chatDataProps {
+  id: number;
+  chat: string;
+  isSender?: boolean;
+}
+
+export interface chatDataItemProps {
+  chat: string;
+  sender?: boolean;
 }

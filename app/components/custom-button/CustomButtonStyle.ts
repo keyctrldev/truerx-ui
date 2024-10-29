@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { Colors, moderateScale, verticalScale } from '../../theme';
-import { fonts } from '../../assets';
+import { gilroy } from '../../assets';
 
 export const styles = StyleSheet.create({
   buttonContainerStyle: {
@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
   },
   titleTextStyle: {
     maxWidth: '82%',
-    fontFamily: fonts.Medium,
+    fontFamily: gilroy.Medium,
     fontSize: moderateScale(16),
   },
   primaryBtnContainer: {

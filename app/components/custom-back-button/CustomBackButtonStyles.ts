@@ -1,10 +1,10 @@
-import { fonts } from '../../assets';
+import { gilroy } from '../../assets';
 import { StyleSheet } from 'react-native';
 import { Colors, horizontalScale, moderateScale, verticalScale } from '../../theme';
 
 export const styles = StyleSheet.create({
   backTextStyle: {
-    fontFamily: fonts.Medium,
+    fontFamily: gilroy.Medium,
     fontSize: moderateScale(15),
     color: Colors.black,
     marginLeft: verticalScale(8),

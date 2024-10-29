@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { fonts } from '../../assets';
+import { gilroy } from '../../assets';
 import { Colors, horizontalScale, moderateScale, verticalScale } from '../../theme';
 
 export const styles = StyleSheet.create({
@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
   titleTextStyle: {
     color: Colors.black,
     fontSize: moderateScale(18),
-    fontFamily: fonts.SemiBold,
+    fontFamily: gilroy.SemiBold,
     paddingTop: verticalScale(20),
   },
   itemSeparatorContainer: {
@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
   },
   filerNameStyle: {
     color: Colors.black,
-    fontFamily: fonts.Regular,
+    fontFamily: gilroy.Regular,
     fontSize: moderateScale(16),
   },
   radioBtnContainer: {

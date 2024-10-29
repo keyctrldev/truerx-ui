@@ -13,7 +13,11 @@
 		16A33B07B8F5EDC9F55A43BF /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 1E243B7F98FFA018A8A75AEA /* PrivacyInfo.xcprivacy */; };
 		3C9F92E4928575C6D76B37D9 /* Pods_truerxui.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E78AE91CB0ADB440CD73A17 /* Pods_truerxui.framework */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
+		40F562D6B1FB421C960C947D /* Arial-BoldMT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 23834CA28B264BD993137618 /* Arial-BoldMT.ttf */; };
 		4F9641BD996D4D13BB9D7277 /* noop-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A95AB9D0D54493BAF9A491 /* noop-file.swift */; };
+		55B73637B800493CBB32D53A /* ArialMT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 324A2DF1FBB345FE8EF8CE94 /* ArialMT.ttf */; };
+		55FAA659177C48C58C54F56A /* Arial-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BA36A14FFBF40A3BCE87A05 /* Arial-Black.ttf */; };
+		6631CAE39341459890799CA1 /* Arial-Mdm.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46F14AC333C24DD3BB89DBC4 /* Arial-Mdm.ttf */; };
 		B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */; };
 		B54331D790E54CD381909AAC /* Gilroy-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5AA82EEE5FF34DCC96F21B43 /* Gilroy-SemiBold.ttf */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
@@ -31,7 +35,11 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = truerxui/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = truerxui/main.m; sourceTree = "<group>"; };
 		1E243B7F98FFA018A8A75AEA /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = truerxui/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		23834CA28B264BD993137618 /* Arial-BoldMT.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Arial-BoldMT.ttf"; path = "../app/assets/fonts/Arial-BoldMT.ttf"; sourceTree = "<group>"; };
+		2BA36A14FFBF40A3BCE87A05 /* Arial-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Arial-Black.ttf"; path = "../app/assets/fonts/Arial-Black.ttf"; sourceTree = "<group>"; };
+		324A2DF1FBB345FE8EF8CE94 /* ArialMT.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = ArialMT.ttf; path = ../app/assets/fonts/ArialMT.ttf; sourceTree = "<group>"; };
 		3E78AE91CB0ADB440CD73A17 /* Pods_truerxui.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_truerxui.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46F14AC333C24DD3BB89DBC4 /* Arial-Mdm.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Arial-Mdm.ttf"; path = "../app/assets/fonts/Arial-Mdm.ttf"; sourceTree = "<group>"; };
 		5AA82EEE5FF34DCC96F21B43 /* Gilroy-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-SemiBold.ttf"; path = "../app/assets/fonts/Gilroy-SemiBold.ttf"; sourceTree = "<group>"; };
 		6C2E3173556A471DD304B334 /* Pods-truerxui.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-truerxui.debug.xcconfig"; path = "Target Support Files/Pods-truerxui/Pods-truerxui.debug.xcconfig"; sourceTree = "<group>"; };
 		798E3F44253C40B0B9A1BA00 /* Gilroy-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Gilroy-Regular.ttf"; path = "../app/assets/fonts/Gilroy-Regular.ttf"; sourceTree = "<group>"; };
@@ -93,6 +101,10 @@
 				B512EDDC97524164872CF3E2 /* Gilroy-Medium.ttf */,
 				798E3F44253C40B0B9A1BA00 /* Gilroy-Regular.ttf */,
 				5AA82EEE5FF34DCC96F21B43 /* Gilroy-SemiBold.ttf */,
+				23834CA28B264BD993137618 /* Arial-BoldMT.ttf */,
+				46F14AC333C24DD3BB89DBC4 /* Arial-Mdm.ttf */,
+				324A2DF1FBB345FE8EF8CE94 /* ArialMT.ttf */,
+				2BA36A14FFBF40A3BCE87A05 /* Arial-Black.ttf */,
 			);
 			name = Resources;
 			path = "";
@@ -234,6 +246,10 @@
 				D0F6145715CF477987DE4DD0 /* Gilroy-Medium.ttf in Resources */,
 				D0C3820872844014B125013E /* Gilroy-Regular.ttf in Resources */,
 				B54331D790E54CD381909AAC /* Gilroy-SemiBold.ttf in Resources */,
+				40F562D6B1FB421C960C947D /* Arial-BoldMT.ttf in Resources */,
+				6631CAE39341459890799CA1 /* Arial-Mdm.ttf in Resources */,
+				55B73637B800493CBB32D53A /* ArialMT.ttf in Resources */,
+				55FAA659177C48C58C54F56A /* Arial-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
