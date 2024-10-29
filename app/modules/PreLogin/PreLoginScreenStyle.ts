@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { fonts } from '../../assets';
+import { gilroy } from '../../assets';
 import { Colors, horizontalScale, moderateScale, verticalScale } from '../../theme';
 
 export const styles = StyleSheet.create({
@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     marginTop: verticalScale(30),
   },
   headerTxt: {
-    fontFamily: fonts.SemiBold,
+    fontFamily: gilroy.SemiBold,
     fontWeight: 700,
     fontSize: moderateScale(25),
     marginTop: verticalScale(16),

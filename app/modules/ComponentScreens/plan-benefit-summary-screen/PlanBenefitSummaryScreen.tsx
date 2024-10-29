@@ -18,6 +18,7 @@ const PlanBenefitSummaryScreen = () => {
     <SafeAreaContainer style={GlobalStyles.mainContainerStyle}>
       <CustomBackButton onBackPress={handleBackPress} />
       <PlanBenefitSummary
+        isDeducible={false}
         title={'Your Plan Benefit'}
         deductibleAmount={'$150'}
         outOfPocketAmount={'$4,350'}

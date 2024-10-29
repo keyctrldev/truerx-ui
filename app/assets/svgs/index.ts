@@ -15,6 +15,8 @@ import MoreVert from '../svgs/more_vert.svg';
 import SendMessage from '../svgs/sendIcon.svg';
 import CloseIcon from '../svgs/closeIcon.svg';
 import SearchIcon from '../svgs/searchIcon.svg';
+import MediaIcon from '../svgs/mediaIcon.svg';
+
 export {
   MailIcon,
   EyeOpenIcon,
@@ -33,4 +35,5 @@ export {
   SendMessage,
   SearchIcon,
   CloseIcon,
+  MediaIcon,
 };

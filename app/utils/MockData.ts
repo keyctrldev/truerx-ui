@@ -6,6 +6,8 @@ import {
   prescriptionListDataProps,
   TrackerMedicationListDataProps,
   PlanDetailCardDataProps,
+  chatDataProps,
+  profileIconsDataProps,
 } from '../types';
 
 export const claimsData: ClaimsData[] = [
@@ -170,7 +172,11 @@ export const componentListView: componentListProps[] = [
     componentTitle: 'CityZipCodeModal',
     screenName: Routes.cityZipCodeModalScreen,
   },
-  { id: 25, componentTitle: 'CustomProgressStepper', screenName: Routes.CustomProgressStepper },
+  {
+    id: 25,
+    componentTitle: 'CustomProgressStepper',
+    screenName: Routes.CustomProgressStepper,
+  },
   {
     id: 26,
     componentTitle: 'PATrackerMedicationList',
@@ -198,16 +204,46 @@ export const componentListView: componentListProps[] = [
   },
   {
     id: 30,
+    componentTitle: 'Action List Item',
+    screenName: Routes.ActionListItem,
+  },
+  {
+    id: 31,
     componentTitle: 'Message Card Component',
     screenName: Routes.messageCardComponent,
   },
   {
-    id: 31,
+    id: 32,
+    componentTitle: 'Profile Icons Screen',
+    screenName: Routes.profileIcons,
+  },
+  {
+    id: 33,
     componentTitle: 'SaveMoneyView',
     screenName: Routes.saveMoneyView,
   },
   {
-    id: 32,
+    id: 34,
+    componentTitle: 'ChatDetail Component',
+    screenName: Routes.chatDetail,
+  },
+  {
+    id: 35,
+    componentTitle: 'Chat Input Box',
+    screenName: Routes.chatInputBox,
+  },
+  {
+    id: 35,
+    componentTitle: 'Deductibles Card',
+    screenName: Routes.deducibleCard,
+  },
+  {
+    id: 36,
+    componentTitle: 'Membership Card',
+    screenName: Routes.membershipCard,
+  },
+  {
+    id: 37,
     componentTitle: 'SearchBar',
     screenName: Routes.SearchBar,
   },
@@ -440,5 +476,62 @@ export const filterDataList: FilterDataListProps[] = [
   {
     id: 3,
     filterName: customFilterModalComponent.last90Days,
+  },
+];
+
+export const chatData: chatDataProps[] = [
+  {
+    id: 1,
+    isSender: false,
+    chat: 'Hello Kris 👋 Thank you for for contacting trueRx Health Strategist. I would be happy to assist you. May I please start with your date of birth and mailing address?',
+  },
+  {
+    id: 2,
+    isSender: true,
+    chat: 'My DOB is 1.1.1950 and my address is 1234 Lazy Lane Hyperville, Indiana 45285',
+  },
+  {
+    id: 3,
+    isSender: false,
+    chat: 'Kris, thank you for this information. How may I assist you today?',
+  },
+  {
+    id: 4,
+    isSender: true,
+    chat: 'I need to see if Wegovy is covered by my insurance.  ',
+  },
+  {
+    id: 5,
+    isSender: false,
+    chat: 'I would be happy to see if Wegovy is covered. Please give me a few moments.',
+  },
+  {
+    id: 6,
+    isSender: true,
+    chat: 'Yes, can you provide more information about this?',
+  },
+  {
+    id: 7,
+    isSender: false,
+    chat: 'I would be happy to help. Please give me a few moments.',
+  },
+];
+export const profileIconsData: profileIconsDataProps[] = [
+  {
+    id: 1,
+    firstName: 'John',
+    lastName: 'Doe',
+    profileIcon: 'https://cdn3.pixelcut.app/1/3/profile_picture_1728ecf2bd.jpg',
+  },
+  {
+    id: 2,
+    firstName: 'Jane',
+    lastName: 'Reacher',
+  },
+  {
+    id: 3,
+    firstName: 'Alice',
+    lastName: 'Brown',
+    profileIcon: 'https://cdn3.pixelcut.app/1/3/profile_picture_1728ecf2bd.jpg',
   },
 ];

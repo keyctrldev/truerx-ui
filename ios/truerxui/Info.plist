@@ -83,6 +83,10 @@
 		<string>Gilroy-Medium.ttf</string>
 		<string>Gilroy-Regular.ttf</string>
 		<string>Gilroy-SemiBold.ttf</string>
+		<string>Arial-BoldMT.ttf</string>
+		<string>Arial-Mdm.ttf</string>
+		<string>ArialMT.ttf</string>
+		<string>Arial-Black.ttf</string>
 	</array>
 </dict>
 </plist>

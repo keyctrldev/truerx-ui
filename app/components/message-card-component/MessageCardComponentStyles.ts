@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { fonts } from '../../assets';
+import { gilroy } from '../../assets';
 import { Colors, moderateScale, verticalScale } from '../../theme';
 
 export const styles = StyleSheet.create({
@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
   },
   titleTextStyle: {
     color: Colors.black,
-    fontFamily: fonts.SemiBold,
+    fontFamily: gilroy.SemiBold,
     fontSize: moderateScale(15),
   },
   dotContainerStyle: {
@@ -28,7 +28,7 @@ export const styles = StyleSheet.create({
   },
   statusTextStyle: {
     color: Colors.lightBlack,
-    fontFamily: fonts.Medium,
+    fontFamily: gilroy.Medium,
     fontSize: moderateScale(14),
   },
   statusContainer: {

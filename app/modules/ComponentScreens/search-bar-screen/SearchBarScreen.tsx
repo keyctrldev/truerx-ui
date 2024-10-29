@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native';
 import { SearchBar } from '../../../components';
-import './SearchBarScreenStyle';
 import { styles } from './SearchBarScreenStyle';
 const SearchBarScreen = () => {
   const [search, setSearch] = useState<string>('');

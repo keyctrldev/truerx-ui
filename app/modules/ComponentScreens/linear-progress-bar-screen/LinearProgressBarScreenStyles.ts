@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { fonts } from '../../../assets';
+import { gilroy } from '../../../assets';
 import { Colors, moderateScale, verticalScale } from '../../../theme';
 
 export const styles = StyleSheet.create({
@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
   },
   btnTextStyle: {
     color: Colors.white,
-    fontFamily: fonts.Medium,
+    fontFamily: gilroy.Medium,
     fontSize: moderateScale(16),
   },
 });
