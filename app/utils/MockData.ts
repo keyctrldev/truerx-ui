@@ -247,6 +247,11 @@ export const componentListView: componentListProps[] = [
     componentTitle: 'Membership Card',
     screenName: Routes.membershipCard,
   },
+  {
+    id: 39,
+    componentTitle: 'SearchBar',
+    screenName: Routes.SearchBar,
+  },
 ];
 
 export const claimsHistoryData = [

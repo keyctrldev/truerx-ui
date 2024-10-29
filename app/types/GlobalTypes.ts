@@ -318,7 +318,6 @@ export interface SaveMoneyViewProp {
   containerStyle?: StyleProp<ViewStyle>;
   onPress: () => void;
 }
-
 export interface chatDataProps {
   id: number;
   chat: string;
@@ -343,4 +342,11 @@ export interface MembershipCardProp {
   pcn: string;
   rxGCP: string;
   coPays: string;
+}
+export interface SearchBarProps {
+  value: string;
+  placeHolder?: string;
+  onChangeText: (search: string) => void;
+  containerStyle: ViewStyle;
+  clearSearch: () => void;
 }

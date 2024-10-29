@@ -13,6 +13,7 @@ import ActiveRadioIcon from '../svgs/activeRadioIcon.svg';
 import InActiveRadioIcon from '../svgs/inActiveRadioIcon.svg';
 import MoreVert from '../svgs/more_vert.svg';
 import SendMessage from '../svgs/sendIcon.svg';
+import SearchIcon from '../svgs/searchIcon.svg';
 import MediaIcon from '../svgs/mediaIcon.svg';
 import RightIcon from '../svgs/rightIcon.svg';
 import CloseIcon from '../svgs/closeIcon.svg';
@@ -34,6 +35,7 @@ export {
   InActiveRadioIcon,
   MoreVert,
   SendMessage,
+  SearchIcon,
   MediaIcon,
   RightIcon,
   CloseIcon,
