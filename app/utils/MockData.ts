@@ -233,12 +233,17 @@ export const componentListView: componentListProps[] = [
     screenName: Routes.chatInputBox,
   },
   {
-    id: 35,
+    id: 36,
+    componentTitle: 'Password Validation',
+    screenName: Routes.passwordValidation,
+  },
+  {
+    id: 37,
     componentTitle: 'Deductibles Card',
     screenName: Routes.deducibleCard,
   },
   {
-    id: 36,
+    id: 38,
     componentTitle: 'Membership Card',
     screenName: Routes.membershipCard,
   },
