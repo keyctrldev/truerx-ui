@@ -17,12 +17,10 @@ const MedicationList = ({ medicineName, count, dosage, supply, refill }: Medicat
 
         <View style={styles.medicineDetails}>
           <AppText style={styles.medicineName}>{medicineName}</AppText>
-
           <View style={styles.medicineDosage}>
             <AppText style={styles.textDosage}>{count} CT,</AppText>
             <AppText style={styles.textDosage}>{dosage} mg</AppText>
           </View>
-
           <View style={styles.medicineRefill}>
             <AppText style={styles.textRefill}>{supply} day supply</AppText>
             <AppText style={styles.textRefill}>{`\u2022 ${refill}`} days to refill</AppText>

@@ -19,7 +19,7 @@ import { Icons } from '../../assets';
 import { styles } from './AcceptTermsScreenStyles';
 import { useGlobalStyles } from '../../utils/GlobalStyles';
 import { acceptTermsScreenStrings, agreementTermsList } from '../../constants';
-import { CustomBackButton, CustomButton, SafeAreaContainer } from '../../components';
+import { AppText, CustomBackButton, CustomButton, SafeAreaContainer } from '../../components';
 
 if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
   UIManager.setLayoutAnimationEnabledExperimental(true);
@@ -51,7 +51,7 @@ const AcceptTermsScreen = () => {
           item.id == 1 && styles.topContainerStyle,
         ]}>
         <TouchableOpacity activeOpacity={0.8} style={GlobalStyles.rowSpaceBetweenContainer} onPress={handleExpandView}>
-          <Text style={styles.btnTitleText}>{item.title}</Text>
+          <AppText style={styles.btnTitleText}>{item.title}</AppText>
           <Image
             source={Icons.dropDownArrowIcon}
             style={[GlobalStyles.commonIconStyle, isExpandedView ? styles.downIconStyle : styles.upIconStyle]}

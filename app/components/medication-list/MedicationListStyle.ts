@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { Colors, horizontalScale, moderateScale, verticalScale } from '../../theme';
+import { arial, gilroy } from '../../assets';
 
 export const styles = StyleSheet.create({
   medicineContainer: {
@@ -29,12 +30,12 @@ export const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignContent: 'center',
-    padding: moderateScale(6),
+    padding: moderateScale(8),
   },
 
   medicineName: {
-    fontSize: moderateScale(20),
-    fontWeight: '800',
+    fontSize: moderateScale(18),
+    fontFamily: gilroy.SemiBold,
   },
 
   medicineDosage: {
@@ -44,7 +45,7 @@ export const styles = StyleSheet.create({
 
   textDosage: {
     fontSize: moderateScale(14),
-    fontWeight: '500',
+    fontFamily: arial.Regular,
   },
 
   medicineRefill: {
@@ -55,5 +56,6 @@ export const styles = StyleSheet.create({
   textRefill: {
     color: Colors.argent,
     fontSize: moderateScale(14),
+    fontFamily: arial.Regular,
   },
 });

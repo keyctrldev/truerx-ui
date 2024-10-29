@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { TextInput, View } from 'react-native';
-import './SearchBarStyle';
+
 import { styles } from './SearchBarStyle';
 import { Colors } from '../../theme';
 import { SearchBarProps } from '../../types';
