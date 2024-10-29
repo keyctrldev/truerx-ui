@@ -40,6 +40,7 @@ import {
   PlanBenefitSummaryScreen,
   ChatDetailListScreen,
   ProfileIconsScreen,
+  PasswordValidationScreen,
   ResetPasswordMethodScreen,
   MessageCardComponentScreen,
   TrackerMedicationListScreen,
@@ -103,6 +104,7 @@ const RootStack = () => {
       <Stack.Screen name={Routes.chatDetail} component={ChatDetailListScreen} />
       <Stack.Screen name={Routes.profileIcons} component={ProfileIconsScreen} />
       <Stack.Screen name={Routes.chatInputBox} component={ChatInputBoxScreen} />
+      <Stack.Screen name={Routes.passwordValidation} component={PasswordValidationScreen} />
       <Stack.Screen name={Routes.deducibleCard} component={DeducibleCardScreen} />
       <Stack.Screen name={Routes.membershipCard} component={MembershipCardScreen} />
     </Stack.Navigator>

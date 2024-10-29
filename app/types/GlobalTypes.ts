@@ -329,6 +329,12 @@ export interface chatDataItemProps {
   chat: string;
   sender?: boolean;
 }
+
+export interface PasswordValidationProps {
+  password: string;
+  containerStyle?: StyleProp<ViewStyle>;
+  isValid: (val: boolean) => void;
+}
 export interface MembershipCardProp {
   memberId: number;
   memberName: string;

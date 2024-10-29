@@ -40,7 +40,8 @@ type ColorType =
   | 'separatorColor'
   | 'separatorColor'
   | 'placeHolderTextColor'
-  | 'dustGray';
+  | 'dustGray'
+  | 'success';
 
 // This object provides a centralized way to manage and reference color values throughout the application, ensuring consistency in color usage.
 // Color code should be Hex values.
@@ -81,4 +82,5 @@ export const Colors: Record<ColorType, string> = {
   darkCyan: '#8AE0E3',
   darkGreen: '#00363A',
   placeHolderTextColor: '#A3A3A3',
+  success: '#54AB6A',
 };
