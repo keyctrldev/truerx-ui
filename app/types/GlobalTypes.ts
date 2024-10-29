@@ -138,15 +138,28 @@ export interface otpInputComponentProps {
   pinCount: number;
 }
 
-export interface PlanBenefitSummaryProps {
+interface DeductiblePlanBenefitSummaryProps {
   title: string;
   titleTextStyle?: TextStyle;
   icon?: React.ReactElement<SvgProps>;
   deductibleAmount: string;
   outOfPocketAmount: string;
+}
+
+interface DeductiblesSummaryProps extends DeductiblePlanBenefitSummaryProps {
+  isDeducible: true;
+  deductiveProgressValue: undefined;
+  outOfPocketMaxProgressValue: undefined;
+}
+
+interface PlanSummaryProps extends DeductiblePlanBenefitSummaryProps {
+  isDeducible: false;
   deductiveProgressValue: number;
   outOfPocketMaxProgressValue: number;
 }
+
+export type PlanBenefitSummaryProps = DeductiblesSummaryProps | PlanSummaryProps;
+
 export interface PharmacyDetails {
   pharmacyLogo: ImageSourcePropType;
   pharmacyName: string;
@@ -319,4 +332,13 @@ export interface chatDataItemProps {
 
 export interface PasswordValidationProps {
   password: string;
+}
+export interface MembershipCardProp {
+  memberId: number;
+  memberName: string;
+  groupNumber: number;
+  rxBin: string;
+  pcn: string;
+  rxGCP: string;
+  coPays: string;
 }

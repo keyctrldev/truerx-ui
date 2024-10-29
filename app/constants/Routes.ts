@@ -53,4 +53,6 @@ export default {
   profileIcons: 'ProfileIconsScreen',
   chatInputBox: 'ChatInputBoxScreen',
   passwordValidation: 'PasswordValidationScreen',
+  deducibleCard: 'DeductibleCardScreen',
+  membershipCard: 'MembershipCardScreen',
 };
