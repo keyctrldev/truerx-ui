@@ -237,6 +237,11 @@ export const componentListView: componentListProps[] = [
     componentTitle: 'Deductibles Card',
     screenName: Routes.deducibleCard,
   },
+  {
+    id: 36,
+    componentTitle: 'Membership Card',
+    screenName: Routes.membershipCard,
+  },
 ];
 
 export const claimsHistoryData = [
