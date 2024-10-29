@@ -24,3 +24,4 @@ export { default as CustomFilterModal } from './custom-filter-modal/CustomFilter
 export { default as ChatDetailItem } from './chat-detail-item/ChatDetailItem';
 export { default as ProfileIconsItem } from './profile-icons/ProfileIconsItem';
 export { default as ChatInputBox } from './chat-input-box/ChatInputBox';
+export { default as MembershipCard } from './membership-card/MembershipCard';

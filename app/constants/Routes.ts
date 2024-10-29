@@ -45,10 +45,13 @@ export default {
   trackerMedicationList: 'TrackerMedicationListScreen',
   saveMoneyView: 'SaveMoneyViewScreen',
   PrescriptionsList: 'PrescriptionsListScreen',
+  ActionListItem: 'ActionListItemScreen',
   messageCardComponent: 'MessageCardComponentScreen',
   PlanDetailCard: 'PlanDetailCardScreen',
   filterModalScreen: 'CustomFilterModalScreen',
   chatDetail: 'ChatDetailListScreen',
   profileIcons: 'ProfileIconsScreen',
   chatInputBox: 'ChatInputBoxScreen',
+  deducibleCard: 'DeductibleCardScreen',
+  membershipCard: 'MembershipCardScreen',
 };

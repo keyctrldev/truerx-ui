@@ -4,9 +4,10 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { ParamListBase, useNavigation } from '@react-navigation/native';
 
 import { useGlobalStyles } from '../../../utils/GlobalStyles';
-import { CustomBackButton, SafeAreaContainer, PlanBenefitSummary } from '../../../components';
+import { styles } from './DeducibleCardScreenStyles';
+import { CustomBackButton, PlanBenefitSummary, SafeAreaContainer } from '../../../components';
 
-const PlanBenefitSummaryScreen = () => {
+const DeducibleCardScreen = () => {
   const GlobalStyles = useGlobalStyles();
   const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
 
@@ -17,16 +18,26 @@ const PlanBenefitSummaryScreen = () => {
   return (
     <SafeAreaContainer style={GlobalStyles.mainContainerStyle}>
       <CustomBackButton onBackPress={handleBackPress} />
+
+      <PlanBenefitSummary
+        isDeducible={true}
+        title="Deductibles"
+        deductibleAmount="$1500"
+        outOfPocketAmount="$4,000"
+        deductiveProgressValue={undefined}
+        outOfPocketMaxProgressValue={undefined}
+      />
       <PlanBenefitSummary
         isDeducible={false}
-        title={'Your Plan Benefit'}
         deductibleAmount={'$150'}
+        title={'Your Plan Benefit'}
         outOfPocketAmount={'$4,350'}
         deductiveProgressValue={0.8}
         outOfPocketMaxProgressValue={0.3}
+        style={styles.deducibleCardContainerStyle}
       />
     </SafeAreaContainer>
   );
 };
 
-export default PlanBenefitSummaryScreen;
+export default DeducibleCardScreen;
