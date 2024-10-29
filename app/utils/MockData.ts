@@ -234,11 +234,6 @@ export const componentListView: componentListProps[] = [
   },
   {
     id: 36,
-    componentTitle: 'Password Validation',
-    screenName: Routes.passwordValidation,
-  },
-  {
-    id: 37,
     componentTitle: 'Membership Card',
     screenName: Routes.membershipCard,
   },

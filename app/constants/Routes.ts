@@ -53,5 +53,4 @@ export default {
   profileIcons: 'ProfileIconsScreen',
   chatInputBox: 'ChatInputBoxScreen',
   membershipCard: 'MembershipCardScreen',
-  passwordValidation: 'PasswordValidationScreen',
 };

@@ -25,4 +25,3 @@ export { default as ChatDetailItem } from './chat-detail-item/ChatDetailItem';
 export { default as ProfileIconsItem } from './profile-icons/ProfileIconsItem';
 export { default as ChatInputBox } from './chat-input-box/ChatInputBox';
 export { default as MembershipCard } from './membership-card/MembershipCard';
-export { default as PasswordValidation } from './password-validation/PasswordValidation';

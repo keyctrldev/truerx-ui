@@ -325,6 +325,3 @@ export interface MembershipCardProp {
   rxGCP: string;
   coPays: string;
 }
-export interface PasswordValidationProps {
-  password: string;
-}

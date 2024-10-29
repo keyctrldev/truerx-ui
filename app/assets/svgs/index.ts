@@ -14,8 +14,6 @@ import InActiveRadioIcon from '../svgs/inActiveRadioIcon.svg';
 import MoreVert from '../svgs/more_vert.svg';
 import SendMessage from '../svgs/sendIcon.svg';
 import MediaIcon from '../svgs/mediaIcon.svg';
-import RightIcon from '../svgs/rightIcon.svg';
-import CloseIcon from '../svgs/closeIcon.svg';
 
 export {
   MailIcon,
@@ -34,6 +32,4 @@ export {
   MoreVert,
   SendMessage,
   MediaIcon,
-  RightIcon,
-  CloseIcon,
 };
