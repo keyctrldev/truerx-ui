@@ -18,7 +18,7 @@ const SearchBar = ({ value, placeHolder, onChangeText, containerStyle, clearSear
         placeholderTextColor={Colors.darkGrey}
         style={styles.input}
       />
-      {value.length > 0 && <SVGIcon component={<CloseIcon />} onPress={clearSearch} />}
+      {value.length > 0 && <SVGIcon component={<CloseIcon stroke={Colors.black} />} onPress={clearSearch} />}
     </View>
   );
 };
