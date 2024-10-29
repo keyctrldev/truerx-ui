@@ -191,12 +191,12 @@ export const passwordValidationRegx = Object.freeze({
 });
 
 export const passwordValidationError = Object.freeze({
-  min8Character: 'Minimum of 8 characters',
-  max20Character: 'Maximum of 20 characters',
-  oneUpperCase: 'At least one uppercase letter',
-  oneLowerCase: 'At least one lowercase letter',
-  oneDigits: 'At least one digit',
-  oneSpecialCharacter: 'At least one special character',
+  min8Character: 'Minimum of 8 characters.',
+  max20Character: 'Maximum of 20 characters.',
+  oneUpperCase: 'At least one uppercase letter (A-Z).',
+  oneLowerCase: 'At least one lowercase letter (a-z).',
+  oneDigits: 'At least one digit (0-9).',
+  oneSpecialCharacter: 'At least one special character (e.g.,!,@,#,$,%,^,&,*).',
   passwordRequired: 'Password is required',
   passwordRequirements: 'Password Requirements',
 });

@@ -5,7 +5,7 @@ import { Colors, moderateScale, verticalScale } from '../../theme';
 
 export const styles = StyleSheet.create({
   validationText: {
-    fontSize: moderateScale(14),
+    fontSize: moderateScale(12),
     fontFamily: arial.Regular,
   },
   inValidTextStyle: {

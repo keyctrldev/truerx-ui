@@ -12,7 +12,7 @@ import { useGlobalStyles } from '../../utils/GlobalStyles';
 import { getValidationMessages, PasswordValidationSchema } from '../../utils';
 
 const PasswordValidation = (props: PasswordValidationProps) => {
-  const { password } = props;
+  const { password, containerStyle, isValid } = props;
   const GlobalStyles = useGlobalStyles();
 
   const { setFieldValue, values } = useFormik({
@@ -23,10 +23,11 @@ const PasswordValidation = (props: PasswordValidationProps) => {
 
   useEffect(() => {
     setFieldValue('password', password);
+    isValid(getValidationMessages(password).every(item => item.condition));
   }, [password]);
 
   return (
-    <>
+    <View style={containerStyle}>
       <AppText style={styles.titleTextStyle}>{passwordValidationError.passwordRequirements}</AppText>
       {getValidationMessages(values.password).map((msg, index) => (
         <View style={[GlobalStyles.rowContainer, styles.errorTextContainer]}>
@@ -38,7 +39,7 @@ const PasswordValidation = (props: PasswordValidationProps) => {
           </Text>
         </View>
       ))}
-    </>
+    </View>
   );
 };
 

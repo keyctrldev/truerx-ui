@@ -28,7 +28,7 @@ const PasswordValidationScreen = () => {
         touched
       />
       <View style={styles.errorTextContainer}>
-        <PasswordValidation password={inputText} />
+        <PasswordValidation password={inputText} isValid={isValid => {}} />
       </View>
     </SafeAreaContainer>
   );
