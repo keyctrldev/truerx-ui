@@ -232,11 +232,6 @@ export const componentListView: componentListProps[] = [
     componentTitle: 'Chat Input Box',
     screenName: Routes.chatInputBox,
   },
-  {
-    id: 36,
-    componentTitle: 'Password Validation',
-    screenName: Routes.passwordValidation,
-  },
 ];
 
 export const claimsHistoryData = [

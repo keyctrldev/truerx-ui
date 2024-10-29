@@ -316,7 +316,3 @@ export interface chatDataItemProps {
   chat: string;
   sender?: boolean;
 }
-
-export interface PasswordValidationProps {
-  password: string;
-}
