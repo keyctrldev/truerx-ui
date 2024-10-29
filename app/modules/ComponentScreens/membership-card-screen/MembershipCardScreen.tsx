@@ -1,10 +1,20 @@
 import React from 'react';
-import { MembershipCard } from '../../../components';
-import { SafeAreaView } from 'react-native';
+
+import { StackNavigationProp } from '@react-navigation/stack';
+import { ParamListBase, useNavigation } from '@react-navigation/native';
+
+import { CustomBackButton, MembershipCard, SafeAreaContainer } from '../../../components';
 
 const MembershipCardScreen = () => {
+  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+
+  const handleBackPress = () => {
+    navigation.goBack();
+  };
+
   return (
-    <SafeAreaView>
+    <SafeAreaContainer>
+      <CustomBackButton onBackPress={handleBackPress} />
       <MembershipCard
         memberId={99665683711101}
         memberName="Kris Schepers"
@@ -14,7 +24,7 @@ const MembershipCardScreen = () => {
         rxGCP="TRUE5415"
         coPays="In-network PCP $35 In-network Specialist $40 urgent care $40 Emergency Room $300"
       />
-    </SafeAreaView>
+    </SafeAreaContainer>
   );
 };
 export default MembershipCardScreen;
