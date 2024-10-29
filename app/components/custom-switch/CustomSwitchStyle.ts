@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
     },
     shadowOpacity: 0.2,
     shadowRadius: moderateScale(2.5),
-    elevation: moderateScale(4),
+    // elevation: moderateScale(4),
     position: 'absolute',
   },
 });

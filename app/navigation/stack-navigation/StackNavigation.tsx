@@ -32,6 +32,7 @@ import {
   PharmacyPriceListScreen,
   ClaimHistoryItemScreen,
   PrescriptionsListScreen,
+  ActionListItemScreen,
   MessageCardComponentScreen,
   PlanDetailCardScreen,
   CustomFilterModalScreen,
@@ -92,6 +93,7 @@ const RootStack = () => {
       <Stack.Screen name={Routes.trackerMedicationList} component={TrackerMedicationListScreen} />
       <Stack.Screen name={Routes.saveMoneyView} component={SaveMoneyViewScreen} />
       <Stack.Screen name={Routes.PrescriptionsList} component={PrescriptionsListScreen} />
+      <Stack.Screen name={Routes.ActionListItem} component={ActionListItemScreen} />
       <Stack.Screen name={Routes.messageCardComponent} component={MessageCardComponentScreen} />
       <Stack.Screen name={Routes.PlanDetailCard} component={PlanDetailCardScreen} />
       <Stack.Screen name={Routes.filterModalScreen} component={CustomFilterModalScreen} />

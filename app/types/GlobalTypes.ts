@@ -228,6 +228,17 @@ export interface PrescriptionListProps {
   secondButtonOnPress: () => void;
 }
 
+export interface ActionListItemProps {
+  label: string;
+  value?: boolean;
+  onPress: () => void;
+  isDisabled?: boolean;
+  isSwitch?: boolean;
+  isSeparator?: boolean;
+  customStyles?: StyleProp<ViewStyle>;
+  actionNameStyles?: StyleProp<TextStyle>;
+  onValueChange?: (value: boolean) => void;
+}
 export interface MessageCardComponentProps {
   containerStyle?: StyleProp<ViewStyle>;
   titleText: string;
