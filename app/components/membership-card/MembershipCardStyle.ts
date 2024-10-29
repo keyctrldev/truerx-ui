@@ -7,6 +7,14 @@ export const styles = StyleSheet.create({
     margin: moderateScale(10),
     padding: moderateScale(8),
     borderRadius: moderateScale(10),
+    shadowColor: Colors.black,
+    elevation: moderateScale(5),
+    shadowOffset: {
+      height: verticalScale(3),
+      width: horizontalScale(3),
+    },
+    shadowRadius: moderateScale(2),
+    shadowOpacity: 0.2,
   },
   logoContainer: {
     flexDirection: 'row',
@@ -29,9 +37,6 @@ export const styles = StyleSheet.create({
   cardColumn: {
     textAlign: 'center',
     flex: 1,
-  },
-  secondColumn: {
-    marginLeft: moderateScale(2),
   },
   detailsContainer: {
     padding: moderateScale(4),

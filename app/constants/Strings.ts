@@ -182,3 +182,21 @@ export const customFilterModalComponent = Object.freeze({
   last60Days: 'Last 60 days',
   last90Days: 'Last 90 days',
 });
+
+export const passwordValidationRegx = Object.freeze({
+  upperCase: /[A-Z]/,
+  lowerCase: /[a-z]/,
+  digit: /\d/,
+  specialCharacter: /[!@#$%^&*]/,
+});
+
+export const passwordValidationError = Object.freeze({
+  min8Character: 'Minimum of 8 characters',
+  max20Character: 'Maximum of 20 characters',
+  oneUpperCase: 'At least one uppercase letter',
+  oneLowerCase: 'At least one lowercase letter',
+  oneDigits: 'At least one digit',
+  oneSpecialCharacter: 'At least one special character',
+  passwordRequired: 'Password is required',
+  passwordRequirements: 'Password Requirements',
+});

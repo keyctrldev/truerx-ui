@@ -21,7 +21,7 @@ const MemberShipCard: React.FC<MembershipCardProp> = props => {
           <DetailsContainer label={'Member ID'} value={memberId} />
           <DetailsContainer label={'Group #'} value={groupNumber} />
         </View>
-        <View style={[styles.cardColumn, styles.secondColumn]}>
+        <View style={styles.cardColumn}>
           <DetailsContainer label={'RXBIN'} value={rxBin} />
           <DetailsContainer label={'PCN'} value={pcn} />
           <DetailsContainer label={'RXGCP'} value={rxGCP} />

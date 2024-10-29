@@ -45,6 +45,7 @@ export default {
   trackerMedicationList: 'TrackerMedicationListScreen',
   saveMoneyView: 'SaveMoneyViewScreen',
   PrescriptionsList: 'PrescriptionsListScreen',
+  ActionListItem: 'ActionListItemScreen',
   messageCardComponent: 'MessageCardComponentScreen',
   PlanDetailCard: 'PlanDetailCardScreen',
   filterModalScreen: 'CustomFilterModalScreen',
@@ -52,4 +53,5 @@ export default {
   profileIcons: 'ProfileIconsScreen',
   chatInputBox: 'ChatInputBoxScreen',
   membershipCard: 'MembershipCardScreen',
+  passwordValidation: 'PasswordValidationScreen',
 };

@@ -204,31 +204,41 @@ export const componentListView: componentListProps[] = [
   },
   {
     id: 30,
+    componentTitle: 'Action List Item',
+    screenName: Routes.ActionListItem,
+  },
+  {
+    id: 31,
     componentTitle: 'Message Card Component',
     screenName: Routes.messageCardComponent,
   },
   {
-    id: 31,
+    id: 32,
     componentTitle: 'Profile Icons Screen',
     screenName: Routes.profileIcons,
   },
   {
-    id: 32,
+    id: 33,
     componentTitle: 'SaveMoneyView',
     screenName: Routes.saveMoneyView,
   },
   {
-    id: 33,
+    id: 34,
     componentTitle: 'ChatDetail Component',
     screenName: Routes.chatDetail,
   },
   {
-    id: 34,
+    id: 35,
     componentTitle: 'Chat Input Box',
     screenName: Routes.chatInputBox,
   },
   {
-    id: 35,
+    id: 36,
+    componentTitle: 'Password Validation',
+    screenName: Routes.passwordValidation,
+  },
+  {
+    id: 37,
     componentTitle: 'Membership Card',
     screenName: Routes.membershipCard,
   },

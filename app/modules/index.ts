@@ -35,6 +35,7 @@ export { default as CityZipCodeModalScreen } from './ComponentScreens/city-zip-c
 export { default as ClaimHistoryItemScreen } from './ComponentScreens/claim-history-item-screen/ClaimHistoryItemScreen';
 export { default as TrackerMedicationListScreen } from './ComponentScreens/tracker-medication-list/TrackerMedicationListScreen';
 export { default as PrescriptionsListScreen } from './ComponentScreens/prescriptions-list/PrescriptionsListScreen';
+export { default as ActionListItemScreen } from './ComponentScreens/action-list-item-screen/ActionListItemScreen';
 export { default as MessageCardComponentScreen } from './ComponentScreens/message-card-component-screen/MessageCardComponentScreen';
 export { default as PlanDetailCardScreen } from './ComponentScreens/plan-detail-card/PlanDetailCardScreen';
 export { default as CustomFilterModalScreen } from './ComponentScreens/custom-filter-modal-screen/CustomFilterModalScreen';
@@ -42,3 +43,4 @@ export { default as ChatDetailListScreen } from './ComponentScreens/chat-detail-
 export { default as ProfileIconsScreen } from './ComponentScreens/profile-icons-screen/ProfileIconsScreen';
 export { default as ChatInputBoxScreen } from './ComponentScreens/chat-input-box-screen/ChatInputBoxScreen';
 export { default as MembershipCardScreen } from './ComponentScreens/membership-card-screen/MembershipCardScreen';
+export { default as PasswordValidationScreen } from './ComponentScreens/password-validation-screen/PasswordValidationScreen';
