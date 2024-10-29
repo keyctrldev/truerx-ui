@@ -51,4 +51,5 @@ export default {
   chatDetail: 'ChatDetailListScreen',
   profileIcons: 'ProfileIconsScreen',
   chatInputBox: 'ChatInputBoxScreen',
+  membershipCard: 'MembershipCardScreen',
 };

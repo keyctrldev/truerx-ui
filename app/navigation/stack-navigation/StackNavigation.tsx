@@ -41,6 +41,7 @@ import {
   ChatDetailListScreen,
   ProfileIconsScreen,
   ChatInputBoxScreen,
+  MembershipCardScreen,
 } from '../../modules';
 import SvgScreen from '../../modules/ComponentScreens/svg-screen/SvgScreen';
 import SaveMoneyViewScreen from '../../modules/ComponentScreens/save-money-view-screen/SaveMoneyViewScreen';
@@ -99,6 +100,7 @@ const RootStack = () => {
       <Stack.Screen name={Routes.chatDetail} component={ChatDetailListScreen} />
       <Stack.Screen name={Routes.profileIcons} component={ProfileIconsScreen} />
       <Stack.Screen name={Routes.chatInputBox} component={ChatInputBoxScreen} />
+      <Stack.Screen name={Routes.membershipCard} component={MembershipCardScreen} />
     </Stack.Navigator>
   );
 };

@@ -305,3 +305,12 @@ export interface chatDataItemProps {
   chat: string;
   sender?: boolean;
 }
+export interface MembershipCardProp {
+  memberId: number;
+  memberName: string;
+  groupNumber: number;
+  rxBin: string;
+  pcn: string;
+  rxGCP: string;
+  coPays: string;
+}
