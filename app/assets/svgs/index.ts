@@ -16,6 +16,7 @@ import SendMessage from '../svgs/sendIcon.svg';
 import MediaIcon from '../svgs/mediaIcon.svg';
 import RightIcon from '../svgs/rightIcon.svg';
 import CloseIcon from '../svgs/closeIcon.svg';
+import AlertCircle from '../svgs/alertCircle.svg';
 
 export {
   MailIcon,
@@ -36,4 +37,5 @@ export {
   MediaIcon,
   RightIcon,
   CloseIcon,
+  AlertCircle,
 };

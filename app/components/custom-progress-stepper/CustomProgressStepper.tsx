@@ -5,7 +5,7 @@ import AppText from '../app-text/AppText';
 import Dash from '../dash-line-component/Dash';
 import { Colors, verticalScale } from '../../theme';
 import { styles } from './CustomProgressStepperStyle';
-import { CheckIcon, InfoIcon } from '../../assets/svgs';
+import { AlertCircle, CheckIcon } from '../../assets/svgs';
 import { ProgressStepperComponentProps, StepperData } from '../../types';
 import { useGlobalStyles } from '../../utils/GlobalStyles';
 
@@ -44,7 +44,7 @@ const CustomProgressStepper = (props: ProgressStepperComponentProps) => {
                 isDeniedStatus ? styles.declineContainerStyle : styles.approvedContainerStyle,
               ]}>
               {isDeniedStatus ? (
-                <InfoIcon height={styles.iconStyle.height} width={styles.iconStyle.width} />
+                <AlertCircle height={styles.iconStyle.height} width={styles.iconStyle.width} />
               ) : (
                 <CheckIcon height={styles.iconStyle.height} width={styles.iconStyle.width} />
               )}

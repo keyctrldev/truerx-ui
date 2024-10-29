@@ -34,11 +34,8 @@ type ColorType =
   | 'separatorColor'
   | 'yellow'
   | 'dustGray'
-  | 'separatorColor'
   | 'darkCyan'
   | 'darkGreen'
-  | 'separatorColor'
-  | 'separatorColor'
   | 'placeHolderTextColor'
   | 'dustGray'
   | 'success';
