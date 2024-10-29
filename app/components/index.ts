@@ -21,5 +21,6 @@ export { default as PharmacyPriceList } from './pharmacy-price-list/PharmacyPric
 export { default as SaveMoneyView } from './save-money-view/SaveMoneyView';
 export { default as MessageCardComponent } from './message-card-component/MessageCardComponent';
 export { default as CustomFilterModal } from './custom-filter-modal/CustomFilterModal';
+export { default as ChatDetailItem } from './chat-detail-item/ChatDetailItem';
 export { default as ProfileIconsItem } from './profile-icons/ProfileIconsItem';
 export { default as ChatInputBox } from './chat-input-box/ChatInputBox';

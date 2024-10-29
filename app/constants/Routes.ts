@@ -48,6 +48,7 @@ export default {
   messageCardComponent: 'MessageCardComponentScreen',
   PlanDetailCard: 'PlanDetailCardScreen',
   filterModalScreen: 'CustomFilterModalScreen',
+  chatDetail: 'ChatDetailListScreen',
   profileIcons: 'ProfileIconsScreen',
   chatInputBox: 'ChatInputBoxScreen',
 };
