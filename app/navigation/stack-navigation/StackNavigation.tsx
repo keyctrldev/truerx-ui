@@ -33,6 +33,7 @@ import {
   SafeAreaContainerScreen,
   CustomProgressBarScreen,
   PharmacyPriceListScreen,
+  SearchBarScreen,
   ClaimHistoryItemScreen,
   PrescriptionsListScreen,
   ActionListItemScreen,
@@ -92,6 +93,7 @@ const RootStack = () => {
       <Stack.Screen name={Routes.linearProgressBar} component={LinearProgressBarScreen} />
       <Stack.Screen name={Routes.PharmacyPriceList} component={PharmacyPriceListScreen} />
       <Stack.Screen name={Routes.cityZipCodeModalScreen} component={CityZipCodeModalScreen} />
+      <Stack.Screen name={Routes.SearchBar} component={SearchBarScreen} />
       <Stack.Screen name={Routes.ClaimHistoryItem} component={ClaimHistoryItemScreen} />
       <Stack.Screen name={Routes.trackerMedicationList} component={TrackerMedicationListScreen} />
       <Stack.Screen name={Routes.saveMoneyView} component={SaveMoneyViewScreen} />
